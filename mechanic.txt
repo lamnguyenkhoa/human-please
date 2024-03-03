@@ -1,0 +1,7 @@
+- At end of day, show report how many legal, illegal and alternate got in.
+    - Next few days news will be related to them.
+
+- Expected process:
+    - A subject come in
+    - check if paper and reason correct (to remove illegal)
+    - If sus of being alternates, report. Otherwise deny.
