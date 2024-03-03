@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://but17v4nmtkk8"]
 
-[node name="InspectorChat" type="HBoxContainer"]
+[node name="InspectorDialog" type="HBoxContainer"]
 
 [node name="ReferenceRect" type="TextureRect" parent="."]
 layout_mode = 2
