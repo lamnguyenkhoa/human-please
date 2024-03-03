@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c3hm8qfrt1efv"]
+
+[node name="SubjectDialog" type="HBoxContainer"]
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(450, 25)
+layout_mode = 2
+text = "Hello Inspector. I'm Vish, Vish Yo, from Sri Lanka."
+autowrap_mode = 2
+
+[node name="ReferenceRect" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
