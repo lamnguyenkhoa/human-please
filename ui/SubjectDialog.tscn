@@ -1,13 +1,14 @@
-[gd_scene format=3 uid="uid://c3hm8qfrt1efv"]
+[gd_scene load_steps=2 format=3 uid="uid://c3hm8qfrt1efv"]
+
+[ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="1_gtsc6"]
 
 [node name="SubjectDialog" type="HBoxContainer"]
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(450, 25)
 layout_mode = 2
-text = "Hello Inspector. I'm Vish, Vish Yo, from Sri Lanka."
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gtsc6")
+theme_override_font_sizes/font_size = 14
+text = "SUBJECT: Hello Inspector. I'm Vish, Vish Yo, from Sri Lanka."
 autowrap_mode = 2
-
-[node name="ReferenceRect" type="TextureRect" parent="."]
-layout_mode = 2
-size_flags_horizontal = 3

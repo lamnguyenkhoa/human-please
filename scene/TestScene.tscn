@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://buwmemilvox0o"]
 
 [ext_resource type="Texture2D" uid="uid://b35qc7h3wshnn" path="res://asset/sprite/mugshot_background.png" id="1_jqa12"]
-[ext_resource type="Texture2D" uid="uid://b4j4hk2l2coy5" path="res://asset/sprite/square.png" id="1_kebkf"]
 [ext_resource type="Texture2D" uid="uid://duf3sth0tr448" path="res://asset/sprite/circle.png" id="2_0j1a0"]
 [ext_resource type="Texture2D" uid="uid://b2x8ulxnmus2v" path="res://asset/sprite/character/daniel_smith.png" id="3_yoww3"]
+[ext_resource type="Texture2D" uid="uid://byvshjajis80m" path="res://asset/sprite/table_area.png" id="4_itneh"]
 [ext_resource type="PackedScene" uid="uid://yv86p5tb3yjf" path="res://ui/GameUI.tscn" id="5_g7feh"]
 
 [node name="TestScene" type="Node2D"]
@@ -29,10 +29,9 @@ texture = ExtResource("3_yoww3")
 offset = Vector2(4.40183, -92.0706)
 
 [node name="WorkingArea" type="Sprite2D" parent="."]
-self_modulate = Color(0.152344, 0.0641451, 0.00684388, 1)
 position = Vector2(844, 480)
-scale = Vector2(16.375, 9)
-texture = ExtResource("1_kebkf")
+scale = Vector2(1.71242, 1.41176)
+texture = ExtResource("4_itneh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

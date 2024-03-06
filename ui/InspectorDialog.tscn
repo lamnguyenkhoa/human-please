@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://but17v4nmtkk8"]
+[gd_scene load_steps=2 format=3 uid="uid://but17v4nmtkk8"]
+
+[ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="1_2ndiy"]
 
 [node name="InspectorDialog" type="HBoxContainer"]
-
-[node name="ReferenceRect" type="TextureRect" parent="."]
-layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(450, 25)
 layout_mode = 2
-text = "Good morning. What is your name?"
-horizontal_alignment = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_2ndiy")
+theme_override_font_sizes/font_size = 14
+text = "INSPECTOR: Good morning. What is your name?"
 autowrap_mode = 2
