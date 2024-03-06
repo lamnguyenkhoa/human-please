@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=3 format=3 uid="uid://cyynmamt4oi0m"]
+
+[ext_resource type="Script" path="res://entity/character_data/character_resource.gd" id="1_mng4i"]
+[ext_resource type="Texture2D" uid="uid://b2x8ulxnmus2v" path="res://asset/sprite/character/daniel_smith.png" id="2_kqv88"]
+
+[resource]
+script = ExtResource("1_mng4i")
+name = "Daniel Smith"
+sprite = ExtResource("2_kqv88")
+age = 27
+gender = 1
+dateOfBirth = "12/01"
+nationality = "USA"
+dialogs = Array[Resource("res://entity/character_data/dialog_resource.gd")]([])

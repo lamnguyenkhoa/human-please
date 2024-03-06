@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3hm8qfrt1efv"]
+[gd_scene load_steps=3 format=3 uid="uid://c3hm8qfrt1efv"]
 
 [ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="1_gtsc6"]
+[ext_resource type="Script" path="res://ui/dialog_entry.gd" id="1_hadc3"]
 
 [node name="SubjectDialog" type="HBoxContainer"]
+script = ExtResource("1_hadc3")
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(450, 25)

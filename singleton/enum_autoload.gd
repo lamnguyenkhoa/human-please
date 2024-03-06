@@ -1,11 +1,17 @@
 extends Node
 
+enum Gender {
+    NONE,
+    MALE,
+    FEMALE,
+    NEUTRAL
+}
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-    pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-    pass
+enum QuestionID {
+    NONE,
+    IDENTITY_VERIFICATION,
+    PURPOSE_OF_VISIT,
+    DURATION_OF_STAY,
+    ITEM_IN_POSSESSION,
+    PREVIOUS_VISIT,
+}
