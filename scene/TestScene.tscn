@@ -1,16 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://buwmemilvox0o"]
+[gd_scene load_steps=17 format=3 uid="uid://buwmemilvox0o"]
 
-[ext_resource type="Texture2D" uid="uid://b35qc7h3wshnn" path="res://asset/sprite/mugshot_background.png" id="1_jqa12"]
+[ext_resource type="Texture2D" uid="uid://b35qc7h3wshnn" path="res://asset/sprite/ui/mugshot_background.png" id="1_jqa12"]
 [ext_resource type="Texture2D" uid="uid://duf3sth0tr448" path="res://asset/sprite/circle.png" id="2_0j1a0"]
-[ext_resource type="Texture2D" uid="uid://byvshjajis80m" path="res://asset/sprite/table_area.png" id="4_itneh"]
+[ext_resource type="Texture2D" uid="uid://byvshjajis80m" path="res://asset/sprite/ui/table_area.png" id="4_itneh"]
 [ext_resource type="Texture2D" uid="uid://n38dnx7m7t8o" path="res://asset/sprite/character/devish_pant.png" id="4_l3c0p"]
 [ext_resource type="Shader" path="res://shader/crt_vhs.gdshader" id="5_353xh"]
 [ext_resource type="Texture2D" uid="uid://b4j4hk2l2coy5" path="res://asset/sprite/square.png" id="6_0xiln"]
 [ext_resource type="Script" path="res://ui/dialog_area.gd" id="7_hfu6n"]
 [ext_resource type="PackedScene" uid="uid://c3hm8qfrt1efv" path="res://ui/SubjectDialog.tscn" id="8_1kshn"]
 [ext_resource type="PackedScene" uid="uid://but17v4nmtkk8" path="res://ui/InspectorDialog.tscn" id="9_pf5tj"]
-[ext_resource type="Texture2D" uid="uid://x0cnt1hy7276" path="res://asset/sprite/audio_transcript.png" id="10_g68p3"]
-[ext_resource type="Texture2D" uid="uid://co1sjt6h2h1as" path="res://asset/sprite/question_area.png" id="11_lxu6w"]
+[ext_resource type="Texture2D" uid="uid://x0cnt1hy7276" path="res://asset/sprite/ui/audio_transcript.png" id="10_g68p3"]
+[ext_resource type="Texture2D" uid="uid://co1sjt6h2h1as" path="res://asset/sprite/ui/question_area.png" id="11_lxu6w"]
+[ext_resource type="Texture2D" uid="uid://dsnsf88fxyg7o" path="res://asset/sprite/ui/common_passport.png" id="12_filux"]
+[ext_resource type="Texture2D" uid="uid://by4j1vauy0nwa" path="res://asset/sprite/character/mark_davidson_face.png" id="13_k2hkp"]
+[ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="14_y43m6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ioefl"]
 shader = ExtResource("5_353xh")
@@ -240,3 +243,30 @@ text_overrun_behavior = 3
 layout_mode = 2
 text = "Did you see anything suspicious?"
 text_overrun_behavior = 3
+
+[node name="CommonPassport" type="Node2D" parent="."]
+clip_children = 2
+position = Vector2(960, 520)
+
+[node name="Sprite2D" type="Sprite2D" parent="CommonPassport"]
+position = Vector2(16, -72)
+texture = ExtResource("12_filux")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CommonPassport"]
+position = Vector2(-56, 16)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_k2hkp")
+
+[node name="Label" type="Label" parent="CommonPassport"]
+texture_filter = 1
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 121.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_y43m6")
+theme_override_font_sizes/font_size = 12
+text = "Name: Mark Davidson
+DoB: 04/02/1982
+
+042123123"

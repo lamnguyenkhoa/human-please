@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x0cnt1hy7276"
-path="res://.godot/imported/audio_transcript.png-439dc52ecffbd97d5d29d718aa6d8979.ctex"
+uid="uid://b35qc7h3wshnn"
+path="res://.godot/imported/mugshot_background.png-0f6309cbad80e66eaeac5bdf4377b0ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprite/audio_transcript.png"
-dest_files=["res://.godot/imported/audio_transcript.png-439dc52ecffbd97d5d29d718aa6d8979.ctex"]
+source_file="res://asset/sprite/ui/mugshot_background.png"
+dest_files=["res://.godot/imported/mugshot_background.png-0f6309cbad80e66eaeac5bdf4377b0ae.ctex"]
 
 [params]
 

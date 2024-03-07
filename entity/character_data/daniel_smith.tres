@@ -1,7 +1,17 @@
-[gd_resource type="Resource" script_class="CharacterResource" load_steps=3 format=3 uid="uid://cyynmamt4oi0m"]
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=5 format=3 uid="uid://cyynmamt4oi0m"]
 
+[ext_resource type="Script" path="res://entity/character_data/dialog_resource.gd" id="1_bx6y6"]
 [ext_resource type="Script" path="res://entity/character_data/character_resource.gd" id="1_mng4i"]
 [ext_resource type="Texture2D" uid="uid://b2x8ulxnmus2v" path="res://asset/sprite/character/daniel_smith.png" id="2_kqv88"]
+
+[sub_resource type="Resource" id="Resource_u073v"]
+script = ExtResource("1_bx6y6")
+day = 1
+identity_verification = "Here is my ID."
+purpose_of_visit = "Well I come to visit my grandpa, who live in the North of the town."
+duration_of_stay = "Just one day. Maybe even less."
+item_in_possession = "I didn't bring anything much."
+previous_visit = "Yeah, plenty already. I'm suprise this time they opened a checkpoint."
 
 [resource]
 script = ExtResource("1_mng4i")
@@ -11,4 +21,4 @@ age = 27
 gender = 1
 dateOfBirth = "12/01"
 nationality = "USA"
-dialogs = Array[Resource("res://entity/character_data/dialog_resource.gd")]([])
+dialogs = Array[ExtResource("1_bx6y6")]([SubResource("Resource_u073v")])

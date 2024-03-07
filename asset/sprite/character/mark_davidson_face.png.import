@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b35qc7h3wshnn"
-path="res://.godot/imported/mugshot_background.png-b5117d8fc7a1e0be4d0fdbdd06c68e88.ctex"
+uid="uid://by4j1vauy0nwa"
+path="res://.godot/imported/mark_davidson_face.png-2e00cb1f23a0cfb7279458febb930cd3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprite/mugshot_background.png"
-dest_files=["res://.godot/imported/mugshot_background.png-b5117d8fc7a1e0be4d0fdbdd06c68e88.ctex"]
+source_file="res://asset/sprite/character/mark_davidson_face.png"
+dest_files=["res://.godot/imported/mark_davidson_face.png-2e00cb1f23a0cfb7279458febb930cd3.ctex"]
 
 [params]
 
