@@ -1,0 +1,127 @@
+[gd_scene load_steps=6 format=3 uid="uid://b024pqofk6p4t"]
+
+[ext_resource type="Script" path="res://ui/passport.gd" id="1_4ccjp"]
+[ext_resource type="Texture2D" uid="uid://dsnsf88fxyg7o" path="res://asset/sprite/ui/common_passport.png" id="1_k8r2b"]
+[ext_resource type="Texture2D" uid="uid://by4j1vauy0nwa" path="res://asset/sprite/character/mark_davidson_face.png" id="2_sycny"]
+[ext_resource type="Texture2D" uid="uid://dtb2s3m74ig8k" path="res://asset/sprite/ui/barcode.png" id="3_4whe3"]
+[ext_resource type="Texture2D" uid="uid://3b5pw7kl3gx2" path="res://asset/sprite/ui/usa_flag.png" id="4_ggq16"]
+
+[node name="Passport" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 264.0
+offset_bottom = 328.0
+script = ExtResource("1_4ccjp")
+
+[node name="Paper" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 260.0
+offset_bottom = 324.0
+texture = ExtResource("1_k8r2b")
+
+[node name="Photo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -120.0
+offset_right = 98.0
+offset_bottom = -24.0
+grow_vertical = 0
+texture = ExtResource("2_sycny")
+expand_mode = 1
+
+[node name="PersonalDetail" type="RichTextLabel" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -136.0
+offset_right = -23.0
+offset_bottom = -26.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 11
+bbcode_enabled = true
+text = "[color=blue]Name[/color]
+Mark Davidson
+[color=blue]Date of birth[/color]
+04/02/1982
+[color=blue]Gender[/color]
+M
+[color=blue]Expired date[/color]
+10/14/2002
+
+<<<<<042123123<<<<<"
+fit_content = true
+scroll_active = false
+
+[node name="TopSerial" type="Label" parent="."]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 128.0
+offset_right = 101.0
+offset_bottom = 143.0
+rotation = -1.57079
+theme_override_font_sizes/font_size = 14
+text = "042123123"
+horizontal_alignment = 1
+
+[node name="Country" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = 4.0
+offset_right = 92.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "United state of American"
+fit_content = true
+
+[node name="Barcode" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -16.0
+offset_top = 40.0
+offset_right = 67.0
+offset_bottom = 73.0
+grow_horizontal = 0
+rotation = 1.5708
+texture = ExtResource("3_4whe3")
+
+[node name="Flag" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 48.0
+offset_right = 66.0
+offset_bottom = 120.0
+grow_horizontal = 2
+texture = ExtResource("4_ggq16")
+expand_mode = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
