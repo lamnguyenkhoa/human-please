@@ -3,8 +3,9 @@
 [ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="1_gtsc6"]
 [ext_resource type="Script" path="res://ui/dialog_entry.gd" id="1_hadc3"]
 
-[node name="SubjectDialog" type="HBoxContainer"]
+[node name="SubjectDialog" type="HBoxContainer" node_paths=PackedStringArray("label")]
 script = ExtResource("1_hadc3")
+label = NodePath("Label")
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(450, 25)

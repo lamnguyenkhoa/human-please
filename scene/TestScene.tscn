@@ -372,6 +372,7 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 0
 
 [node name="InspectorChat" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("9_pf5tj")]
 layout_mode = 2
@@ -389,6 +390,18 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="SubjectDialog3" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("8_1kshn")]
+layout_mode = 2
+
+[node name="InspectorChat4" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("9_pf5tj")]
+layout_mode = 2
+
+[node name="SubjectDialog4" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("8_1kshn")]
+layout_mode = 2
+
+[node name="InspectorChat5" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("9_pf5tj")]
+layout_mode = 2
+
+[node name="SubjectDialog5" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("8_1kshn")]
 layout_mode = 2
 
 [node name="QuestionArea" parent="CanvasLayer/GameUI" instance=ExtResource("11_mbsvd")]

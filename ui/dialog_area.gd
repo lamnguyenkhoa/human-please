@@ -5,20 +5,25 @@ class_name DialogArea
 @export var inspector_dialog_prefab: PackedScene
 
 @onready var dialog_container = $ScrollContainer/VBoxContainer
+@onready var scroll_container: ScrollContainer = $ScrollContainer
 
 func _ready():
-	clear_all_dialog()
+    clear_all_dialog()
 
 func clear_all_dialog():
-	for child in dialog_container.get_children():
-		child.queue_free()
+    for child in dialog_container.get_children():
+        child.queue_free()
 
 func add_subject_dialog(text: String):
-	var new_dialog: DialogEntry = subject_dialog_prefab.instantiate()
-	dialog_container.add_child(new_dialog)
-	new_dialog.update_text("SUBJECT: " + text)
+    var new_dialog: DialogEntry = subject_dialog_prefab.instantiate()
+    dialog_container.add_child(new_dialog)
+    new_dialog.update_text("SUBJECT: " + text)
+    await get_tree().process_frame
+    scroll_container.ensure_control_visible(new_dialog)
 
 func add_inspector_dialog(text: String):
-	var new_dialog: DialogEntry = inspector_dialog_prefab.instantiate()
-	dialog_container.add_child(new_dialog)
-	new_dialog.update_text("INSPECTOR: " + text)
+    var new_dialog: DialogEntry = inspector_dialog_prefab.instantiate()
+    dialog_container.add_child(new_dialog)
+    new_dialog.update_text("INSPECTOR: " + text)
+    await get_tree().process_frame
+    scroll_container.ensure_control_visible(new_dialog)
