@@ -14,4 +14,6 @@ enum QuestionID {
     DURATION_OF_STAY,
     ITEM_IN_POSSESSION,
     PREVIOUS_VISIT,
+    QUESTION_APPEARANCE,
+    
 }
