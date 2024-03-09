@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://cajp41ks5tyef"]
+
+[ext_resource type="Texture2D" uid="uid://co1sjt6h2h1as" path="res://asset/sprite/ui/question_area.png" id="1_8txi1"]
+[ext_resource type="Script" path="res://ui/question_area.gd" id="1_ct41n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_snson"]
+
+[node name="QuestionArea" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 960.0
+offset_right = 1368.0
+offset_bottom = 192.0
+script = ExtResource("1_ct41n")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8txi1")
+expand_mode = 1
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_snson")
+
+[node name="Standard" type="ScrollContainer" parent="TabContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Standard"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Standard1" type="Button" parent="TabContainer/Standard/VBoxContainer"]
+layout_mode = 2
+text = "Identity verification"
+text_overrun_behavior = 3
+
+[node name="Standard2" type="Button" parent="TabContainer/Standard/VBoxContainer"]
+layout_mode = 2
+text = "Purpose of visit"
+text_overrun_behavior = 3
+
+[node name="Standard3" type="Button" parent="TabContainer/Standard/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Duration of stay"
+text_overrun_behavior = 3
+
+[node name="Standard4" type="Button" parent="TabContainer/Standard/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Item in possession"
+text_overrun_behavior = 3
+
+[node name="Standard5" type="Button" parent="TabContainer/Standard/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Previous visit"
+text_overrun_behavior = 3
+
+[node name="Suspicious" type="ScrollContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Suspicious"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="TabContainer/Suspicious/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "What's is your name?"
+text_overrun_behavior = 3
+
+[connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard1" to="." method="_on_standard_1_pressed"]
+[connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard2" to="." method="_on_standard_2_pressed"]

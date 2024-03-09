@@ -1,11 +1,8 @@
 extends Node
 
+@export var subject_today: Array[CharacterResource]
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-    pass # Replace with function body.
+var current_subject: CharacterResource
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-    pass
+func _ready() -> void:
+    current_subject = subject_today[0]

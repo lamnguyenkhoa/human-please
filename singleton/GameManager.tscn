@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxqn6hswvrohj"]
+[gd_scene load_steps=3 format=3 uid="uid://dxqn6hswvrohj"]
 
 [ext_resource type="Script" path="res://singleton/game_manager.gd" id="1_2sgo4"]
+[ext_resource type="Resource" uid="uid://bvad1dg57pnki" path="res://entity/character_data/mark_davidson.tres" id="2_f6jp6"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_2sgo4")
+subject_today = Array[Resource("res://entity/character_data/character_resource.gd")]([ExtResource("2_f6jp6")])

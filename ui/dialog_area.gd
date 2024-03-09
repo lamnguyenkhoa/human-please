@@ -15,10 +15,10 @@ func clear_all_dialog():
 
 func add_subject_dialog(text: String):
 	var new_dialog: DialogEntry = subject_dialog_prefab.instantiate()
-	new_dialog.update_text(text)
 	dialog_container.add_child(new_dialog)
+	new_dialog.update_text("SUBJECT: " + text)
 
 func add_inspector_dialog(text: String):
 	var new_dialog: DialogEntry = inspector_dialog_prefab.instantiate()
-	new_dialog.update_text(text)
 	dialog_container.add_child(new_dialog)
+	new_dialog.update_text("INSPECTOR: " + text)
