@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b35qc7h3wshnn" path="res://asset/sprite/ui/mugshot_background.png" id="1_jqa12"]
 [ext_resource type="Texture2D" uid="uid://duf3sth0tr448" path="res://asset/sprite/circle.png" id="2_0j1a0"]
-[ext_resource type="Texture2D" uid="uid://n38dnx7m7t8o" path="res://asset/sprite/character/devish_pant.png" id="3_avfid"]
+[ext_resource type="Texture2D" uid="uid://cofc05u43ip6" path="res://asset/sprite/character/mark_davidson.png" id="3_ox8mf"]
 [ext_resource type="Texture2D" uid="uid://byvshjajis80m" path="res://asset/sprite/ui/table_area.png" id="4_itneh"]
 [ext_resource type="Texture2D" uid="uid://by4j1vauy0nwa" path="res://asset/sprite/character/mark_davidson_face.png" id="4_s17c2"]
 [ext_resource type="Texture2D" uid="uid://b4j4hk2l2coy5" path="res://asset/sprite/square.png" id="6_0xiln"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://x0cnt1hy7276" path="res://asset/sprite/ui/audio_transcript.png" id="10_g68p3"]
 [ext_resource type="PackedScene" uid="uid://cajp41ks5tyef" path="res://ui/QuestionArea.tscn" id="11_mbsvd"]
 [ext_resource type="PackedScene" uid="uid://b024pqofk6p4t" path="res://ui/Passport.tscn" id="12_lew0a"]
-[ext_resource type="Texture2D" uid="uid://j0xw2p5dmgah" path="res://asset/sprite/ui/guidebook_cover.png" id="13_76laj"]
+[ext_resource type="PackedScene" uid="uid://oasns4fb3vda" path="res://ui/Guidebook.tscn" id="13_htrsk"]
 
 [sub_resource type="Shader" id="Shader_ahqtn"]
 code = "/*
@@ -277,55 +277,54 @@ shader_parameter/vignette_opacity = 0.5
 position = Vector2(160, 384)
 
 [node name="Background" type="Sprite2D" parent="CameraArea"]
-position = Vector2(64.5, -159.937)
-scale = Vector2(1.34639, 0.705709)
+position = Vector2(24, -192.018)
+scale = Vector2(1.20482, 0.604667)
 texture = ExtResource("1_jqa12")
 
 [node name="Shadow" type="Sprite2D" parent="CameraArea"]
 self_modulate = Color(0, 0, 0, 0.478431)
-position = Vector2(56, 48)
-scale = Vector2(2.75, 0.5625)
+position = Vector2(12, -13)
+scale = Vector2(1.875, 0.40625)
 texture = ExtResource("2_0j1a0")
 
 [node name="Subject" type="Sprite2D" parent="CameraArea"]
-position = Vector2(48, -40)
-scale = Vector2(0.645072, 0.645072)
-texture = ExtResource("3_avfid")
+position = Vector2(16, -104)
+scale = Vector2(0.547634, 0.547634)
+texture = ExtResource("3_ox8mf")
 offset = Vector2(4.40183, -92.0706)
 
 [node name="Date" type="Label" parent="CameraArea"]
-offset_left = 128.0
-offset_top = 32.0
-offset_right = 246.0
-offset_bottom = 50.0
+offset_left = 88.0
+offset_top = -32.0
+offset_right = 206.0
+offset_bottom = -14.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "12/02/2000"
 
-[node name="MarkDavidsonFace" type="Sprite2D" parent="CameraArea"]
-position = Vector2(-37, 231)
-scale = Vector2(3, 3)
+[node name="Face" type="Sprite2D" parent="CameraArea"]
+position = Vector2(-32, 160)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("4_s17c2")
 
 [node name="CRTShader" type="ColorRect" parent="CameraArea"]
 material = SubResource("ShaderMaterial_ioefl")
 offset_left = -160.0
 offset_top = -384.0
-offset_right = 288.0
-offset_bottom = 64.0
+offset_right = 224.0
 
 [node name="BottomCover" type="Sprite2D" parent="CameraArea"]
 self_modulate = Color(0, 0, 0, 1)
-position = Vector2(64, 224)
-scale = Vector2(7, 5)
+position = Vector2(32, 192)
+scale = Vector2(6, 6)
 texture = ExtResource("6_0xiln")
 
 [node name="CRTShader2" type="ColorRect" parent="CameraArea"]
 material = SubResource("ShaderMaterial_ioefl")
-offset_left = -149.0
-offset_top = 79.0
-offset_right = 91.0
-offset_bottom = 375.0
+offset_left = -128.0
+offset_top = 32.0
+offset_right = 72.0
+offset_bottom = 280.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -341,8 +340,8 @@ mouse_filter = 1
 [node name="DialogArea" type="Control" parent="CanvasLayer/GameUI"]
 layout_mode = 1
 anchors_preset = 0
-offset_left = 448.0
-offset_right = 960.0
+offset_left = 384.0
+offset_right = 896.0
 offset_bottom = 192.0
 script = ExtResource("7_hfu6n")
 subject_dialog_prefab = ExtResource("8_1kshn")
@@ -382,6 +381,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="QuestionArea" parent="CanvasLayer/GameUI" instance=ExtResource("11_mbsvd")]
+offset_left = 896.0
 
 [node name="WorkingArea" type="Control" parent="CanvasLayer/GameUI"]
 layout_mode = 1
@@ -390,7 +390,7 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -920.0
+offset_left = -982.0
 offset_top = -576.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -405,36 +405,49 @@ grow_vertical = 2
 texture = ExtResource("4_itneh")
 expand_mode = 1
 
-[node name="Passport" parent="CanvasLayer/GameUI/WorkingArea" instance=ExtResource("12_lew0a")]
-offset_left = 634.0
-offset_top = 56.0
-offset_right = 898.0
-offset_bottom = 384.0
-
 [node name="Control" type="HBoxContainer" parent="CanvasLayer/GameUI/WorkingArea"]
 layout_mode = 0
-offset_left = 10.0
+offset_left = 8.0
 offset_top = 8.0
-offset_right = 212.0
-offset_bottom = 56.0
+offset_right = 210.0
+offset_bottom = 40.0
 alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer/GameUI/WorkingArea/Control"]
+self_modulate = Color(0.0196078, 1, 0, 1)
 layout_mode = 2
 text = "Allow"
 
 [node name="Button2" type="Button" parent="CanvasLayer/GameUI/WorkingArea/Control"]
+self_modulate = Color(1, 0.407843, 0.176471, 1)
 layout_mode = 2
 text = "Deny"
 
 [node name="Button3" type="Button" parent="CanvasLayer/GameUI/WorkingArea/Control"]
+self_modulate = Color(1, 0.0196078, 0, 1)
 layout_mode = 2
 text = "Emergency"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/WorkingArea"]
-layout_mode = 0
-offset_left = 42.0
-offset_top = 120.0
-offset_right = 352.0
-offset_bottom = 520.0
-texture = ExtResource("13_76laj")
+[node name="DocumentArea" type="Control" parent="CanvasLayer/GameUI/WorkingArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 48.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Guidebook" parent="CanvasLayer/GameUI/WorkingArea/DocumentArea" instance=ExtResource("13_htrsk")]
+layout_mode = 1
+offset_left = 152.0
+offset_top = 96.0
+offset_right = 548.0
+offset_bottom = 352.0
+
+[node name="TabContainer" parent="CanvasLayer/GameUI/WorkingArea/DocumentArea" instance=ExtResource("12_lew0a")]
+layout_mode = 1
+offset_left = 576.0
+offset_top = 56.0
+offset_right = 832.0
+offset_bottom = 376.0

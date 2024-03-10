@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cajp41ks5tyef"]
+[gd_scene load_steps=5 format=3 uid="uid://cajp41ks5tyef"]
 
 [ext_resource type="Texture2D" uid="uid://co1sjt6h2h1as" path="res://asset/sprite/ui/question_area.png" id="1_8txi1"]
 [ext_resource type="Script" path="res://ui/question_area.gd" id="1_ct41n"]
+[ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="3_og5ud"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_snson"]
 
@@ -33,6 +34,7 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_og5ud")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_snson")
 
 [node name="Standard" type="ScrollContainer" parent="TabContainer"]
@@ -44,29 +46,34 @@ size_flags_horizontal = 3
 
 [node name="Standard1" type="Button" parent="TabContainer/Standard/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_og5ud")
 text = "Identity verification"
 text_overrun_behavior = 3
 
 [node name="Standard2" type="Button" parent="TabContainer/Standard/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_og5ud")
 text = "Purpose of visit"
 text_overrun_behavior = 3
 
 [node name="Standard3" type="Button" parent="TabContainer/Standard/VBoxContainer"]
 visible = false
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_og5ud")
 text = "Duration of stay"
 text_overrun_behavior = 3
 
 [node name="Standard4" type="Button" parent="TabContainer/Standard/VBoxContainer"]
 visible = false
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_og5ud")
 text = "Item in possession"
 text_overrun_behavior = 3
 
 [node name="Standard5" type="Button" parent="TabContainer/Standard/VBoxContainer"]
 visible = false
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_og5ud")
 text = "Previous visit"
 text_overrun_behavior = 3
 
@@ -81,6 +88,7 @@ size_flags_horizontal = 3
 [node name="Button" type="Button" parent="TabContainer/Suspicious/VBoxContainer"]
 visible = false
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_og5ud")
 text = "What's is your name?"
 text_overrun_behavior = 3
 
