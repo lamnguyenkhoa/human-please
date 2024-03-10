@@ -1,8 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://buwmemilvox0o"]
+[gd_scene load_steps=16 format=3 uid="uid://buwmemilvox0o"]
 
 [ext_resource type="Texture2D" uid="uid://b35qc7h3wshnn" path="res://asset/sprite/ui/mugshot_background.png" id="1_jqa12"]
 [ext_resource type="Texture2D" uid="uid://duf3sth0tr448" path="res://asset/sprite/circle.png" id="2_0j1a0"]
-[ext_resource type="Texture2D" uid="uid://cofc05u43ip6" path="res://asset/sprite/character/mark_davidson.png" id="3_51iue"]
+[ext_resource type="Texture2D" uid="uid://n38dnx7m7t8o" path="res://asset/sprite/character/devish_pant.png" id="3_avfid"]
 [ext_resource type="Texture2D" uid="uid://byvshjajis80m" path="res://asset/sprite/ui/table_area.png" id="4_itneh"]
 [ext_resource type="Texture2D" uid="uid://by4j1vauy0nwa" path="res://asset/sprite/character/mark_davidson_face.png" id="4_s17c2"]
 [ext_resource type="Texture2D" uid="uid://b4j4hk2l2coy5" path="res://asset/sprite/square.png" id="6_0xiln"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://x0cnt1hy7276" path="res://asset/sprite/ui/audio_transcript.png" id="10_g68p3"]
 [ext_resource type="PackedScene" uid="uid://cajp41ks5tyef" path="res://ui/QuestionArea.tscn" id="11_mbsvd"]
 [ext_resource type="PackedScene" uid="uid://b024pqofk6p4t" path="res://ui/Passport.tscn" id="12_lew0a"]
+[ext_resource type="Texture2D" uid="uid://j0xw2p5dmgah" path="res://asset/sprite/ui/guidebook_cover.png" id="13_76laj"]
 
 [sub_resource type="Shader" id="Shader_ahqtn"]
 code = "/*
@@ -289,7 +290,7 @@ texture = ExtResource("2_0j1a0")
 [node name="Subject" type="Sprite2D" parent="CameraArea"]
 position = Vector2(48, -40)
 scale = Vector2(0.645072, 0.645072)
-texture = ExtResource("3_51iue")
+texture = ExtResource("3_avfid")
 offset = Vector2(4.40183, -92.0706)
 
 [node name="Date" type="Label" parent="CameraArea"]
@@ -380,30 +381,6 @@ layout_mode = 2
 [node name="SubjectDialog" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("8_1kshn")]
 layout_mode = 2
 
-[node name="InspectorChat2" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("9_pf5tj")]
-layout_mode = 2
-
-[node name="SubjectDialog2" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("8_1kshn")]
-layout_mode = 2
-
-[node name="InspectorChat3" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("9_pf5tj")]
-layout_mode = 2
-
-[node name="SubjectDialog3" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("8_1kshn")]
-layout_mode = 2
-
-[node name="InspectorChat4" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("9_pf5tj")]
-layout_mode = 2
-
-[node name="SubjectDialog4" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("8_1kshn")]
-layout_mode = 2
-
-[node name="InspectorChat5" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("9_pf5tj")]
-layout_mode = 2
-
-[node name="SubjectDialog5" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("8_1kshn")]
-layout_mode = 2
-
 [node name="QuestionArea" parent="CanvasLayer/GameUI" instance=ExtResource("11_mbsvd")]
 
 [node name="WorkingArea" type="Control" parent="CanvasLayer/GameUI"]
@@ -453,3 +430,11 @@ text = "Deny"
 [node name="Button3" type="Button" parent="CanvasLayer/GameUI/WorkingArea/Control"]
 layout_mode = 2
 text = "Emergency"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/WorkingArea"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 120.0
+offset_right = 352.0
+offset_bottom = 520.0
+texture = ExtResource("13_76laj")

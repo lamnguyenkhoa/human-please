@@ -5,11 +5,15 @@ var dialog_area: DialogArea
 var standard_1_questions = [
     "Please present your identification papers.",
     "Papers, please.",
+    "I need to verify your identification.",
+    "Where are your documents?"
 ]
 
 var standard_2_questions = [
     "What is your purpose of visit?",
-    "Can you tell mewhy you visit this town?",
+    "Can you tell me why you visit this town?",
+    "Please state your purpose of visit.",
+    "Purpose of visit, please."
 ]
 
 func _ready():

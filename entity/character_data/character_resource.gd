@@ -8,3 +8,5 @@ class_name CharacterResource
 @export var dateOfBirth: String
 @export var nationality: String
 @export var dialogs: Array[DialogResource]
+
+var gave_id = false

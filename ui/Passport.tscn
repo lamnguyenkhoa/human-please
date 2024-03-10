@@ -57,7 +57,7 @@ Mark Davidson
 [color=blue]Gender[/color]
 M
 [color=blue]Expired date[/color]
-10/14/2002
+10/04/2002
 
 <<<<<042123123<<<<<"
 fit_content = true
@@ -65,12 +65,12 @@ scroll_active = false
 
 [node name="TopSerial" type="Label" parent="."]
 layout_mode = 1
-offset_left = 16.0
-offset_top = 128.0
-offset_right = 101.0
-offset_bottom = 143.0
+offset_left = 19.0
+offset_top = 126.0
+offset_right = 104.0
+offset_bottom = 141.0
 rotation = -1.57079
-theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.498039, 0.498039, 0.498039, 1)
 text = "042123123"
 horizontal_alignment = 1
 
@@ -101,9 +101,9 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -16.0
+offset_left = -20.0
 offset_top = 40.0
-offset_right = 67.0
+offset_right = 63.0
 offset_bottom = 73.0
 grow_horizontal = 0
 rotation = 1.5708
@@ -123,5 +123,9 @@ grow_horizontal = 2
 texture = ExtResource("4_ggq16")
 expand_mode = 2
 
+[node name="DestroyTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]
