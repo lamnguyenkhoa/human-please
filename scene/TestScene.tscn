@@ -10,8 +10,6 @@
 
 [node name="TestScene" type="Node2D"]
 
-[node name="CameraArea" parent="." instance=ExtResource("1_mrj0o")]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameUI" type="Control" parent="CanvasLayer"]
@@ -22,6 +20,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+
+[node name="CameraArea" parent="CanvasLayer/GameUI" instance=ExtResource("1_mrj0o")]
+layout_mode = 1
 
 [node name="DialogArea" type="Control" parent="CanvasLayer/GameUI"]
 layout_mode = 1

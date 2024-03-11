@@ -47,6 +47,7 @@ layout_mode = 2
 text = "Deny"
 
 [node name="EmergencyButton" type="Button" parent="Control"]
+visible = false
 self_modulate = Color(1, 0.0196078, 0, 1)
 layout_mode = 2
 text = "Emergency"

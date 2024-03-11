@@ -19,11 +19,13 @@
 clip_contents = true
 offset_right = 198.0
 offset_bottom = 256.0
+current_tab = 1
 tabs_visible = false
 script = ExtResource("1_b2pv4")
 multiple_pages = true
 
 [node name="Cover" type="TextureRect" parent="."]
+visible = false
 layout_mode = 2
 texture = ExtResource("1_ucjtt")
 
@@ -42,7 +44,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
 flat = true
 
 [node name="Page1-2" type="TextureRect" parent="."]
-visible = false
 layout_mode = 2
 texture = ExtResource("2_gh52f")
 

@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://qibwmrns1nek"]
+[gd_scene load_steps=7 format=3 uid="uid://qibwmrns1nek"]
 
 [ext_resource type="Script" path="res://scene/camera_area.gd" id="1_momrw"]
 [ext_resource type="Texture2D" uid="uid://b35qc7h3wshnn" path="res://asset/sprite/ui/mugshot_background.png" id="2_dum4j"]
-[ext_resource type="Texture2D" uid="uid://duf3sth0tr448" path="res://asset/sprite/circle.png" id="3_cn8u4"]
 [ext_resource type="Texture2D" uid="uid://cofc05u43ip6" path="res://asset/sprite/character/mark_davidson.png" id="4_g7v4q"]
-[ext_resource type="Texture2D" uid="uid://by4j1vauy0nwa" path="res://asset/sprite/character/mark_davidson_face.png" id="5_4kemi"]
 [ext_resource type="Texture2D" uid="uid://b4j4hk2l2coy5" path="res://asset/sprite/square.png" id="6_8lm3i"]
 
 [sub_resource type="Shader" id="Shader_2ub6l"]
@@ -264,74 +262,166 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
-[node name="CameraArea" type="Node2D"]
-position = Vector2(160, 384)
+[node name="CameraArea" type="Control"]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -384.0
+offset_right = 384.0
+offset_bottom = 384.0
+grow_vertical = 2
 script = ExtResource("1_momrw")
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(24, -192.018)
-scale = Vector2(1.20482, 0.604667)
+[node name="Camera" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 384.0
+offset_bottom = 384.0
+
+[node name="Background" type="TextureRect" parent="Camera"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_dum4j")
+expand_mode = 1
 
-[node name="Shadow" type="Sprite2D" parent="."]
-self_modulate = Color(0, 0, 0, 0.478431)
-position = Vector2(12, -13)
-scale = Vector2(1.875, 0.40625)
-texture = ExtResource("3_cn8u4")
-
-[node name="Subject" type="Sprite2D" parent="."]
-position = Vector2(16, -104)
-scale = Vector2(0.547634, 0.547634)
+[node name="Subject" type="TextureRect" parent="Camera"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 80.0
+offset_right = 256.0
+offset_bottom = 387.0
 texture = ExtResource("4_g7v4q")
-offset = Vector2(4.40183, -92.0706)
+expand_mode = 1
 
-[node name="Date" type="Label" parent="."]
-offset_left = 88.0
-offset_top = -32.0
-offset_right = 206.0
-offset_bottom = -14.0
+[node name="Date" type="Label" parent="Camera"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -144.0
+offset_top = -40.0
+offset_right = -26.0
+offset_bottom = -22.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "12/02/2000"
+text = "12/05/2000"
 
-[node name="Face" type="Sprite2D" parent="."]
-position = Vector2(-32, 160)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_4kemi")
-
-[node name="CRTShader" type="ColorRect" parent="."]
+[node name="CRTShader" type="ColorRect" parent="Camera"]
 material = SubResource("ShaderMaterial_ioefl")
-offset_left = -160.0
-offset_top = -384.0
-offset_right = 224.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="BottomCover" type="Sprite2D" parent="."]
+[node name="ControlPanel" type="TextureRect" parent="."]
 self_modulate = Color(0, 0, 0, 1)
-position = Vector2(32, 192)
-scale = Vector2(6, 6)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -384.0
+offset_right = 384.0
+grow_vertical = 0
 texture = ExtResource("6_8lm3i")
 
-[node name="CRTShader2" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_ioefl")
-offset_left = -128.0
-offset_top = 32.0
-offset_right = 72.0
-offset_bottom = 280.0
+[node name="ZoomIn" type="Button" parent="ControlPanel"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 64.0
+offset_right = 168.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 20
+text = "Zoom+"
 
-[node name="TransitionCover" type="Node2D" parent="."]
+[node name="ZoomOut" type="Button" parent="ControlPanel"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 64.0
+offset_right = 296.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 20
+text = "Zoom-
+"
+
+[node name="Up" type="Button" parent="ControlPanel"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 112.0
+offset_right = 232.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 20
+text = "Up"
+
+[node name="Left" type="Button" parent="ControlPanel"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 152.0
+offset_right = 160.0
+offset_bottom = 184.0
+theme_override_font_sizes/font_size = 20
+text = "Left
+"
+
+[node name="Right" type="Button" parent="ControlPanel"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 152.0
+offset_right = 304.0
+offset_bottom = 184.0
+theme_override_font_sizes/font_size = 20
+text = "Left
+"
+
+[node name="Down" type="Button" parent="ControlPanel"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 192.0
+offset_right = 232.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 20
+text = "Down"
+
+[node name="TransitionCover" type="Control" parent="."]
 visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="BlackCover" type="Sprite2D" parent="TransitionCover"]
+[node name="BlackCover" type="TextureRect" parent="TransitionCover"]
 self_modulate = Color(0, 0, 0, 1)
-position = Vector2(32, 0)
-scale = Vector2(6, 12)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("6_8lm3i")
 
 [node name="Result" type="Label" parent="TransitionCover"]
-offset_left = -96.0
-offset_top = -288.0
-offset_right = 156.0
-offset_bottom = -261.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -126.0
+offset_top = 128.0
+offset_right = 126.0
+offset_bottom = 155.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 28
 text = "SUBJECT PASSED"
 horizontal_alignment = 1
@@ -339,10 +429,15 @@ uppercase = true
 
 [node name="Notify" type="Label" parent="TransitionCover"]
 visible = false
-offset_left = -144.0
-offset_top = -216.0
-offset_right = 216.0
-offset_bottom = -189.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_top = 192.0
+offset_right = 180.0
+offset_bottom = 219.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 28
 text = "NEXT SUBJECT ENTERED"
 horizontal_alignment = 1

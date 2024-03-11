@@ -1,12 +1,9 @@
-extends Node2D
+extends Control
 
 @onready var transition_cover = $TransitionCover
 @onready var result_label: Label = $TransitionCover/Result
 @onready var notify_label: Label = $TransitionCover/Notify
-
-@onready var subject: Sprite2D = $Subject
-@onready var shadow: Sprite2D = $Shadow
-@onready var face: Sprite2D = $Face
+@onready var subject: TextureRect = $Camera/Subject
 
 func _ready():
 	transition_cover.visible = false
@@ -24,9 +21,7 @@ func subject_denied():
 
 func common_transition_effect():
 	transition_cover.visible = true
-	face.visible = false
 	subject.visible = false
-	shadow.visible = false
 	await get_tree().create_timer(1).timeout
 	notify_label.visible = true
 	await get_tree().create_timer(1).timeout
