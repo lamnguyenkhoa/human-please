@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw5gex6j5klfd"]
+
+[ext_resource type="Texture2D" uid="uid://b4j4hk2l2coy5" path="res://asset/sprite/square.png" id="1_ra5r6"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+self_modulate = Color(0.333333, 0.333333, 0.333333, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ra5r6")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -643.0
+offset_top = 184.0
+offset_right = 301.0
+offset_bottom = 272.0
+grow_horizontal = 2
+rotation = -0.188529
+theme_override_font_sizes/font_size = 100
+text = "HUMAN, PLEASE..."
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 584.0
+offset_top = 472.0
+offset_right = 736.0
+offset_bottom = 507.0
+theme_override_font_sizes/font_size = 30
+text = "NEW GAME"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 584.0
+offset_top = 520.0
+offset_right = 736.0
+offset_bottom = 555.0
+theme_override_font_sizes/font_size = 30
+text = "QUIT"

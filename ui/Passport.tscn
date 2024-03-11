@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://b024pqofk6p4t"]
 
-[ext_resource type="Script" path="res://ui/moveable_document.gd" id="1_c1m5l"]
 [ext_resource type="Texture2D" uid="uid://dsnsf88fxyg7o" path="res://asset/sprite/ui/common_passport.png" id="1_k8r2b"]
-[ext_resource type="Texture2D" uid="uid://by4j1vauy0nwa" path="res://asset/sprite/character/mark_davidson_face.png" id="2_sycny"]
+[ext_resource type="Script" path="res://ui/passport.gd" id="1_vhgh7"]
+[ext_resource type="Resource" uid="uid://bvad1dg57pnki" path="res://entity/character_data/mark_davidson.tres" id="2_qbrfd"]
 [ext_resource type="Texture2D" uid="uid://dtb2s3m74ig8k" path="res://asset/sprite/ui/barcode.png" id="3_4whe3"]
 [ext_resource type="Texture2D" uid="uid://3b5pw7kl3gx2" path="res://asset/sprite/ui/usa_flag.png" id="4_ggq16"]
 [ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="4_hqsx3"]
@@ -11,7 +11,8 @@
 offset_right = 256.0
 offset_bottom = 320.0
 tabs_visible = false
-script = ExtResource("1_c1m5l")
+script = ExtResource("1_vhgh7")
+character_data = ExtResource("2_qbrfd")
 
 [node name="DestroyTimer" type="Timer" parent="."]
 one_shot = true
@@ -28,7 +29,7 @@ offset_right = 101.0
 offset_bottom = 135.0
 rotation = -1.57079
 theme_override_colors/font_color = Color(0.498039, 0.498039, 0.498039, 1)
-text = "042123123"
+text = "C1234567"
 horizontal_alignment = 1
 
 [node name="Flag" type="TextureRect" parent="Page"]
@@ -90,7 +91,6 @@ offset_top = -120.0
 offset_right = 98.0
 offset_bottom = -24.0
 grow_vertical = 0
-texture = ExtResource("2_sycny")
 expand_mode = 1
 
 [node name="PersonalDetail" type="RichTextLabel" parent="Page"]
@@ -112,13 +112,13 @@ theme_override_fonts/normal_font = ExtResource("4_hqsx3")
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 text = "[color=blue]Name[/color]
-Mark Davidson
+{name}
 [color=blue]Date of birth[/color]
-04/02/1962
+{dob}
 [color=blue]Gender[/color]
-M
+{gender}
 [color=blue]Expired date[/color]
-10/04/2002"
+{expired_date}"
 fit_content = true
 scroll_active = false
 

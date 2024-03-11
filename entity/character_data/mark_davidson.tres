@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CharacterResource" load_steps=5 format=3 uid="uid://bvad1dg57pnki"]
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://bvad1dg57pnki"]
 
 [ext_resource type="Script" path="res://entity/character_data/dialog_resource.gd" id="1_p2wqj"]
+[ext_resource type="Texture2D" uid="uid://by4j1vauy0nwa" path="res://asset/sprite/character/mark_davidson_face.png" id="2_of8eo"]
 [ext_resource type="Script" path="res://entity/character_data/character_resource.gd" id="2_s7vwa"]
 [ext_resource type="Texture2D" uid="uid://cofc05u43ip6" path="res://asset/sprite/character/mark_davidson.png" id="3_ewob3"]
 
@@ -17,8 +18,10 @@ previous_visit = "Countless. Better if Im not tell you, Inspector."
 script = ExtResource("2_s7vwa")
 name = "Mark Davidson"
 sprite = ExtResource("3_ewob3")
-age = 38
+face_photo = ExtResource("2_of8eo")
 gender = 1
-dateOfBirth = "04/02"
+birthdate = "2/3/1962"
 nationality = "USA"
+id_number = "C4212947"
+passport_expired = false
 dialogs = Array[ExtResource("1_p2wqj")]([SubResource("Resource_vrktd")])

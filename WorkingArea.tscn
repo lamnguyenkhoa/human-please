@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu7tx0jfe6p46"]
+
+[ext_resource type="Script" path="res://scene/working_area.gd" id="1_o44ef"]
+[ext_resource type="Texture2D" uid="uid://byvshjajis80m" path="res://asset/sprite/ui/table_area.png" id="2_38vih"]
+[ext_resource type="PackedScene" uid="uid://oasns4fb3vda" path="res://ui/Guidebook.tscn" id="3_f542s"]
+[ext_resource type="PackedScene" uid="uid://b024pqofk6p4t" path="res://ui/Passport.tscn" id="4_5jwk2"]
+
+[node name="WorkingArea" type="Control"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -982.0
+offset_top = -576.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_o44ef")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_38vih")
+expand_mode = 1
+
+[node name="Control" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 210.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="AllowButton" type="Button" parent="Control"]
+self_modulate = Color(0.0196078, 1, 0, 1)
+layout_mode = 2
+text = "Allow"
+
+[node name="DenyButton" type="Button" parent="Control"]
+self_modulate = Color(1, 0.407843, 0.176471, 1)
+layout_mode = 2
+text = "Deny"
+
+[node name="EmergencyButton" type="Button" parent="Control"]
+self_modulate = Color(1, 0.0196078, 0, 1)
+layout_mode = 2
+text = "Emergency"
+
+[node name="DocumentArea" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 48.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Guidebook" parent="DocumentArea" instance=ExtResource("3_f542s")]
+layout_mode = 1
+offset_left = 152.0
+offset_top = 96.0
+offset_right = 350.0
+offset_bottom = 352.0
+
+[node name="TabContainer" parent="DocumentArea" instance=ExtResource("4_5jwk2")]
+layout_mode = 1
+offset_left = 576.0
+offset_top = 56.0
+offset_right = 832.0
+offset_bottom = 376.0
+
+[connection signal="pressed" from="Control/AllowButton" to="." method="_on_allow_button_pressed"]
+[connection signal="pressed" from="Control/DenyButton" to="." method="_on_deny_button_pressed"]

@@ -1,5 +1,5 @@
 extends TabContainer
-class_name MovableDocument
+class_name MoveableDocument
 
 @onready var timer: Timer = $DestroyTimer
 
