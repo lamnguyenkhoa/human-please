@@ -274,12 +274,31 @@ grow_vertical = 2
 script = ExtResource("1_momrw")
 
 [node name="Camera" type="Control" parent="."]
-layout_mode = 3
+custom_minimum_size = Vector2(384, 384)
 anchors_preset = 0
 offset_right = 384.0
 offset_bottom = 384.0
 
-[node name="Background" type="TextureRect" parent="Camera"]
+[node name="Mask" type="Panel" parent="Camera"]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ZoomArea" type="Control" parent="Camera/Mask"]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(192, 192)
+
+[node name="Background" type="TextureRect" parent="Camera/Mask/ZoomArea"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -289,7 +308,7 @@ grow_vertical = 2
 texture = ExtResource("2_dum4j")
 expand_mode = 1
 
-[node name="Subject" type="TextureRect" parent="Camera"]
+[node name="Subject" type="TextureRect" parent="Camera/Mask/ZoomArea"]
 layout_mode = 0
 offset_left = 112.0
 offset_top = 80.0
@@ -314,6 +333,24 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "12/05/2000"
+
+[node name="ZoomAmount" type="Label" parent="Camera"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -40.0
+offset_right = -336.0
+offset_bottom = -22.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "x1"
+horizontal_alignment = 1
 
 [node name="CRTShader" type="ColorRect" parent="Camera"]
 material = SubResource("ShaderMaterial_ioefl")
@@ -357,7 +394,7 @@ text = "Zoom-
 
 [node name="Up" type="Button" parent="ControlPanel"]
 layout_mode = 0
-offset_left = 160.0
+offset_left = 152.0
 offset_top = 112.0
 offset_right = 232.0
 offset_bottom = 144.0
@@ -368,7 +405,7 @@ text = "Up"
 layout_mode = 0
 offset_left = 88.0
 offset_top = 152.0
-offset_right = 160.0
+offset_right = 168.0
 offset_bottom = 184.0
 theme_override_font_sizes/font_size = 20
 text = "Left
@@ -376,17 +413,17 @@ text = "Left
 
 [node name="Right" type="Button" parent="ControlPanel"]
 layout_mode = 0
-offset_left = 232.0
+offset_left = 216.0
 offset_top = 152.0
-offset_right = 304.0
+offset_right = 296.0
 offset_bottom = 184.0
 theme_override_font_sizes/font_size = 20
-text = "Left
+text = "Right
 "
 
 [node name="Down" type="Button" parent="ControlPanel"]
 layout_mode = 0
-offset_left = 160.0
+offset_left = 152.0
 offset_top = 192.0
 offset_right = 232.0
 offset_bottom = 224.0
@@ -442,3 +479,11 @@ theme_override_font_sizes/font_size = 28
 text = "NEXT SUBJECT ENTERED"
 horizontal_alignment = 1
 uppercase = true
+
+[connection signal="pressed" from="ControlPanel/ZoomIn" to="." method="_on_zoom_in_pressed"]
+[connection signal="pressed" from="ControlPanel/ZoomOut" to="." method="_on_zoom_out_pressed"]
+[connection signal="button_down" from="ControlPanel/Up" to="." method="_on_up_button_down"]
+[connection signal="pressed" from="ControlPanel/Up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="ControlPanel/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="ControlPanel/Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="ControlPanel/Down" to="." method="_on_down_pressed"]
