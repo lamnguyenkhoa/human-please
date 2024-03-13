@@ -309,6 +309,7 @@ texture = ExtResource("2_dum4j")
 expand_mode = 1
 
 [node name="Subject" type="TextureRect" parent="Camera/Mask/ZoomArea"]
+visible = false
 layout_mode = 0
 offset_left = 112.0
 offset_top = 80.0
@@ -373,62 +374,99 @@ offset_right = 384.0
 grow_vertical = 0
 texture = ExtResource("6_8lm3i")
 
-[node name="ZoomIn" type="Button" parent="ControlPanel"]
+[node name="CameraControl" type="Control" parent="ControlPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ZoomIn" type="Button" parent="ControlPanel/CameraControl"]
 layout_mode = 0
-offset_left = 88.0
-offset_top = 64.0
-offset_right = 168.0
-offset_bottom = 96.0
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 104.0
+offset_bottom = 80.0
 theme_override_font_sizes/font_size = 20
 text = "Zoom+"
 
-[node name="ZoomOut" type="Button" parent="ControlPanel"]
+[node name="ZoomOut" type="Button" parent="ControlPanel/CameraControl"]
 layout_mode = 0
-offset_left = 216.0
-offset_top = 64.0
-offset_right = 296.0
-offset_bottom = 96.0
+offset_left = 24.0
+offset_top = 96.0
+offset_right = 104.0
+offset_bottom = 128.0
 theme_override_font_sizes/font_size = 20
 text = "Zoom-
 "
 
-[node name="Up" type="Button" parent="ControlPanel"]
+[node name="Up" type="Button" parent="ControlPanel/CameraControl"]
 layout_mode = 0
-offset_left = 152.0
-offset_top = 112.0
-offset_right = 232.0
-offset_bottom = 144.0
+offset_left = 216.0
+offset_top = 32.0
+offset_right = 296.0
+offset_bottom = 64.0
 theme_override_font_sizes/font_size = 20
 text = "Up"
 
-[node name="Left" type="Button" parent="ControlPanel"]
+[node name="Left" type="Button" parent="ControlPanel/CameraControl"]
 layout_mode = 0
-offset_left = 88.0
-offset_top = 152.0
-offset_right = 168.0
-offset_bottom = 184.0
+offset_left = 152.0
+offset_top = 72.0
+offset_right = 232.0
+offset_bottom = 104.0
 theme_override_font_sizes/font_size = 20
 text = "Left
 "
 
-[node name="Right" type="Button" parent="ControlPanel"]
+[node name="Right" type="Button" parent="ControlPanel/CameraControl"]
 layout_mode = 0
-offset_left = 216.0
-offset_top = 152.0
-offset_right = 296.0
-offset_bottom = 184.0
+offset_left = 280.0
+offset_top = 72.0
+offset_right = 360.0
+offset_bottom = 104.0
 theme_override_font_sizes/font_size = 20
 text = "Right
 "
 
-[node name="Down" type="Button" parent="ControlPanel"]
+[node name="Down" type="Button" parent="ControlPanel/CameraControl"]
 layout_mode = 0
-offset_left = 152.0
-offset_top = 192.0
-offset_right = 232.0
-offset_bottom = 224.0
+offset_left = 216.0
+offset_top = 112.0
+offset_right = 296.0
+offset_bottom = 144.0
 theme_override_font_sizes/font_size = 20
 text = "Down"
+
+[node name="Allowed" type="Button" parent="ControlPanel"]
+self_modulate = Color(0.184314, 1, 0, 1)
+layout_mode = 0
+offset_left = 80.0
+offset_top = 176.0
+offset_right = 160.0
+offset_bottom = 208.0
+theme_override_font_sizes/font_size = 20
+text = "Allow"
+
+[node name="Denied" type="Button" parent="ControlPanel"]
+self_modulate = Color(1, 0.0616866, 0.0989994, 1)
+layout_mode = 0
+offset_left = 216.0
+offset_top = 176.0
+offset_right = 296.0
+offset_bottom = 208.0
+theme_override_font_sizes/font_size = 20
+text = "Deny"
+
+[node name="StartWork" type="Button" parent="ControlPanel"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 336.0
+offset_right = 304.0
+offset_bottom = 368.0
+theme_override_font_sizes/font_size = 20
+text = "Start work"
 
 [node name="TransitionCover" type="Control" parent="."]
 visible = false
@@ -480,10 +518,12 @@ text = "NEXT SUBJECT ENTERED"
 horizontal_alignment = 1
 uppercase = true
 
-[connection signal="pressed" from="ControlPanel/ZoomIn" to="." method="_on_zoom_in_pressed"]
-[connection signal="pressed" from="ControlPanel/ZoomOut" to="." method="_on_zoom_out_pressed"]
-[connection signal="button_down" from="ControlPanel/Up" to="." method="_on_up_button_down"]
-[connection signal="pressed" from="ControlPanel/Up" to="." method="_on_up_pressed"]
-[connection signal="pressed" from="ControlPanel/Left" to="." method="_on_left_pressed"]
-[connection signal="pressed" from="ControlPanel/Right" to="." method="_on_right_pressed"]
-[connection signal="pressed" from="ControlPanel/Down" to="." method="_on_down_pressed"]
+[connection signal="pressed" from="ControlPanel/CameraControl/ZoomIn" to="." method="_on_zoom_in_pressed"]
+[connection signal="pressed" from="ControlPanel/CameraControl/ZoomOut" to="." method="_on_zoom_out_pressed"]
+[connection signal="pressed" from="ControlPanel/CameraControl/Up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="ControlPanel/CameraControl/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="ControlPanel/CameraControl/Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="ControlPanel/CameraControl/Down" to="." method="_on_down_pressed"]
+[connection signal="pressed" from="ControlPanel/Allowed" to="." method="_on_allowed_pressed"]
+[connection signal="pressed" from="ControlPanel/Denied" to="." method="_on_denied_pressed"]
+[connection signal="pressed" from="ControlPanel/StartWork" to="." method="_on_start_work_pressed"]

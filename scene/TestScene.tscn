@@ -1,14 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://buwmemilvox0o"]
+[gd_scene load_steps=7 format=3 uid="uid://buwmemilvox0o"]
 
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://CameraArea.tscn" id="1_mrj0o"]
-[ext_resource type="Script" path="res://ui/dialog_area.gd" id="7_hfu6n"]
-[ext_resource type="PackedScene" uid="uid://c3hm8qfrt1efv" path="res://ui/SubjectDialog.tscn" id="8_1kshn"]
-[ext_resource type="PackedScene" uid="uid://but17v4nmtkk8" path="res://ui/InspectorDialog.tscn" id="9_pf5tj"]
-[ext_resource type="Texture2D" uid="uid://x0cnt1hy7276" path="res://asset/sprite/ui/audio_transcript.png" id="10_g68p3"]
+[ext_resource type="Script" path="res://scene/work_day.gd" id="1_ol8rn"]
+[ext_resource type="PackedScene" uid="uid://r3obsn7dyt73" path="res://DialogArea.tscn" id="2_qicx2"]
+[ext_resource type="Resource" uid="uid://bvad1dg57pnki" path="res://entity/character_data/mark_davidson.tres" id="2_vss5y"]
 [ext_resource type="PackedScene" uid="uid://cu7tx0jfe6p46" path="res://WorkingArea.tscn" id="11_k1ci3"]
 [ext_resource type="PackedScene" uid="uid://cajp41ks5tyef" path="res://ui/QuestionArea.tscn" id="11_mbsvd"]
 
-[node name="TestScene" type="Node2D"]
+[node name="Day0" type="Node2D"]
+script = ExtResource("1_ol8rn")
+today_subjects = Array[Resource("res://entity/character_data/character_resource.gd")]([ExtResource("2_vss5y")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -24,48 +25,7 @@ mouse_filter = 1
 [node name="CameraArea" parent="CanvasLayer/GameUI" instance=ExtResource("1_mrj0o")]
 layout_mode = 1
 
-[node name="DialogArea" type="Control" parent="CanvasLayer/GameUI"]
-layout_mode = 1
-anchors_preset = 0
-offset_left = 384.0
-offset_right = 896.0
-offset_bottom = 192.0
-script = ExtResource("7_hfu6n")
-subject_dialog_prefab = ExtResource("8_1kshn")
-inspector_dialog_prefab = ExtResource("9_pf5tj")
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/DialogArea"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("10_g68p3")
-expand_mode = 1
-
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/GameUI/DialogArea"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 24.0
-offset_top = 8.0
-offset_right = -24.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 0
-
-[node name="InspectorChat" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("9_pf5tj")]
-layout_mode = 2
-
-[node name="SubjectDialog" parent="CanvasLayer/GameUI/DialogArea/ScrollContainer/VBoxContainer" instance=ExtResource("8_1kshn")]
-layout_mode = 2
+[node name="DialogArea" parent="CanvasLayer/GameUI" instance=ExtResource("2_qicx2")]
 
 [node name="QuestionArea" parent="CanvasLayer/GameUI" instance=ExtResource("11_mbsvd")]
 offset_left = 896.0

@@ -1,4 +1,5 @@
 extends Control
+class_name CameraArea
 
 @onready var transition_cover = $TransitionCover
 @onready var result_label: Label = $TransitionCover/Result
@@ -6,6 +7,10 @@ extends Control
 @onready var subject: TextureRect = $Camera/Mask/ZoomArea/Subject
 @onready var zoom_area = $Camera/Mask/ZoomArea
 @onready var zoom_amount_label: Label = $Camera/ZoomAmount
+@onready var camera_control_group = $ControlPanel/CameraControl
+@onready var allow_button: Button = $ControlPanel/Allowed
+@onready var deny_button: Button = $ControlPanel/Denied
+@onready var start_work_button: Button = $ControlPanel/StartWork
 
 var max_v_distance = 0
 var max_h_distance = 0
@@ -13,28 +18,52 @@ var max_h_distance = 0
 const BASE_MOVE_DISTANCE = 32
 
 func _ready():
+	GameManager.camera_area = self
+	GameManager.subject_resolved.connect(_on_subject_resolve)
+	GameManager.next_subject_readied.connect(_on_next_subject_readied)
 	transition_cover.visible = false
 	notify_label.visible = false
-	GameManager.subject_passed.connect(subject_passed)
-	GameManager.subject_denied.connect(subject_denied)
 	change_zoom_value(false)
+	update_button_status(true)
 
-func subject_passed():
-	result_label.text = "Subject passed"
-	common_transition_effect()
+func _on_subject_resolve(allowed: bool):
+	transition_effect(allowed)
+	update_button_status(true)
 
-func subject_denied():
-	result_label.text = "Subject denied"
-	common_transition_effect()
+func _on_next_subject_readied():
+	update_button_status(false)
+	update_subject_on_camera()
+	start_work_button.visible = false
 
-func common_transition_effect():
+func update_subject_on_camera():
+	subject.texture = GameManager.current_subject.sprite
+	subject.visible = true
+
+func first_subject_transition():
+	transition_cover.visible = true
+	result_label.text = "Subject entered"
+	await get_tree().create_timer(1).timeout
+	transition_cover.visible = false
+
+func transition_effect(allowed: bool):
+	if allowed:
+		result_label.text = "Subject passed"
+	else:
+		result_label.text = "Subject denied"
 	transition_cover.visible = true
 	subject.visible = false
 	await get_tree().create_timer(1).timeout
 	notify_label.visible = true
 	await get_tree().create_timer(1).timeout
+	GameManager.ready_next_subject()
 	transition_cover.visible = false
 	notify_label.visible = false
+
+func update_button_status(no_subject_now: bool):
+	for elem in camera_control_group.get_children():
+		elem.disabled = no_subject_now
+	allow_button.disabled = no_subject_now
+	deny_button.disabled = no_subject_now
 
 func change_zoom_value(zoom_in: bool):
 	var val = zoom_area.scale.x
@@ -70,3 +99,12 @@ func _on_down_pressed() -> void:
 func _on_right_pressed() -> void:
 	var new_val = zoom_area.position.x - BASE_MOVE_DISTANCE * (zoom_area.scale.x - 1)
 	zoom_area.position.x = clamp(new_val, -max_v_distance, max_v_distance)
+
+func _on_denied_pressed() -> void:
+	GameManager.deny_subject()
+
+func _on_allowed_pressed() -> void:
+	GameManager.allow_subject()
+
+func _on_start_work_pressed() -> void:
+	GameManager.load_next_character()

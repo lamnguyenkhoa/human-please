@@ -9,6 +9,7 @@ var is_dragging = false
 var drag_offset = Vector2()
 var mouse_in = false
 var document_area: Control
+var belong_to_subject = false
 
 func _ready():
 	modulate = Color(1, 1, 1, 0)
@@ -34,7 +35,7 @@ func _process(_delta):
 	else:
 		size = Vector2(0, 0) # Keep document size at minimum
 
-func remove():
+func return_to_subject():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "modulate", Color(1, 1, 1, 0), 0.5).set_trans(Tween.TRANS_SINE)
 	timer.start()

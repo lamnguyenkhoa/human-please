@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://r3obsn7dyt73"]
+
+[ext_resource type="Script" path="res://ui/dialog_area.gd" id="1_o87ju"]
+[ext_resource type="PackedScene" uid="uid://c3hm8qfrt1efv" path="res://ui/SubjectDialog.tscn" id="2_mxb55"]
+[ext_resource type="PackedScene" uid="uid://but17v4nmtkk8" path="res://ui/InspectorDialog.tscn" id="3_j166h"]
+[ext_resource type="Texture2D" uid="uid://x0cnt1hy7276" path="res://asset/sprite/ui/audio_transcript.png" id="4_gfmip"]
+
+[node name="DialogArea" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 384.0
+offset_right = 896.0
+offset_bottom = 192.0
+script = ExtResource("1_o87ju")
+subject_dialog_prefab = ExtResource("2_mxb55")
+inspector_dialog_prefab = ExtResource("3_j166h")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gfmip")
+expand_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 8.0
+offset_right = -24.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="InspectorChat" parent="ScrollContainer/VBoxContainer" node_paths=PackedStringArray("label") instance=ExtResource("3_j166h")]
+layout_mode = 2
+label = NodePath("")
+
+[node name="SubjectDialog" parent="ScrollContainer/VBoxContainer" node_paths=PackedStringArray("label") instance=ExtResource("2_mxb55")]
+layout_mode = 2
+label = NodePath("")

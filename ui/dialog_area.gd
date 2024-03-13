@@ -8,6 +8,7 @@ class_name DialogArea
 @onready var scroll_container: ScrollContainer = $ScrollContainer
 
 func _ready():
+    GameManager.dialog_area = self
     clear_all_dialog()
 
 func clear_all_dialog():

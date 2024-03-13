@@ -1,23 +1,39 @@
 extends Node
 
-signal subject_passed
-signal subject_denied
+signal subject_resolved(allowed)
+signal next_subject_readied
+signal end_day
 
-@export var subject_today: Array[CharacterResource]
+var work_day: WorkDay
+var working_area: WorkingArea
+var camera_area: CameraArea
+var dialog_area: DialogArea
+var question_area: QuestionArea
 
-var current_subject: CharacterResource
+var current_subject: CharacterResource = null
 var subject_count: int = 0
-var today: String = "12/04/2000"
-
-func _ready() -> void:
-	load_next_character()
 
 func allow_subject():
-	emit_signal("subject_passed")
+	emit_signal("subject_resolved", true)
 
 func deny_subject():
-	emit_signal("subject_denied")
+	emit_signal("subject_resolved", false)
+
+func ready_next_subject():
+	load_next_character()
+	await get_tree().process_frame
 
 func load_next_character():
-	current_subject = subject_today[0]
-	subject_count += 1
+	if work_day == null or working_area == null:
+		return
+
+	if subject_count == 0:
+		camera_area.first_subject_transition()
+
+	if subject_count < len(work_day.today_subjects):
+		current_subject = work_day.today_subjects[subject_count]
+		subject_count += 1
+		emit_signal("next_subject_readied")
+		working_area.spawn_passport()
+	else:
+		emit_signal("end_day")
