@@ -41,13 +41,17 @@ func _on_next_subject_readied():
 
 func _on_standard_2_pressed() -> void:
 	dialog_area.add_inspector_dialog(select_random_string(standard_questions[1]))
+	await get_tree().create_timer(1).timeout
 	dialog_area.add_subject_dialog(GameManager.current_subject.dialogs[0].purpose_of_visit)
 	standard_btns[1].disabled = true
 
 func _on_standard_1_pressed() -> void:
 	dialog_area.add_inspector_dialog(select_random_string(standard_questions[0]))
+	await get_tree().create_timer(1).timeout
 	dialog_area.add_subject_dialog(GameManager.current_subject.dialogs[0].identity_verification)
 	standard_btns[0].disabled = true
+	if not GameManager.current_subject.auto_give_passport:
+		GameManager.working_area.spawn_passport()
 
 func select_random_string(array):
 	if array.size() == 0:

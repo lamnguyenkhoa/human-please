@@ -12,6 +12,8 @@ func _ready() -> void:
 	populate_passport_data()
 
 func populate_passport_data():
+	if character_data == null:
+		return
 	var gender = "M"
 	if character_data.gender == EnumAutoload.Gender.FEMALE:
 		gender = "F"

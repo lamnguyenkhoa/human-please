@@ -472,6 +472,17 @@ theme_override_colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
 theme_override_fonts/font = ExtResource("3_qub8w")
 text = "Local map"
 
+[node name="Label2" type="Label" parent="Page9-10"]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 112.0
+offset_right = 354.0
+offset_bottom = 159.0
+theme_override_colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
+theme_override_fonts/font = ExtResource("3_qub8w")
+text = "WIP
+Sorry :(("
+
 [node name="PageCount" type="Label" parent="Page9-10"]
 layout_mode = 0
 offset_left = 94.0

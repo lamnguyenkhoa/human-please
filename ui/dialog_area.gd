@@ -21,7 +21,6 @@ func _on_subject_resolved(_allowed: bool):
 
 func _on_next_subject_readied():
 	stop_dialog = false
-	await get_tree().create_timer(1).timeout
 	var dialog = get_dialog_data()
 	for elem in dialog.openings:
 		await get_tree().create_timer(1).timeout
@@ -34,7 +33,7 @@ func get_dialog_data() -> DialogResource:
 		if elem.day == GameManager.work_day.day:
 			return elem
 		else:
-			print("DIALOG_AREA: ERROR CANT FIND DIALOG OF DAY " + GameManager.work_day.day)
+			print("DIALOG_AREA: ERROR CANT FIND DIALOG OF DAY ", GameManager.work_day.day)
 	return null
 
 func clear_all_dialog():

@@ -39,16 +39,19 @@ func _on_next_subject_readied():
 	update_button_status(false)
 	update_subject_on_camera()
 	start_work_button.visible = false
+	transition_cover.visible = false
+	notify_label.visible = false
 
 func update_subject_on_camera():
 	subject.texture = GameManager.current_subject.sprite
 	subject.visible = true
 
 func first_subject_transition():
+	result_label.text = "Work started"
 	transition_cover.visible = true
-	result_label.text = "Subject entered"
 	await get_tree().create_timer(1).timeout
-	transition_cover.visible = false
+	notify_label.text = "Subject entered"
+	notify_label.visible = true
 
 func transition_effect(allowed: bool):
 	if allowed:
@@ -58,16 +61,12 @@ func transition_effect(allowed: bool):
 	transition_cover.visible = true
 	subject.visible = false
 	await get_tree().create_timer(1).timeout
-	# If there are more subjects
-	if GameManager.subject_count < len(GameManager.work_day.today_subjects):
-		notify_label.visible = true
-		await get_tree().create_timer(1).timeout
-		transition_cover.visible = false
-		notify_label.visible = false
+	# If there are no more subjects
+	if GameManager.subject_count >= len(GameManager.work_day.today_subjects):
+		notify_label.text = "Quota finished"
 	else:
-		notify_label.text = "QUOTA FINISHED"
-		notify_label.visible = true
-	GameManager.ready_next_subject()
+		notify_label.text = "Subject entered"
+	notify_label.visible = true
 
 func update_button_status(no_subject_now: bool):
 	for elem in camera_control_group.get_children():
@@ -117,4 +116,4 @@ func _on_allowed_pressed() -> void:
 	GameManager.allow_subject()
 
 func _on_start_work_pressed() -> void:
-	GameManager.load_next_character()
+	GameManager.start_work()
