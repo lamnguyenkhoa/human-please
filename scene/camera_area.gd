@@ -11,6 +11,7 @@ class_name CameraArea
 @onready var allow_button: Button = $ControlPanel/Allowed
 @onready var deny_button: Button = $ControlPanel/Denied
 @onready var start_work_button: Button = $ControlPanel/StartWork
+@onready var date_label: Label = $Camera/Date
 
 var max_v_distance = 0
 var max_h_distance = 0
@@ -18,7 +19,7 @@ var max_h_distance = 0
 const BASE_MOVE_DISTANCE = 32
 
 func _ready():
-	call_deferred("connect_to_game_manager")
+	connect_to_game_manager()
 	transition_cover.visible = false
 	notify_label.visible = false
 	change_zoom_value(false)
@@ -65,7 +66,7 @@ func transition_effect(allowed: bool):
 	if GameManager.subject_count >= len(GameManager.work_day.today_subjects):
 		notify_label.text = "Quota finished"
 	else:
-		notify_label.text = "Subject entered"
+		notify_label.text = "Next subject entered"
 	notify_label.visible = true
 
 func update_button_status(no_subject_now: bool):

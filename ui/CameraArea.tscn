@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b35qc7h3wshnn" path="res://asset/sprite/ui/mugshot_background.png" id="2_dum4j"]
 [ext_resource type="Texture2D" uid="uid://b4j4hk2l2coy5" path="res://asset/sprite/square.png" id="6_8lm3i"]
 
-[sub_resource type="Shader" id="Shader_2ub6l"]
+[sub_resource type="Shader" id="Shader_apvge"]
 code = "/*
 Shader from Godot Shaders - the free shader library.
 godotshaders.com/shader/VHS-and-CRT-monitor-effect
@@ -238,7 +238,7 @@ void fragment()
 }"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ioefl"]
-shader = SubResource("Shader_2ub6l")
+shader = SubResource("Shader_apvge")
 shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.0
 shader_parameter/scanlines_width = 0.0
