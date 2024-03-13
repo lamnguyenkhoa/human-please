@@ -21,10 +21,11 @@ func remove_subject_document():
 				doc.return_to_subject()
 
 func spawn_passport():
+	await get_tree().create_timer(1).timeout
 	var new_pp = usa_passport_prefab.instantiate() as Passport
 	document_area.add_child(new_pp)
 	new_pp.belong_to_subject = true
 	new_pp.position = document_spawn.position
 	new_pp.position.x -= (new_pp.size.x / 2)
-
 	new_pp.character_data = GameManager.current_subject
+	new_pp.populate_passport_data()

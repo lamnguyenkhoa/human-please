@@ -18,19 +18,24 @@ var max_h_distance = 0
 const BASE_MOVE_DISTANCE = 32
 
 func _ready():
-	GameManager.camera_area = self
-	GameManager.subject_resolved.connect(_on_subject_resolve)
-	GameManager.next_subject_readied.connect(_on_next_subject_readied)
+	call_deferred("connect_to_game_manager")
 	transition_cover.visible = false
 	notify_label.visible = false
 	change_zoom_value(false)
 	update_button_status(true)
 
+func connect_to_game_manager():
+	GameManager.camera_area = self
+	GameManager.subject_resolved.connect(_on_subject_resolve)
+	GameManager.next_subject_readied.connect(_on_next_subject_readied)
+	
 func _on_subject_resolve(allowed: bool):
 	transition_effect(allowed)
 	update_button_status(true)
 
 func _on_next_subject_readied():
+	change_zoom_value(false)
+	change_zoom_value(false)
 	update_button_status(false)
 	update_subject_on_camera()
 	start_work_button.visible = false
@@ -53,11 +58,16 @@ func transition_effect(allowed: bool):
 	transition_cover.visible = true
 	subject.visible = false
 	await get_tree().create_timer(1).timeout
-	notify_label.visible = true
-	await get_tree().create_timer(1).timeout
+	# If there are more subjects
+	if GameManager.subject_count < len(GameManager.work_day.today_subjects):
+		notify_label.visible = true
+		await get_tree().create_timer(1).timeout
+		transition_cover.visible = false
+		notify_label.visible = false
+	else:
+		notify_label.text = "QUOTA FINISHED"
+		notify_label.visible = true
 	GameManager.ready_next_subject()
-	transition_cover.visible = false
-	notify_label.visible = false
 
 func update_button_status(no_subject_now: bool):
 	for elem in camera_control_group.get_children():

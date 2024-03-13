@@ -9,6 +9,7 @@ class_name CharacterResource
 @export var nationality: String
 @export var id_number: String
 @export var passport_expired: bool
+@export var auto_give_passport: bool
 @export var dialogs: Array[DialogResource]
 
 var gave_id = false

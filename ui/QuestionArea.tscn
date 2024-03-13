@@ -101,6 +101,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Button" type="Button" parent="TabContainer/Contigency/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_og5ud")
 text = "What should I do now?"

@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://qibwmrns1nek"]
+[gd_scene load_steps=6 format=3 uid="uid://qibwmrns1nek"]
 
 [ext_resource type="Script" path="res://scene/camera_area.gd" id="1_momrw"]
 [ext_resource type="Texture2D" uid="uid://b35qc7h3wshnn" path="res://asset/sprite/ui/mugshot_background.png" id="2_dum4j"]
-[ext_resource type="Texture2D" uid="uid://cofc05u43ip6" path="res://asset/sprite/character/mark_davidson.png" id="4_g7v4q"]
 [ext_resource type="Texture2D" uid="uid://b4j4hk2l2coy5" path="res://asset/sprite/square.png" id="6_8lm3i"]
 
 [sub_resource type="Shader" id="Shader_2ub6l"]
@@ -309,14 +308,12 @@ texture = ExtResource("2_dum4j")
 expand_mode = 1
 
 [node name="Subject" type="TextureRect" parent="Camera/Mask/ZoomArea"]
-visible = false
 layout_mode = 0
 offset_left = 112.0
-offset_top = 80.0
-offset_right = 256.0
-offset_bottom = 387.0
-texture = ExtResource("4_g7v4q")
-expand_mode = 1
+offset_top = 40.0
+offset_right = 412.0
+offset_bottom = 740.0
+scale = Vector2(0.5, 0.5)
 
 [node name="Date" type="Label" parent="Camera"]
 layout_mode = 1

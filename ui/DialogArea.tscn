@@ -42,10 +42,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="InspectorChat" parent="ScrollContainer/VBoxContainer" node_paths=PackedStringArray("label") instance=ExtResource("3_j166h")]
+[node name="InspectorChat" parent="ScrollContainer/VBoxContainer" instance=ExtResource("3_j166h")]
 layout_mode = 2
-label = NodePath("")
 
-[node name="SubjectDialog" parent="ScrollContainer/VBoxContainer" node_paths=PackedStringArray("label") instance=ExtResource("2_mxb55")]
+[node name="SubjectDialog" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_mxb55")]
 layout_mode = 2
-label = NodePath("")

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://bvja6p0i3nlnb"]
+
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="1_3lkkx"]
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_h1yrg"]
+[ext_resource type="Texture2D" uid="uid://c5ab6p0vo0fa8" path="res://asset/sprite/character/earnell_armstrong_face.png" id="2_22ymo"]
+[ext_resource type="Texture2D" uid="uid://brjuk4d2qokap" path="res://asset/sprite/character/earnell_armstrong.png" id="2_fq5mi"]
+
+[sub_resource type="Resource" id="Resource_7rods"]
+script = ExtResource("1_h1yrg")
+day = 0
+openings = Array[String](["Hello Inspector, some time the visitors will forget to present their papers.", "Make sure ask them to remind them."])
+identity_verification = "Here is it."
+purpose_of_visit = "To get a glass of beer. Care to join me later?"
+duration_of_stay = ""
+item_in_possession = ""
+previous_visit = ""
+
+[resource]
+script = ExtResource("1_3lkkx")
+name = "Earnell Armstrong"
+sprite = ExtResource("2_fq5mi")
+face_photo = ExtResource("2_22ymo")
+gender = 1
+birthdate = "10/5/1955"
+nationality = "USA"
+id_number = "C9530282"
+passport_expired = true
+auto_give_passport = false
+dialogs = Array[ExtResource("1_h1yrg")]([SubResource("Resource_7rods")])

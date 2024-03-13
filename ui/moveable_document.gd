@@ -66,11 +66,11 @@ func show_document_on_top():
 	get_parent().move_child(self, get_parent().get_child_count() - 1)
 	
 func _on_next_page_button_pressed() -> void:
-	var max_tabs = get_child_count()
+	var max_tabs = get_tab_count()
 	current_tab = clampi(current_tab + 1, 0, max_tabs - 1)
 
 func _on_previous_page_button_pressed() -> void:
-	var max_tabs = get_child_count()
+	var max_tabs = get_tab_count()
 	current_tab = clampi(current_tab - 1, 0, max_tabs - 1)
 
 func _on_resized() -> void:

@@ -5,4 +5,4 @@
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_2sgo4")
-subject_today = Array[Resource("res://entity/character_data/character_resource.gd")]([ExtResource("2_f6jp6")])
+subject_today = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_f6jp6")])
