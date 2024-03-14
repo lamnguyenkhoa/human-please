@@ -25,5 +25,6 @@ birthdate = "25/2/1972"
 nationality = "USA"
 id_number = "C5320983"
 passport_expired = false
+bad_visit_reason = false
 auto_give_passport = true
 dialog = SubResource("Resource_5cygy")

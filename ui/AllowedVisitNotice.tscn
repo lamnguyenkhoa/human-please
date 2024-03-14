@@ -1,16 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://xb65vfev8api"]
 
-[ext_resource type="Script" path="res://ui/moveable_document.gd" id="1_vyy2a"]
+[ext_resource type="Script" path="res://ui/allowed_visit_notice.gd" id="1_ja4u5"]
 [ext_resource type="Texture2D" uid="uid://cr4bt8du0nwjd" path="res://asset/sprite/ui/notice_paper.png" id="2_nc0rb"]
 [ext_resource type="FontFile" uid="uid://b1o8u7gtfofwm" path="res://asset/font/aflfont.TTF" id="3_qoogw"]
 
-[node name="VisitAllowedNotice" type="TabContainer"]
-offset_left = 728.0
-offset_top = 184.0
-offset_right = 948.0
-offset_bottom = 494.0
+[node name="AllowedVisitNotice" type="TabContainer"]
+offset_right = 220.0
+offset_bottom = 310.0
 tabs_visible = false
-script = ExtResource("1_vyy2a")
+script = ExtResource("1_ja4u5")
 
 [node name="DestroyTimer" type="Timer" parent="."]
 one_shot = true
@@ -19,7 +17,7 @@ one_shot = true
 layout_mode = 2
 texture = ExtResource("2_nc0rb")
 
-[node name="Label" type="Label" parent="Background"]
+[node name="Title" type="Label" parent="Background"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -37,7 +35,7 @@ text = "Allowed purpose
 of visit:"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Background"]
+[node name="Content" type="Label" parent="Background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -57,10 +55,9 @@ text = "Research (except Photography)
 Visit familly
 Medical reasons
 Education
-Politic
-"
+Politic"
 
-[node name="Label3" type="Label" parent="Background"]
+[node name="Date" type="Label" parent="Background"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

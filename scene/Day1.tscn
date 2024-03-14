@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cajp41ks5tyef" path="res://ui/QuestionArea.tscn" id="6_toohs"]
 [ext_resource type="PackedScene" uid="uid://cu7tx0jfe6p46" path="res://ui/WorkingArea.tscn" id="7_pijnk"]
 [ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="8_fgsii"]
-[ext_resource type="PackedScene" uid="uid://xb65vfev8api" path="res://ui/VisitAllowedNotice.tscn" id="9_y6hy7"]
+[ext_resource type="PackedScene" uid="uid://xb65vfev8api" path="res://ui/AllowedVisitNotice.tscn" id="9_y6hy7"]
 
 [node name="Day1" type="Node2D"]
 script = ExtResource("1_y1sn6")
@@ -38,11 +38,19 @@ offset_left = 896.0
 
 [node name="WorkingArea" parent="CanvasLayer/GameUI" node_paths=PackedStringArray("today_extra_documents") instance=ExtResource("7_pijnk")]
 layout_mode = 1
-today_extra_documents = [NodePath("VisitAllowedNotice")]
+today_extra_documents = [NodePath("AllowedVisitNotice")]
 
-[node name="VisitAllowedNotice" parent="CanvasLayer/GameUI/WorkingArea" instance=ExtResource("9_y6hy7")]
-visible = false
+[node name="AllowedVisitNotice" parent="CanvasLayer/GameUI/WorkingArea" instance=ExtResource("9_y6hy7")]
 layout_mode = 0
+offset_left = 736.0
+offset_top = 232.0
+offset_right = 956.0
+offset_bottom = 542.0
+content = "Research (except Photography)
+Visit familly
+Medical reasons
+Education
+Politic"
 
 [node name="ResultScreen" parent="CanvasLayer/GameUI" instance=ExtResource("8_fgsii")]
 visible = false

@@ -15,6 +15,9 @@ func _ready():
 		doc_parent.remove_child(doc)
 		document_area.add_child(doc)
 		doc.visible = true
+	for doc in document_area.get_children():
+		if doc is MoveableDocument:
+			doc.document_area = document_area
 
 func _on_subject_resolved(_allowed: bool):
 	remove_subject_document()
