@@ -15,8 +15,12 @@ Day 0
 - Officer 2 also play pretend to give you an illegal case.
 
 Day 1
-- 3 visitors
+- 5 visitors
 - Daniel Smith, legal, visit his grandmother
+- Devesh Pant, illegal, tourism
+- Carol Coleman, illegal, business
+- 
+-
 
 Day 2
 - Rule #3: Need a card about staying location during visit.

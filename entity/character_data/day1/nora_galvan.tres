@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://dsttd66hdkbfn"]
+
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_4e3cb"]
+[ext_resource type="Texture2D" uid="uid://bnrm6l8g7ixus" path="res://asset/sprite/character/nora_galvan_face.png" id="1_q0k2q"]
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="2_ioike"]
+[ext_resource type="Texture2D" uid="uid://c8cjwmcx6tava" path="res://asset/sprite/character/nora_galvan.png" id="3_x04kh"]
+
+[sub_resource type="Resource" id="Resource_836l3"]
+script = ExtResource("1_4e3cb")
+openings = Array[String]([])
+identity_verification = "It's there, officer."
+purpose_of_visit = "I heard the land here is strange, and I want to do some research on it. It's for my geology class."
+duration_of_stay = "I think around 4 to 5 days, officer."
+item_in_possession = "I have my bag, which has some clothes, a pair of thick gloves, my laptop, and... some chemical for analyze the dirt. They are totally safe and legal, don't worry, sir."
+previous_visit = "No sir. I haven't visited this place before"
+what_your_name = "My name? First name Nora, last name Galvan, sir."
+why_appearance = "Aren'y you supposed to compliment my look, not the other way around, officer?"
+
+[resource]
+script = ExtResource("2_ioike")
+name = "Nora Galvan"
+sprite = ExtResource("3_x04kh")
+face_photo = ExtResource("1_q0k2q")
+gender = 2
+birthdate = "9/4/1975"
+nationality = "USA"
+id_number = "C9052194"
+passport_expired = false
+bad_visit_reason = true
+auto_give_passport = true
+dialog = SubResource("Resource_836l3")

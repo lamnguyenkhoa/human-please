@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://oasns4fb3vda"]
 
-[ext_resource type="Script" path="res://ui/moveable_document.gd" id="1_b2pv4"]
-[ext_resource type="Texture2D" uid="uid://j0xw2p5dmgah" path="res://asset/sprite/ui/guidebook_cover.png" id="1_ucjtt"]
-[ext_resource type="Texture2D" uid="uid://bmy07teg0e25r" path="res://asset/sprite/ui/guidebook_paper_full.png" id="2_gh52f"]
-[ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="3_qub8w"]
+[ext_resource type="Script" path="res://entity/document/moveable_document.gd" id="1_8yrlg"]
+[ext_resource type="Texture2D" uid="uid://j0xw2p5dmgah" path="res://asset/sprite/ui/guidebook_cover.png" id="2_jdxbl"]
+[ext_resource type="Texture2D" uid="uid://bmy07teg0e25r" path="res://asset/sprite/ui/guidebook_paper_full.png" id="3_ibe5a"]
+[ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="4_hv1g7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_530yy"]
 
@@ -19,12 +19,12 @@
 offset_right = 198.0
 offset_bottom = 256.0
 tabs_visible = false
-script = ExtResource("1_b2pv4")
+script = ExtResource("1_8yrlg")
 multiple_pages = true
 
 [node name="Cover" type="TextureRect" parent="."]
 layout_mode = 2
-texture = ExtResource("1_ucjtt")
+texture = ExtResource("2_jdxbl")
 
 [node name="NextPageButton" type="Button" parent="Cover"]
 layout_mode = 0
@@ -43,7 +43,7 @@ flat = true
 [node name="Page1-2" type="TextureRect" parent="."]
 visible = false
 layout_mode = 2
-texture = ExtResource("2_gh52f")
+texture = ExtResource("3_ibe5a")
 
 [node name="Label" type="Label" parent="Page1-2"]
 layout_mode = 2
@@ -52,7 +52,7 @@ offset_top = 32.0
 offset_right = 376.0
 offset_bottom = 56.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 14
 text = "TABLE OF CONTENT
 "
@@ -65,7 +65,7 @@ offset_top = 104.0
 offset_right = 374.0
 offset_bottom = 161.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 12
 text = "Rules.............3-6
 Terminology.......7-8
@@ -79,8 +79,8 @@ offset_right = 174.0
 offset_bottom = 200.0
 mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_qub8w")
-theme_override_fonts/bold_font = ExtResource("3_qub8w")
+theme_override_fonts/normal_font = ExtResource("4_hv1g7")
+theme_override_fonts/bold_font = ExtResource("4_hv1g7")
 theme_override_font_sizes/normal_font_size = 8
 theme_override_font_sizes/bold_font_size = 12
 bbcode_enabled = true
@@ -133,7 +133,7 @@ offset_top = 240.0
 offset_right = 104.0
 offset_bottom = 252.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 8
 text = "1"
 horizontal_alignment = 1
@@ -145,7 +145,7 @@ offset_top = 240.0
 offset_right = 296.0
 offset_bottom = 252.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 8
 text = "2"
 horizontal_alignment = 1
@@ -153,7 +153,7 @@ horizontal_alignment = 1
 [node name="Page3-4" type="TextureRect" parent="."]
 visible = false
 layout_mode = 2
-texture = ExtResource("2_gh52f")
+texture = ExtResource("3_ibe5a")
 
 [node name="Label" type="Label" parent="Page3-4"]
 layout_mode = 0
@@ -162,7 +162,7 @@ offset_top = 8.0
 offset_right = 119.0
 offset_bottom = 30.0
 theme_override_colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "Rules"
 horizontal_alignment = 1
 
@@ -173,7 +173,7 @@ offset_top = 8.0
 offset_right = 327.0
 offset_bottom = 30.0
 theme_override_colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "Rules"
 horizontal_alignment = 1
 
@@ -184,7 +184,7 @@ offset_top = 40.0
 offset_right = 182.0
 offset_bottom = 232.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 10
 text = "Rule #1: ID documents must be valid:
 	- Photo must matched.
@@ -228,7 +228,7 @@ offset_top = 240.0
 offset_right = 104.0
 offset_bottom = 252.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 8
 text = "3
 "
@@ -241,7 +241,7 @@ offset_top = 240.0
 offset_right = 296.0
 offset_bottom = 252.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 8
 text = "4
 "
@@ -250,7 +250,7 @@ horizontal_alignment = 1
 [node name="Page5-6" type="TextureRect" parent="."]
 visible = false
 layout_mode = 2
-texture = ExtResource("2_gh52f")
+texture = ExtResource("3_ibe5a")
 
 [node name="Label3" type="Label" parent="Page5-6"]
 layout_mode = 0
@@ -259,7 +259,7 @@ offset_top = 40.0
 offset_right = 182.0
 offset_bottom = 232.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 10
 autowrap_mode = 2
 
@@ -298,7 +298,7 @@ offset_top = 8.0
 offset_right = 119.0
 offset_bottom = 30.0
 theme_override_colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "Rules"
 horizontal_alignment = 1
 
@@ -309,7 +309,7 @@ offset_top = 8.0
 offset_right = 327.0
 offset_bottom = 30.0
 theme_override_colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "Rules"
 horizontal_alignment = 1
 
@@ -320,7 +320,7 @@ offset_top = 240.0
 offset_right = 104.0
 offset_bottom = 252.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 8
 text = "5"
 horizontal_alignment = 1
@@ -332,7 +332,7 @@ offset_top = 240.0
 offset_right = 296.0
 offset_bottom = 252.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 8
 text = "6
 "
@@ -341,7 +341,7 @@ horizontal_alignment = 1
 [node name="Page7-8" type="TextureRect" parent="."]
 visible = false
 layout_mode = 2
-texture = ExtResource("2_gh52f")
+texture = ExtResource("3_ibe5a")
 
 [node name="NextPageButton" type="Button" parent="Page7-8"]
 layout_mode = 0
@@ -378,7 +378,7 @@ offset_top = 8.0
 offset_right = 152.0
 offset_bottom = 30.0
 theme_override_colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "Terminology"
 horizontal_alignment = 1
 
@@ -389,7 +389,7 @@ offset_top = 8.0
 offset_right = 352.0
 offset_bottom = 30.0
 theme_override_colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "Terminology"
 horizontal_alignment = 1
 
@@ -400,7 +400,7 @@ offset_top = 40.0
 offset_right = 182.0
 offset_bottom = 232.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 10
 autowrap_mode = 2
 
@@ -411,7 +411,7 @@ offset_top = 240.0
 offset_right = 104.0
 offset_bottom = 252.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 8
 text = "7"
 horizontal_alignment = 1
@@ -423,7 +423,7 @@ offset_top = 240.0
 offset_right = 296.0
 offset_bottom = 252.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 8
 text = "8"
 horizontal_alignment = 1
@@ -431,7 +431,7 @@ horizontal_alignment = 1
 [node name="Page9-10" type="TextureRect" parent="."]
 visible = false
 layout_mode = 2
-texture = ExtResource("2_gh52f")
+texture = ExtResource("3_ibe5a")
 
 [node name="NextPageButton" type="Button" parent="Page9-10"]
 layout_mode = 0
@@ -468,7 +468,7 @@ offset_top = 8.0
 offset_right = 120.0
 offset_bottom = 30.0
 theme_override_colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "Local map"
 
 [node name="Label2" type="Label" parent="Page9-10"]
@@ -478,7 +478,7 @@ offset_top = 112.0
 offset_right = 354.0
 offset_bottom = 159.0
 theme_override_colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "WIP
 Sorry :(("
 
@@ -489,7 +489,7 @@ offset_top = 240.0
 offset_right = 104.0
 offset_bottom = 252.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 8
 text = "9"
 horizontal_alignment = 1
@@ -501,7 +501,7 @@ offset_top = 240.0
 offset_right = 296.0
 offset_bottom = 252.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_qub8w")
+theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 8
 text = "10"
 horizontal_alignment = 1

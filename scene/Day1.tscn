@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://rhslxr0t6o5v"]
+[gd_scene load_steps=13 format=3 uid="uid://rhslxr0t6o5v"]
 
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_y1sn6"]
 [ext_resource type="Resource" uid="uid://b451oxbcvbbxx" path="res://entity/character_data/day1/daniel_smith_day1.tres" id="2_ruqh5"]
@@ -6,16 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="4_0pheg"]
 [ext_resource type="Resource" uid="uid://bptwnjn0acvhc" path="res://entity/character_data/day1/carol_coleman_day1.tres" id="4_unlga"]
 [ext_resource type="PackedScene" uid="uid://r3obsn7dyt73" path="res://ui/DialogArea.tscn" id="5_myg6n"]
+[ext_resource type="Resource" uid="uid://bkv8yr1gy2fi8" path="res://entity/character_data/day1/luther_griffin_day1.tres" id="5_vf3dd"]
+[ext_resource type="Resource" uid="uid://dsttd66hdkbfn" path="res://entity/character_data/day1/nora_galvan.tres" id="6_3rq5x"]
 [ext_resource type="PackedScene" uid="uid://cajp41ks5tyef" path="res://ui/QuestionArea.tscn" id="6_toohs"]
 [ext_resource type="PackedScene" uid="uid://cu7tx0jfe6p46" path="res://ui/WorkingArea.tscn" id="7_pijnk"]
 [ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="8_fgsii"]
-[ext_resource type="PackedScene" uid="uid://xb65vfev8api" path="res://ui/AllowedVisitNotice.tscn" id="9_y6hy7"]
+[ext_resource type="PackedScene" uid="uid://xb65vfev8api" path="res://entity/document/AllowedVisitNotice.tscn" id="9_y6hy7"]
 
 [node name="Day1" type="Node2D"]
 script = ExtResource("1_y1sn6")
 day = 1
 date_string = "13/05/2000"
-today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_ruqh5"), ExtResource("3_ggspu"), ExtResource("4_unlga")])
+today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_ruqh5"), ExtResource("3_ggspu"), ExtResource("4_unlga"), ExtResource("5_vf3dd"), ExtResource("6_3rq5x")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -42,11 +44,11 @@ today_extra_documents = [NodePath("AllowedVisitNotice")]
 
 [node name="AllowedVisitNotice" parent="CanvasLayer/GameUI/WorkingArea" instance=ExtResource("9_y6hy7")]
 layout_mode = 0
-offset_left = 736.0
-offset_top = 232.0
-offset_right = 956.0
-offset_bottom = 542.0
-content = "Research (except Photography)
+offset_left = 688.0
+offset_top = 160.0
+offset_right = 908.0
+offset_bottom = 470.0
+content = "Research (except Geology)
 Visit familly
 Medical reasons
 Education

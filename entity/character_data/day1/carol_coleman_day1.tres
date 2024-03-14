@@ -14,6 +14,7 @@ duration_of_stay = "Just today, evening at the latest."
 item_in_possession = "I only bring a laptop. Ah, and my set of business cards."
 previous_visit = "Went here once or twice before. I don't remember there is a checkpoint here last time I come though."
 what_your_name = "It's Carol Coleman, officer."
+why_appearance = "That's rude, sir. Please stop it."
 
 [resource]
 script = ExtResource("1_lwlsi")

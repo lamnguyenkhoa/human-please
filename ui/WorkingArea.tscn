@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://ui/working_area.gd" id="1_o44ef"]
 [ext_resource type="Texture2D" uid="uid://byvshjajis80m" path="res://asset/sprite/ui/table_area.png" id="2_38vih"]
-[ext_resource type="PackedScene" uid="uid://oasns4fb3vda" path="res://ui/Guidebook.tscn" id="3_f542s"]
-[ext_resource type="PackedScene" uid="uid://cvl3ya4vpb43o" path="res://ui/USAPassport.tscn" id="5_tmdss"]
+[ext_resource type="PackedScene" uid="uid://oasns4fb3vda" path="res://entity/document/Guidebook.tscn" id="3_f542s"]
+[ext_resource type="PackedScene" uid="uid://cvl3ya4vpb43o" path="res://entity/document/USAPassport.tscn" id="5_tmdss"]
 
 [node name="WorkingArea" type="Control"]
 layout_mode = 3

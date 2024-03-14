@@ -14,6 +14,7 @@ duration_of_stay = "Just for a day. It's a quick visit."
 item_in_possession = "Some snacks, bottle of water, a basket of fruit and a nice scarf as a gift for grandma."
 previous_visit = "I visited this town frequently, once every two weeks."
 what_your_name = "It's Daniel Smith, sir."
+why_appearance = "Sorry, what wrong with my look? Did I got some sauce on my clothes?"
 
 [resource]
 script = ExtResource("3_hpj5x")

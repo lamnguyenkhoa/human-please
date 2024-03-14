@@ -14,6 +14,7 @@ duration_of_stay = "As long as I work this job, buddy."
 item_in_possession = "A Smith & Wesson revolver and a standard-issued police baton."
 previous_visit = "Haha what kinda of question is that? I worked and lived here, man."
 what_your_name = "I am the great American writer, Mark Twain. Just kidding, my full name is Mark Davidson. Yes, my father name is David."
+why_appearance = "My appearance? What's wrong with it? Is it the color of my clothes? Or the color of my hat? Or... Ha, just messing with you Inspector."
 
 [resource]
 script = ExtResource("2_s7vwa")
@@ -25,5 +26,6 @@ birthdate = "2/3/1970"
 nationality = "USA"
 id_number = "C4212947"
 passport_expired = false
+bad_visit_reason = false
 auto_give_passport = true
 dialog = SubResource("Resource_em7s5")

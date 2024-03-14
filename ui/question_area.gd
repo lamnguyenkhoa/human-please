@@ -41,6 +41,11 @@ var suspicious_questions = [
 		"What is your full name?",
 		"Please tell me your full name.",
 		"Your full name, please."
+	],
+	[
+		"Your appearance don't look right to me.",
+		"You look suspicious.",
+		"Your apearance raise suspicion."
 	]
 ]
 
@@ -110,3 +115,8 @@ func _on_suspicious_1_pressed() -> void:
 	var current_dialog = Utils.get_dialog_data()
 	print_dialog(select_random_string(suspicious_questions[0]),
 		current_dialog.what_your_name, suspicious_btns[0])
+
+func _on_suspicious_2_pressed() -> void:
+	var current_dialog = Utils.get_dialog_data()
+	print_dialog(select_random_string(suspicious_questions[1]),
+		current_dialog.why_appearance, suspicious_btns[1])

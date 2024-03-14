@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://xb65vfev8api"]
 
-[ext_resource type="Script" path="res://ui/allowed_visit_notice.gd" id="1_ja4u5"]
+[ext_resource type="Script" path="res://entity/document/allowed_visit_notice.gd" id="1_ja4u5"]
 [ext_resource type="Texture2D" uid="uid://cr4bt8du0nwjd" path="res://asset/sprite/ui/notice_paper.png" id="2_nc0rb"]
 [ext_resource type="FontFile" uid="uid://b1o8u7gtfofwm" path="res://asset/font/aflfont.TTF" id="3_qoogw"]
 
@@ -51,7 +51,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_qoogw")
 theme_override_font_sizes/font_size = 12
-text = "Research (except Photography)
+text = "Research (except Geology)
 Visit familly
 Medical reasons
 Education

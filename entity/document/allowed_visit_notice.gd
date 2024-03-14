@@ -10,7 +10,7 @@ func _ready() -> void:
 	content_label.text = content
 	await get_tree().process_frame
 	await get_tree().process_frame
-	date_label.text = GameManager.work_day.date_string
+	date_label.text = "Date: " + GameManager.work_day.date_string
 
 func _process(delta):
 	super(delta)
