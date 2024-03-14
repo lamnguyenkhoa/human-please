@@ -64,7 +64,7 @@ func transition_effect(allowed: bool):
 	await get_tree().create_timer(1).timeout
 	# If there are no more subjects
 	if GameManager.subject_count >= len(GameManager.work_day.today_subjects):
-		notify_label.text = "Quota finished"
+		notify_label.text = "Work finished"
 	else:
 		notify_label.text = "Next subject entered"
 	notify_label.visible = true

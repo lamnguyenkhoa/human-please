@@ -2,6 +2,7 @@ extends Control
 class_name QuestionArea
 
 var standard_btns: Array[Button]
+var suspicious_btns: Array[Button]
 var dialog_area: DialogArea
 
 var standard_questions = [
@@ -16,6 +17,30 @@ var standard_questions = [
 		"Can you tell me why you visit this town?",
 		"Please state your purpose of visit.",
 		"Purpose of visit, please."
+	],
+	[
+		"How long you planned to stay here?",
+		"How long will be this visit?",
+		"Please state your duration of stay.",
+	],
+	[
+		"What is your current inventory?",
+		"What did you bring with you?",
+		"Please list all of your item in possession.",
+	],
+	[
+		"Have you visited this town before?",
+		"Have you ever been here before?",
+		"Is this your first time here?",
+		"Please state your previous visits to this town.",
+	]
+]
+
+var suspicious_questions = [
+	[
+		"What is your full name?",
+		"Please tell me your full name.",
+		"Your full name, please."
 	]
 ]
 
@@ -24,37 +49,64 @@ func _ready():
 	GameManager.next_subject_readied.connect(_on_next_subject_readied)
 	GameManager.question_area = self
 	dialog_area = get_parent().get_node("DialogArea")
-	standard_btns.append(get_node("TabContainer/Standard/VBoxContainer/Standard1"))
-	standard_btns.append(get_node("TabContainer/Standard/VBoxContainer/Standard2"))
-	standard_btns.append(get_node("TabContainer/Standard/VBoxContainer/Standard3"))
-	standard_btns.append(get_node("TabContainer/Standard/VBoxContainer/Standard4"))
-	standard_btns.append(get_node("TabContainer/Standard/VBoxContainer/Standard5"))
+	for child in get_node("TabContainer/Standard/VBoxContainer").get_children():
+		standard_btns.append(child)
+	for child in get_node("TabContainer/Suspicious/VBoxContainer").get_children():
+		suspicious_btns.append(child)
 	_on_subject_resolved(false) # Disable buttons at the start of game
 
 func _on_subject_resolved(_passed: bool):
 	for btn in standard_btns:
 		btn.disabled = true
+	for btn in suspicious_btns:
+		btn.disabled = true
 
 func _on_next_subject_readied():
 	for btn in standard_btns:
 		btn.disabled = false
-
-func _on_standard_2_pressed() -> void:
-	dialog_area.add_inspector_dialog(select_random_string(standard_questions[1]))
-	await get_tree().create_timer(1).timeout
-	dialog_area.add_subject_dialog(GameManager.current_subject.dialogs[0].purpose_of_visit)
-	standard_btns[1].disabled = true
-
-func _on_standard_1_pressed() -> void:
-	dialog_area.add_inspector_dialog(select_random_string(standard_questions[0]))
-	await get_tree().create_timer(1).timeout
-	dialog_area.add_subject_dialog(GameManager.current_subject.dialogs[0].identity_verification)
-	standard_btns[0].disabled = true
-	if not GameManager.current_subject.auto_give_passport:
-		GameManager.working_area.spawn_passport()
+	for btn in suspicious_btns:
+		btn.disabled = false
 
 func select_random_string(array):
 	if array.size() == 0:
 		return ""
 	var randomIndex = randi() % array.size()
 	return array[randomIndex]
+
+func print_dialog(question: String, answer: String, btn: Button):
+	dialog_area.add_inspector_dialog(question)
+	await get_tree().create_timer(1).timeout
+	dialog_area.add_subject_dialog(answer)
+	btn.disabled = true
+
+func _on_standard_1_pressed() -> void:
+	var current_dialog = Utils.get_dialog_data()
+	print_dialog(select_random_string(standard_questions[0]),
+		current_dialog.identity_verification, standard_btns[0])
+	if not GameManager.current_subject.auto_give_passport:
+		GameManager.working_area.spawn_passport()
+
+func _on_standard_2_pressed() -> void:
+	var current_dialog = Utils.get_dialog_data()
+	print_dialog(select_random_string(standard_questions[1]),
+		current_dialog.purpose_of_visit, standard_btns[1])
+
+func _on_standard_3_pressed() -> void:
+	var current_dialog = Utils.get_dialog_data()
+	print_dialog(select_random_string(standard_questions[2]),
+		current_dialog.duration_of_stay, standard_btns[2])
+
+func _on_standard_4_pressed() -> void:
+	var current_dialog = Utils.get_dialog_data()
+	print_dialog(select_random_string(standard_questions[3]),
+		current_dialog.item_in_possession, standard_btns[3])
+
+func _on_standard_5_pressed() -> void:
+	var current_dialog = Utils.get_dialog_data()
+	print_dialog(select_random_string(standard_questions[4]),
+		current_dialog.previous_visit, standard_btns[4])
+
+func _on_suspicious_1_pressed() -> void:
+	var current_dialog = Utils.get_dialog_data()
+	print_dialog(select_random_string(suspicious_questions[0]),
+		current_dialog.what_your_name, suspicious_btns[0])

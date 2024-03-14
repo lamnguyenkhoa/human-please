@@ -57,21 +57,18 @@ text = "Purpose of visit"
 text_overrun_behavior = 3
 
 [node name="Standard3" type="Button" parent="TabContainer/Standard/VBoxContainer"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_og5ud")
 text = "Duration of stay"
 text_overrun_behavior = 3
 
 [node name="Standard4" type="Button" parent="TabContainer/Standard/VBoxContainer"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_og5ud")
 text = "Item in possession"
 text_overrun_behavior = 3
 
 [node name="Standard5" type="Button" parent="TabContainer/Standard/VBoxContainer"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_og5ud")
 text = "Previous visit"
@@ -85,11 +82,10 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="TabContainer/Suspicious/VBoxContainer"]
-visible = false
+[node name="Suspicious1" type="Button" parent="TabContainer/Suspicious/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_og5ud")
-text = "What's is your name?"
+text = "What's your name?"
 text_overrun_behavior = 3
 
 [node name="Contigency" type="ScrollContainer" parent="TabContainer"]
@@ -100,7 +96,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="TabContainer/Contigency/VBoxContainer"]
+[node name="Contigency1" type="Button" parent="TabContainer/Contigency/VBoxContainer"]
 visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_og5ud")
@@ -109,3 +105,7 @@ text_overrun_behavior = 3
 
 [connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard1" to="." method="_on_standard_1_pressed"]
 [connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard2" to="." method="_on_standard_2_pressed"]
+[connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard3" to="." method="_on_standard_3_pressed"]
+[connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard4" to="." method="_on_standard_4_pressed"]
+[connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard5" to="." method="_on_standard_5_pressed"]
+[connection signal="pressed" from="TabContainer/Suspicious/VBoxContainer/Suspicious1" to="." method="_on_suspicious_1_pressed"]

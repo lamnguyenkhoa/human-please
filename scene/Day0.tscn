@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://buwmemilvox0o"]
+[gd_scene load_steps=9 format=3 uid="uid://buwmemilvox0o"]
 
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="1_mrj0o"]
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_ol8rn"]
 [ext_resource type="Resource" uid="uid://bvad1dg57pnki" path="res://entity/character_data/mark_davidson.tres" id="2_5b6jg"]
 [ext_resource type="PackedScene" uid="uid://r3obsn7dyt73" path="res://ui/DialogArea.tscn" id="2_qicx2"]
 [ext_resource type="Resource" uid="uid://bvja6p0i3nlnb" path="res://entity/character_data/earnell_armstrong.tres" id="3_rx682"]
+[ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="8_whkvw"]
 [ext_resource type="PackedScene" uid="uid://cu7tx0jfe6p46" path="res://ui/WorkingArea.tscn" id="11_k1ci3"]
 [ext_resource type="PackedScene" uid="uid://cajp41ks5tyef" path="res://ui/QuestionArea.tscn" id="11_mbsvd"]
 
@@ -33,4 +34,8 @@ layout_mode = 1
 offset_left = 896.0
 
 [node name="WorkingArea" parent="CanvasLayer/GameUI" instance=ExtResource("11_k1ci3")]
+layout_mode = 1
+
+[node name="ResultScreen" parent="CanvasLayer/GameUI" instance=ExtResource("8_whkvw")]
+visible = false
 layout_mode = 1

@@ -8,12 +8,13 @@
 [sub_resource type="Resource" id="Resource_vrktd"]
 script = ExtResource("1_p2wqj")
 day = 0
-openings = Array[String](["Please read the guidebook to understand the rules.", "You can flip through its pages by the bottom page corners, Inspector."])
+openings = Array[String](["Please read the guidebook to understand the rules. And since it's a training, you can ignore rule 2.", "You can flip through its pages by the bottom page corners, buddy."])
 identity_verification = "I already gave you, Inspector."
 purpose_of_visit = "To give you a trial run, Inspector!"
-duration_of_stay = "As long as I work this job."
-item_in_possession = "A gun and a baton."
-previous_visit = "Countless. Better if Im not tell you, Inspector."
+duration_of_stay = "As long as I work this job, buddy."
+item_in_possession = "A Smith & Wesson revolver and a standard-issued police baton."
+previous_visit = "I worked and lived here, buddy."
+what_your_name = "I am the great American writer, Mark Twain. Just kidding, my full name is Mark Davidson. Yes, my father name is David."
 
 [resource]
 script = ExtResource("2_s7vwa")

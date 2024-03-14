@@ -9,11 +9,12 @@
 script = ExtResource("1_h1yrg")
 day = 0
 openings = Array[String](["Hello Inspector, some time the visitors will forget to present their papers.", "Make sure ask them to remind them."])
-identity_verification = "Here is it."
-purpose_of_visit = "To get a glass of beer. Care to join me later?"
-duration_of_stay = ""
-item_in_possession = ""
-previous_visit = ""
+identity_verification = "Sorry Inspector. Here is it."
+purpose_of_visit = "To get a glass of beer. The beer here is quite unique. Care to join me later?"
+duration_of_stay = "Until this incident is over, I suspose. Could be 2 or 3 more months."
+item_in_possession = "A M1911 pistol, a standrd-issued police baton and a pair of handcuff. This pistol is a real nice one, I tell ya."
+previous_visit = "I think I came across the town once before, but did not stop here. Anyway, now I lived and worked here."
+what_your_name = "Officer Earnell Armstrong, at your service."
 
 [resource]
 script = ExtResource("1_3lkkx")

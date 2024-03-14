@@ -8,3 +8,4 @@ class_name DialogResource
 @export_multiline var duration_of_stay: String
 @export_multiline var item_in_possession: String
 @export_multiline var previous_visit: String
+@export_multiline var what_your_name: String

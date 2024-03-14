@@ -19,6 +19,7 @@ config/icon="res://asset/sprite/ui/icon.png"
 
 EnumAutoload="*res://singleton/enum_autoload.gd"
 GameManager="*res://singleton/GameManager.tscn"
+Utils="*res://singleton/utils.gd"
 
 [display]
 

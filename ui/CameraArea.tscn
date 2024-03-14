@@ -457,13 +457,20 @@ theme_override_font_sizes/font_size = 20
 text = "Deny"
 
 [node name="StartWork" type="Button" parent="ControlPanel"]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 336.0
-offset_right = 304.0
-offset_bottom = 368.0
-theme_override_font_sizes/font_size = 20
-text = "Start work"
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -64.0
+offset_right = 104.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "START WORK"
 
 [node name="TransitionCover" type="Control" parent="."]
 visible = false
