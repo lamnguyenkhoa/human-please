@@ -5,15 +5,14 @@
 [ext_resource type="Script" path="res://entity/character_resource.gd" id="2_s7vwa"]
 [ext_resource type="Texture2D" uid="uid://cofc05u43ip6" path="res://asset/sprite/character/mark_davidson.png" id="3_ewob3"]
 
-[sub_resource type="Resource" id="Resource_vrktd"]
+[sub_resource type="Resource" id="Resource_em7s5"]
 script = ExtResource("1_p2wqj")
-day = 0
 openings = Array[String](["Please read the guidebook to understand the rules. And since it's a training, you can ignore rule 2.", "You can flip through its pages by the bottom page corners, buddy."])
 identity_verification = "I already gave you, Inspector."
-purpose_of_visit = "To give you a trial run, Inspector!"
+purpose_of_visit = "To give you a trial run, buddy!"
 duration_of_stay = "As long as I work this job, buddy."
 item_in_possession = "A Smith & Wesson revolver and a standard-issued police baton."
-previous_visit = "I worked and lived here, buddy."
+previous_visit = "Haha what kinda of question is that? I worked and lived here, man."
 what_your_name = "I am the great American writer, Mark Twain. Just kidding, my full name is Mark Davidson. Yes, my father name is David."
 
 [resource]
@@ -27,4 +26,4 @@ nationality = "USA"
 id_number = "C4212947"
 passport_expired = false
 auto_give_passport = true
-dialogs = Array[ExtResource("1_p2wqj")]([SubResource("Resource_vrktd")])
+dialog = SubResource("Resource_em7s5")

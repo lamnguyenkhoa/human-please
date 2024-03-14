@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://b451oxbcvbbxx"]
+
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_73vgs"]
+[ext_resource type="Texture2D" uid="uid://dqbm18ylgqu6w" path="res://asset/sprite/character/daniel_smith_face.png" id="2_3lnor"]
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="3_hpj5x"]
+[ext_resource type="Texture2D" uid="uid://b2x8ulxnmus2v" path="res://asset/sprite/character/daniel_smith.png" id="4_gw8nq"]
+
+[sub_resource type="Resource" id="Resource_5cygy"]
+script = ExtResource("1_73vgs")
+openings = Array[String]([])
+identity_verification = "It's there. I already gave you, sir."
+purpose_of_visit = "To visit my grandmother. She lived here."
+duration_of_stay = "Just for a day. It's a quick visit."
+item_in_possession = "Some snacks, bottle of water, a basket of fruit and a nice scarf as a gift for grandma."
+previous_visit = "I visited this town frequently, once every two weeks."
+what_your_name = "It's Daniel Smith, sir."
+
+[resource]
+script = ExtResource("3_hpj5x")
+name = "Daniel Smith"
+sprite = ExtResource("4_gw8nq")
+face_photo = ExtResource("2_3lnor")
+gender = 1
+birthdate = "25/2/1972"
+nationality = "USA"
+id_number = "C5320983"
+passport_expired = false
+auto_give_passport = true
+dialog = SubResource("Resource_5cygy")

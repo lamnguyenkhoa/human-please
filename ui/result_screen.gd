@@ -1,6 +1,8 @@
 extends Control
 class_name ResultScreen
 
+@export var next_day_scene: PackedScene
+
 @onready var background: Control = $Background
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var title: Label = $Title
@@ -35,3 +37,9 @@ func show_result():
 		rating2.text = 'Unacceptable'
 
 	anim_player.play("show_result")
+
+func _on_next_day_pressed() -> void:
+	if next_day_scene != null:
+		get_tree().change_scene_to_packed(next_day_scene)
+	else:
+		next_day_button.text = "STILL WIP.\nTHANKS FOR PLAYING"

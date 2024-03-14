@@ -1,12 +1,7 @@
 extends Node
 
 func get_dialog_data() -> DialogResource:
-	for elem in GameManager.current_subject.dialogs:
-		if elem.day == GameManager.work_day.day:
-			return elem
-		else:
-			print("DIALOG_AREA: ERROR CANT FIND DIALOG OF DAY ", GameManager.work_day.day)
-	return null
+	return GameManager.current_subject.dialog
 
 func compare_dates(date1_str: String, date2_str: String) -> int:
 	# Extract day, month, and year from date strings

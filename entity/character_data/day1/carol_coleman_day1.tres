@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://bptwnjn0acvhc"]
+
+[ext_resource type="Texture2D" uid="uid://dmyaoqg2xxdg4" path="res://asset/sprite/character/carol_coleman_face.png" id="1_1x5w7"]
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="1_lwlsi"]
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_o20fx"]
+[ext_resource type="Texture2D" uid="uid://dpleoax244247" path="res://asset/sprite/character/carol_coleman.png" id="3_i6odj"]
+
+[sub_resource type="Resource" id="Resource_t14ou"]
+script = ExtResource("1_o20fx")
+openings = Array[String]([])
+identity_verification = "Ah, I forgot. There it is."
+purpose_of_visit = "Despite my casual clothing, I'm a business woman. I come here to negotiate buying some local products here."
+duration_of_stay = "Just today, evening at the latest."
+item_in_possession = "I only bring a laptop. Ah, and my set of business cards."
+previous_visit = "Went here once or twice before. I don't remember there is a checkpoint here last time I come though."
+what_your_name = "It's Carol Coleman, officer."
+
+[resource]
+script = ExtResource("1_lwlsi")
+name = "Carol Coleman"
+sprite = ExtResource("3_i6odj")
+face_photo = ExtResource("1_1x5w7")
+gender = 2
+birthdate = "9/2/1978"
+nationality = "USA"
+id_number = "C8520921"
+passport_expired = false
+auto_give_passport = false
+dialog = SubResource("Resource_t14ou")

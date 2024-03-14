@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dsnsf88fxyg7o" path="res://asset/sprite/ui/common_passport.png" id="1_k8r2b"]
 [ext_resource type="Script" path="res://ui/passport.gd" id="1_vhgh7"]
-[ext_resource type="Resource" uid="uid://bvad1dg57pnki" path="res://entity/character_data/mark_davidson.tres" id="2_qbrfd"]
+[ext_resource type="Resource" uid="uid://bvad1dg57pnki" path="res://entity/character_data/day0/mark_davidson_day0.tres" id="2_qbrfd"]
 [ext_resource type="Texture2D" uid="uid://dtb2s3m74ig8k" path="res://asset/sprite/ui/barcode.png" id="3_4whe3"]
 [ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="4_hqsx3"]
 [ext_resource type="Texture2D" uid="uid://b4j4hk2l2coy5" path="res://asset/sprite/square.png" id="4_nohvu"]

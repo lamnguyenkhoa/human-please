@@ -5,14 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://c5ab6p0vo0fa8" path="res://asset/sprite/character/earnell_armstrong_face.png" id="2_22ymo"]
 [ext_resource type="Texture2D" uid="uid://brjuk4d2qokap" path="res://asset/sprite/character/earnell_armstrong.png" id="2_fq5mi"]
 
-[sub_resource type="Resource" id="Resource_7rods"]
+[sub_resource type="Resource" id="Resource_nnx17"]
 script = ExtResource("1_h1yrg")
-day = 0
 openings = Array[String](["Hello Inspector, some time the visitors will forget to present their papers.", "Make sure ask them to remind them."])
 identity_verification = "Sorry Inspector. Here is it."
 purpose_of_visit = "To get a glass of beer. The beer here is quite unique. Care to join me later?"
 duration_of_stay = "Until this incident is over, I suspose. Could be 2 or 3 more months."
-item_in_possession = "A M1911 pistol, a standrd-issued police baton and a pair of handcuff. This pistol is a real nice one, I tell ya."
+item_in_possession = "\"A M1911 pistol, a standrd-issued police baton and a pair of handcuff. This pistol is a real nice one, I tell ya."
 previous_visit = "I think I came across the town once before, but did not stop here. Anyway, now I lived and worked here."
 what_your_name = "Officer Earnell Armstrong, at your service."
 
@@ -27,4 +26,4 @@ nationality = "USA"
 id_number = "C9530282"
 passport_expired = true
 auto_give_passport = false
-dialogs = Array[ExtResource("1_h1yrg")]([SubResource("Resource_7rods")])
+dialog = SubResource("Resource_nnx17")

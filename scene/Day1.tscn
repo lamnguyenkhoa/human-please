@@ -1,0 +1,43 @@
+[gd_scene load_steps=10 format=3 uid="uid://rhslxr0t6o5v"]
+
+[ext_resource type="Script" path="res://scene/work_day.gd" id="1_y1sn6"]
+[ext_resource type="Resource" uid="uid://b451oxbcvbbxx" path="res://entity/character_data/day1/daniel_smith_day1.tres" id="2_ruqh5"]
+[ext_resource type="Resource" uid="uid://gq7s2rqr4hyd" path="res://entity/character_data/day1/devish_pant_day1.tres" id="3_ggspu"]
+[ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="4_0pheg"]
+[ext_resource type="Resource" uid="uid://bptwnjn0acvhc" path="res://entity/character_data/day1/carol_coleman_day1.tres" id="4_unlga"]
+[ext_resource type="PackedScene" uid="uid://r3obsn7dyt73" path="res://ui/DialogArea.tscn" id="5_myg6n"]
+[ext_resource type="PackedScene" uid="uid://cajp41ks5tyef" path="res://ui/QuestionArea.tscn" id="6_toohs"]
+[ext_resource type="PackedScene" uid="uid://cu7tx0jfe6p46" path="res://ui/WorkingArea.tscn" id="7_pijnk"]
+[ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="8_fgsii"]
+
+[node name="Day1" type="Node2D"]
+script = ExtResource("1_y1sn6")
+day = 1
+date_string = "13/05/2000"
+today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_ruqh5"), ExtResource("3_ggspu"), ExtResource("4_unlga")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="CameraArea" parent="CanvasLayer/GameUI" instance=ExtResource("4_0pheg")]
+layout_mode = 1
+
+[node name="DialogArea" parent="CanvasLayer/GameUI" instance=ExtResource("5_myg6n")]
+
+[node name="QuestionArea" parent="CanvasLayer/GameUI" instance=ExtResource("6_toohs")]
+offset_left = 896.0
+
+[node name="WorkingArea" parent="CanvasLayer/GameUI" instance=ExtResource("7_pijnk")]
+layout_mode = 1
+
+[node name="ResultScreen" parent="CanvasLayer/GameUI" instance=ExtResource("8_fgsii")]
+visible = false
+layout_mode = 1

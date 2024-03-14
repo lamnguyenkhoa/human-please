@@ -203,3 +203,5 @@ text = "NEXT DAY"
 libraries = {
 "": SubResource("AnimationLibrary_p40sl")
 }
+
+[connection signal="pressed" from="NextDay" to="." method="_on_next_day_pressed"]

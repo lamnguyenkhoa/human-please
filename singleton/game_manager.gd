@@ -18,8 +18,11 @@ var illegal_allowed = 0
 var legal_denied = 0
 
 func start_work():
+	# Reset some stats
 	illegal_allowed = 0
 	legal_denied = 0
+	subject_count = 0
+	decision_blocker = 0
 	camera_area.first_subject_transition()
 	await get_tree().create_timer(2).timeout
 	load_next_character()

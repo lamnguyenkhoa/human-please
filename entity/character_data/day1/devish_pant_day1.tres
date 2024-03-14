@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://gq7s2rqr4hyd"]
+
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_5lopr"]
+[ext_resource type="Texture2D" uid="uid://0ffejrlntywj" path="res://asset/sprite/character/devish_pant_face.png" id="2_nbmiq"]
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="3_ctgoi"]
+[ext_resource type="Texture2D" uid="uid://n38dnx7m7t8o" path="res://asset/sprite/character/devish_pant.png" id="4_ka0pa"]
+
+[sub_resource type="Resource" id="Resource_ys0ou"]
+script = ExtResource("1_5lopr")
+openings = Array[String](["Good day, mister."])
+identity_verification = "It's on the table, mister."
+purpose_of_visit = "Sightseeing! And to try the local specialty beer too."
+duration_of_stay = "I planned to stay here for 3 days. Should be enough to cover the town."
+item_in_possession = "I brought some clothes, foods, a camera and a flashlight."
+previous_visit = "No, haven't come to this place before."
+what_your_name = "My full name? The full name is Deveshwar Prakash Pant."
+
+[resource]
+script = ExtResource("3_ctgoi")
+name = "Devesh Pant"
+sprite = ExtResource("4_ka0pa")
+face_photo = ExtResource("2_nbmiq")
+gender = 1
+birthdate = "9/1/1980"
+nationality = "USA"
+id_number = "C9955332"
+passport_expired = true
+auto_give_passport = true
+dialog = SubResource("Resource_ys0ou")
