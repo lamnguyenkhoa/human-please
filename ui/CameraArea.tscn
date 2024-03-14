@@ -330,7 +330,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "12/05/2000"
+text = "DD/MM/YYYY"
 
 [node name="ZoomAmount" type="Label" parent="Camera"]
 layout_mode = 1

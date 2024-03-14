@@ -58,4 +58,6 @@ func load_next_character():
 func calculate_pax_legal():
 	if current_subject.passport_expired:
 		return false
+	if current_subject.bad_visit_reason:
+		return false
 	return true

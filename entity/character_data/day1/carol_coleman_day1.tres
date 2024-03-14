@@ -25,5 +25,6 @@ birthdate = "9/2/1978"
 nationality = "USA"
 id_number = "C8520921"
 passport_expired = false
+bad_visit_reason = true
 auto_give_passport = false
 dialog = SubResource("Resource_t14ou")

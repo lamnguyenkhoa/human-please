@@ -2,6 +2,7 @@ extends Control
 class_name WorkingArea
 
 @export var usa_passport_prefab: PackedScene
+@export var today_extra_documents: Array[MoveableDocument]
 
 @onready var document_area = $DocumentArea
 @onready var document_spawn = $DocumentArea/DocumentSpawn
@@ -9,6 +10,11 @@ class_name WorkingArea
 func _ready():
 	GameManager.working_area = self
 	GameManager.subject_resolved.connect(_on_subject_resolved)
+	for doc in today_extra_documents:
+		var doc_parent = doc.get_parent()
+		doc_parent.remove_child(doc)
+		document_area.add_child(doc)
+		doc.visible = true
 
 func _on_subject_resolved(_allowed: bool):
 	remove_subject_document()

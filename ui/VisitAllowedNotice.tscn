@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://xb65vfev8api"]
+
+[ext_resource type="Script" path="res://ui/moveable_document.gd" id="1_vyy2a"]
+[ext_resource type="Texture2D" uid="uid://cr4bt8du0nwjd" path="res://asset/sprite/ui/notice_paper.png" id="2_nc0rb"]
+[ext_resource type="FontFile" uid="uid://b1o8u7gtfofwm" path="res://asset/font/aflfont.TTF" id="3_qoogw"]
+
+[node name="VisitAllowedNotice" type="TabContainer"]
+offset_left = 728.0
+offset_top = 184.0
+offset_right = 948.0
+offset_bottom = 494.0
+tabs_visible = false
+script = ExtResource("1_vyy2a")
+
+[node name="DestroyTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_nc0rb")
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.0
+offset_top = 32.0
+offset_right = 99.0
+offset_bottom = 79.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_qoogw")
+text = "Allowed purpose 
+of visit:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -52.5
+offset_right = 96.5
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qoogw")
+theme_override_font_sizes/font_size = 12
+text = "Research (except Photography)
+Visit familly
+Medical reasons
+Education
+Politic
+"
+
+[node name="Label3" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -108.0
+offset_top = 8.0
+offset_right = -3.0
+offset_bottom = 24.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qoogw")
+theme_override_font_sizes/font_size = 12
+text = "Date: 12/05/2000"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="resized" from="." to="." method="_on_resized"]
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]

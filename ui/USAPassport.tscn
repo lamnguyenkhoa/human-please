@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dtb2s3m74ig8k" path="res://asset/sprite/ui/barcode.png" id="5_jc7mg"]
 [ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="6_5i1lb"]
 
-[node name="TabContainer" type="TabContainer"]
+[node name="USAPassport" type="TabContainer"]
 offset_right = 256.0
 offset_bottom = 320.0
 tabs_visible = false

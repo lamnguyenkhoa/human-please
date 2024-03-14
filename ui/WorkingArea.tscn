@@ -39,15 +39,15 @@ offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="DocumentSpawn" type="Control" parent="DocumentArea"]
+anchors_preset = 0
+offset_left = 480.0
+offset_right = 520.0
+offset_bottom = 40.0
+
 [node name="Guidebook" parent="DocumentArea" instance=ExtResource("3_f542s")]
 layout_mode = 1
 offset_left = 24.0
 offset_top = 256.0
 offset_right = 222.0
 offset_bottom = 512.0
-
-[node name="DocumentSpawn" type="Control" parent="DocumentArea"]
-anchors_preset = 0
-offset_left = 480.0
-offset_right = 520.0
-offset_bottom = 40.0
