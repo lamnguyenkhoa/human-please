@@ -74,10 +74,10 @@ func select_random_string(array):
 	return array[randomIndex]
 
 func print_dialog(question: String, answer: String, btn: Button):
+	btn.disabled = true
 	dialog_area.add_inspector_dialog(question)
 	await get_tree().create_timer(1).timeout
 	dialog_area.add_subject_dialog(answer)
-	btn.disabled = true
 
 func _on_standard_1_pressed() -> void:
 	var current_dialog = Utils.get_dialog_data()
