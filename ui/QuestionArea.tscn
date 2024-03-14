@@ -85,7 +85,13 @@ size_flags_horizontal = 3
 [node name="Suspicious1" type="Button" parent="TabContainer/Suspicious/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_og5ud")
-text = "What's your name?"
+text = "Question their full name"
+text_overrun_behavior = 3
+
+[node name="Suspicious2" type="Button" parent="TabContainer/Suspicious/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_og5ud")
+text = "Question their appearance"
 text_overrun_behavior = 3
 
 [node name="Contigency" type="ScrollContainer" parent="TabContainer"]
@@ -109,3 +115,4 @@ text_overrun_behavior = 3
 [connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard4" to="." method="_on_standard_4_pressed"]
 [connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard5" to="." method="_on_standard_5_pressed"]
 [connection signal="pressed" from="TabContainer/Suspicious/VBoxContainer/Suspicious1" to="." method="_on_suspicious_1_pressed"]
+[connection signal="pressed" from="TabContainer/Suspicious/VBoxContainer/Suspicious2" to="." method="_on_suspicious_1_pressed"]
