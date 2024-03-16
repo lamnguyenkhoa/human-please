@@ -3,9 +3,9 @@ class_name Passport
 
 @export var character_data: CharacterResource
 
-@onready var basic_details: RichTextLabel = $Page/PersonalDetail
-@onready var top_serial: Label = $Page/TopSerial
-@onready var face_photo: TextureRect = $Page/Photo
+@onready var basic_details: RichTextLabel = $TabContainer/Page/PersonalDetail
+@onready var top_serial: Label = $TabContainer/Page/TopSerial
+@onready var face_photo: TextureRect = $TabContainer/Page/Photo
 
 func _ready() -> void:
 	super()
@@ -34,7 +34,7 @@ func random_generate_date(birthdate: String, expired: bool) -> String:
 
 	var date_parts = birthdate.split("/")
 	var birthyear = int(date_parts[2])
-	
+
 	var year = rng.randi_range(2001, 2050)
 	if expired:
 		year = rng.randi_range(birthyear + 18, 1999)

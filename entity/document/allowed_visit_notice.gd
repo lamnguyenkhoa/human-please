@@ -2,8 +2,8 @@ extends MoveableDocument
 
 @export_multiline var content: String
 
-@onready var content_label: Label = $Background/Content
-@onready var date_label: Label = $Background/Date
+@onready var content_label: Label = $TabContainer/Background/Content
+@onready var date_label: Label = $TabContainer/Background/Date
 
 func _ready() -> void:
 	super()

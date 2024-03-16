@@ -1,7 +1,8 @@
-extends TabContainer
+extends Control
 class_name MoveableDocument
 
 @onready var timer: Timer = $DestroyTimer
+@onready var tab_container = $TabContainer
 
 @export var multiple_pages = false
 
@@ -21,17 +22,20 @@ func _input(event):
 		if event.pressed and event.get_button_index() == MOUSE_BUTTON_LEFT:
 			if mouse_in:
 				is_dragging = true
+				tab_container.position = Vector2( - 8, -8)
 				drag_offset = get_global_mouse_position() - position
 				show_document_on_top()
 		elif not event.pressed and is_dragging:
 			is_dragging = false
+			tab_container.position = Vector2(0, 0)
 
 func _process(_delta):
 	if is_dragging:
 		var new_pos = get_global_mouse_position() - drag_offset
 		keep_inside_document_area(new_pos)
 	else:
-		size = Vector2(0, 0) # Keep document size at minimum
+		tab_container.size = Vector2(0, 0) # Keep document size at minimum
+		size = tab_container.size
 
 func return_to_subject():
 	var tween = get_tree().create_tween()
@@ -63,12 +67,12 @@ func show_document_on_top():
 	get_parent().move_child(self, get_parent().get_child_count() - 1)
 
 func _on_next_page_button_pressed() -> void:
-	var max_tabs = get_tab_count()
-	current_tab = clampi(current_tab + 1, 0, max_tabs - 1)
+	var max_tabs = tab_container.get_tab_count()
+	tab_container.current_tab = clampi(tab_container.current_tab + 1, 0, max_tabs - 1)
 
 func _on_previous_page_button_pressed() -> void:
-	var max_tabs = get_tab_count()
-	current_tab = clampi(current_tab - 1, 0, max_tabs - 1)
+	var max_tabs = tab_container.get_tab_count()
+	tab_container.current_tab = clampi(tab_container.current_tab - 1, 0, max_tabs - 1)
 
 func _on_resized() -> void:
 	keep_inside_document_area(position)

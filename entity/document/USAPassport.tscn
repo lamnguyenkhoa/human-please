@@ -6,20 +6,33 @@
 [ext_resource type="Texture2D" uid="uid://dtb2s3m74ig8k" path="res://asset/sprite/ui/barcode.png" id="5_jc7mg"]
 [ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="6_5i1lb"]
 
-[node name="USAPassport" type="TabContainer"]
+[node name="USAPassport" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 320.0
+script = ExtResource("1_eobry")
+
+[node name="Shadow" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.329412)
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
 offset_right = 256.0
 offset_bottom = 320.0
 tabs_visible = false
-script = ExtResource("1_eobry")
 
-[node name="DestroyTimer" type="Timer" parent="."]
-one_shot = true
-
-[node name="Page" type="TextureRect" parent="."]
+[node name="Page" type="TextureRect" parent="TabContainer"]
 layout_mode = 2
 texture = ExtResource("3_4mb6o")
 
-[node name="TopSerial" type="Label" parent="Page"]
+[node name="TopSerial" type="Label" parent="TabContainer/Page"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -34,7 +47,7 @@ theme_override_colors/font_color = Color(0.113725, 0.207843, 0.498039, 1)
 text = "C1234567"
 horizontal_alignment = 1
 
-[node name="Barcode" type="TextureRect" parent="Page"]
+[node name="Barcode" type="TextureRect" parent="TabContainer/Page"]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 1
 offset_left = 16.0
@@ -44,7 +57,7 @@ offset_bottom = 161.0
 rotation = 4.71239
 texture = ExtResource("5_jc7mg")
 
-[node name="Country" type="RichTextLabel" parent="Page"]
+[node name="Country" type="RichTextLabel" parent="TabContainer/Page"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -65,7 +78,7 @@ bbcode_enabled = true
 text = "United state of American"
 fit_content = true
 
-[node name="Photo" type="TextureRect" parent="Page"]
+[node name="Photo" type="TextureRect" parent="TabContainer/Page"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -78,7 +91,7 @@ grow_vertical = 0
 texture = ExtResource("5_6tbpm")
 expand_mode = 1
 
-[node name="PersonalDetail" type="RichTextLabel" parent="Page"]
+[node name="PersonalDetail" type="RichTextLabel" parent="TabContainer/Page"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -107,7 +120,10 @@ text = "[color=blue]Name[/color]
 fit_content = true
 scroll_active = false
 
+[node name="DestroyTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="resized" from="." to="." method="_on_resized"]
-[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]
+[connection signal="timeout" from="DestroyTimer" to="TabContainer" method="_on_destroy_timer_timeout"]
