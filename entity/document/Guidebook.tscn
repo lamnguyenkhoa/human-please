@@ -42,21 +42,24 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.329412)
 
 [node name="TabContainer" type="TabContainer" parent="."]
+light_mask = 2
 layout_mode = 0
 offset_right = 198.0
 offset_bottom = 256.0
 tabs_visible = false
 
 [node name="Cover" type="TextureRect" parent="TabContainer"]
+visible = false
+light_mask = 2
 layout_mode = 2
 texture = ExtResource("2_jdxbl")
 
 [node name="NextPageButton" type="Button" parent="TabContainer/Cover"]
 layout_mode = 0
-offset_left = 168.0
-offset_top = 232.0
+offset_left = 184.0
+offset_top = 8.0
 offset_right = 200.0
-offset_bottom = 256.0
+offset_bottom = 248.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_xpwve")
@@ -67,6 +70,7 @@ flat = true
 
 [node name="Pages" type="TextureRect" parent="TabContainer"]
 visible = false
+light_mask = 2
 layout_mode = 2
 texture = ExtResource("3_ibe5a")
 
@@ -120,9 +124,9 @@ autowrap_mode = 2
 [node name="Label4" type="RichTextLabel" parent="TabContainer/Pages"]
 layout_mode = 2
 offset_left = 16.0
-offset_top = 144.0
+offset_top = 128.0
 offset_right = 184.0
-offset_bottom = 232.0
+offset_bottom = 238.0
 mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_hv1g7")
@@ -132,18 +136,18 @@ theme_override_font_sizes/bold_font_size = 12
 bbcode_enabled = true
 text = "[center][b]Control[/b][/center]
 
-LMB: Move document around
-RMB: Zoomed-in inspect document
-Esc: Open setting menu"
+- LMB: Click and drag to move document around. Click near the page's edge to flip throuugh pages.
+- RMB: Zoomed-in inspect document
+- Esc: Open setting menu"
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
 
 [node name="NextPageButton" type="Button" parent="TabContainer/Pages"]
 layout_mode = 0
-offset_left = 366.0
-offset_top = 232.0
-offset_right = 398.0
+offset_left = 376.0
+offset_top = 8.0
+offset_right = 392.0
 offset_bottom = 256.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
@@ -155,9 +159,8 @@ flat = true
 
 [node name="PreviousPageButton" type="Button" parent="TabContainer/Pages"]
 layout_mode = 0
-offset_left = -2.0
-offset_top = 232.0
-offset_right = 30.0
+offset_top = 8.0
+offset_right = 16.0
 offset_bottom = 256.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
@@ -193,10 +196,10 @@ horizontal_alignment = 1
 
 [node name="RuleButton" type="Button" parent="TabContainer/Pages"]
 layout_mode = 0
-offset_left = 216.0
-offset_top = 104.0
+offset_left = 224.0
+offset_top = 107.0
 offset_right = 376.0
-offset_bottom = 120.0
+offset_bottom = 117.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_d4dvb")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_7x83d")
@@ -207,10 +210,10 @@ flat = true
 
 [node name="TermButton" type="Button" parent="TabContainer/Pages"]
 layout_mode = 0
-offset_left = 216.0
-offset_top = 124.0
+offset_left = 224.0
+offset_top = 127.0
 offset_right = 376.0
-offset_bottom = 140.0
+offset_bottom = 137.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_d4dvb")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_7x83d")
@@ -221,10 +224,10 @@ flat = true
 
 [node name="LocalMapButton" type="Button" parent="TabContainer/Pages"]
 layout_mode = 0
-offset_left = 216.0
-offset_top = 144.0
+offset_left = 224.0
+offset_top = 147.0
 offset_right = 376.0
-offset_bottom = 160.0
+offset_bottom = 156.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_d4dvb")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_7x83d")
@@ -234,7 +237,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_1ui7l")
 flat = true
 
 [node name="Pages2" type="TextureRect" parent="TabContainer"]
-visible = false
+light_mask = 2
 layout_mode = 2
 texture = ExtResource("3_ibe5a")
 
@@ -278,9 +281,9 @@ autowrap_mode = 2
 
 [node name="NextPageButton" type="Button" parent="TabContainer/Pages2"]
 layout_mode = 0
-offset_left = 366.0
-offset_top = 232.0
-offset_right = 398.0
+offset_left = 376.0
+offset_top = 8.0
+offset_right = 392.0
 offset_bottom = 256.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
@@ -292,9 +295,8 @@ flat = true
 
 [node name="PreviousPageButton" type="Button" parent="TabContainer/Pages2"]
 layout_mode = 0
-offset_left = -2.0
-offset_top = 232.0
-offset_right = 30.0
+offset_top = 8.0
+offset_right = 16.0
 offset_bottom = 256.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
@@ -332,6 +334,7 @@ horizontal_alignment = 1
 
 [node name="Pages3" type="TextureRect" parent="TabContainer"]
 visible = false
+light_mask = 2
 layout_mode = 2
 texture = ExtResource("3_ibe5a")
 
@@ -348,9 +351,9 @@ autowrap_mode = 2
 
 [node name="NextPageButton" type="Button" parent="TabContainer/Pages3"]
 layout_mode = 0
-offset_left = 366.0
-offset_top = 232.0
-offset_right = 398.0
+offset_left = 376.0
+offset_top = 8.0
+offset_right = 392.0
 offset_bottom = 256.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
@@ -362,9 +365,8 @@ flat = true
 
 [node name="PreviousPageButton" type="Button" parent="TabContainer/Pages3"]
 layout_mode = 0
-offset_left = -2.0
-offset_top = 232.0
-offset_right = 30.0
+offset_top = 8.0
+offset_right = 16.0
 offset_bottom = 256.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
@@ -423,14 +425,15 @@ horizontal_alignment = 1
 
 [node name="Pages4" type="TextureRect" parent="TabContainer"]
 visible = false
+light_mask = 2
 layout_mode = 2
 texture = ExtResource("3_ibe5a")
 
 [node name="NextPageButton" type="Button" parent="TabContainer/Pages4"]
 layout_mode = 0
-offset_left = 366.0
-offset_top = 232.0
-offset_right = 398.0
+offset_left = 376.0
+offset_top = 8.0
+offset_right = 392.0
 offset_bottom = 256.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
@@ -442,9 +445,8 @@ flat = true
 
 [node name="PreviousPageButton" type="Button" parent="TabContainer/Pages4"]
 layout_mode = 0
-offset_left = -2.0
-offset_top = 232.0
-offset_right = 30.0
+offset_top = 8.0
+offset_right = 16.0
 offset_bottom = 256.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
@@ -513,14 +515,15 @@ horizontal_alignment = 1
 
 [node name="Pages5" type="TextureRect" parent="TabContainer"]
 visible = false
+light_mask = 2
 layout_mode = 2
 texture = ExtResource("3_ibe5a")
 
 [node name="NextPageButton" type="Button" parent="TabContainer/Pages5"]
 layout_mode = 0
-offset_left = 366.0
-offset_top = 232.0
-offset_right = 398.0
+offset_left = 376.0
+offset_top = 8.0
+offset_right = 392.0
 offset_bottom = 256.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
@@ -532,9 +535,8 @@ flat = true
 
 [node name="PreviousPageButton" type="Button" parent="TabContainer/Pages5"]
 layout_mode = 0
-offset_left = -2.0
-offset_top = 232.0
-offset_right = 30.0
+offset_top = 8.0
+offset_right = 16.0
 offset_bottom = 256.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
@@ -589,89 +591,6 @@ theme_override_font_sizes/font_size = 8
 text = "10"
 horizontal_alignment = 1
 
-[node name="Pages6" type="TextureRect" parent="TabContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("3_ibe5a")
-
-[node name="NextPageButton" type="Button" parent="TabContainer/Pages6"]
-layout_mode = 0
-offset_left = 366.0
-offset_top = 232.0
-offset_right = 398.0
-offset_bottom = 256.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xpwve")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_h0jec")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
-flat = true
-
-[node name="PreviousPageButton" type="Button" parent="TabContainer/Pages6"]
-layout_mode = 0
-offset_left = -2.0
-offset_top = 232.0
-offset_right = 30.0
-offset_bottom = 256.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xpwve")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_h0jec")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
-flat = true
-
-[node name="Label" type="Label" parent="TabContainer/Pages6"]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 8.0
-offset_right = 120.0
-offset_bottom = 30.0
-theme_override_colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
-theme_override_fonts/font = ExtResource("4_hv1g7")
-text = "Local map"
-
-[node name="Label2" type="Label" parent="TabContainer/Pages6"]
-layout_mode = 0
-offset_left = 248.0
-offset_top = 112.0
-offset_right = 354.0
-offset_bottom = 159.0
-theme_override_colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
-theme_override_fonts/font = ExtResource("4_hv1g7")
-text = "WIP
-Sorry :(("
-
-[node name="PageCount" type="Label" parent="TabContainer/Pages6"]
-layout_mode = 0
-offset_left = 94.0
-offset_top = 240.0
-offset_right = 104.0
-offset_bottom = 252.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_hv1g7")
-theme_override_font_sizes/font_size = 8
-text = "9"
-horizontal_alignment = 1
-
-[node name="PageCount2" type="Label" parent="TabContainer/Pages6"]
-layout_mode = 0
-offset_left = 286.0
-offset_top = 240.0
-offset_right = 296.0
-offset_bottom = 252.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_hv1g7")
-theme_override_font_sizes/font_size = 8
-text = "10"
-horizontal_alignment = 1
-
-[node name="Shadow" type="ColorRect" parent="TabContainer"]
-visible = false
-layout_mode = 2
-color = Color(0, 0, 0, 0.329412)
-
 [node name="DestroyTimer" type="Timer" parent="."]
 one_shot = true
 
@@ -692,6 +611,4 @@ one_shot = true
 [connection signal="pressed" from="TabContainer/Pages4/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
 [connection signal="pressed" from="TabContainer/Pages5/NextPageButton" to="." method="_on_next_page_button_pressed"]
 [connection signal="pressed" from="TabContainer/Pages5/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Pages6/NextPageButton" to="." method="_on_next_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Pages6/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
 [connection signal="timeout" from="DestroyTimer" to="TabContainer" method="_on_destroy_timer_timeout"]

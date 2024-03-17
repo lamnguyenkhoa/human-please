@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3t1coeegq2wg"]
+[gd_scene load_steps=14 format=3 uid="uid://d3t1coeegq2wg"]
 
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_3x04h"]
+[ext_resource type="Resource" uid="uid://bvja6p0i3nlnb" path="res://entity/character_data/day0/earnell_armstrong_day0.tres" id="2_t301v"]
 [ext_resource type="PackedScene" uid="uid://chh2jhkuq1pai" path="res://entity/document/PostitNote.tscn" id="7_qgtkp"]
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="7_rubju"]
 [ext_resource type="PackedScene" uid="uid://r3obsn7dyt73" path="res://ui/DialogArea.tscn" id="8_o1l0y"]
@@ -17,16 +18,13 @@
 script = ExtResource("1_3x04h")
 day = 2
 date_string = "14/05/2000"
+today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_t301v")])
 
 [node name="GameUI" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 0
 offset_right = 1368.0
 offset_bottom = 768.0
-grow_horizontal = 2
-grow_vertical = 2
 mouse_filter = 1
 
 [node name="CameraArea" parent="GameUI" instance=ExtResource("7_rubju")]
@@ -71,19 +69,17 @@ visible = false
 layout_mode = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0666667, 0.0666667, 0.0666667, 1)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
+[node name="FlashLight" type="PointLight2D" parent="."]
 position = Vector2(792, 408)
 scale = Vector2(4.375, 4.375)
-energy = 0.5
+energy = 0.6
+range_item_cull_mask = 3
 texture = ExtResource("8_ys3h3")
 script = ExtResource("9_3q2os")
 
 [node name="ScreenLight" type="PointLight2D" parent="."]
-visible = false
 position = Vector2(192, 192)
 scale = Vector2(4, 4)
 energy = 0.8

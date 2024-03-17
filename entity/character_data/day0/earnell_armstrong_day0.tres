@@ -8,13 +8,13 @@
 [sub_resource type="Resource" id="Resource_nnx17"]
 script = ExtResource("1_h1yrg")
 openings = Array[String](["Hello Inspector, some time the visitors will forget to present their papers.", "Make sure ask them to remind them."])
-identity_verification = "Sorry Inspector. Here is it."
+identity_verification = "Sorry inspector. Here is it."
 purpose_of_visit = "To get a glass of beer. The beer here is quite unique. Care to join me later?"
 duration_of_stay = "Until this incident is over, I suspose. Could be 2 or 3 more months."
-item_in_possession = "\"A M1911 pistol, a standrd-issued police baton and a pair of handcuff. This pistol is a real nice one, I tell ya."
+item_in_possession = "A Smith and Wesson revolver, a standard-issued police baton and a pair of handcuff. This revolver is a real nice one, I tell ya."
 previous_visit = "I think I came across the town once before, but did not stop here. Anyway, now I lived and worked here."
 what_your_name = "Officer Earnell Armstrong, at your service."
-why_appearance = "My appearance? What's wrong with it? Is it because of the color of my clothes? Or the color of my hat? Or... Ha, just messing with you Inspector."
+why_appearance = "My appearance? What's wrong with it? Is it because of the color of my clothes? Or the color of my hat? Or... Ha, just messing with you, inspector."
 
 [resource]
 script = ExtResource("1_3lkkx")

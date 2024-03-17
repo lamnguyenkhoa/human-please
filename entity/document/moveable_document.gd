@@ -4,8 +4,6 @@ class_name MoveableDocument
 @onready var timer: Timer = $DestroyTimer
 @onready var tab_container = $TabContainer
 
-@export var multiple_pages = false
-
 var is_dragging = false
 var drag_offset = Vector2()
 var mouse_in = false

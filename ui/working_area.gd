@@ -32,7 +32,7 @@ func remove_subject_document():
 func spawn_passport():
 	var new_pp = usa_passport_prefab.instantiate() as Passport
 	document_area.add_child(new_pp)
-	new_pp.document_area = self
+	new_pp.document_area = document_area
 	new_pp.belong_to_subject = true
 	new_pp.position = document_spawn.position
 	new_pp.position.x -= (new_pp.size.x / 2)

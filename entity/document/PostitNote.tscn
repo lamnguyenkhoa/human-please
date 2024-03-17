@@ -33,6 +33,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_70jop")
 tabs_visible = false
 
 [node name="Background" type="TextureRect" parent="TabContainer"]
+light_mask = 2
 layout_mode = 2
 texture = ExtResource("2_cl0s2")
 
