@@ -82,3 +82,12 @@ func _on_previous_page_button_pressed() -> void:
 
 func _on_resized() -> void:
 	keep_inside_document_area(position)
+
+func _on_rule_button_pressed() -> void:
+	tab_container.current_tab = 2
+
+func _on_term_button_pressed() -> void:
+	tab_container.current_tab = 4
+	
+func _on_local_map_button_pressed() -> void:
+	tab_container.current_tab = 5
