@@ -18,8 +18,11 @@ func _ready():
 	tween.tween_property(self, "modulate", Color(1, 1, 1, 1), 0.5).set_trans(Tween.TRANS_SINE)
 
 func _input(event):
-	if event.is_action_pressed("right_click") and mouse_in:
-		GameManager.zoom_document(self)
+	if event.is_action_pressed("right_click"):
+		if GameManager.is_in_zoom_view and GameManager.zoomed_doc == self:
+			GameManager.unzoom_document()
+		elif not GameManager.is_in_zoom_view and mouse_in:
+			GameManager.zoom_document(self)
 
 	if event is InputEventMouseButton:
 		if event.pressed and event.get_button_index() == MOUSE_BUTTON_LEFT:
@@ -57,8 +60,8 @@ func _on_destroy_timer_timeout():
 func keep_inside_document_area(new_pos: Vector2):
 	if document_area != null:
 		var document_area_rect = document_area.get_rect()
-		new_pos.x = clamp(new_pos.x, 0, document_area_rect.size.x - size.x)
-		new_pos.y = clamp(new_pos.y, 0, document_area_rect.size.y - size.y)
+		new_pos.x = clamp(new_pos.x, 0, document_area_rect.size.x - (size.x * scale.x))
+		new_pos.y = clamp(new_pos.y, 0, document_area_rect.size.y - (size.y * scale.y))
 	position = new_pos
 
 func show_document_on_top():

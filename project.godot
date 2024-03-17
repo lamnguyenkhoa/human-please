@@ -31,7 +31,7 @@ window/stretch/mode="canvas_items"
 [gui]
 
 theme/custom_font="res://asset/font/VCR_OSD_MONO_1.001.ttf"
-theme/default_font_antialiasing=0
+theme/default_font_multichannel_signed_distance_field=true
 
 [input]
 

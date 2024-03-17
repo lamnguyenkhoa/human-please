@@ -67,6 +67,7 @@ visible = false
 layout_mode = 1
 
 [node name="ZoomView" parent="GameUI" instance=ExtResource("9_ukbc4")]
+visible = false
 layout_mode = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

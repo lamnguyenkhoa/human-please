@@ -10,14 +10,15 @@ var camera_area: CameraArea
 var dialog_area: DialogArea
 var question_area: QuestionArea
 var result_screen: ResultScreen
+var zoom_view: ZoomView
 
 var current_subject: CharacterResource = null
 var subject_count = 0
 var decision_blocker = 0 # If this > 0, you can't press Allow or Deny
 var illegal_allowed = 0
 var legal_denied = 0
-var zoom_view
 var is_in_zoom_view = false
+var zoomed_doc: Control
 
 func start_work():
 	# Reset some stats
@@ -42,7 +43,7 @@ func deny_subject():
 	emit_signal("subject_resolved", false)
 	await get_tree().create_timer(2).timeout
 	load_next_character()
-	
+
 func load_next_character():
 	if work_day == null or working_area == null:
 		return
@@ -65,4 +66,13 @@ func calculate_pax_legal():
 	return true
 
 func zoom_document(doc: MoveableDocument):
-	is_in_zoom_view = not is_in_zoom_view
+	is_in_zoom_view = true
+	zoom_view.visible = true
+	zoom_view.add_item_to_zoom(doc)
+	zoomed_doc = doc
+
+func unzoom_document():
+	is_in_zoom_view = false
+	zoom_view.visible = false
+	zoom_view.return_item()
+	zoomed_doc = null
