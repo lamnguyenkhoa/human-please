@@ -18,6 +18,9 @@ func _ready():
 	tween.tween_property(self, "modulate", Color(1, 1, 1, 1), 0.5).set_trans(Tween.TRANS_SINE)
 
 func _input(event):
+	if event.is_action_pressed("right_click") and mouse_in:
+		GameManager.zoom_document(self)
+
 	if event is InputEventMouseButton:
 		if event.pressed and event.get_button_index() == MOUSE_BUTTON_LEFT:
 			if mouse_in:

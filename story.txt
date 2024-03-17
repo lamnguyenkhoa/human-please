@@ -1,5 +1,6 @@
 Town: Barreniota
 
+- 14 days
 - A normal town, until there a small meteorite striked. Now the town is famous and everyone want to go there.
 - Unknowly, the meteorite also attract the new kind of monster, alternate
 - Alternate divied into 2 types:
@@ -23,9 +24,10 @@ Day 1
 - Nora Galvan, illegal, research geology
 
 Day 2
+- Updated allowed visit reason
 - Rule #3: Need a card about staying location during visit.
 - Rule #4: Duration of stay must less than a week.
-- 4 visitors
+- 7 visitors
 
 Day 3
 - Alternate appear

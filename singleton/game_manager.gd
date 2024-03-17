@@ -16,6 +16,8 @@ var subject_count = 0
 var decision_blocker = 0 # If this > 0, you can't press Allow or Deny
 var illegal_allowed = 0
 var legal_denied = 0
+var zoom_view
+var is_in_zoom_view = false
 
 func start_work():
 	# Reset some stats
@@ -61,3 +63,6 @@ func calculate_pax_legal():
 	if current_subject.bad_visit_reason:
 		return false
 	return true
+
+func zoom_document(doc: MoveableDocument):
+	is_in_zoom_view = not is_in_zoom_view

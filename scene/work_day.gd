@@ -7,4 +7,7 @@ class_name WorkDay
 
 func _ready():
 	GameManager.work_day = self
-	get_node("CanvasLayer/GameUI/CameraArea").date_label.text = date_string
+	var game_ui = get_node("GameUI")
+	game_ui.size.x = ProjectSettings.get_setting("display/window/size/viewport_width")
+	game_ui.size.y = ProjectSettings.get_setting("display/window/size/viewport_height")
+	get_node("GameUI/CameraArea").date_label.text = date_string

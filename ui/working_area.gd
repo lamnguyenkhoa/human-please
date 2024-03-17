@@ -18,7 +18,6 @@ func _ready():
 	for doc in document_area.get_children():
 		if doc is MoveableDocument:
 			doc.document_area = document_area
-			print(doc)
 
 func _on_subject_resolved(_allowed: bool):
 	remove_subject_document()

@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://chh2jhkuq1pai"]
+
+[ext_resource type="Script" path="res://entity/document/postit_note.gd" id="1_ltpus"]
+[ext_resource type="Texture2D" uid="uid://cy1muecppgcnk" path="res://asset/sprite/ui/postit_note.png" id="2_cl0s2"]
+[ext_resource type="FontFile" uid="uid://djcehdoovoysf" path="res://asset/font/Peanut Butter.ttf" id="3_5fc0y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70jop"]
+
+[node name="PostitNote" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 312.0
+offset_top = 80.0
+offset_right = 448.0
+offset_bottom = 208.0
+rotation = -0.0482557
+script = ExtResource("1_ltpus")
+
+[node name="Shadow" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.329412)
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 132.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_70jop")
+tabs_visible = false
+
+[node name="Background" type="TextureRect" parent="TabContainer"]
+layout_mode = 2
+texture = ExtResource("2_cl0s2")
+
+[node name="Content" type="Label" parent="TabContainer/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -56.0
+offset_right = 63.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5fc0y")
+theme_override_font_sizes/font_size = 14
+text = "There's some trouble with lighting today. Use the flashlight if needed.
+         -Mark, ur buddy"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="DestroyTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="resized" from="." to="." method="_on_resized"]
+[connection signal="timeout" from="DestroyTimer" to="TabContainer" method="_on_destroy_timer_timeout"]

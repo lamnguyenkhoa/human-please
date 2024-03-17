@@ -83,7 +83,7 @@ grow_horizontal = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_qoogw")
 theme_override_font_sizes/font_size = 12
-text = "Date: 12/05/2000"
+text = "Issued date: DD/MM/YYYY"
 horizontal_alignment = 1
 
 [node name="DestroyTimer" type="Timer" parent="."]
