@@ -5,9 +5,11 @@
 - [ ] Alternate monster mechanic
   - [ ] Report instead of deny entry
   - [ ] Usually has odd body feature
+- [x] Zoom feature for accessibility
 
 ## Story
 
+- [ ] Intro cutscene
 - [x] Day 0
 - [x] Day 1
 - [ ] Day 2
@@ -30,3 +32,4 @@
 ## Other
 
 - [ ] Fancier main menu
+- [x] VFX for picking up documents

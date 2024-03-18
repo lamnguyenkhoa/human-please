@@ -4,8 +4,8 @@ const SoundEffectsPlayer = preload ("res://addons/sound_manager/sound_effects.gd
 const MusicPlayer = preload ("res://addons/sound_manager/music.gd")
 
 var sound_effects: SoundEffectsPlayer = SoundEffectsPlayer.new(["Sounds", "SFX"], 8)
-var ui_sound_effects: SoundEffectsPlayer = SoundEffectsPlayer.new(["UI", "Interface", "Sounds", "SFX"], 8)
-var music: MusicPlayer = MusicPlayer.new(["Music"], 2)
+var ui_sound_effects: SoundEffectsPlayer = SoundEffectsPlayer.new(["UI", "Interface"], 8)
+var music: MusicPlayer = MusicPlayer.new(["Music", "BGM"], 2)
 
 # var correct_sfx = preload ("res://asset/sfx/351564__bertrof__game-sound-correct-with-delay.ogg")
 # var wrong_sfx = preload ("res://asset/sfx/588654__majetheman__vine-boom-sound-effect.ogg")
@@ -124,10 +124,3 @@ func _show_shared_bus_warning() -> void:
 
 # func play_wrong_sfx():
 # 	SoundManager.play_sound(wrong_sfx, "SFX")
-
-# func play_card_hover_sfx():
-# 	SoundManager.play_sound(card_hover_sfx, "SFX")
-
-# func play_card_select_sfx():
-# 	SoundManager.play_sound(card_select_sfx, "SFX")
-	
