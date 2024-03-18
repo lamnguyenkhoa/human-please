@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://rhslxr0t6o5v"]
+[gd_scene load_steps=15 format=3 uid="uid://rhslxr0t6o5v"]
 
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_y1sn6"]
 [ext_resource type="Resource" uid="uid://b451oxbcvbbxx" path="res://entity/character_data/day1/daniel_smith_day1.tres" id="2_ruqh5"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="8_fgsii"]
 [ext_resource type="PackedScene" uid="uid://xb65vfev8api" path="res://entity/document/AllowedVisitNotice.tscn" id="9_y6hy7"]
 [ext_resource type="PackedScene" uid="uid://up6eaj3xcu5g" path="res://ui/ZoomView.tscn" id="13_spa2q"]
+[ext_resource type="AudioStream" uid="uid://cgoe0ob7iinbo" path="res://asset/music/booth_ambient_440126__blaukreuz.ogg" id="14_l6uew"]
 
 [node name="Day1" type="Node2D"]
 script = ExtResource("1_y1sn6")
@@ -58,3 +59,8 @@ layout_mode = 1
 [node name="ZoomView" parent="GameUI" instance=ExtResource("13_spa2q")]
 visible = false
 layout_mode = 1
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_l6uew")
+autoplay = true
+bus = &"BGM"

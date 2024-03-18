@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://buwmemilvox0o"]
+[gd_scene load_steps=12 format=3 uid="uid://buwmemilvox0o"]
 
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="1_mrj0o"]
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_ol8rn"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="8_whkvw"]
 [ext_resource type="PackedScene" uid="uid://rhslxr0t6o5v" path="res://scene/Day1.tscn" id="9_flwck"]
 [ext_resource type="PackedScene" uid="uid://up6eaj3xcu5g" path="res://ui/ZoomView.tscn" id="10_i56so"]
+[ext_resource type="AudioStream" uid="uid://cgoe0ob7iinbo" path="res://asset/music/booth_ambient_440126__blaukreuz.ogg" id="11_d0d73"]
 [ext_resource type="PackedScene" uid="uid://cu7tx0jfe6p46" path="res://ui/WorkingArea.tscn" id="11_k1ci3"]
 [ext_resource type="PackedScene" uid="uid://cajp41ks5tyef" path="res://ui/QuestionArea.tscn" id="11_mbsvd"]
 
@@ -42,3 +43,8 @@ next_day_scene = ExtResource("9_flwck")
 [node name="ZoomView" parent="GameUI" instance=ExtResource("10_i56so")]
 visible = false
 layout_mode = 1
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_d0d73")
+autoplay = true
+bus = &"BGM"

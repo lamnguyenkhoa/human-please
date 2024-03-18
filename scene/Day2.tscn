@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d3t1coeegq2wg"]
+[gd_scene load_steps=15 format=3 uid="uid://d3t1coeegq2wg"]
 
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_3x04h"]
 [ext_resource type="Resource" uid="uid://bvja6p0i3nlnb" path="res://entity/character_data/day0/earnell_armstrong_day0.tres" id="2_t301v"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bk8176mgri0v5" path="res://asset/sprite/ui/square_light.png" id="10_sdkeg"]
 [ext_resource type="PackedScene" uid="uid://xb65vfev8api" path="res://entity/document/AllowedVisitNotice.tscn" id="11_e1nc0"]
 [ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="12_beiu4"]
+[ext_resource type="AudioStream" uid="uid://cgoe0ob7iinbo" path="res://asset/music/booth_ambient_440126__blaukreuz.ogg" id="14_0rx63"]
 
 [node name="Day2" type="Node2D"]
 script = ExtResource("1_3x04h")
@@ -84,3 +85,8 @@ position = Vector2(192, 192)
 scale = Vector2(4, 4)
 energy = 0.8
 texture = ExtResource("10_sdkeg")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_0rx63")
+autoplay = true
+bus = &"BGM"
