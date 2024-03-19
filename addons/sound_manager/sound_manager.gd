@@ -7,12 +7,8 @@ var sound_effects: SoundEffectsPlayer = SoundEffectsPlayer.new(["Sounds", "SFX"]
 var ui_sound_effects: SoundEffectsPlayer = SoundEffectsPlayer.new(["UI", "Interface"], 8)
 var music: MusicPlayer = MusicPlayer.new(["Music", "BGM"], 2)
 
-# var correct_sfx = preload ("res://asset/sfx/351564__bertrof__game-sound-correct-with-delay.ogg")
-# var wrong_sfx = preload ("res://asset/sfx/588654__majetheman__vine-boom-sound-effect.ogg")
-# var button_hover_sfx = preload ("res://asset/sfx/620568__eminyildirim__ui-click.ogg")
-# var button_click_sfx = preload ("res://asset/sfx/683587__yehawsnail__bubble-pop.ogg")
-# var card_hover_sfx = preload ("res://asset/sfx/217501__vkproduktion__shuffling-cards-hover.ogg")
-# var card_select_sfx = preload ("res://asset/sfx/217501__vkproduktion__shuffling-cards-select.ogg")
+var button_hover_sfx = preload ("res://asset/sfx/button3_677860__el_boss.ogg")
+var ui_button_click_sfx = preload ("res://asset/sfx/button1_333430__brandondelehoy.ogg")
 
 var sound_process_mode: ProcessMode:
 	set(value):
@@ -52,11 +48,11 @@ func set_sound_volume(volume_between_0_and_1) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(sound_effects.bus), linear_to_db(volume_between_0_and_1))
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(ui_sound_effects.bus), linear_to_db(volume_between_0_and_1))
 
-func play_sound(resource: AudioStream, override_bus: String="") -> AudioStreamPlayer:
-	return sound_effects.play(resource, override_bus)
+func play_sound(resource: AudioStream, override_bus: String="", randomize_pitch=false) -> AudioStreamPlayer:
+	return sound_effects.play(resource, override_bus, randomize_pitch)
 
-func play_ui_sound(resource: AudioStream, override_bus: String="") -> AudioStreamPlayer:
-	return ui_sound_effects.play(resource, override_bus)
+func play_ui_sound(resource: AudioStream, override_bus: String="", randomize_pitch=false) -> AudioStreamPlayer:
+	return ui_sound_effects.play(resource, override_bus, randomize_pitch)
 
 func set_default_sound_bus(bus: String) -> void:
 	sound_effects.bus = bus
@@ -113,11 +109,12 @@ func _show_shared_bus_warning() -> void:
 		push_warning("Both music and sounds are using the same bus: %s" % music.bus)
 
 ### Shortcuts
-# func play_button_click_sfx():
-# 	SoundManager.play_sound(button_click_sfx, "SFX")
+# We will put UI and normal SFX into one group SFX
+func play_ui_button_click_sfx():
+	SoundManager.play_sound(ui_button_click_sfx, "SFX", true)
 
-# func play_button_hover_sfx():
-# 	SoundManager.play_sound(button_hover_sfx, "SFX")
+func play_button_hover_sfx():
+	SoundManager.play_sound(button_hover_sfx, "SFX", true)
 
 # func play_correct_sfx():
 # 	SoundManager.play_sound(correct_sfx, "SFX")

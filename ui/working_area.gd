@@ -38,3 +38,4 @@ func spawn_passport():
 	new_pp.position.x -= (new_pp.size.x / 2)
 	new_pp.character_data = GameManager.current_subject
 	new_pp.populate_passport_data()
+	new_pp.play_sfx(new_pp.receive_remove_new_doc_sfx)

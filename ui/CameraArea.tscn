@@ -491,7 +491,7 @@ offset_right = 104.0
 offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(2, 2, 2, 1)
+theme_override_colors/font_color = Color(0, 2, 0.0652704, 1)
 theme_override_font_sizes/font_size = 32
 text = "START WORK"
 
@@ -551,12 +551,21 @@ text = "NEXT SUBJECT ENTERED"
 horizontal_alignment = 1
 uppercase = true
 
+[connection signal="mouse_entered" from="ControlPanel/CameraControl/ZoomIn" to="." method="button_hover_sfx"]
 [connection signal="pressed" from="ControlPanel/CameraControl/ZoomIn" to="." method="_on_zoom_in_pressed"]
+[connection signal="mouse_entered" from="ControlPanel/CameraControl/ZoomOut" to="." method="button_hover_sfx"]
 [connection signal="pressed" from="ControlPanel/CameraControl/ZoomOut" to="." method="_on_zoom_out_pressed"]
+[connection signal="mouse_entered" from="ControlPanel/CameraControl/Up" to="." method="button_hover_sfx"]
 [connection signal="pressed" from="ControlPanel/CameraControl/Up" to="." method="_on_up_pressed"]
+[connection signal="mouse_entered" from="ControlPanel/CameraControl/Left" to="." method="button_hover_sfx"]
 [connection signal="pressed" from="ControlPanel/CameraControl/Left" to="." method="_on_left_pressed"]
+[connection signal="mouse_entered" from="ControlPanel/CameraControl/Right" to="." method="button_hover_sfx"]
 [connection signal="pressed" from="ControlPanel/CameraControl/Right" to="." method="_on_right_pressed"]
+[connection signal="mouse_entered" from="ControlPanel/CameraControl/Down" to="." method="button_hover_sfx"]
 [connection signal="pressed" from="ControlPanel/CameraControl/Down" to="." method="_on_down_pressed"]
+[connection signal="mouse_entered" from="ControlPanel/Allowed" to="." method="button_hover_sfx"]
 [connection signal="pressed" from="ControlPanel/Allowed" to="." method="_on_allowed_pressed"]
+[connection signal="mouse_entered" from="ControlPanel/Denied" to="." method="button_hover_sfx"]
 [connection signal="pressed" from="ControlPanel/Denied" to="." method="_on_denied_pressed"]
+[connection signal="mouse_entered" from="ControlPanel/StartWork" to="." method="button_hover_sfx"]
 [connection signal="pressed" from="ControlPanel/StartWork" to="." method="_on_start_work_pressed"]

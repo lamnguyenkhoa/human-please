@@ -89,32 +89,47 @@ func change_zoom_value(zoom_in: bool):
 	zoom_amount_label.text = "X" + str(val)
 
 func _on_zoom_in_pressed() -> void:
+	button_click_sfx()
 	change_zoom_value(true)
 
 func _on_zoom_out_pressed() -> void:
+	button_click_sfx()
 	change_zoom_value(false)
 
 func _on_up_pressed() -> void:
+	button_click_sfx()
 	var new_val = zoom_area.position.y + BASE_MOVE_DISTANCE * (zoom_area.scale.y - 1)
 	zoom_area.position.y = clamp(new_val, -max_h_distance, max_h_distance)
 
 func _on_left_pressed() -> void:
+	button_click_sfx()
 	var new_val = zoom_area.position.x + BASE_MOVE_DISTANCE * (zoom_area.scale.x - 1)
 	zoom_area.position.x = clamp(new_val, -max_v_distance, max_v_distance)
 
 func _on_down_pressed() -> void:
+	button_click_sfx()
 	var new_val = zoom_area.position.y - BASE_MOVE_DISTANCE * (zoom_area.scale.y - 1)
 	zoom_area.position.y = clamp(new_val, -max_h_distance, max_h_distance)
 
 func _on_right_pressed() -> void:
+	button_click_sfx()
 	var new_val = zoom_area.position.x - BASE_MOVE_DISTANCE * (zoom_area.scale.x - 1)
 	zoom_area.position.x = clamp(new_val, -max_v_distance, max_v_distance)
 
 func _on_denied_pressed() -> void:
+	button_click_sfx()
 	GameManager.deny_subject()
 
 func _on_allowed_pressed() -> void:
+	button_click_sfx()
 	GameManager.allow_subject()
 
 func _on_start_work_pressed() -> void:
+	button_click_sfx()
 	GameManager.start_work()
+
+func button_hover_sfx():
+	SoundManager.play_button_hover_sfx()
+
+func button_click_sfx():
+	SoundManager.play_ui_button_click_sfx()
