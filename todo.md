@@ -25,9 +25,9 @@
 - [ ] Audio setting option
 - [ ] Button hover sfx
 - [ ] Button clicking sfx
-- [ ] Ambient bgm
+- [x] Ambient bgm
 - [ ] Camera control sfx
-- [ ] Document sfx
+- [x] Document sfx
 
 ## Other
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://qibwmrns1nek"]
+[gd_scene load_steps=8 format=3 uid="uid://qibwmrns1nek"]
 
 [ext_resource type="Script" path="res://scene/camera_area.gd" id="1_momrw"]
 [ext_resource type="Texture2D" uid="uid://b35qc7h3wshnn" path="res://asset/sprite/ui/mugshot_background.png" id="2_dum4j"]
@@ -261,6 +261,28 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
+[sub_resource type="Animation" id="Animation_efmlc"]
+resource_name = "blinking"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StartWork:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(2, 2, 2, 1), Color(1, 2, 1, 1), Color(0, 2, 0.0652704, 1), Color(0, 2, 0.0652704, 1), Color(1, 2, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7a85w"]
+_data = {
+"blinking": SubResource("Animation_efmlc")
+}
+
 [node name="CameraArea" type="Control"]
 layout_mode = 3
 anchors_preset = 4
@@ -470,8 +492,14 @@ offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(2, 2, 2, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 32
 text = "START WORK"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ControlPanel"]
+libraries = {
+"": SubResource("AnimationLibrary_7a85w")
+}
+autoplay = "blinking"
 
 [node name="TransitionCover" type="Control" parent="."]
 visible = false
