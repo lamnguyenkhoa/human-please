@@ -9,6 +9,7 @@ var music: MusicPlayer = MusicPlayer.new(["Music", "BGM"], 2)
 
 var button_hover_sfx = preload ("res://asset/sfx/button3_677860__el_boss.ogg")
 var ui_button_click_sfx = preload ("res://asset/sfx/button1_333430__brandondelehoy.ogg")
+var radio_beep_sfx = preload ("res://asset/sfx/radio_beep_259710__alienxxx.ogg")
 
 var sound_process_mode: ProcessMode:
 	set(value):
@@ -115,6 +116,9 @@ func play_ui_button_click_sfx():
 
 func play_button_hover_sfx():
 	SoundManager.play_sound(button_hover_sfx, "SFX", true)
+
+func play_radio_beep_sfx():
+	SoundManager.play_sound(radio_beep_sfx, "SFX", true)
 
 # func play_correct_sfx():
 # 	SoundManager.play_sound(correct_sfx, "SFX")

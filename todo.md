@@ -35,6 +35,7 @@
 - [x] Ambient bgm
 - [x] Camera control sfx
 - [x] Document sfx
+- [x] Dialog sfx
 
 ## Other
 

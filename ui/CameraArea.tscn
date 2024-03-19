@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://qibwmrns1nek"]
+[gd_scene load_steps=10 format=3 uid="uid://qibwmrns1nek"]
 
 [ext_resource type="Script" path="res://scene/camera_area.gd" id="1_momrw"]
 [ext_resource type="Texture2D" uid="uid://b35qc7h3wshnn" path="res://asset/sprite/ui/mugshot_background.png" id="2_dum4j"]
+[ext_resource type="AudioStream" uid="uid://w7mlwfk1sdls" path="res://asset/sfx/wood_step_689416__saha213131.ogg" id="4_5bky7"]
+[ext_resource type="AudioStream" uid="uid://devuwkbtxcivl" path="res://asset/sfx/door_open_15419__pagancow.ogg" id="5_dxhou"]
 [ext_resource type="Texture2D" uid="uid://b4j4hk2l2coy5" path="res://asset/sprite/square.png" id="6_8lm3i"]
 
 [sub_resource type="Shader" id="Shader_apvge"]
@@ -550,6 +552,14 @@ theme_override_font_sizes/font_size = 28
 text = "NEXT SUBJECT ENTERED"
 horizontal_alignment = 1
 uppercase = true
+
+[node name="WoodStepSFX" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(192, 192)
+stream = ExtResource("4_5bky7")
+
+[node name="OpenDoorSFX" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(192, 192)
+stream = ExtResource("5_dxhou")
 
 [connection signal="mouse_entered" from="ControlPanel/CameraControl/ZoomIn" to="." method="button_hover_sfx"]
 [connection signal="pressed" from="ControlPanel/CameraControl/ZoomIn" to="." method="_on_zoom_in_pressed"]

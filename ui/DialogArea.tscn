@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://r3obsn7dyt73"]
+[gd_scene load_steps=6 format=3 uid="uid://r3obsn7dyt73"]
 
 [ext_resource type="Script" path="res://ui/dialog_area.gd" id="1_o87ju"]
 [ext_resource type="PackedScene" uid="uid://c3hm8qfrt1efv" path="res://ui/SubjectDialog.tscn" id="2_mxb55"]
 [ext_resource type="PackedScene" uid="uid://but17v4nmtkk8" path="res://ui/InspectorDialog.tscn" id="3_j166h"]
 [ext_resource type="Texture2D" uid="uid://x0cnt1hy7276" path="res://asset/sprite/ui/audio_transcript.png" id="4_gfmip"]
+[ext_resource type="AudioStream" uid="uid://baf8rvyqv7h8o" path="res://asset/sfx/typewriter_360601__cabled_mess.ogg" id="5_5cjjg"]
 
 [node name="DialogArea" type="Control"]
 layout_mode = 3
@@ -41,3 +42,6 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
+
+[node name="TypewriterSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_5cjjg")

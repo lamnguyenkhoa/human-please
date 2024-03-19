@@ -12,6 +12,8 @@ class_name CameraArea
 @onready var deny_button: Button = $ControlPanel/Denied
 @onready var start_work_button: Button = $ControlPanel/StartWork
 @onready var date_label: Label = $Camera/Date
+@onready var wood_step_sfx: AudioStreamPlayer2D = $WoodStepSFX
+@onready var open_door_sfx: AudioStreamPlayer2D = $OpenDoorSFX
 
 var max_v_distance = 0
 var max_h_distance = 0
@@ -48,6 +50,7 @@ func update_subject_on_camera():
 	subject.visible = true
 
 func first_subject_transition():
+	play_transition_sfx()
 	result_label.text = "Work started"
 	transition_cover.visible = true
 	await get_tree().create_timer(1).timeout
@@ -55,6 +58,7 @@ func first_subject_transition():
 	notify_label.visible = true
 
 func transition_effect(allowed: bool):
+	play_transition_sfx()
 	if allowed:
 		result_label.text = "Subject passed"
 	else:
@@ -87,6 +91,12 @@ func change_zoom_value(zoom_in: bool):
 	zoom_area.position.x = clamp(zoom_area.position.x, -max_v_distance, max_v_distance)
 	zoom_area.position.y = clamp(zoom_area.position.y, -max_h_distance, max_h_distance)
 	zoom_amount_label.text = "X" + str(val)
+
+func play_transition_sfx():
+	wood_step_sfx.pitch_scale = randf_range(0.8, 1.2)
+	open_door_sfx.pitch_scale = randf_range(0.8, 1.2)
+	wood_step_sfx.play()
+	open_door_sfx.play()
 
 func _on_zoom_in_pressed() -> void:
 	button_click_sfx()

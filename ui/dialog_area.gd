@@ -6,6 +6,7 @@ class_name DialogArea
 
 @onready var dialog_container = $ScrollContainer/VBoxContainer
 @onready var scroll_container: ScrollContainer = $ScrollContainer
+@onready var typewriter_sfx: AudioStreamPlayer2D = $TypewriterSFX
 
 var stop_dialog = false
 
@@ -33,6 +34,8 @@ func clear_all_dialog():
 		child.queue_free()
 
 func add_subject_dialog(text: String):
+	typewriter_sfx.pitch_scale = randf_range(0.8, 1.2)
+	typewriter_sfx.play()
 	var new_dialog: DialogEntry = subject_dialog_prefab.instantiate()
 	dialog_container.add_child(new_dialog)
 	new_dialog.update_text("SUBJECT: " + text)
@@ -40,6 +43,8 @@ func add_subject_dialog(text: String):
 	scroll_container.ensure_control_visible(new_dialog)
 
 func add_inspector_dialog(text: String):
+	typewriter_sfx.pitch_scale = randf_range(0.8, 1.2)
+	typewriter_sfx.play()
 	var new_dialog: DialogEntry = inspector_dialog_prefab.instantiate()
 	dialog_container.add_child(new_dialog)
 	new_dialog.update_text("INSPECTOR: " + text)

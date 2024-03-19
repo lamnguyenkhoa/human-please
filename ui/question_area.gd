@@ -81,7 +81,7 @@ func select_random_string(array):
 	return array[randomIndex]
 
 func print_dialog(question: String, answer: String, btn: Button):
-	SoundManager.play_ui_button_click_sfx()
+	button_click_sfx()
 	btn.disabled = true
 	dialog_area.add_inspector_dialog(question)
 	await get_tree().create_timer(1).timeout
@@ -128,10 +128,10 @@ func button_hover_sfx():
 	SoundManager.play_button_hover_sfx()
 
 func button_click_sfx():
-	SoundManager.play_ui_button_click_sfx()
+	SoundManager.play_radio_beep_sfx()
 
 func _on_tab_container_tab_clicked(_tab: int) -> void:
 	SoundManager.play_ui_button_click_sfx()
 
 func _on_tab_container_tab_hovered(_tab: int) -> void:
-	SoundManager.play_button_hover_sfx()
+	button_hover_sfx()
