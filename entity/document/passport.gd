@@ -42,9 +42,3 @@ func random_generate_date(birthdate: String, expired: bool) -> String:
 	var date_str = "%02d/%02d/%04d" % [day, month, year]
 
 	return date_str
-
-func _on_open_button_pressed() -> void:
-	tab_container.current_tab = 1
-
-func _on_close_button_pressed() -> void:
-	tab_container.current_tab = 0

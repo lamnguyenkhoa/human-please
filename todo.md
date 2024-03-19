@@ -36,6 +36,7 @@
 - [x] Camera control sfx
 - [x] Document sfx
 - [x] Dialog sfx
+- [x] Subject transistion sfx
 
 ## Other
 
