@@ -109,6 +109,8 @@ theme_override_fonts/font = ExtResource("3_og5ud")
 text = "What should I do now?"
 text_overrun_behavior = 3
 
+[connection signal="tab_clicked" from="TabContainer" to="." method="_on_tab_container_tab_clicked"]
+[connection signal="tab_hovered" from="TabContainer" to="." method="_on_tab_container_tab_hovered"]
 [connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard1" to="." method="_on_standard_1_pressed"]
 [connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard2" to="." method="_on_standard_2_pressed"]
 [connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard3" to="." method="_on_standard_3_pressed"]

@@ -18,15 +18,22 @@
 - [ ] Day 5
 - [ ] Day 6
 - [ ] Day 7
-- [ ] Newspaper between day, based on subjects get in
+
+## Side stories
+
+- [ ] Newspapers between day, based on subjects get in
+- [ ] side story 1 - murder
+- [ ] side story 2 - missing person
+- [ ] side story 3 - spy
+- [ ] side story 4 - beer festival
 
 ## Audio
 
 - [ ] Audio setting option
-- [ ] Button hover sfx
-- [ ] Button clicking sfx
+- [x] Button hover sfx
+- [x] Button clicking sfx
 - [x] Ambient bgm
-- [ ] Camera control sfx
+- [x] Camera control sfx
 - [x] Document sfx
 
 ## Other

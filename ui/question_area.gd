@@ -54,10 +54,12 @@ func _ready():
 	GameManager.next_subject_readied.connect(_on_next_subject_readied)
 	GameManager.question_area = self
 	dialog_area = get_parent().get_node("DialogArea")
-	for child in get_node("TabContainer/Standard/VBoxContainer").get_children():
+	for child: Button in get_node("TabContainer/Standard/VBoxContainer").get_children():
 		standard_btns.append(child)
-	for child in get_node("TabContainer/Suspicious/VBoxContainer").get_children():
+		child.mouse_entered.connect(button_hover_sfx)
+	for child: Button in get_node("TabContainer/Suspicious/VBoxContainer").get_children():
 		suspicious_btns.append(child)
+		child.mouse_entered.connect(button_hover_sfx)
 	_on_subject_resolved(false) # Disable buttons at the start of game
 
 func _on_subject_resolved(_passed: bool):
@@ -79,6 +81,7 @@ func select_random_string(array):
 	return array[randomIndex]
 
 func print_dialog(question: String, answer: String, btn: Button):
+	SoundManager.play_ui_button_click_sfx()
 	btn.disabled = true
 	dialog_area.add_inspector_dialog(question)
 	await get_tree().create_timer(1).timeout
@@ -120,3 +123,15 @@ func _on_suspicious_2_pressed() -> void:
 	var current_dialog = Utils.get_dialog_data()
 	print_dialog(select_random_string(suspicious_questions[1]),
 		current_dialog.why_appearance, suspicious_btns[1])
+
+func button_hover_sfx():
+	SoundManager.play_button_hover_sfx()
+
+func button_click_sfx():
+	SoundManager.play_ui_button_click_sfx()
+
+func _on_tab_container_tab_clicked(_tab: int) -> void:
+	SoundManager.play_ui_button_click_sfx()
+
+func _on_tab_container_tab_hovered(_tab: int) -> void:
+	SoundManager.play_button_hover_sfx()
