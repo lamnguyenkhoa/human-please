@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://qibwmrns1nek"]
+[gd_scene load_steps=11 format=3 uid="uid://qibwmrns1nek"]
 
 [ext_resource type="Script" path="res://scene/camera_area.gd" id="1_momrw"]
 [ext_resource type="Texture2D" uid="uid://b35qc7h3wshnn" path="res://asset/sprite/ui/mugshot_background.png" id="2_dum4j"]
 [ext_resource type="AudioStream" uid="uid://w7mlwfk1sdls" path="res://asset/sfx/wood_step_689416__saha213131.ogg" id="4_5bky7"]
+[ext_resource type="Texture2D" uid="uid://hd0sj0s7yhim" path="res://asset/sprite/gear.png" id="4_b1pba"]
 [ext_resource type="AudioStream" uid="uid://devuwkbtxcivl" path="res://asset/sfx/door_open_15419__pagancow.ogg" id="5_dxhou"]
 [ext_resource type="Texture2D" uid="uid://b4j4hk2l2coy5" path="res://asset/sprite/square.png" id="6_8lm3i"]
 
@@ -488,14 +489,32 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -104.0
-offset_top = -64.0
+offset_top = -104.0
 offset_right = 104.0
-offset_bottom = -29.0
+offset_bottom = -67.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 2, 0.0652704, 1)
 theme_override_font_sizes/font_size = 32
 text = "START WORK"
+
+[node name="Setting" type="Button" parent="ControlPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -48.0
+offset_right = 62.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "Setting"
+icon = ExtResource("4_b1pba")
+expand_icon = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ControlPanel"]
 libraries = {
@@ -579,3 +598,5 @@ stream = ExtResource("5_dxhou")
 [connection signal="pressed" from="ControlPanel/Denied" to="." method="_on_denied_pressed"]
 [connection signal="mouse_entered" from="ControlPanel/StartWork" to="." method="button_hover_sfx"]
 [connection signal="pressed" from="ControlPanel/StartWork" to="." method="_on_start_work_pressed"]
+[connection signal="mouse_entered" from="ControlPanel/Setting" to="." method="button_hover_sfx"]
+[connection signal="pressed" from="ControlPanel/Setting" to="." method="_on_setting_pressed"]

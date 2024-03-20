@@ -143,3 +143,7 @@ func button_hover_sfx():
 
 func button_click_sfx():
 	SoundManager.play_ui_button_click_sfx()
+
+func _on_setting_pressed() -> void:
+	button_click_sfx()
+	GameManager.open_setting_menu()

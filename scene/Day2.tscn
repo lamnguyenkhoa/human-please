@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d3t1coeegq2wg"]
+[gd_scene load_steps=16 format=3 uid="uid://d3t1coeegq2wg"]
 
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_3x04h"]
 [ext_resource type="Resource" uid="uid://bvja6p0i3nlnb" path="res://entity/character_data/day0/earnell_armstrong_day0.tres" id="2_t301v"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cu7tx0jfe6p46" path="res://ui/WorkingArea.tscn" id="10_eatvi"]
 [ext_resource type="Texture2D" uid="uid://bk8176mgri0v5" path="res://asset/sprite/ui/square_light.png" id="10_sdkeg"]
 [ext_resource type="PackedScene" uid="uid://xb65vfev8api" path="res://entity/document/AllowedVisitNotice.tscn" id="11_e1nc0"]
+[ext_resource type="PackedScene" uid="uid://c4orpco2rb63g" path="res://ui/SettingMenu.tscn" id="11_p5ui1"]
 [ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="12_beiu4"]
 [ext_resource type="AudioStream" uid="uid://cgoe0ob7iinbo" path="res://asset/music/booth_ambient_440126__blaukreuz.ogg" id="14_0rx63"]
 
@@ -67,6 +68,9 @@ layout_mode = 1
 
 [node name="ZoomView" parent="GameUI" instance=ExtResource("9_ukbc4")]
 visible = false
+layout_mode = 1
+
+[node name="SettingMenu" parent="GameUI" instance=ExtResource("11_p5ui1")]
 layout_mode = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

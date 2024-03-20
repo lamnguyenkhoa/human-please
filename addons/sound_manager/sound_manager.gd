@@ -41,12 +41,15 @@ func _init() -> void:
 func get_sound_volume() -> float:
 	return db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index(sound_effects.bus)))
 
-func get_ui_sound_volume() -> float:
-	return db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index(ui_sound_effects.bus)))
-
 func set_sound_volume(volume_between_0_and_1) -> void:
 	_show_shared_bus_warning()
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(sound_effects.bus), linear_to_db(volume_between_0_and_1))
+
+func get_ui_sound_volume() -> float:
+	return db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index(ui_sound_effects.bus)))
+
+func set_ui_sound_volume(volume_between_0_and_1) -> void:
+	_show_shared_bus_warning()
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(ui_sound_effects.bus), linear_to_db(volume_between_0_and_1))
 
 func play_sound(resource: AudioStream, override_bus: String="", randomize_pitch=false) -> AudioStreamPlayer:
@@ -103,6 +106,12 @@ func stop_music(fade_out_duration: float=0.0) -> void:
 
 func set_default_music_bus(bus: String) -> void:
 	music.bus = bus
+
+func get_master_volume() -> float:
+	return db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
+
+func set_master_volume(volume_between_0_and_1) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(volume_between_0_and_1))
 
 ### Helpers
 func _show_shared_bus_warning() -> void:

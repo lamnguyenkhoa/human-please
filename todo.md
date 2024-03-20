@@ -29,7 +29,7 @@
 
 ## Audio
 
-- [ ] Audio setting option
+- [x] Audio setting option
 - [x] Button hover sfx
 - [x] Button clicking sfx
 - [x] Ambient bgm

@@ -11,6 +11,7 @@ var dialog_area: DialogArea
 var question_area: QuestionArea
 var result_screen: ResultScreen
 var zoom_view: ZoomView
+var setting_menu: SettingMenu
 
 var current_subject: CharacterResource = null
 var subject_count = 0
@@ -19,6 +20,12 @@ var illegal_allowed = 0
 var legal_denied = 0
 var is_in_zoom_view = false
 var zoomed_doc: Control
+
+func _ready():
+	SoundManager.set_master_volume(1)
+	SoundManager.set_music_volume(0.8)
+	SoundManager.set_sound_volume(0.8)
+	return
 
 func start_work():
 	# Reset some stats
@@ -76,3 +83,6 @@ func unzoom_document():
 	zoom_view.visible = false
 	zoom_view.return_item()
 	zoomed_doc = null
+
+func open_setting_menu():
+	setting_menu.open()

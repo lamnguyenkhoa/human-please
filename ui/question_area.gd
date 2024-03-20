@@ -43,9 +43,9 @@ var suspicious_questions = [
 		"Your full name, please."
 	],
 	[
-		"Your appearance don't look right to me.",
+		"Your appearance doesn't look right to me.",
 		"You look suspicious.",
-		"Your apearance raise suspicion."
+		"Your appearance raise suspicion."
 	]
 ]
 
