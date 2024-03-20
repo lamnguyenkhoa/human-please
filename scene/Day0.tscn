@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://buwmemilvox0o"]
+[gd_scene load_steps=26 format=3 uid="uid://buwmemilvox0o"]
 
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="1_mrj0o"]
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_ol8rn"]
 [ext_resource type="Resource" uid="uid://bvad1dg57pnki" path="res://entity/character_data/day0/mark_davidson_day0.tres" id="2_5b6jg"]
 [ext_resource type="PackedScene" uid="uid://r3obsn7dyt73" path="res://ui/DialogArea.tscn" id="2_qicx2"]
 [ext_resource type="Resource" uid="uid://bvja6p0i3nlnb" path="res://entity/character_data/day0/earnell_armstrong_day0.tres" id="3_rx682"]
+[ext_resource type="AudioStream" uid="uid://cj1un8frisw5u" path="res://asset/music/The_Stars_and_Stripes_Forever_1929_Sousa.ogg" id="4_gpucv"]
 [ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="8_whkvw"]
 [ext_resource type="PackedScene" uid="uid://rhslxr0t6o5v" path="res://scene/Day1.tscn" id="9_flwck"]
 [ext_resource type="PackedScene" uid="uid://up6eaj3xcu5g" path="res://ui/ZoomView.tscn" id="10_i56so"]
@@ -12,11 +13,45 @@
 [ext_resource type="PackedScene" uid="uid://c4orpco2rb63g" path="res://ui/SettingMenu.tscn" id="11_gyku5"]
 [ext_resource type="PackedScene" uid="uid://cu7tx0jfe6p46" path="res://ui/WorkingArea.tscn" id="11_k1ci3"]
 [ext_resource type="PackedScene" uid="uid://cajp41ks5tyef" path="res://ui/QuestionArea.tscn" id="11_mbsvd"]
+[ext_resource type="Texture2D" uid="uid://bw6j8x37nosyq" path="res://asset/sprite/cutscene/county_location.png" id="13_80y6a"]
+[ext_resource type="Script" path="res://ui/cutscene.gd" id="13_mt7u3"]
+[ext_resource type="Texture2D" uid="uid://cvq84vfo2co1v" path="res://asset/sprite/cutscene/meteor_rain.png" id="14_siqti"]
+[ext_resource type="Texture2D" uid="uid://bm74qc5fpavp6" path="res://asset/sprite/cutscene/broome_town.png" id="14_xqrtw"]
+[ext_resource type="Texture2D" uid="uid://b51n1ymbsgmdm" path="res://asset/sprite/cutscene/news_report.png" id="16_fnoqs"]
+[ext_resource type="Texture2D" uid="uid://deowem57svk3o" path="res://asset/sprite/cutscene/airplane.png" id="18_4cqcu"]
+[ext_resource type="Texture2D" uid="uid://cu3q1hlmc5ice" path="res://asset/sprite/cutscene/inspector.png" id="19_hugcr"]
+[ext_resource type="Texture2D" uid="uid://c7p1htmtfx12p" path="res://asset/sprite/cutscene/superior_officer.png" id="19_pt04q"]
+[ext_resource type="Texture2D" uid="uid://gcyyugg8xmpf" path="res://asset/sprite/cutscene/driving.png" id="21_18uvw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28ubb"]
+
+[sub_resource type="Animation" id="Animation_mx57t"]
+resource_name = "fadeout"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ForegroundCover:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kmm4g"]
+_data = {
+"fadeout": SubResource("Animation_mx57t")
+}
 
 [node name="Day0" type="Node2D"]
 script = ExtResource("1_ol8rn")
 date_string = "12/05/2000"
 today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_5b6jg"), ExtResource("3_rx682")])
+has_cutscene = true
+cutscene_bgm = ExtResource("4_gpucv")
 
 [node name="GameUI" type="Control" parent="."]
 layout_mode = 3
@@ -48,7 +83,311 @@ layout_mode = 1
 [node name="SettingMenu" parent="GameUI" instance=ExtResource("11_gyku5")]
 layout_mode = 1
 
+[node name="Cutscene" type="Control" parent="GameUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("13_mt7u3")
+
+[node name="BackgroundCover" type="ColorRect" parent="GameUI/Cutscene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TabContainer" type="TabContainer" parent="GameUI/Cutscene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_28ubb")
+current_tab = 1
+tabs_visible = false
+
+[node name="TownIntro" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/Cutscene/TabContainer/TownIntro"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 492.0
+offset_bottom = 449.0
+texture = ExtResource("13_80y6a")
+
+[node name="TextureRect2" type="TextureRect" parent="GameUI/Cutscene/TabContainer/TownIntro"]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 112.0
+offset_right = 1176.0
+offset_bottom = 452.0
+texture = ExtResource("14_xqrtw")
+
+[node name="Label" type="Label" parent="GameUI/Cutscene/TabContainer/TownIntro"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 512.0
+offset_right = 1192.0
+offset_bottom = 632.0
+theme_override_font_sizes/font_size = 26
+text = "Broome in Saxum County, once overlooked and forgotten, a town untouched by the rush of modern life.
+
+Life here moved at its own gentle pace, unaffected by the chaos beyond its borders."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/Cutscene/TabContainer/TownIntro"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MeteorNew" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/Cutscene/TabContainer/MeteorNew"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 56.0
+offset_right = 640.0
+offset_bottom = 448.0
+texture = ExtResource("14_siqti")
+
+[node name="TextureRect2" type="TextureRect" parent="GameUI/Cutscene/TabContainer/MeteorNew"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 168.0
+offset_right = 1150.0
+offset_bottom = 384.0
+texture = ExtResource("16_fnoqs")
+
+[node name="Label" type="Label" parent="GameUI/Cutscene/TabContainer/MeteorNew"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 512.0
+offset_right = 1216.0
+offset_bottom = 632.0
+theme_override_font_sizes/font_size = 26
+text = "Reports are coming in of a meteorite shower hitting the outskirts of Broome.
+
+Initial analysis suggests these meteorites may contain rare materials and possibly even signs of extraterrestrial life."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/Cutscene/TabContainer/MeteorNew"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PeopleCome" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/Cutscene/TabContainer/PeopleCome"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 56.0
+offset_right = 944.0
+offset_bottom = 448.0
+texture = ExtResource("18_4cqcu")
+
+[node name="Label" type="Label" parent="GameUI/Cutscene/TabContainer/PeopleCome"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 512.0
+offset_right = 1216.0
+offset_bottom = 632.0
+theme_override_font_sizes/font_size = 26
+text = "Broome, once quiet and unassuming, was now thrust into the spotlight, its streets teeming with eager visitors seeking to unravel its mysteries."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/Cutscene/TabContainer/PeopleCome"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Officer1" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="GameUI/Cutscene/TabContainer/Officer1"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 168.0
+offset_right = 974.0
+offset_bottom = 453.0
+texture = ExtResource("19_pt04q")
+
+[node name="Label" type="RichTextLabel" parent="GameUI/Cutscene/TabContainer/Officer1"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 512.0
+offset_right = 1216.0
+offset_bottom = 632.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=aqua]Superior Officer[/color]: \"You've been selected for a special assignment, Inspector. We need someone to oversee the influx of people into Broome and ensure order is maintained\"."
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/Cutscene/TabContainer/Officer1"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Officer2" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="RichTextLabel" parent="GameUI/Cutscene/TabContainer/Officer2"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 512.0
+offset_right = 1216.0
+offset_bottom = 632.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=aqua]Superior Officer[/color]: \"With the sudden surge in interest due to the meteorite discovery, we can't afford any mishaps. Your job is to regulate access to the town and keep things under control.\"."
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/Cutscene/TabContainer/Officer2"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GameUI/Cutscene/TabContainer/Officer2"]
+offset_left = 440.0
+offset_top = 168.0
+offset_right = 974.0
+offset_bottom = 453.0
+texture = ExtResource("19_pt04q")
+
+[node name="Inspector1" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="RichTextLabel" parent="GameUI/Cutscene/TabContainer/Inspector1"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 512.0
+offset_right = 1216.0
+offset_bottom = 632.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=yellow]Inspector Officer[/color]:  \"Understood, sir. I'll do everything in my power to uphold order and security in Broome\"."
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/Cutscene/TabContainer/Inspector1"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GameUI/Cutscene/TabContainer/Inspector1"]
+offset_left = 376.0
+offset_top = 168.0
+offset_right = 1007.0
+offset_bottom = 448.0
+texture = ExtResource("19_hugcr")
+
+[node name="Depart" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="RichTextLabel" parent="GameUI/Cutscene/TabContainer/Depart"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 512.0
+offset_right = 1216.0
+offset_bottom = 672.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "Assigned to the task of maintaining order, the inspector sets out for Broome, prepared to face the challenges that await.
+
+Yet, beneath the surface of everyday duties and regular tasks, a mysterious aura surrounded the job, suggesting hidden dangers lying in wait."
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/Cutscene/TabContainer/Depart"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GameUI/Cutscene/TabContainer/Depart"]
+offset_left = 456.0
+offset_top = 128.0
+offset_right = 937.0
+offset_bottom = 448.0
+texture = ExtResource("21_18uvw")
+
+[node name="ForegroundCover" type="ColorRect" parent="GameUI/Cutscene"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameUI/Cutscene"]
+libraries = {
+"": SubResource("AnimationLibrary_kmm4g")
+}
+autoplay = "fadeout"
+
+[node name="Timer" type="Timer" parent="GameUI/Cutscene"]
+one_shot = true
+
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_d0d73")
-autoplay = true
 bus = &"BGM"

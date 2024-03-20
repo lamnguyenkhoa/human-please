@@ -9,7 +9,7 @@
 
 ## Story
 
-- [ ] Intro cutscene
+- [x] Intro cutscene
 - [x] Day 0
 - [x] Day 1
 - [ ] Day 2

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dw5gex6j5klfd"]
+[gd_scene load_steps=11 format=3 uid="uid://dw5gex6j5klfd"]
 
 [ext_resource type="Texture2D" uid="uid://dsbtkd1owj325" path="res://asset/sprite/ui/main_menu.png" id="1_81wn2"]
 [ext_resource type="Script" path="res://scene/main_menu.gd" id="1_cgdo5"]
 [ext_resource type="PackedScene" uid="uid://buwmemilvox0o" path="res://scene/Day0.tscn" id="2_a1ppj"]
+[ext_resource type="AudioStream" uid="uid://cgoe0ob7iinbo" path="res://asset/music/booth_ambient_440126__blaukreuz.ogg" id="4_s74fy"]
 
 [sub_resource type="Shader" id="Shader_2ub6l"]
 code = "/*
@@ -399,5 +400,12 @@ libraries = {
 }
 autoplay = "idle"
 
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_s74fy")
+autoplay = true
+bus = &"BGM"
+
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/StartButton" to="." method="button_hover_sfx"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/QuitButton" to="." method="button_hover_sfx"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
