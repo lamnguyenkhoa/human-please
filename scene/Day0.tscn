@@ -114,6 +114,7 @@ current_tab = 1
 tabs_visible = false
 
 [node name="TownIntro" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
+visible = false
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
@@ -157,7 +158,6 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="MeteorNew" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
-visible = false
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
@@ -295,6 +295,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="TextureRect2" type="TextureRect" parent="GameUI/Cutscene/TabContainer/Officer2"]
+layout_mode = 0
 offset_left = 440.0
 offset_top = 168.0
 offset_right = 974.0
@@ -328,6 +329,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="TextureRect2" type="TextureRect" parent="GameUI/Cutscene/TabContainer/Inspector1"]
+layout_mode = 0
 offset_left = 376.0
 offset_top = 168.0
 offset_right = 1007.0
@@ -349,7 +351,7 @@ theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "Assigned to the task of maintaining order, the inspector sets out for Broome, prepared to face the challenges that await.
 
-Yet, beneath the surface of everyday duties and regular tasks, a mysterious aura surrounded the job, suggesting hidden dangers lying in wait."
+Yet, beneath the surface of everyday duties and regular tasks, a mysterious aura surrounded the job. \"It won't be just smooth sailing\", the inspector think."
 autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="GameUI/Cutscene/TabContainer/Depart"]
@@ -363,6 +365,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="TextureRect2" type="TextureRect" parent="GameUI/Cutscene/TabContainer/Depart"]
+layout_mode = 0
 offset_left = 456.0
 offset_top = 128.0
 offset_right = 937.0

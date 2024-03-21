@@ -74,9 +74,11 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.0666667, 0.0666667, 0.0666667, 1)
 
 [node name="FlashLight" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(792, 408)
 scale = Vector2(4.375, 4.375)
 energy = 0.6
@@ -85,6 +87,7 @@ texture = ExtResource("8_ys3h3")
 script = ExtResource("9_3q2os")
 
 [node name="ScreenLight" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(192, 192)
 scale = Vector2(4, 4)
 energy = 0.8
