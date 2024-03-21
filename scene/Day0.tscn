@@ -63,13 +63,13 @@ mouse_filter = 1
 [node name="CameraArea" parent="GameUI" instance=ExtResource("1_mrj0o")]
 layout_mode = 1
 
+[node name="WorkingArea" parent="GameUI" instance=ExtResource("11_k1ci3")]
+layout_mode = 1
+
 [node name="DialogArea" parent="GameUI" instance=ExtResource("2_qicx2")]
 
 [node name="QuestionArea" parent="GameUI" instance=ExtResource("11_mbsvd")]
 offset_left = 896.0
-
-[node name="WorkingArea" parent="GameUI" instance=ExtResource("11_k1ci3")]
-layout_mode = 1
 
 [node name="ResultScreen" parent="GameUI" instance=ExtResource("8_whkvw")]
 visible = false

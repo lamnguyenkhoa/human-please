@@ -9,12 +9,12 @@
 script = ExtResource("1_o20fx")
 openings = Array[String]([])
 identity_verification = "Ah, I forgot. There it is."
-purpose_of_visit = "Despite my casual clothing, I'm a business woman. I come here to negotiate buying some local products here."
+purpose_of_visit = "Despite my casual clothing, I'm a businesswoman. I come here to negotiate buying some local products here."
 duration_of_stay = "Just today, evening at the latest."
 item_in_possession = "I only bring a laptop. Ah, and my set of business cards."
 previous_visit = "Went here once or twice before. I don't remember there is a checkpoint here last time I come though."
 what_your_name = "It's Carol Coleman, officer."
-why_appearance = "That's rude, sir. Please stop it."
+why_appearance = "That's rude, sir. Please stop it. I'm a perfectly normal and legal citizen of America. There's nothing is wrong with me nor my look."
 
 [resource]
 script = ExtResource("1_lwlsi")

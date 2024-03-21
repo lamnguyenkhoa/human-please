@@ -14,7 +14,7 @@ duration_of_stay = "I will stay here for a while, probably one months. Maybe one
 item_in_possession = "I carry a small luggage, which has some clothes, a laptop, some notebooks and a lots of medicine. *Cough*. Sorry, officer."
 previous_visit = "No, I haven't visit this town before, but I have heard about it. Something about a meteor storm happened here? Anyway, I don't care about it."
 what_your_name = "Sir, it's Luther Griffin."
-why_appearance = "What's wrong with my appearance, sir? Even though I'm sick, I think I look OK."
+why_appearance = "What's wrong with my appearance, sir? Even though I'm sick, I think I look fine."
 
 [resource]
 script = ExtResource("3_o1prn")

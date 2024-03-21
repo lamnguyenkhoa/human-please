@@ -1,3 +1,4 @@
+@tool
 extends MoveableDocument
 
 @export_multiline var content: String
@@ -5,5 +6,6 @@ extends MoveableDocument
 @onready var content_label: Label = $TabContainer/Background/Content
 
 func _ready() -> void:
-	super()
+	if not Engine.is_editor_hint():
+		super()
 	content_label.text = content

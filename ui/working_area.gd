@@ -6,6 +6,9 @@ class_name WorkingArea
 
 @onready var document_area = $DocumentArea
 @onready var document_spawn = $DocumentArea/DocumentSpawn
+@onready var anim_player = $AnimationPlayer
+
+var drawer_opened = false
 
 func _ready():
 	GameManager.working_area = self
@@ -39,3 +42,17 @@ func spawn_passport():
 	new_pp.character_data = GameManager.current_subject
 	new_pp.populate_passport_data()
 	new_pp.play_sfx(new_pp.receive_remove_new_doc_sfx)
+
+func _on_open_close_button_pressed() -> void:
+	button_click_sfx()
+	if drawer_opened:
+		anim_player.play_backwards("open_drawer")
+	else:
+		anim_player.play("open_drawer")
+	drawer_opened = !drawer_opened
+
+func button_hover_sfx():
+	SoundManager.play_button_hover_sfx()
+
+func button_click_sfx():
+	SoundManager.play_ui_button_click_sfx()

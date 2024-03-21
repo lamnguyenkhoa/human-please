@@ -1,9 +1,53 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu7tx0jfe6p46"]
+[gd_scene load_steps=14 format=3 uid="uid://cu7tx0jfe6p46"]
 
 [ext_resource type="Script" path="res://ui/working_area.gd" id="1_o44ef"]
 [ext_resource type="Texture2D" uid="uid://byvshjajis80m" path="res://asset/sprite/ui/table_area.png" id="2_38vih"]
+[ext_resource type="Texture2D" uid="uid://81ecgaiqfigs" path="res://asset/sprite/ui/desk_drawer.png" id="3_dchnk"]
 [ext_resource type="PackedScene" uid="uid://oasns4fb3vda" path="res://entity/document/Guidebook.tscn" id="3_f542s"]
+[ext_resource type="Texture2D" uid="uid://dmkk8e6v0vteb" path="res://asset/sprite/ui/black_rug.png" id="3_w3std"]
 [ext_resource type="PackedScene" uid="uid://cvl3ya4vpb43o" path="res://entity/document/USAPassport.tscn" id="5_tmdss"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ocq7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6xfco"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_47h7h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gpndu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qijgj"]
+
+[sub_resource type="Animation" id="Animation_ojqe8"]
+resource_name = "open_drawer"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DocumentArea:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -184)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RugBackground:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -184)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u54c4"]
+_data = {
+"open_drawer": SubResource("Animation_ojqe8")
+}
 
 [node name="WorkingArea" type="Control"]
 layout_mode = 3
@@ -19,7 +63,92 @@ grow_vertical = 0
 script = ExtResource("1_o44ef")
 usa_passport_prefab = ExtResource("5_tmdss")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="RugBackground" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+offset_bottom = 312.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_w3std")
+
+[node name="DeskShadow" type="ColorRect" parent="RugBackground"]
+layout_mode = 0
+offset_top = 256.0
+offset_right = 984.0
+offset_bottom = 576.0
+color = Color(0, 0, 0, 0.329412)
+
+[node name="DrawerArea" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 352.0
+offset_right = 984.0
+offset_bottom = 576.0
+
+[node name="BelowDrawerShadow" type="ColorRect" parent="DrawerArea"]
+layout_mode = 1
+offset_left = 40.0
+offset_top = -32.0
+offset_right = 429.0
+offset_bottom = 207.0
+color = Color(0, 0, 0, 0.329412)
+
+[node name="Drawer1" type="TextureRect" parent="DrawerArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -32.0
+offset_right = -546.0
+offset_bottom = 7.99957
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_dchnk")
+expand_mode = 2
+
+[node name="OpenCloseButton" type="Button" parent="DrawerArea/Drawer1"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -39.9996
+offset_right = -6.0
+offset_bottom = -7.99957
+grow_horizontal = 2
+grow_vertical = 0
+tooltip_text = "Open drawer"
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7ocq7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6xfco")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_47h7h")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_gpndu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qijgj")
+flat = true
+
+[node name="DeskShadowOnDrawer" type="ColorRect" parent="DrawerArea/Drawer1"]
+layout_mode = 1
+offset_left = 8.0
+offset_right = 393.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 0.329412)
+
+[node name="DocumentArea" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="DocumentArea"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,21 +158,12 @@ grow_vertical = 2
 texture = ExtResource("2_38vih")
 expand_mode = 1
 
-[node name="DocumentArea" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 48.0
-offset_right = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="DocumentSpawn" type="Control" parent="DocumentArea"]
 anchors_preset = 0
 offset_left = 480.0
+offset_top = 80.0
 offset_right = 520.0
-offset_bottom = 40.0
+offset_bottom = 120.0
 
 [node name="Guidebook" parent="DocumentArea" instance=ExtResource("3_f542s")]
 layout_mode = 1
@@ -51,3 +171,11 @@ offset_left = 24.0
 offset_top = 256.0
 offset_right = 222.0
 offset_bottom = 512.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u54c4")
+}
+
+[connection signal="mouse_entered" from="DrawerArea/Drawer1/OpenCloseButton" to="." method="button_hover_sfx"]
+[connection signal="pressed" from="DrawerArea/Drawer1/OpenCloseButton" to="." method="_on_open_close_button_pressed"]
