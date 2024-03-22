@@ -40,6 +40,7 @@ func add_subject_dialog(text: String):
 	dialog_container.add_child(new_dialog)
 	new_dialog.update_text("SUBJECT: " + text)
 	await get_tree().process_frame
+	await get_tree().process_frame
 	scroll_container.ensure_control_visible(new_dialog)
 
 func add_inspector_dialog(text: String):
@@ -48,5 +49,6 @@ func add_inspector_dialog(text: String):
 	var new_dialog: DialogEntry = inspector_dialog_prefab.instantiate()
 	dialog_container.add_child(new_dialog)
 	new_dialog.update_text("INSPECTOR: " + text)
+	await get_tree().process_frame
 	await get_tree().process_frame
 	scroll_container.ensure_control_visible(new_dialog)

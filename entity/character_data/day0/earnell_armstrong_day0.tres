@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_nnx17"]
 script = ExtResource("1_h1yrg")
-openings = Array[String](["Hello Inspector, some time the visitors will forget to present their papers.", "Make sure ask them to remind them."])
+openings = Array[String](["Hello Inspector, some time the visitors will forget to present their papers.", "Make sure to ask them to remind them."])
 identity_verification = "Sorry inspector. Here is it."
 purpose_of_visit = "To get a glass of beer. The beer here is quite unique. Care to join me later?"
 duration_of_stay = "Until this incident is over, I suspose. Could be 2 or 3 more months."

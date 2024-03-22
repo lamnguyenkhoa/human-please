@@ -2,7 +2,7 @@ extends Control
 class_name QuestionArea
 
 var standard_btns: Array[Button]
-var suspicious_btns: Array[Button]
+var interrogate_btns: Array[Button]
 var dialog_area: DialogArea
 
 var standard_questions = [
@@ -36,7 +36,7 @@ var standard_questions = [
 	]
 ]
 
-var suspicious_questions = [
+var interrogate_questions = [
 	[
 		"What is your full name?",
 		"Please tell me your full name.",
@@ -57,21 +57,21 @@ func _ready():
 	for child: Button in get_node("TabContainer/Standard/VBoxContainer").get_children():
 		standard_btns.append(child)
 		child.mouse_entered.connect(button_hover_sfx)
-	for child: Button in get_node("TabContainer/Suspicious/VBoxContainer").get_children():
-		suspicious_btns.append(child)
+	for child: Button in get_node("TabContainer/Interrogate/VBoxContainer").get_children():
+		interrogate_btns.append(child)
 		child.mouse_entered.connect(button_hover_sfx)
 	_on_subject_resolved(false) # Disable buttons at the start of game
 
 func _on_subject_resolved(_passed: bool):
 	for btn in standard_btns:
 		btn.disabled = true
-	for btn in suspicious_btns:
+	for btn in interrogate_btns:
 		btn.disabled = true
 
 func _on_next_subject_readied():
 	for btn in standard_btns:
 		btn.disabled = false
-	for btn in suspicious_btns:
+	for btn in interrogate_btns:
 		btn.disabled = false
 
 func select_random_string(array):
@@ -114,15 +114,17 @@ func _on_standard_5_pressed() -> void:
 	print_dialog(select_random_string(standard_questions[4]),
 		current_dialog.previous_visit, standard_btns[4])
 
-func _on_suspicious_1_pressed() -> void:
-	var current_dialog = Utils.get_dialog_data()
-	print_dialog(select_random_string(suspicious_questions[0]),
-		current_dialog.what_your_name, suspicious_btns[0])
+####################
 
-func _on_suspicious_2_pressed() -> void:
+func _on_interrogate_1_pressed() -> void:
 	var current_dialog = Utils.get_dialog_data()
-	print_dialog(select_random_string(suspicious_questions[1]),
-		current_dialog.why_appearance, suspicious_btns[1])
+	print_dialog(select_random_string(interrogate_questions[0]),
+		current_dialog.what_your_name, interrogate_btns[0])
+
+func _on_interrogate_2_pressed() -> void:
+	var current_dialog = Utils.get_dialog_data()
+	print_dialog(select_random_string(interrogate_questions[1]),
+		current_dialog.why_appearance, interrogate_btns[1])
 
 func button_hover_sfx():
 	SoundManager.play_button_hover_sfx()

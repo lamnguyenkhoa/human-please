@@ -52,10 +52,10 @@ func set_ui_sound_volume(volume_between_0_and_1) -> void:
 	_show_shared_bus_warning()
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(ui_sound_effects.bus), linear_to_db(volume_between_0_and_1))
 
-func play_sound(resource: AudioStream, override_bus: String="", randomize_pitch=false) -> AudioStreamPlayer:
+func play_sound(resource: AudioStream, override_bus: String="", randomize_pitch: bool=false) -> AudioStreamPlayer:
 	return sound_effects.play(resource, override_bus, randomize_pitch)
 
-func play_ui_sound(resource: AudioStream, override_bus: String="", randomize_pitch=false) -> AudioStreamPlayer:
+func play_ui_sound(resource: AudioStream, override_bus: String="", randomize_pitch: bool=false) -> AudioStreamPlayer:
 	return ui_sound_effects.play(resource, override_bus, randomize_pitch)
 
 func set_default_sound_bus(bus: String) -> void:

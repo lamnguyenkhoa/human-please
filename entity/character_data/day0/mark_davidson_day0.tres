@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_em7s5"]
 script = ExtResource("1_p2wqj")
-openings = Array[String](["Please read the guidebook to understand the rules. And since today is a training day, you can ignore rule #2.", "You can flip through it by clicking on its right edge. The same apply for most documents, such as passports."])
+openings = Array[String](["Hello inspector, welcome to Broome.", "Please read the guidebook to understand the rules. And since today is a training day, you can ignore rule #2.", "You can flip through it by clicking on its right edge. The same apply for most documents, such as passports."])
 identity_verification = "I already gave it to you, inspector."
 purpose_of_visit = "To give you a trial run, buddy! For the perfect result, you should allow me in and deny Earnie, since his passport is expired."
 duration_of_stay = "As long as I work this job, buddy."

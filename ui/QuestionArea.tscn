@@ -36,8 +36,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_og5ud")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_snson")
+current_tab = 1
 
 [node name="Standard" type="ScrollContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Standard"]
@@ -74,35 +76,34 @@ theme_override_fonts/font = ExtResource("3_og5ud")
 text = "Previous visit"
 text_overrun_behavior = 3
 
-[node name="Suspicious" type="ScrollContainer" parent="TabContainer"]
-visible = false
+[node name="Interrogate" type="ScrollContainer" parent="TabContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Suspicious"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Interrogate"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Suspicious1" type="Button" parent="TabContainer/Suspicious/VBoxContainer"]
+[node name="Interrogate1" type="Button" parent="TabContainer/Interrogate/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_og5ud")
 text = "Question their full name"
 text_overrun_behavior = 3
 
-[node name="Suspicious2" type="Button" parent="TabContainer/Suspicious/VBoxContainer"]
+[node name="Interrogate2" type="Button" parent="TabContainer/Interrogate/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_og5ud")
 text = "Question their appearance"
 text_overrun_behavior = 3
 
-[node name="Contigency" type="ScrollContainer" parent="TabContainer"]
+[node name="Conditional" type="ScrollContainer" parent="TabContainer"]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Contigency"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Conditional"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Contigency1" type="Button" parent="TabContainer/Contigency/VBoxContainer"]
+[node name="Contigency1" type="Button" parent="TabContainer/Conditional/VBoxContainer"]
 visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_og5ud")
@@ -116,5 +117,5 @@ text_overrun_behavior = 3
 [connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard3" to="." method="_on_standard_3_pressed"]
 [connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard4" to="." method="_on_standard_4_pressed"]
 [connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard5" to="." method="_on_standard_5_pressed"]
-[connection signal="pressed" from="TabContainer/Suspicious/VBoxContainer/Suspicious1" to="." method="_on_suspicious_1_pressed"]
-[connection signal="pressed" from="TabContainer/Suspicious/VBoxContainer/Suspicious2" to="." method="_on_suspicious_2_pressed"]
+[connection signal="pressed" from="TabContainer/Interrogate/VBoxContainer/Interrogate1" to="." method="_on_interrogate_1_pressed"]
+[connection signal="pressed" from="TabContainer/Interrogate/VBoxContainer/Interrogate2" to="." method="_on_interrogate_2_pressed"]

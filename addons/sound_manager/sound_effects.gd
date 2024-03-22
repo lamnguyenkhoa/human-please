@@ -5,6 +5,6 @@ func play(resource: AudioStream, override_bus: String="", randomize_pitch=false)
 	if randomize_pitch:
 		player.pitch_scale = randf_range(0.8, 1.2)
 	else:
-		player.pitch = 1
+		player.pitch_scale = 1
 	player.call_deferred("play")
 	return player

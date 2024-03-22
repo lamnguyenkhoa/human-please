@@ -19,7 +19,8 @@ func _input(event: InputEvent) -> void:
 		var max_tab = tab_container.get_tab_count() - 1
 		SoundManager.play_ui_button_click_sfx()
 		if tab_container.current_tab + 1 > max_tab:
-			GameManager.work_day.start_day_after_cutscene(self)
+			visible = false
+			GameManager.work_day.start_day_stuff()
 			cutscene_ended = true
 		else:
 			tab_container.current_tab += 1
