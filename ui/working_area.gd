@@ -9,6 +9,7 @@ class_name WorkingArea
 @onready var anim_player = $AnimationPlayer
 
 var drawer_opened = false
+var open_drawer_sfx = preload ("res://asset/sfx/open_drawer_550361__mattruthsound.ogg")
 
 func _ready():
 	GameManager.working_area = self
@@ -43,10 +44,11 @@ func spawn_passport():
 	new_pp.populate_passport_data()
 	new_pp.play_sfx(new_pp.receive_remove_new_doc_sfx)
 
-func _on_open_close_button_pressed() -> void:
+func _on_open_close_drawer_button_pressed() -> void:
 	button_click_sfx()
+	SoundManager.play_sound(open_drawer_sfx, "SFX", true)
 	if drawer_opened:
-		anim_player.play_backwards("open_drawer")
+		anim_player.play("close_drawer")
 	else:
 		anim_player.play("open_drawer")
 	drawer_opened = !drawer_opened

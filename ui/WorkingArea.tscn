@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cu7tx0jfe6p46"]
+[gd_scene load_steps=15 format=3 uid="uid://cu7tx0jfe6p46"]
 
 [ext_resource type="Script" path="res://ui/working_area.gd" id="1_o44ef"]
 [ext_resource type="Texture2D" uid="uid://byvshjajis80m" path="res://asset/sprite/ui/table_area.png" id="2_38vih"]
@@ -43,9 +43,61 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -184)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DocumentArea/DeskShadowOnDrawer:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ppd3n"]
+resource_name = "close_drawer"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DocumentArea:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, -184), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RugBackground:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, -184), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DocumentArea/DeskShadowOnDrawer:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u54c4"]
 _data = {
+"close_drawer": SubResource("Animation_ppd3n"),
 "open_drawer": SubResource("Animation_ojqe8")
 }
 
@@ -110,7 +162,7 @@ grow_vertical = 2
 texture = ExtResource("3_dchnk")
 expand_mode = 2
 
-[node name="OpenCloseButton" type="Button" parent="DrawerArea/Drawer1"]
+[node name="OpenCloseDrawerButton" type="Button" parent="DrawerArea/Drawer1"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -131,13 +183,6 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_gpndu")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qijgj")
 flat = true
 
-[node name="DeskShadowOnDrawer" type="ColorRect" parent="DrawerArea/Drawer1"]
-layout_mode = 1
-offset_left = 8.0
-offset_right = 393.0
-offset_bottom = 48.0
-color = Color(0, 0, 0, 0.329412)
-
 [node name="DocumentArea" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -147,6 +192,15 @@ offset_right = 2.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="DeskShadowOnDrawer" type="ColorRect" parent="DocumentArea"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+offset_left = 40.0
+offset_top = 504.0
+offset_right = 425.0
+offset_bottom = 552.0
+color = Color(0, 0, 0, 0.329412)
 
 [node name="Background" type="TextureRect" parent="DocumentArea"]
 layout_mode = 1
@@ -177,5 +231,5 @@ libraries = {
 "": SubResource("AnimationLibrary_u54c4")
 }
 
-[connection signal="mouse_entered" from="DrawerArea/Drawer1/OpenCloseButton" to="." method="button_hover_sfx"]
-[connection signal="pressed" from="DrawerArea/Drawer1/OpenCloseButton" to="." method="_on_open_close_button_pressed"]
+[connection signal="mouse_entered" from="DrawerArea/Drawer1/OpenCloseDrawerButton" to="." method="button_hover_sfx"]
+[connection signal="pressed" from="DrawerArea/Drawer1/OpenCloseDrawerButton" to="." method="_on_open_close_drawer_button_pressed"]
