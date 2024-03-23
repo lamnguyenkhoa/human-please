@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://75vynvbd7hni"]
+
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_8s3el"]
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="1_tkwak"]
+[ext_resource type="Texture2D" uid="uid://73cqb3s3kel0" path="res://asset/sprite/character/vish_yo_face.png" id="2_pa205"]
+[ext_resource type="Texture2D" uid="uid://brs1ox0q3tndy" path="res://asset/sprite/character/vish_yo.png" id="4_4uxs1"]
+
+[sub_resource type="Resource" id="Resource_4wt2k"]
+script = ExtResource("1_8s3el")
+openings = Array[String](["Good day, mister officer."])
+identity_verification = "It's there, mister."
+purpose_of_visit = "I come here to study with my professor. He lived here and invited me to come here. I don't really want to but I guess some fieldwork experience is good for me."
+duration_of_stay = "I will be here for around 4 months."
+item_in_possession = "I have my luggage with me, which has clothes, textbooks, a laptop, my phone, some personal toiletries and some food."
+previous_visit = "I came here once with my professor before. I don't like it, to be honest. I prefer the liveliness of the city more."
+what_your_name = "It's Vishnu Yo, sir. But you can call me Vish."
+why_appearance = "Uhh... sorry, sir? Is something wrong with my appearance?"
+
+[resource]
+script = ExtResource("1_tkwak")
+name = "Vishnu Yo"
+sprite = ExtResource("4_4uxs1")
+face_photo = ExtResource("2_pa205")
+gender = 1
+birthdate = "4/2/1970"
+nationality = "USA"
+id_number = "C5329381"
+passport_expired = false
+bad_visit_reason = false
+auto_give_passport = true
+dialog = SubResource("Resource_4wt2k")

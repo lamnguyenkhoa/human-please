@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://cdgq8r7iklsk6"]
+
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="1_chiyl"]
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_f31tc"]
+[ext_resource type="Texture2D" uid="uid://dmyaoqg2xxdg4" path="res://asset/sprite/character/carol_coleman_face.png" id="2_sbrjl"]
+[ext_resource type="Texture2D" uid="uid://dpleoax244247" path="res://asset/sprite/character/carol_coleman.png" id="4_x110g"]
+
+[sub_resource type="Resource" id="Resource_k4p1l"]
+script = ExtResource("1_f31tc")
+openings = Array[String](["Hello officer, I'm back. And this time I got the valid reason for visiting."])
+identity_verification = "Already gave you, officer."
+purpose_of_visit = "You forgot already? It's for business, mister officer. Business. I'm gonna make tons of money by buying those meteorite fragments and re-sell them. Gotta hurry up before the government ban trading them."
+duration_of_stay = "Roughly a day, officer."
+item_in_possession = "Not much. A laptop, phone and my set of business cards."
+previous_visit = "Does it count if I only arrived at the checkpoint but unable to get in? Because that's exactly what I did yesterday."
+what_your_name = "It's Carol Coleman."
+why_appearance = "Why I wear the same clothes like yesterday? Cause I own multiple sets of the same clothes to streamline my morning routine, saving time on deciding what to wear. Isn't it efficient?"
+
+[resource]
+script = ExtResource("1_chiyl")
+name = ""
+sprite = ExtResource("4_x110g")
+face_photo = ExtResource("2_sbrjl")
+gender = 2
+birthdate = "9/2/1978"
+nationality = "USA"
+id_number = "C8520921"
+passport_expired = false
+bad_visit_reason = true
+auto_give_passport = true
+dialog = SubResource("Resource_k4p1l")

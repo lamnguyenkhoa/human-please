@@ -7,8 +7,8 @@
 [node name="AllowedVisitNotice" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 224.0
-offset_bottom = 312.0
+offset_right = 220.0
+offset_bottom = 310.0
 script = ExtResource("1_ja4u5")
 
 [node name="Shadow" type="ColorRect" parent="."]
@@ -47,6 +47,7 @@ theme_override_fonts/font = ExtResource("3_qoogw")
 text = "Allowed purpose 
 of visit:"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Content" type="Label" parent="TabContainer/Background"]
 layout_mode = 1
@@ -64,11 +65,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_qoogw")
 theme_override_font_sizes/font_size = 12
-text = "Research (except Geology)
-Visit familly
-Medical reasons
-Education
-Politic"
+autowrap_mode = 2
 
 [node name="Date" type="Label" parent="TabContainer/Background"]
 layout_mode = 1

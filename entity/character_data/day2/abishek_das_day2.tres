@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://dqh48kdtefunm"]
+
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_snjdj"]
+[ext_resource type="Texture2D" uid="uid://d0t4p2wafphti" path="res://asset/sprite/character/abishek_das.png" id="2_6c4r5"]
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="3_bmmba"]
+[ext_resource type="Texture2D" uid="uid://btwi0jan42ty4" path="res://asset/sprite/character/abishek_das_face.png" id="4_7e78g"]
+
+[sub_resource type="Resource" id="Resource_vjc1j"]
+script = ExtResource("1_snjdj")
+openings = Array[String](["Hey yo!"])
+identity_verification = "Sorry, let me get it. Umm..., where is it? Oh hell no, I think I forgot it man. Can you... let me in without it? It's just a quick visit, I promise!"
+purpose_of_visit = "I'm here for the famous beer in this town! Just the bar and the beer only!"
+duration_of_stay = "Very quick, sir. Nothing to worry about."
+item_in_possession = "I only bring my phone and my wallet here. I do have other stuff but it's in my car parked outside. I don't plan to drive the car in so there is no need to declare what's in there."
+previous_visit = "No man. Who would come to this town in a place of nowhere? Maybe for the beer and the meteor thing they talked on the news, but that's it."
+what_your_name = "It's Abi. Abishek Das."
+why_appearance = "Hey man, don't your mother teach you not to judge a book by cover? Despite the look, I'm a decent person! Really!"
+
+[resource]
+script = ExtResource("3_bmmba")
+name = "Abishek Das"
+sprite = ExtResource("2_6c4r5")
+face_photo = ExtResource("4_7e78g")
+gender = 1
+birthdate = "5/9/1976"
+nationality = "USA"
+id_number = "C5291230"
+passport_expired = false
+auto_give_passport = false
+forgot_passport = true
+bad_visit_reason = false
+dialog = SubResource("Resource_vjc1j")

@@ -1,7 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://d3t1coeegq2wg"]
+[gd_scene load_steps=18 format=3 uid="uid://d3t1coeegq2wg"]
 
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_3x04h"]
-[ext_resource type="Resource" uid="uid://bvja6p0i3nlnb" path="res://entity/character_data/day0/earnell_armstrong_day0.tres" id="2_t301v"]
+[ext_resource type="Resource" uid="uid://cdgq8r7iklsk6" path="res://entity/character_data/day2/carol_coleman_day2.tres" id="2_gwfat"]
+[ext_resource type="Resource" uid="uid://dqh48kdtefunm" path="res://entity/character_data/day2/abishek_das_day2.tres" id="3_sbtvb"]
+[ext_resource type="Resource" uid="uid://75vynvbd7hni" path="res://entity/character_data/day2/vish_yo_day2.tres" id="4_ftybs"]
 [ext_resource type="PackedScene" uid="uid://chh2jhkuq1pai" path="res://entity/document/PostitNote.tscn" id="7_qgtkp"]
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="7_rubju"]
 [ext_resource type="PackedScene" uid="uid://r3obsn7dyt73" path="res://ui/DialogArea.tscn" id="8_o1l0y"]
@@ -20,7 +22,7 @@
 script = ExtResource("1_3x04h")
 day = 2
 date_string = "14/05/2000"
-today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_t301v")])
+today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_gwfat"), ExtResource("3_sbtvb"), ExtResource("4_ftybs")])
 
 [node name="GameUI" type="Control" parent="."]
 layout_mode = 3
@@ -47,7 +49,7 @@ content = "Research
 Medical reasons
 Education
 Politic
-Business (Except selling shovel)"
+Business (Except meteorite-related objects)"
 
 [node name="PostitNote" parent="GameUI/WorkingArea" instance=ExtResource("7_qgtkp")]
 offset_left = 24.0

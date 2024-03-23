@@ -70,6 +70,8 @@ func calculate_pax_legal():
 		return false
 	if current_subject.bad_visit_reason:
 		return false
+	if current_subject.forgot_passport:
+		return false
 	return true
 
 func zoom_document(doc: MoveableDocument):
