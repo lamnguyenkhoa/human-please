@@ -9,7 +9,9 @@ class_name ResultScreen
 @onready var stat: RichTextLabel = $Stat
 @onready var rating: Label = $Rating
 @onready var rating2: Label = $Rating2
-@onready var next_day_button = $NextDay
+@onready var next_day_button = $EndDay
+
+var beep_sfx = preload ("res://asset/sfx/beep_1_33776__jobro.ogg")
 
 func _ready():
 	GameManager.result_screen = self
@@ -38,8 +40,21 @@ func show_result():
 
 	anim_player.play("show_result")
 
-func _on_next_day_pressed() -> void:
+func _on_end_day_pressed() -> void:
+	button_click_sfx()
 	if next_day_scene != null:
 		get_tree().change_scene_to_packed(next_day_scene)
 	else:
-		next_day_button.text = "STILL WIP.\nTHANKS FOR PLAYING"
+		next_day_button.text = "NEXT DAY STILL WIP.\nTHANKS FOR PLAYING"
+
+func play_beep_sfx():
+	SoundManager.play_sound(beep_sfx, "SFX", true)
+
+func button_hover_sfx():
+	SoundManager.play_button_hover_sfx()
+
+func button_click_sfx():
+	SoundManager.play_ui_button_click_sfx()
+
+func _on_end_day_mouse_entered():
+	button_hover_sfx()

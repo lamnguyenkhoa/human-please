@@ -1,11 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://buwmemilvox0o"]
+[gd_scene load_steps=25 format=3 uid="uid://buwmemilvox0o"]
 
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="1_mrj0o"]
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_ol8rn"]
 [ext_resource type="Resource" uid="uid://bvad1dg57pnki" path="res://entity/character_data/day0/mark_davidson_day0.tres" id="2_5b6jg"]
 [ext_resource type="PackedScene" uid="uid://r3obsn7dyt73" path="res://ui/DialogArea.tscn" id="2_qicx2"]
 [ext_resource type="Resource" uid="uid://bvja6p0i3nlnb" path="res://entity/character_data/day0/earnell_armstrong_day0.tres" id="3_rx682"]
-[ext_resource type="AudioStream" uid="uid://cj1un8frisw5u" path="res://asset/music/The_Stars_and_Stripes_Forever_1929_Sousa.ogg" id="4_gpucv"]
 [ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="8_whkvw"]
 [ext_resource type="PackedScene" uid="uid://rhslxr0t6o5v" path="res://scene/Day1.tscn" id="9_flwck"]
 [ext_resource type="PackedScene" uid="uid://up6eaj3xcu5g" path="res://ui/ZoomView.tscn" id="10_i56so"]
@@ -50,8 +49,6 @@ _data = {
 script = ExtResource("1_ol8rn")
 date_string = "12/05/2000"
 today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_5b6jg"), ExtResource("3_rx682")])
-has_cutscene = true
-cutscene_bgm = ExtResource("4_gpucv")
 
 [node name="GameUI" type="Control" parent="."]
 layout_mode = 3
@@ -120,7 +117,7 @@ text = "Training day
 12/05/2000"
 horizontal_alignment = 1
 
-[node name="Cutscene" type="Control" parent="GameUI"]
+[node name="PreworkCutscene" type="Control" parent="GameUI"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -130,7 +127,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("13_mt7u3")
 
-[node name="BackgroundCover" type="ColorRect" parent="GameUI/Cutscene"]
+[node name="BackgroundCover" type="ColorRect" parent="GameUI/PreworkCutscene"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -139,7 +136,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TabContainer" type="TabContainer" parent="GameUI/Cutscene"]
+[node name="TabContainer" type="TabContainer" parent="GameUI/PreworkCutscene"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -150,12 +147,12 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_28ubb")
 current_tab = 1
 tabs_visible = false
 
-[node name="TownIntro" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
+[node name="TownIntro" type="ColorRect" parent="GameUI/PreworkCutscene/TabContainer"]
 visible = false
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="GameUI/Cutscene/TabContainer/TownIntro"]
+[node name="TextureRect" type="TextureRect" parent="GameUI/PreworkCutscene/TabContainer/TownIntro"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 128.0
@@ -163,7 +160,7 @@ offset_right = 492.0
 offset_bottom = 449.0
 texture = ExtResource("13_80y6a")
 
-[node name="TextureRect2" type="TextureRect" parent="GameUI/Cutscene/TabContainer/TownIntro"]
+[node name="TextureRect2" type="TextureRect" parent="GameUI/PreworkCutscene/TabContainer/TownIntro"]
 layout_mode = 0
 offset_left = 696.0
 offset_top = 112.0
@@ -171,7 +168,7 @@ offset_right = 1176.0
 offset_bottom = 452.0
 texture = ExtResource("14_xqrtw")
 
-[node name="Label" type="Label" parent="GameUI/Cutscene/TabContainer/TownIntro"]
+[node name="Label" type="Label" parent="GameUI/PreworkCutscene/TabContainer/TownIntro"]
 layout_mode = 0
 offset_left = 232.0
 offset_top = 512.0
@@ -184,7 +181,7 @@ Life here moved at its own gentle pace, unaffected by the chaos beyond its borde
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="GameUI/Cutscene/TabContainer/TownIntro"]
+[node name="Label2" type="Label" parent="GameUI/PreworkCutscene/TabContainer/TownIntro"]
 layout_mode = 0
 offset_left = 624.0
 offset_top = 704.0
@@ -194,11 +191,11 @@ text = "Click to continue"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="MeteorNew" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
+[node name="MeteorNew" type="ColorRect" parent="GameUI/PreworkCutscene/TabContainer"]
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="GameUI/Cutscene/TabContainer/MeteorNew"]
+[node name="TextureRect" type="TextureRect" parent="GameUI/PreworkCutscene/TabContainer/MeteorNew"]
 layout_mode = 0
 offset_left = 160.0
 offset_top = 56.0
@@ -206,7 +203,7 @@ offset_right = 640.0
 offset_bottom = 448.0
 texture = ExtResource("14_siqti")
 
-[node name="TextureRect2" type="TextureRect" parent="GameUI/Cutscene/TabContainer/MeteorNew"]
+[node name="TextureRect2" type="TextureRect" parent="GameUI/PreworkCutscene/TabContainer/MeteorNew"]
 layout_mode = 0
 offset_left = 768.0
 offset_top = 168.0
@@ -214,7 +211,7 @@ offset_right = 1150.0
 offset_bottom = 384.0
 texture = ExtResource("16_fnoqs")
 
-[node name="Label" type="Label" parent="GameUI/Cutscene/TabContainer/MeteorNew"]
+[node name="Label" type="Label" parent="GameUI/PreworkCutscene/TabContainer/MeteorNew"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 512.0
@@ -227,7 +224,7 @@ Initial analysis suggests these meteorites may contain rare materials and possib
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="GameUI/Cutscene/TabContainer/MeteorNew"]
+[node name="Label2" type="Label" parent="GameUI/PreworkCutscene/TabContainer/MeteorNew"]
 layout_mode = 0
 offset_left = 624.0
 offset_top = 704.0
@@ -237,12 +234,12 @@ text = "Click to continue"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="PeopleCome" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
+[node name="PeopleCome" type="ColorRect" parent="GameUI/PreworkCutscene/TabContainer"]
 visible = false
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="GameUI/Cutscene/TabContainer/PeopleCome"]
+[node name="TextureRect" type="TextureRect" parent="GameUI/PreworkCutscene/TabContainer/PeopleCome"]
 layout_mode = 0
 offset_left = 432.0
 offset_top = 56.0
@@ -250,7 +247,7 @@ offset_right = 944.0
 offset_bottom = 448.0
 texture = ExtResource("18_4cqcu")
 
-[node name="Label" type="Label" parent="GameUI/Cutscene/TabContainer/PeopleCome"]
+[node name="Label" type="Label" parent="GameUI/PreworkCutscene/TabContainer/PeopleCome"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 512.0
@@ -261,7 +258,7 @@ text = "Broome, once quiet and unassuming, was now thrust into the spotlight, it
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="GameUI/Cutscene/TabContainer/PeopleCome"]
+[node name="Label2" type="Label" parent="GameUI/PreworkCutscene/TabContainer/PeopleCome"]
 layout_mode = 0
 offset_left = 624.0
 offset_top = 704.0
@@ -271,12 +268,12 @@ text = "Click to continue"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Officer1" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
+[node name="Officer1" type="ColorRect" parent="GameUI/PreworkCutscene/TabContainer"]
 visible = false
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect2" type="TextureRect" parent="GameUI/Cutscene/TabContainer/Officer1"]
+[node name="TextureRect2" type="TextureRect" parent="GameUI/PreworkCutscene/TabContainer/Officer1"]
 layout_mode = 0
 offset_left = 440.0
 offset_top = 168.0
@@ -284,7 +281,7 @@ offset_right = 974.0
 offset_bottom = 453.0
 texture = ExtResource("19_pt04q")
 
-[node name="Label" type="RichTextLabel" parent="GameUI/Cutscene/TabContainer/Officer1"]
+[node name="Label" type="RichTextLabel" parent="GameUI/PreworkCutscene/TabContainer/Officer1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 512.0
@@ -295,7 +292,7 @@ bbcode_enabled = true
 text = "[color=aqua]Superior Officer[/color]: \"You've been selected for a special assignment, Inspector. We need someone to oversee the influx of people into Broome and ensure order is maintained\"."
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="GameUI/Cutscene/TabContainer/Officer1"]
+[node name="Label2" type="Label" parent="GameUI/PreworkCutscene/TabContainer/Officer1"]
 layout_mode = 0
 offset_left = 624.0
 offset_top = 704.0
@@ -305,12 +302,12 @@ text = "Click to continue"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Officer2" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
+[node name="Officer2" type="ColorRect" parent="GameUI/PreworkCutscene/TabContainer"]
 visible = false
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="RichTextLabel" parent="GameUI/Cutscene/TabContainer/Officer2"]
+[node name="Label" type="RichTextLabel" parent="GameUI/PreworkCutscene/TabContainer/Officer2"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 512.0
@@ -321,7 +318,7 @@ bbcode_enabled = true
 text = "[color=aqua]Superior Officer[/color]: \"With the sudden surge in interest due to the meteorite discovery, we can't afford any mishaps. Your job is to regulate access to the town and keep things under control.\"."
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="GameUI/Cutscene/TabContainer/Officer2"]
+[node name="Label2" type="Label" parent="GameUI/PreworkCutscene/TabContainer/Officer2"]
 layout_mode = 0
 offset_left = 624.0
 offset_top = 704.0
@@ -331,7 +328,7 @@ text = "Click to continue"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="GameUI/Cutscene/TabContainer/Officer2"]
+[node name="TextureRect2" type="TextureRect" parent="GameUI/PreworkCutscene/TabContainer/Officer2"]
 layout_mode = 0
 offset_left = 440.0
 offset_top = 168.0
@@ -339,12 +336,12 @@ offset_right = 974.0
 offset_bottom = 453.0
 texture = ExtResource("19_pt04q")
 
-[node name="Inspector1" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
+[node name="Inspector1" type="ColorRect" parent="GameUI/PreworkCutscene/TabContainer"]
 visible = false
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="RichTextLabel" parent="GameUI/Cutscene/TabContainer/Inspector1"]
+[node name="Label" type="RichTextLabel" parent="GameUI/PreworkCutscene/TabContainer/Inspector1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 512.0
@@ -355,7 +352,7 @@ bbcode_enabled = true
 text = "[color=yellow]Inspector Officer[/color]:  \"Understood, sir. I'll do everything in my power to uphold order and security in Broome\"."
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="GameUI/Cutscene/TabContainer/Inspector1"]
+[node name="Label2" type="Label" parent="GameUI/PreworkCutscene/TabContainer/Inspector1"]
 layout_mode = 0
 offset_left = 624.0
 offset_top = 704.0
@@ -365,7 +362,7 @@ text = "Click to continue"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="GameUI/Cutscene/TabContainer/Inspector1"]
+[node name="TextureRect2" type="TextureRect" parent="GameUI/PreworkCutscene/TabContainer/Inspector1"]
 layout_mode = 0
 offset_left = 376.0
 offset_top = 168.0
@@ -373,12 +370,12 @@ offset_right = 1007.0
 offset_bottom = 448.0
 texture = ExtResource("19_hugcr")
 
-[node name="Depart" type="ColorRect" parent="GameUI/Cutscene/TabContainer"]
+[node name="Depart" type="ColorRect" parent="GameUI/PreworkCutscene/TabContainer"]
 visible = false
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="RichTextLabel" parent="GameUI/Cutscene/TabContainer/Depart"]
+[node name="Label" type="RichTextLabel" parent="GameUI/PreworkCutscene/TabContainer/Depart"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 512.0
@@ -391,7 +388,7 @@ text = "Assigned to the task of maintaining order, the inspector sets out for Br
 Yet, beneath the surface of everyday duties and regular tasks, a mysterious aura surrounded the job. \"It won't be just smooth sailing\", the inspector think."
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="GameUI/Cutscene/TabContainer/Depart"]
+[node name="Label2" type="Label" parent="GameUI/PreworkCutscene/TabContainer/Depart"]
 layout_mode = 0
 offset_left = 624.0
 offset_top = 704.0
@@ -401,7 +398,7 @@ text = "Click to continue"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="GameUI/Cutscene/TabContainer/Depart"]
+[node name="TextureRect2" type="TextureRect" parent="GameUI/PreworkCutscene/TabContainer/Depart"]
 layout_mode = 0
 offset_left = 456.0
 offset_top = 128.0
@@ -409,7 +406,7 @@ offset_right = 937.0
 offset_bottom = 448.0
 texture = ExtResource("21_18uvw")
 
-[node name="ForegroundCover" type="ColorRect" parent="GameUI/Cutscene"]
+[node name="ForegroundCover" type="ColorRect" parent="GameUI/PreworkCutscene"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -419,13 +416,61 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="GameUI/Cutscene"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameUI/PreworkCutscene"]
 libraries = {
 "": SubResource("AnimationLibrary_kmm4g")
 }
 autoplay = "fadeout"
 
-[node name="Timer" type="Timer" parent="GameUI/Cutscene"]
+[node name="Timer" type="Timer" parent="GameUI/PreworkCutscene"]
+one_shot = true
+
+[node name="PostworkCutscene" type="Control" parent="GameUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("13_mt7u3")
+
+[node name="BackgroundCover" type="ColorRect" parent="GameUI/PostworkCutscene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TabContainer" type="TabContainer" parent="GameUI/PostworkCutscene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_28ubb")
+tabs_visible = false
+
+[node name="ForegroundCover" type="ColorRect" parent="GameUI/PostworkCutscene"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameUI/PostworkCutscene"]
+libraries = {
+"": SubResource("AnimationLibrary_kmm4g")
+}
+autoplay = "fadeout"
+
+[node name="Timer" type="Timer" parent="GameUI/PostworkCutscene"]
 one_shot = true
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]

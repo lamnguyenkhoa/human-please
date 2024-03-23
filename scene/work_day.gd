@@ -5,8 +5,8 @@ class_name WorkDay
 @export var date_string: String
 @export var today_subjects: Array[CharacterResource]
 
-@export var has_cutscene = false
-@export var cutscene_bgm: AudioStream
+@export var prework_cutscene: Cutscene
+@export var postwork_cutscene: Cutscene
 
 @onready var bgm: AudioStreamPlayer = $BGM
 @onready var day_announcer = $GameUI/DayAnnouncer
@@ -27,17 +27,21 @@ func _ready():
 	else:
 		day_announcer.get_node("Label").text = "Day {0}\n\n{1}".format([day, date_string])
 	day_announcer.visible = true
-	if has_cutscene:
-		var cutscene = get_node("GameUI/Cutscene")
-		cutscene.start_cutscene()
-		if cutscene_bgm != null:
-			bgm.stream = cutscene_bgm
-			bgm.pitch_scale = 0.6
-			bgm.play()
+	if prework_cutscene != null:
+		start_cutscene(prework_cutscene)
 	else:
-		start_day_stuff()
+		start_workday()
 
-func start_day_stuff():
+func start_cutscene(cutscene: Cutscene):
+	cutscene.start_cutscene()
+	if cutscene.cutscene_bgm != null:
+		bgm.stream = cutscene.cutscene_bgm
+		bgm.pitch_scale = 0.6
+		bgm.play()
+	else:
+		bgm.stop()
+
+func start_workday():
 	bgm.stream = default_bgm
 	bgm.play()
 	day_announcer.visible = true
@@ -45,3 +49,7 @@ func start_day_stuff():
 	SoundManager.play_sound(door_bell_sfx, "SFX")
 	await get_tree().create_timer(2).timeout
 	day_announcer.visible = false
+
+func start_post_work_cutscene():
+	if postwork_cutscene != null:
+		start_cutscene(postwork_cutscene)

@@ -1,4 +1,7 @@
 extends Control
+class_name Cutscene
+
+@export var cutscene_bgm: AudioStream
 
 @onready var tab_container: TabContainer = $TabContainer
 @onready var timer: Timer = $Timer
@@ -20,7 +23,7 @@ func _input(event: InputEvent) -> void:
 		SoundManager.play_ui_button_click_sfx()
 		if tab_container.current_tab + 1 > max_tab:
 			visible = false
-			GameManager.work_day.start_day_stuff()
+			GameManager.work_day.start_workday()
 			cutscene_ended = true
 		else:
 			tab_container.current_tab += 1
