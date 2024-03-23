@@ -42,6 +42,12 @@ func show_result():
 
 func _on_end_day_pressed() -> void:
 	button_click_sfx()
+	if GameManager.work_day.postwork_cutscene != null:
+		GameManager.work_day.start_post_work_cutscene()
+	else:
+		move_to_next_day()
+
+func move_to_next_day():
 	if next_day_scene != null:
 		get_tree().change_scene_to_packed(next_day_scene)
 	else:

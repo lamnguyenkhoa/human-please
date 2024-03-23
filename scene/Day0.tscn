@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://buwmemilvox0o"]
+[gd_scene load_steps=29 format=3 uid="uid://buwmemilvox0o"]
 
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="1_mrj0o"]
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_ol8rn"]
 [ext_resource type="Resource" uid="uid://bvad1dg57pnki" path="res://entity/character_data/day0/mark_davidson_day0.tres" id="2_5b6jg"]
 [ext_resource type="PackedScene" uid="uid://r3obsn7dyt73" path="res://ui/DialogArea.tscn" id="2_qicx2"]
 [ext_resource type="Resource" uid="uid://bvja6p0i3nlnb" path="res://entity/character_data/day0/earnell_armstrong_day0.tres" id="3_rx682"]
+[ext_resource type="AudioStream" uid="uid://cj1un8frisw5u" path="res://asset/music/The_Stars_and_Stripes_Forever_1929_Sousa.ogg" id="4_gpucv"]
 [ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="8_whkvw"]
 [ext_resource type="PackedScene" uid="uid://rhslxr0t6o5v" path="res://scene/Day1.tscn" id="9_flwck"]
 [ext_resource type="PackedScene" uid="uid://up6eaj3xcu5g" path="res://ui/ZoomView.tscn" id="10_i56so"]
@@ -21,6 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://cu3q1hlmc5ice" path="res://asset/sprite/cutscene/inspector.png" id="19_hugcr"]
 [ext_resource type="Texture2D" uid="uid://c7p1htmtfx12p" path="res://asset/sprite/cutscene/superior_officer.png" id="19_pt04q"]
 [ext_resource type="Texture2D" uid="uid://gcyyugg8xmpf" path="res://asset/sprite/cutscene/driving.png" id="21_18uvw"]
+[ext_resource type="Texture2D" uid="uid://ckfjivs516yth" path="res://asset/sprite/cutscene/beer_bar.png" id="22_hkbty"]
+[ext_resource type="Texture2D" uid="uid://trhhrji0ahtt" path="res://asset/sprite/cutscene/inspector_home.png" id="23_0psbb"]
+[ext_resource type="Texture2D" uid="uid://dtxy23mc4navr" path="res://asset/sprite/cutscene/bed_lamp.png" id="24_6jpxh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28ubb"]
 
@@ -45,10 +49,12 @@ _data = {
 "fadeout": SubResource("Animation_mx57t")
 }
 
-[node name="Day0" type="Node2D"]
+[node name="Day0" type="Node2D" node_paths=PackedStringArray("prework_cutscene", "postwork_cutscene")]
 script = ExtResource("1_ol8rn")
 date_string = "12/05/2000"
 today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_5b6jg"), ExtResource("3_rx682")])
+prework_cutscene = NodePath("GameUI/PreworkCutscene")
+postwork_cutscene = NodePath("GameUI/PostworkCutscene")
 
 [node name="GameUI" type="Control" parent="."]
 layout_mode = 3
@@ -126,6 +132,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("13_mt7u3")
+cutscene_bgm = ExtResource("4_gpucv")
 
 [node name="BackgroundCover" type="ColorRect" parent="GameUI/PreworkCutscene"]
 layout_mode = 1
@@ -434,6 +441,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("13_mt7u3")
+is_post_work = true
 
 [node name="BackgroundCover" type="ColorRect" parent="GameUI/PostworkCutscene"]
 layout_mode = 1
@@ -452,7 +460,153 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_28ubb")
+current_tab = 1
 tabs_visible = false
+
+[node name="BeerTalk" type="ColorRect" parent="GameUI/PostworkCutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/PostworkCutscene/TabContainer/BeerTalk"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 144.0
+offset_right = 930.0
+offset_bottom = 444.0
+texture = ExtResource("22_hkbty")
+
+[node name="Label" type="Label" parent="GameUI/PostworkCutscene/TabContainer/BeerTalk"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 512.0
+offset_right = 1192.0
+offset_bottom = 644.0
+theme_override_font_sizes/font_size = 26
+text = "After the training session, you and Officer Earnell go the the local bar to quench your thirst.
+
+Just like he said, the beers here is unlike anything else you have ever drink."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/PostworkCutscene/TabContainer/BeerTalk"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="BeerTalk2" type="ColorRect" parent="GameUI/PostworkCutscene/TabContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/PostworkCutscene/TabContainer/BeerTalk2"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 144.0
+offset_right = 930.0
+offset_bottom = 444.0
+texture = ExtResource("22_hkbty")
+
+[node name="Label" type="RichTextLabel" parent="GameUI/PostworkCutscene/TabContainer/BeerTalk2"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 512.0
+offset_right = 1192.0
+offset_bottom = 644.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=aqua]Officer Earnell[/color]: \"Pretty nice, isn't it? Welcome to the town, I hope we can be a good team.\"
+
+\"You should get some rest soon, the journey here must be tiring.\""
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/PostworkCutscene/TabContainer/BeerTalk2"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="GoHome" type="ColorRect" parent="GameUI/PostworkCutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/PostworkCutscene/TabContainer/GoHome"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 128.0
+offset_right = 928.0
+offset_bottom = 448.0
+texture = ExtResource("23_0psbb")
+
+[node name="Label" type="RichTextLabel" parent="GameUI/PostworkCutscene/TabContainer/GoHome"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 512.0
+offset_right = 1192.0
+offset_bottom = 644.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "And thus, you went back to your new house. 
+
+The government-provided accomodation is suprisingly nice, though that make you skeptical about your mission, since these sort of treatments usually come with strings attached."
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/PostworkCutscene/TabContainer/GoHome"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="GoHome2" type="ColorRect" parent="GameUI/PostworkCutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/PostworkCutscene/TabContainer/GoHome2"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 128.0
+offset_right = 928.0
+offset_bottom = 448.0
+texture = ExtResource("24_6jpxh")
+
+[node name="Label" type="RichTextLabel" parent="GameUI/PostworkCutscene/TabContainer/GoHome2"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 512.0
+offset_right = 1192.0
+offset_bottom = 672.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "But the day is long, and you are tired...
+
+\"Let's worry about that later. Not much I can do now anyway.\", you thought.
+
+...and you fall asleep."
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/PostworkCutscene/TabContainer/GoHome2"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="ForegroundCover" type="ColorRect" parent="GameUI/PostworkCutscene"]
 visible = false
