@@ -42,3 +42,4 @@ func _on_bgm_slider_value_changed(value: float) -> void:
 	if not is_starting_up:
 		button_click_sfx()
 	SoundManager.set_music_volume(value / 100)
+

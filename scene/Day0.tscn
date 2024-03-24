@@ -83,9 +83,6 @@ next_day_scene = ExtResource("9_flwck")
 visible = false
 layout_mode = 1
 
-[node name="SettingMenu" parent="GameUI" instance=ExtResource("11_gyku5")]
-layout_mode = 1
-
 [node name="DayAnnouncer" type="Control" parent="GameUI"]
 visible = false
 layout_mode = 1
@@ -630,3 +627,8 @@ one_shot = true
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_d0d73")
 bus = &"BGM"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SettingMenu" parent="CanvasLayer" instance=ExtResource("11_gyku5")]
+visible = false

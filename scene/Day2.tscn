@@ -18,13 +18,12 @@
 [ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="12_beiu4"]
 [ext_resource type="AudioStream" uid="uid://cgoe0ob7iinbo" path="res://asset/music/booth_ambient_440126__blaukreuz.ogg" id="14_0rx63"]
 
-[node name="Day2" type="Node2D" node_paths=PackedStringArray("screen_light", "dark_overlay")]
+[node name="Day2" type="Node2D"]
 script = ExtResource("1_3x04h")
 day = 2
 date_string = "14/05/2000"
 today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_gwfat"), ExtResource("3_sbtvb"), ExtResource("4_ftybs"), ExtResource("5_j0a52")])
-screen_light = NodePath("ScreenLight")
-dark_overlay = NodePath("ScreenLight")
+lightout_after_n_second = 30
 
 [node name="GameUI" type="Control" parent="."]
 layout_mode = 3
@@ -81,9 +80,6 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="SettingMenu" parent="GameUI" instance=ExtResource("11_p5ui1")]
-layout_mode = 1
-
 [node name="DayAnnouncer" type="Control" parent="GameUI"]
 visible = false
 layout_mode = 1
@@ -132,7 +128,21 @@ scale = Vector2(4, 4)
 energy = 0.5
 texture = ExtResource("10_sdkeg")
 
+[node name="ScreenLight2" type="PointLight2D" parent="ScreenLight"]
+position = Vector2(1.75, 129.875)
+scale = Vector2(0.535156, 0.248047)
+energy = 0.5
+texture = ExtResource("10_sdkeg")
+
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_0rx63")
 autoplay = true
 bus = &"BGM"
+
+[node name="LightoutTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SettingMenu" parent="CanvasLayer" instance=ExtResource("11_p5ui1")]
+visible = false

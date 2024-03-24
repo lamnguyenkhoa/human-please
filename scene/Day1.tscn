@@ -63,9 +63,6 @@ next_day_scene = ExtResource("13_e8k2m")
 visible = false
 layout_mode = 1
 
-[node name="SettingMenu" parent="GameUI" instance=ExtResource("14_dx7wa")]
-layout_mode = 1
-
 [node name="DayAnnouncer" type="Control" parent="GameUI"]
 visible = false
 layout_mode = 1
@@ -107,3 +104,8 @@ horizontal_alignment = 1
 stream = ExtResource("14_l6uew")
 autoplay = true
 bus = &"BGM"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SettingMenu" parent="CanvasLayer" instance=ExtResource("14_dx7wa")]
+visible = false

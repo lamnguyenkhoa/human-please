@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://ui/setting_menu.gd" id="1_xbnep"]
 
 [node name="SettingMenu" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,6 +21,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.521569)
 
 [node name="TabContainer" type="TabContainer" parent="."]
+light_mask = 0
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
