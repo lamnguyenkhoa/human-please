@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://domin0o44vgw0"]
+
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_86yv7"]
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="1_nlxiy"]
+[ext_resource type="Texture2D" uid="uid://dpslvehiy0tsd" path="res://asset/sprite/character/tuan_ngo_face.png" id="2_chobe"]
+[ext_resource type="Texture2D" uid="uid://d3dfpwbexec30" path="res://asset/sprite/character/tuan_ngo.png" id="4_8fvbn"]
+
+[sub_resource type="Resource" id="Resource_2re4j"]
+script = ExtResource("1_86yv7")
+openings = Array[String]([])
+identity_verification = "The document in question is already on the table."
+purpose_of_visit = "I come here to visit my dear friend, who lived and studied in the lovely town."
+duration_of_stay = "For 2 to 3 of sunrises. Don't want to overstay my welcmome."
+item_in_possession = "I only bring the essentials. 3 shirts, 2 cargo pants, 1 shorts, 1 toothbrush, 1 bottle of water, my bag, my wallet and my phone."
+previous_visit = "Last time I came here is for my friend's birthday party. Maybe half a year ago."
+what_your_name = "My name is Tuan Nguyen, but my friend usually call me Tuan Tuan."
+why_appearance = "Such clean and bright clothes in this weather? Without a single stain? I simply take care of my appearance a bit more than normal."
+
+[resource]
+script = ExtResource("1_nlxiy")
+name = "Tuan Ngo"
+sprite = ExtResource("4_8fvbn")
+face_photo = ExtResource("2_chobe")
+gender = 1
+birthdate = "14/7/1976"
+nationality = "USA"
+id_number = "C8530293"
+passport_expired = false
+auto_give_passport = true
+forgot_passport = false
+bad_visit_reason = true
+dialog = SubResource("Resource_2re4j")

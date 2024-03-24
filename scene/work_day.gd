@@ -17,6 +17,8 @@ class_name WorkDay
 var default_bgm = preload ("res://asset/music/booth_ambient_440126__blaukreuz.ogg")
 var open_door_sfx = preload ("res://asset/sfx/door_open_15419__pagancow.ogg")
 var door_bell_sfx = preload ("res://asset/sfx/door_bell_571674__nachtmahrtv.ogg")
+var power_cut_sfx = preload ("res://asset/sfx/power_cut_400194__ninjatrappeur.ogg")
+
 var screen_light: PointLight2D
 var dark_overlay: CanvasModulate
 var lightout_timer: Timer
@@ -67,12 +69,13 @@ func start_timer_lightout():
     dark_overlay = get_node("DarkOverlay")
     lightout_timer = get_node("LightoutTimer")
     screen_light.visible = false
-    dark_overlay.visible= false
+    dark_overlay.visible = false
     lightout_timer.start(lightout_after_n_second)
     lightout_timer.timeout.connect(lightout)
 
 func lightout():
-    # TODO: Play lightout SFX
+    SoundManager.play_sound(power_cut_sfx, "SFX", true)
+    bgm.stop()
     dark_overlay.visible = true
     if not GameManager.is_in_zoom_view:
         screen_light.visible = true

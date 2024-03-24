@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://d3t1coeegq2wg"]
+[gd_scene load_steps=19 format=3 uid="uid://d3t1coeegq2wg"]
 
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_3x04h"]
 [ext_resource type="Resource" uid="uid://cdgq8r7iklsk6" path="res://entity/character_data/day2/carol_coleman_day2.tres" id="2_gwfat"]
 [ext_resource type="Resource" uid="uid://dqh48kdtefunm" path="res://entity/character_data/day2/abishek_das_day2.tres" id="3_sbtvb"]
 [ext_resource type="Resource" uid="uid://75vynvbd7hni" path="res://entity/character_data/day2/vish_yo_day2.tres" id="4_ftybs"]
 [ext_resource type="Resource" uid="uid://b6hr5uh0nvdps" path="res://entity/character_data/day2/pratima_sanchez_day2.tres" id="5_j0a52"]
+[ext_resource type="Resource" uid="uid://domin0o44vgw0" path="res://entity/character_data/day2/tuan_ngo_day2.tres" id="6_0sogx"]
 [ext_resource type="PackedScene" uid="uid://chh2jhkuq1pai" path="res://entity/document/PostitNote.tscn" id="7_qgtkp"]
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="7_rubju"]
 [ext_resource type="PackedScene" uid="uid://r3obsn7dyt73" path="res://ui/DialogArea.tscn" id="8_o1l0y"]
@@ -22,7 +23,7 @@
 script = ExtResource("1_3x04h")
 day = 2
 date_string = "14/05/2000"
-today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_gwfat"), ExtResource("3_sbtvb"), ExtResource("4_ftybs"), ExtResource("5_j0a52")])
+today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_gwfat"), ExtResource("3_sbtvb"), ExtResource("4_ftybs"), ExtResource("5_j0a52"), ExtResource("6_0sogx")])
 lightout_after_n_second = 30
 
 [node name="GameUI" type="Control" parent="."]
@@ -58,7 +59,7 @@ offset_left = 24.0
 offset_top = 64.0
 offset_right = 164.0
 offset_bottom = 196.0
-content = "There's some trouble with lighting today. Use the flashlight if needed. It's in the table drawer.
+content = "There's some trouble with the lighting today. Use the flashlight if needed. It's in the table drawer.
          -Mark, ur buddy"
 
 [node name="FlashlightTool" parent="GameUI/WorkingArea" instance=ExtResource("9_pg102")]
@@ -119,7 +120,7 @@ horizontal_alignment = 1
 
 [node name="DarkOverlay" type="CanvasModulate" parent="."]
 visible = false
-color = Color(0.227451, 0.227451, 0.227451, 1)
+color = Color(0.164706, 0.164706, 0.164706, 1)
 
 [node name="ScreenLight" type="PointLight2D" parent="."]
 visible = false

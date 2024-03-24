@@ -6,6 +6,11 @@
   - [ ] Report instead of deny entry
   - [ ] Usually has odd body feature
 - [x] Zoom feature for accessibility
+- [ ] Work result reward / penalty
+- [ ] Lightout
+- [ ] Fixing camera
+- [ ] Inspect detailed inventory
+- [ ] Conditional questions
 
 ## Story
 
@@ -22,6 +27,8 @@
 ## Side stories
 
 - [ ] Newspapers between day, based on subjects get in
+  - [ ] Businesswoman get rich
+  - [ ] 4 Michelin star beer
 - [ ] side story 1 - murder
 - [ ] side story 2 - missing person
 - [ ] side story 3 - spy
