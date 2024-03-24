@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://d3t1coeegq2wg"]
+[gd_scene load_steps=18 format=3 uid="uid://d3t1coeegq2wg"]
 
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_3x04h"]
 [ext_resource type="Resource" uid="uid://cdgq8r7iklsk6" path="res://entity/character_data/day2/carol_coleman_day2.tres" id="2_gwfat"]
 [ext_resource type="Resource" uid="uid://dqh48kdtefunm" path="res://entity/character_data/day2/abishek_das_day2.tres" id="3_sbtvb"]
 [ext_resource type="Resource" uid="uid://75vynvbd7hni" path="res://entity/character_data/day2/vish_yo_day2.tres" id="4_ftybs"]
+[ext_resource type="Resource" uid="uid://b6hr5uh0nvdps" path="res://entity/character_data/day2/pratima_sanchez_day2.tres" id="5_j0a52"]
 [ext_resource type="PackedScene" uid="uid://chh2jhkuq1pai" path="res://entity/document/PostitNote.tscn" id="7_qgtkp"]
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="7_rubju"]
 [ext_resource type="PackedScene" uid="uid://r3obsn7dyt73" path="res://ui/DialogArea.tscn" id="8_o1l0y"]
@@ -17,12 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="12_beiu4"]
 [ext_resource type="AudioStream" uid="uid://cgoe0ob7iinbo" path="res://asset/music/booth_ambient_440126__blaukreuz.ogg" id="14_0rx63"]
 
-[node name="Day2" type="Node2D" node_paths=PackedStringArray("screen_light")]
+[node name="Day2" type="Node2D" node_paths=PackedStringArray("screen_light", "dark_overlay")]
 script = ExtResource("1_3x04h")
 day = 2
 date_string = "14/05/2000"
-today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_gwfat"), ExtResource("3_sbtvb"), ExtResource("4_ftybs")])
+today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_gwfat"), ExtResource("3_sbtvb"), ExtResource("4_ftybs"), ExtResource("5_j0a52")])
 screen_light = NodePath("ScreenLight")
+dark_overlay = NodePath("ScreenLight")
 
 [node name="GameUI" type="Control" parent="."]
 layout_mode = 3

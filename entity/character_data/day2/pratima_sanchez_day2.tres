@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://b6hr5uh0nvdps"]
+
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_52qqc"]
+[ext_resource type="Texture2D" uid="uid://4q3se080yj1q" path="res://asset/sprite/character/pratima_sanchez_face.png" id="2_tek7y"]
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="3_7unnn"]
+[ext_resource type="Texture2D" uid="uid://fxwdetmcks00" path="res://asset/sprite/character/pratima_sanchez.png" id="4_i67l1"]
+
+[sub_resource type="Resource" id="Resource_upqc4"]
+script = ExtResource("1_52qqc")
+openings = Array[String]([])
+identity_verification = "It's already on the table, mate."
+purpose_of_visit = "I come here to do business with the local tobacco shop. Do you smoke, offier?"
+duration_of_stay = "One day only."
+item_in_possession = "I just have my phone, cigarettes and a lighter."
+previous_visit = "Yes, I came here before. Usually once a month."
+what_your_name = "It's Pratima Sanchez, officer."
+why_appearance = "Maybe I smoke too much? Other than that I think my appearance is normal."
+
+[resource]
+script = ExtResource("3_7unnn")
+name = "Pratima Sanchez"
+sprite = ExtResource("4_i67l1")
+face_photo = ExtResource("2_tek7y")
+gender = 1
+birthdate = "5/6/1976"
+nationality = "USA"
+id_number = "C9573284"
+passport_expired = false
+auto_give_passport = true
+forgot_passport = false
+bad_visit_reason = false
+dialog = SubResource("Resource_upqc4")

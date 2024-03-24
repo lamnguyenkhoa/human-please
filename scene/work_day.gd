@@ -8,6 +8,7 @@ class_name WorkDay
 @export var prework_cutscene: Cutscene
 @export var postwork_cutscene: Cutscene
 @export var screen_light: PointLight2D
+@export var dark_overlay: PointLight2D
 
 @onready var bgm: AudioStreamPlayer = $BGM
 @onready var day_announcer = $GameUI/DayAnnouncer
