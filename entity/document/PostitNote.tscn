@@ -11,8 +11,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = 312.0
 offset_top = 80.0
-offset_right = 448.0
-offset_bottom = 208.0
+offset_right = 452.0
+offset_bottom = 212.0
 rotation = -0.0482557
 script = ExtResource("1_ltpus")
 
@@ -33,7 +33,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_70jop")
 tabs_visible = false
 
 [node name="Background" type="TextureRect" parent="TabContainer"]
-light_mask = 2
+light_mask = 3
 layout_mode = 2
 texture = ExtResource("2_cl0s2")
 
@@ -53,8 +53,6 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_5fc0y")
 theme_override_font_sizes/font_size = 14
-text = "There's some trouble with lighting today. Use the flashlight if needed.
-         -Mark, ur buddy"
 vertical_alignment = 1
 autowrap_mode = 2
 

@@ -79,12 +79,16 @@ func zoom_document(doc: MoveableDocument):
 	zoom_view.visible = true
 	zoom_view.add_item_to_zoom(doc)
 	zoomed_doc = doc
+	if work_day.screen_light != null:
+		work_day.screen_light.visible = false
 
 func unzoom_document():
 	is_in_zoom_view = false
 	zoom_view.visible = false
 	zoom_view.return_item()
 	zoomed_doc = null
+	if work_day.screen_light != null:
+		work_day.screen_light.visible = true
 
 func open_setting_menu():
 	setting_menu.open()

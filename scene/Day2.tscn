@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d3t1coeegq2wg"]
+[gd_scene load_steps=17 format=3 uid="uid://d3t1coeegq2wg"]
 
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_3x04h"]
 [ext_resource type="Resource" uid="uid://cdgq8r7iklsk6" path="res://entity/character_data/day2/carol_coleman_day2.tres" id="2_gwfat"]
@@ -7,8 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chh2jhkuq1pai" path="res://entity/document/PostitNote.tscn" id="7_qgtkp"]
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="7_rubju"]
 [ext_resource type="PackedScene" uid="uid://r3obsn7dyt73" path="res://ui/DialogArea.tscn" id="8_o1l0y"]
-[ext_resource type="Texture2D" uid="uid://dsqwkcgi28hul" path="res://asset/sprite/ui/circle_light.png" id="8_ys3h3"]
-[ext_resource type="Script" path="res://entity/tool/flashlight.gd" id="9_3q2os"]
+[ext_resource type="PackedScene" uid="uid://dgh5j07y8yrea" path="res://entity/tool/FlashlightItem.tscn" id="9_pg102"]
 [ext_resource type="PackedScene" uid="uid://cajp41ks5tyef" path="res://ui/QuestionArea.tscn" id="9_ra8jr"]
 [ext_resource type="PackedScene" uid="uid://up6eaj3xcu5g" path="res://ui/ZoomView.tscn" id="9_ukbc4"]
 [ext_resource type="PackedScene" uid="uid://cu7tx0jfe6p46" path="res://ui/WorkingArea.tscn" id="10_eatvi"]
@@ -18,11 +17,12 @@
 [ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="12_beiu4"]
 [ext_resource type="AudioStream" uid="uid://cgoe0ob7iinbo" path="res://asset/music/booth_ambient_440126__blaukreuz.ogg" id="14_0rx63"]
 
-[node name="Day2" type="Node2D"]
+[node name="Day2" type="Node2D" node_paths=PackedStringArray("screen_light")]
 script = ExtResource("1_3x04h")
 day = 2
 date_string = "14/05/2000"
 today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_gwfat"), ExtResource("3_sbtvb"), ExtResource("4_ftybs")])
+screen_light = NodePath("ScreenLight")
 
 [node name="GameUI" type="Control" parent="."]
 layout_mode = 3
@@ -34,10 +34,11 @@ mouse_filter = 1
 [node name="CameraArea" parent="GameUI" instance=ExtResource("7_rubju")]
 layout_mode = 1
 
-[node name="WorkingArea" parent="GameUI" node_paths=PackedStringArray("today_extra_documents") instance=ExtResource("10_eatvi")]
+[node name="WorkingArea" parent="GameUI" node_paths=PackedStringArray("today_extra_documents", "today_items") instance=ExtResource("10_eatvi")]
 layout_mode = 1
 offset_left = -984.0
 today_extra_documents = [NodePath("AllowedVisitNotice"), NodePath("PostitNote")]
+today_items = [NodePath("FlashlightTool")]
 
 [node name="AllowedVisitNotice" parent="GameUI/WorkingArea" instance=ExtResource("11_e1nc0")]
 layout_mode = 0
@@ -58,6 +59,12 @@ offset_right = 164.0
 offset_bottom = 196.0
 content = "There's some trouble with lighting today. Use the flashlight if needed. It's in the table drawer.
          -Mark, ur buddy"
+
+[node name="FlashlightTool" parent="GameUI/WorkingArea" instance=ExtResource("9_pg102")]
+offset_left = 88.0
+offset_top = 359.0
+offset_right = 155.0
+offset_bottom = 532.0
 
 [node name="DialogArea" parent="GameUI" instance=ExtResource("8_o1l0y")]
 
@@ -112,24 +119,15 @@ text = "Training day
 12/05/2000"
 horizontal_alignment = 1
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="DarkOverlay" type="CanvasModulate" parent="."]
 visible = false
-color = Color(0.0666667, 0.0666667, 0.0666667, 1)
-
-[node name="FlashLight" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(792, 408)
-scale = Vector2(4.375, 4.375)
-energy = 0.6
-range_item_cull_mask = 3
-texture = ExtResource("8_ys3h3")
-script = ExtResource("9_3q2os")
+color = Color(0.227451, 0.227451, 0.227451, 1)
 
 [node name="ScreenLight" type="PointLight2D" parent="."]
 visible = false
 position = Vector2(192, 192)
 scale = Vector2(4, 4)
-energy = 0.8
+energy = 0.5
 texture = ExtResource("10_sdkeg")
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]

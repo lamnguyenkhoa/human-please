@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://jglclhn0yobk"]
+
+[ext_resource type="Texture2D" uid="uid://dsqwkcgi28hul" path="res://asset/sprite/ui/circle_light.png" id="1_olxxc"]
+[ext_resource type="Script" path="res://entity/tool/flashlight.gd" id="2_34fhf"]
+
+[node name="FlashLight" type="PointLight2D"]
+position = Vector2(792, 408)
+scale = Vector2(4.375, 4.375)
+energy = 0.6
+range_item_cull_mask = 3
+texture = ExtResource("1_olxxc")
+script = ExtResource("2_34fhf")

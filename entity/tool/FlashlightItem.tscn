@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://dgh5j07y8yrea"]
+
+[ext_resource type="Texture2D" uid="uid://uj7wm5sea0eu" path="res://asset/sprite/item/flashlight.png" id="1_5y6ec"]
+[ext_resource type="PackedScene" uid="uid://jglclhn0yobk" path="res://entity/tool/Flashlight.tscn" id="2_43bw4"]
+[ext_resource type="Script" path="res://entity/tool/flashlight_item.gd" id="2_ntucm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48fr5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oodij"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_80adu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qgy61"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_810tp"]
+
+[node name="FlashlightItem" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 67.0
+offset_bottom = 173.0
+script = ExtResource("2_ntucm")
+flashlight_prefab = ExtResource("2_43bw4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -12.0
+offset_right = 88.0
+offset_bottom = 180.0
+texture = ExtResource("1_5y6ec")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_48fr5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oodij")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_80adu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qgy61")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_810tp")
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

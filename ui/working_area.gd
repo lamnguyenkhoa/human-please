@@ -3,10 +3,12 @@ class_name WorkingArea
 
 @export var usa_passport_prefab: PackedScene
 @export var today_extra_documents: Array[MoveableDocument]
+@export var today_items: Array[DrawerItem]
 
 @onready var document_area = $DocumentArea
 @onready var document_spawn = $DocumentArea/DocumentSpawn
 @onready var anim_player = $AnimationPlayer
+@onready var item_area = $DrawerArea/Drawer1/ItemArea
 
 var drawer_opened = false
 var open_drawer_sfx = preload ("res://asset/sfx/open_drawer_550361__mattruthsound.ogg")
@@ -22,6 +24,12 @@ func _ready():
 	for doc in document_area.get_children():
 		if doc is MoveableDocument:
 			doc.document_area = document_area
+	for item in today_items:
+		var global_pos = item.global_position
+		var item_parent = item.get_parent()
+		item_parent.remove_child(item)
+		item_area.add_child(item)
+		item.global_position = global_pos
 
 func _on_subject_resolved(_allowed: bool):
 	remove_subject_document()
