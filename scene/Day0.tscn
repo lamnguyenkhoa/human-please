@@ -53,6 +53,7 @@ _data = {
 script = ExtResource("1_ol8rn")
 date_string = "12/05/2000"
 today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_5b6jg"), ExtResource("3_rx682")])
+shuffle_subjects_order = false
 prework_cutscene = NodePath("GameUI/PreworkCutscene")
 postwork_cutscene = NodePath("GameUI/PostworkCutscene")
 

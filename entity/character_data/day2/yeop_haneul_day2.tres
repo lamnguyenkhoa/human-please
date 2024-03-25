@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://bkpgk8pb8a5xg"]
+
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_gn6tj"]
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="1_iy5ab"]
+[ext_resource type="Texture2D" uid="uid://qu582vr6htof" path="res://asset/sprite/character/yeop_haneul_face.png" id="2_i3tbt"]
+[ext_resource type="Texture2D" uid="uid://baeyopk7o4ou" path="res://asset/sprite/character/yeop_haneul.png" id="4_bi231"]
+
+[sub_resource type="Resource" id="Resource_1edb8"]
+script = ExtResource("1_gn6tj")
+openings = Array[String]([])
+identity_verification = "Here it is, officer."
+purpose_of_visit = "I come to open a new Asian-style convenience store here."
+duration_of_stay = "I planned to stay here for around a month. Maybe more."
+item_in_possession = "I brought a laptop, clothes, a set of my favourite watches, work documents and some homemade snacks. I don't see any regulation related to allowed items so why bother asking?"
+previous_visit = "No, first time here. But I have my junior scouted this town before so I know the way around."
+what_your_name = "Yeop Haneul from Golden Crown Corp."
+why_appearance = "I come here for business meeting, I need to dress sharp. However, I do understand why you feel it strange, consider your choice of clothes."
+
+[resource]
+script = ExtResource("1_iy5ab")
+name = "Yeop Haneul"
+sprite = ExtResource("4_bi231")
+face_photo = ExtResource("2_i3tbt")
+gender = 1
+birthdate = "15/8/1958"
+nationality = "Korean"
+id_number = "C5320932"
+passport_expired = false
+auto_give_passport = false
+forgot_passport = false
+bad_visit_reason = false
+dialog = SubResource("Resource_1edb8")
