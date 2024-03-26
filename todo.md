@@ -7,7 +7,7 @@
   - [ ] Usually has odd body feature
 - [x] Zoom feature for accessibility
 - [ ] Work result reward / penalty
-- [ ] Lightout
+- [x] Lightout
 - [ ] Fixing camera
 - [ ] Inspect detailed inventory
 - [ ] Conditional questions

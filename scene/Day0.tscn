@@ -73,12 +73,7 @@ layout_mode = 1
 [node name="DialogArea" parent="GameUI" instance=ExtResource("2_qicx2")]
 
 [node name="QuestionArea" parent="GameUI" instance=ExtResource("11_mbsvd")]
-offset_left = 896.0
-
-[node name="ResultScreen" parent="GameUI" instance=ExtResource("8_whkvw")]
-visible = false
 layout_mode = 1
-next_day_scene = ExtResource("9_flwck")
 
 [node name="ZoomView" parent="GameUI" instance=ExtResource("10_i56so")]
 visible = false
@@ -630,6 +625,10 @@ stream = ExtResource("11_d0d73")
 bus = &"BGM"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ResultScreen" parent="CanvasLayer" instance=ExtResource("8_whkvw")]
+visible = false
+next_day_scene = ExtResource("9_flwck")
 
 [node name="SettingMenu" parent="CanvasLayer" instance=ExtResource("11_gyku5")]
 visible = false

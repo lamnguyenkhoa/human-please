@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://5v68jfpbo2gq"]
+
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="1_fn7e1"]
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_gp7ib"]
+[ext_resource type="Texture2D" uid="uid://cl2pr3kfwe8c8" path="res://asset/sprite/character/esther_raymond_face.png" id="1_mqdbl"]
+[ext_resource type="Texture2D" uid="uid://c5y1tbptc3vcx" path="res://asset/sprite/character/esther_raymond.png" id="3_685yd"]
+
+[sub_resource type="Resource" id="Resource_ggwgv"]
+script = ExtResource("1_gp7ib")
+openings = Array[String](["Here's the passport, mister."])
+identity_verification = "I just gave it to you."
+purpose_of_visit = "I'm a candidate for the next Mayor in the nearby town, and I have a meeting with this town officials today."
+duration_of_stay = "I will stay here overnight."
+item_in_possession = "A change of clothes, some personal toiletries and my phone."
+previous_visit = "Obviously, I came here for meetings a few times already."
+what_your_name = "It's Esther Raymond, mister inspector."
+why_appearance = "Is this authority abusing? Because you are an border inspector so you can harass me? I'm not a mayor now but soon will be so you better be careful with your mouth."
+
+[resource]
+script = ExtResource("1_fn7e1")
+name = "Esther G. Raymond"
+sprite = ExtResource("3_685yd")
+face_photo = ExtResource("1_mqdbl")
+gender = 2
+birthdate = "30/7/1973"
+nationality = "USA"
+id_number = "C4320568"
+stand_too_close = false
+passport_expired = false
+auto_give_passport = true
+forgot_passport = false
+bad_visit_reason = false
+dialog = SubResource("Resource_ggwgv")

@@ -340,6 +340,24 @@ offset_right = 412.0
 offset_bottom = 740.0
 scale = Vector2(0.5, 0.5)
 
+[node name="SubjectTooClose" type="TextureRect" parent="Camera/Mask/ZoomArea"]
+layout_mode = 0
+offset_left = -184.0
+offset_top = -152.0
+offset_right = 1416.0
+offset_bottom = 3581.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Fade" type="ColorRect" parent="Camera/Mask/ZoomArea"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.835294)
+
 [node name="Date" type="Label" parent="Camera"]
 layout_mode = 1
 anchors_preset = 3

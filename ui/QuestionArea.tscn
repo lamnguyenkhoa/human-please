@@ -1,17 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cajp41ks5tyef"]
+[gd_scene load_steps=6 format=3 uid="uid://cajp41ks5tyef"]
 
 [ext_resource type="Texture2D" uid="uid://co1sjt6h2h1as" path="res://asset/sprite/ui/question_area.png" id="1_8txi1"]
 [ext_resource type="Script" path="res://ui/question_area.gd" id="1_ct41n"]
 [ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="3_og5ud"]
+[ext_resource type="Texture2D" uid="uid://duf3sth0tr448" path="res://asset/sprite/circle.png" id="4_j8660"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_snson"]
 
 [node name="QuestionArea" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 960.0
-offset_right = 1368.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -472.0
 offset_bottom = 192.0
+grow_horizontal = 0
 script = ExtResource("1_ct41n")
 
 [node name="Background" type="TextureRect" parent="."]
@@ -94,20 +97,35 @@ theme_override_fonts/font = ExtResource("3_og5ud")
 text = "Question their appearance"
 text_overrun_behavior = 3
 
-[node name="Conditional" type="ScrollContainer" parent="TabContainer"]
+[node name="Special" type="ScrollContainer" parent="TabContainer"]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Conditional"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Special"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Contigency1" type="Button" parent="TabContainer/Conditional/VBoxContainer"]
+[node name="Special1" type="Button" parent="TabContainer/Special/VBoxContainer"]
 visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_og5ud")
-text = "What should I do now?"
+text = "Request subject stand further"
 text_overrun_behavior = 3
+
+[node name="Highlight" type="TextureRect" parent="."]
+visible = false
+self_modulate = Color(0.901961, 0.552941, 0.00392157, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -156.0
+offset_top = 3.0
+offset_right = -147.0
+offset_bottom = 12.0
+grow_horizontal = 0
+texture = ExtResource("4_j8660")
+expand_mode = 1
 
 [connection signal="tab_clicked" from="TabContainer" to="." method="_on_tab_container_tab_clicked"]
 [connection signal="tab_hovered" from="TabContainer" to="." method="_on_tab_container_tab_hovered"]
@@ -118,3 +136,4 @@ text_overrun_behavior = 3
 [connection signal="pressed" from="TabContainer/Standard/VBoxContainer/Standard5" to="." method="_on_standard_5_pressed"]
 [connection signal="pressed" from="TabContainer/Interrogate/VBoxContainer/Interrogate1" to="." method="_on_interrogate_1_pressed"]
 [connection signal="pressed" from="TabContainer/Interrogate/VBoxContainer/Interrogate2" to="." method="_on_interrogate_2_pressed"]
+[connection signal="pressed" from="TabContainer/Special/VBoxContainer/Special1" to="." method="_on_special_1_pressed"]

@@ -1,9 +1,14 @@
 extends Control
 class_name QuestionArea
 
+@onready var highlight = $Highlight
+
 var standard_btns: Array[Button]
 var interrogate_btns: Array[Button]
+var special_btns: Array[Button]
 var dialog_area: DialogArea
+
+var quick_footstep_sfx = preload ("res://asset/sfx/quick_footstep_412785__myrararara.ogg")
 
 var standard_questions = [
 	[
@@ -49,6 +54,13 @@ var interrogate_questions = [
 	]
 ]
 
+var special_questions = [
+	[
+		"Please stand further away from the camera.",
+		"Please stand at the X spot on the floor."
+	]
+]
+
 func _ready():
 	GameManager.subject_resolved.connect(_on_subject_resolved)
 	GameManager.next_subject_readied.connect(_on_next_subject_readied)
@@ -60,19 +72,34 @@ func _ready():
 	for child: Button in get_node("TabContainer/Interrogate/VBoxContainer").get_children():
 		interrogate_btns.append(child)
 		child.mouse_entered.connect(button_hover_sfx)
+	for child: Button in get_node("TabContainer/Special/VBoxContainer").get_children():
+		special_btns.append(child)
+		child.mouse_entered.connect(button_hover_sfx)
 	_on_subject_resolved(false) # Disable buttons at the start of game
+	highlight.visible = false
 
 func _on_subject_resolved(_passed: bool):
 	for btn in standard_btns:
 		btn.disabled = true
 	for btn in interrogate_btns:
 		btn.disabled = true
+	for btn in special_btns:
+		btn.disabled = true
+		btn.visible = false
+	highlight.visible = false
 
 func _on_next_subject_readied():
 	for btn in standard_btns:
 		btn.disabled = false
 	for btn in interrogate_btns:
 		btn.disabled = false
+	for btn in special_btns:
+		btn.disabled = false
+		btn.visible = false
+
+	if GameManager.current_subject.stand_too_close:
+		highlight.visible = true
+		special_btns[0].visible = true
 
 func select_random_string(array):
 	if array.size() == 0:
@@ -84,14 +111,16 @@ func print_dialog(question: String, answer: String, btn: Button):
 	button_click_sfx()
 	btn.disabled = true
 	dialog_area.add_inspector_dialog(question)
-	await get_tree().create_timer(1).timeout
-	dialog_area.add_subject_dialog(answer)
+	if answer != "":
+		await get_tree().create_timer(1).timeout
+		dialog_area.add_subject_dialog(answer)
 
 func _on_standard_1_pressed() -> void:
 	var current_dialog = Utils.get_dialog_data()
 	print_dialog(select_random_string(standard_questions[0]),
 		current_dialog.identity_verification, standard_btns[0])
 	if not GameManager.current_subject.auto_give_passport:
+		await get_tree().create_timer(1).timeout
 		GameManager.working_area.spawn_passport()
 
 func _on_standard_2_pressed() -> void:
@@ -125,6 +154,19 @@ func _on_interrogate_2_pressed() -> void:
 	var current_dialog = Utils.get_dialog_data()
 	print_dialog(select_random_string(interrogate_questions[1]),
 		current_dialog.why_appearance, interrogate_btns[1])
+
+#####################
+
+func _on_special_1_pressed() -> void:
+	# Request stand further
+	print_dialog(select_random_string(special_questions[0]),
+		"", special_btns[0])
+	await get_tree().create_timer(0.5).timeout
+	SoundManager.play_sound(quick_footstep_sfx, "SFX", true)
+	await get_tree().create_timer(1).timeout
+	GameManager.camera_area.request_subject_stand_further()
+
+#####################
 
 func button_hover_sfx():
 	SoundManager.play_button_hover_sfx()

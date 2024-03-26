@@ -8,6 +8,7 @@ class_name CharacterResource
 @export var birthdate: String
 @export var nationality: String
 @export var id_number: String
+@export var stand_too_close: bool
 @export var passport_expired: bool
 @export var auto_give_passport: bool
 @export var forgot_passport: bool

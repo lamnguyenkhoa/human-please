@@ -5,6 +5,7 @@ class_name CameraArea
 @onready var result_label: Label = $TransitionCover/Result
 @onready var notify_label: Label = $TransitionCover/Notify
 @onready var subject: TextureRect = $Camera/Mask/ZoomArea/Subject
+@onready var subject_too_close: TextureRect = $Camera/Mask/ZoomArea/SubjectTooClose
 @onready var zoom_area = $Camera/Mask/ZoomArea
 @onready var zoom_amount_label: Label = $Camera/ZoomAmount
 @onready var camera_control_group = $ControlPanel/CameraControl
@@ -12,6 +13,7 @@ class_name CameraArea
 @onready var deny_button: Button = $ControlPanel/Denied
 @onready var start_work_button: Button = $ControlPanel/StartWork
 @onready var date_label: Label = $Camera/Date
+
 @onready var wood_step_sfx: AudioStreamPlayer2D = $WoodStepSFX
 @onready var open_door_sfx: AudioStreamPlayer2D = $OpenDoorSFX
 
@@ -46,8 +48,14 @@ func _on_next_subject_readied():
 	notify_label.visible = false
 
 func update_subject_on_camera():
-	subject.texture = GameManager.current_subject.sprite
-	subject.visible = true
+	subject.texture = null
+	subject_too_close.texture = null
+	if GameManager.current_subject.stand_too_close:
+		subject_too_close.texture = GameManager.current_subject.sprite
+		subject_too_close.visible = true
+	else:
+		subject.texture = GameManager.current_subject.sprite
+		subject.visible = true
 
 func first_subject_transition():
 	play_transition_sfx()
@@ -65,6 +73,7 @@ func transition_effect(allowed: bool):
 		result_label.text = "Subject denied"
 	transition_cover.visible = true
 	subject.visible = false
+	subject_too_close.visible = false
 	await get_tree().create_timer(1).timeout
 	# If there are no more subjects
 	if GameManager.subject_count >= len(GameManager.work_day.today_subjects):
@@ -97,6 +106,11 @@ func play_transition_sfx():
 	open_door_sfx.pitch_scale = randf_range(0.8, 1.2)
 	wood_step_sfx.play()
 	open_door_sfx.play()
+
+func request_subject_stand_further():
+	subject_too_close.texture = null
+	subject.texture = GameManager.current_subject.sprite
+	subject.visible = true
 
 func _on_zoom_in_pressed() -> void:
 	button_click_sfx()

@@ -31,7 +31,7 @@ func show_result():
 	if accuracy == 1:
 		rating2.self_modulate = Color.GREEN
 		rating2.text = 'Excellent'
-	elif accuracy >= 0.5:
+	elif accuracy > 0.5:
 		rating2.self_modulate = Color.YELLOW
 		rating2.text = 'Acceptable'
 	else:
@@ -41,6 +41,7 @@ func show_result():
 	anim_player.play("show_result")
 
 func _on_end_day_pressed() -> void:
+	visible = false
 	button_click_sfx()
 	if GameManager.work_day.postwork_cutscene != null:
 		GameManager.work_day.start_post_work_cutscene()
