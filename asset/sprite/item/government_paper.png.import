@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://domb48r1mxtbi"
-path="res://.godot/imported/guidebook_paper.png-305dbec4c4c954926f9ed2d079e59c9f.ctex"
+uid="uid://d35nf50tupwd6"
+path="res://.godot/imported/government_paper.png-ffc8a2fab2fe2dfdb72775b0b4fe3961.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprite/ui/guidebook_paper.png"
-dest_files=["res://.godot/imported/guidebook_paper.png-305dbec4c4c954926f9ed2d079e59c9f.ctex"]
+source_file="res://asset/sprite/item/government_paper.png"
+dest_files=["res://.godot/imported/government_paper.png-ffc8a2fab2fe2dfdb72775b0b4fe3961.ctex"]
 
 [params]
 

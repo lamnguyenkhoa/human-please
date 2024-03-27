@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://xb65vfev8api"]
 
 [ext_resource type="Script" path="res://entity/document/allowed_visit_notice.gd" id="1_ja4u5"]
-[ext_resource type="Texture2D" uid="uid://cr4bt8du0nwjd" path="res://asset/sprite/ui/notice_paper.png" id="2_nc0rb"]
+[ext_resource type="Texture2D" uid="uid://cr4bt8du0nwjd" path="res://asset/sprite/item/notice_paper.png" id="2_byuj5"]
 [ext_resource type="FontFile" uid="uid://b1o8u7gtfofwm" path="res://asset/font/aflfont.TTF" id="3_qoogw"]
 
 [node name="AllowedVisitNotice" type="Control"]
@@ -28,7 +28,7 @@ tabs_visible = false
 
 [node name="Background" type="TextureRect" parent="TabContainer"]
 layout_mode = 2
-texture = ExtResource("2_nc0rb")
+texture = ExtResource("2_byuj5")
 
 [node name="Title" type="Label" parent="TabContainer/Background"]
 layout_mode = 1

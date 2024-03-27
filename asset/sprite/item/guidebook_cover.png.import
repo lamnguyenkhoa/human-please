@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmy07teg0e25r"
-path="res://.godot/imported/guidebook_paper_full.png-61e24ebe5c5115ff8e3c0f9645795c11.ctex"
+uid="uid://j0xw2p5dmgah"
+path="res://.godot/imported/guidebook_cover.png-42eff62fbc73e63bd55af45e36d305a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprite/ui/guidebook_paper_full.png"
-dest_files=["res://.godot/imported/guidebook_paper_full.png-61e24ebe5c5115ff8e3c0f9645795c11.ctex"]
+source_file="res://asset/sprite/item/guidebook_cover.png"
+dest_files=["res://.godot/imported/guidebook_cover.png-42eff62fbc73e63bd55af45e36d305a5.ctex"]
 
 [params]
 

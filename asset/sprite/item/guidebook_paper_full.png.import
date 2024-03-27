@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3b5pw7kl3gx2"
-path="res://.godot/imported/usa_flag.png-d4b2361f06e4be4b9e113bfc5c9aeb4c.ctex"
+uid="uid://bmy07teg0e25r"
+path="res://.godot/imported/guidebook_paper_full.png-ff8f3918ea007a7d1369ee467ea58ed2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprite/ui/usa_flag.png"
-dest_files=["res://.godot/imported/usa_flag.png-d4b2361f06e4be4b9e113bfc5c9aeb4c.ctex"]
+source_file="res://asset/sprite/item/guidebook_paper_full.png"
+dest_files=["res://.godot/imported/guidebook_paper_full.png-ff8f3918ea007a7d1369ee467ea58ed2.ctex"]
 
 [params]
 

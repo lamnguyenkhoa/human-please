@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://oasns4fb3vda"]
 
 [ext_resource type="Script" path="res://entity/document/moveable_document.gd" id="1_8yrlg"]
-[ext_resource type="Texture2D" uid="uid://j0xw2p5dmgah" path="res://asset/sprite/ui/guidebook_cover.png" id="2_jdxbl"]
-[ext_resource type="Texture2D" uid="uid://bmy07teg0e25r" path="res://asset/sprite/ui/guidebook_paper_full.png" id="3_ibe5a"]
+[ext_resource type="Texture2D" uid="uid://j0xw2p5dmgah" path="res://asset/sprite/item/guidebook_cover.png" id="2_jdxbl"]
+[ext_resource type="Texture2D" uid="uid://bmy07teg0e25r" path="res://asset/sprite/item/guidebook_paper_full.png" id="3_ibe5a"]
 [ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="4_hv1g7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_530yy"]

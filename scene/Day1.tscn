@@ -22,6 +22,7 @@ script = ExtResource("1_y1sn6")
 day = 1
 date_string = "13/05/2000"
 today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_ruqh5"), ExtResource("3_ggspu"), ExtResource("4_unlga"), ExtResource("5_vf3dd"), ExtResource("6_qp85b")])
+next_day_scene = ExtResource("13_e8k2m")
 
 [node name="GameUI" type="Control" parent="."]
 layout_mode = 3
@@ -104,7 +105,6 @@ bus = &"BGM"
 
 [node name="ResultScreen" parent="CanvasLayer" instance=ExtResource("8_fgsii")]
 visible = false
-next_day_scene = ExtResource("13_e8k2m")
 
 [node name="SettingMenu" parent="CanvasLayer" instance=ExtResource("14_dx7wa")]
 visible = false

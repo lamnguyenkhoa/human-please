@@ -1,0 +1,137 @@
+[gd_scene load_steps=4 format=3 uid="uid://dipxawo24s3qy"]
+
+[ext_resource type="Script" path="res://entity/document/new_rule_notice.gd" id="1_qmc7j"]
+[ext_resource type="Texture2D" uid="uid://d35nf50tupwd6" path="res://asset/sprite/item/government_paper.png" id="2_74j73"]
+[ext_resource type="FontFile" uid="uid://dl8neqdx5o1pm" path="res://asset/font/OldNewspaperTypes.ttf" id="3_0deq2"]
+
+[node name="NewRuleNotice" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 152.0
+offset_top = 96.0
+offset_right = 372.0
+offset_bottom = 381.0
+script = ExtResource("1_qmc7j")
+new_rule = "Rule #3: Visitors must carry a card showing their stay location."
+
+[node name="Shadow" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.329412)
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_right = 220.0
+offset_bottom = 285.0
+tabs_visible = false
+
+[node name="Background" type="TextureRect" parent="TabContainer"]
+layout_mode = 2
+texture = ExtResource("2_74j73")
+
+[node name="Date" type="Label" parent="TabContainer/Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -204.0
+offset_top = 16.0
+offset_right = -132.0
+offset_bottom = 32.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0deq2")
+theme_override_font_sizes/font_size = 10
+text = "DD/MM/YYYY"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="TabContainer/Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.0
+offset_top = 32.0
+offset_right = 98.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_0deq2")
+text = "Notice of updated
+ guidebook"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TemplateTop" type="Label" parent="TabContainer/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -54.5
+offset_right = 99.0
+offset_bottom = -18.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0deq2")
+theme_override_font_sizes/font_size = 8
+text = "Dear Inspector,
+We are writing to inform you a new rule has been incorporated:
+"
+autowrap_mode = 2
+
+[node name="NewRule" type="Label" parent="TabContainer/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -14.5
+offset_right = 90.0
+offset_bottom = 113.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0deq2")
+theme_override_font_sizes/font_size = 14
+text = "Rule #3: Visitors must carry a card showing their stay location."
+autowrap_mode = 2
+
+[node name="TemplateBot" type="Label" parent="TabContainer/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = 121.5
+offset_right = 98.0
+offset_bottom = 134.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0deq2")
+theme_override_font_sizes/font_size = 8
+text = "Broome Town Hall"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="DestroyTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="resized" from="." to="." method="_on_resized"]
+[connection signal="timeout" from="DestroyTimer" to="TabContainer" method="_on_destroy_timer_timeout"]

@@ -54,6 +54,7 @@ script = ExtResource("1_ol8rn")
 date_string = "12/05/2000"
 today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_5b6jg"), ExtResource("3_rx682")])
 shuffle_subjects_order = false
+next_day_scene = ExtResource("9_flwck")
 prework_cutscene = NodePath("GameUI/PreworkCutscene")
 postwork_cutscene = NodePath("GameUI/PostworkCutscene")
 
@@ -628,7 +629,6 @@ bus = &"BGM"
 
 [node name="ResultScreen" parent="CanvasLayer" instance=ExtResource("8_whkvw")]
 visible = false
-next_day_scene = ExtResource("9_flwck")
 
 [node name="SettingMenu" parent="CanvasLayer" instance=ExtResource("11_gyku5")]
 visible = false

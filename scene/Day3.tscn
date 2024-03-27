@@ -1,0 +1,142 @@
+[gd_scene load_steps=15 format=3 uid="uid://b01ihqfm83sp0"]
+
+[ext_resource type="Script" path="res://scene/work_day.gd" id="1_mly2x"]
+[ext_resource type="Resource" uid="uid://bvad1dg57pnki" path="res://entity/character_data/day0/mark_davidson_day0.tres" id="2_vtd8q"]
+[ext_resource type="PackedScene" uid="uid://dipxawo24s3qy" path="res://entity/document/NewRuleNotice.tscn" id="6_ts2wh"]
+[ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="9_4gohn"]
+[ext_resource type="PackedScene" uid="uid://cu7tx0jfe6p46" path="res://ui/WorkingArea.tscn" id="10_2ylh6"]
+[ext_resource type="PackedScene" uid="uid://xb65vfev8api" path="res://entity/document/AllowedVisitNotice.tscn" id="11_p701c"]
+[ext_resource type="PackedScene" uid="uid://dgh5j07y8yrea" path="res://entity/tool/FlashlightItem.tscn" id="13_non5o"]
+[ext_resource type="PackedScene" uid="uid://r3obsn7dyt73" path="res://ui/DialogArea.tscn" id="14_bio1f"]
+[ext_resource type="PackedScene" uid="uid://cajp41ks5tyef" path="res://ui/QuestionArea.tscn" id="15_pm7xf"]
+[ext_resource type="PackedScene" uid="uid://up6eaj3xcu5g" path="res://ui/ZoomView.tscn" id="16_ap44c"]
+[ext_resource type="Texture2D" uid="uid://bk8176mgri0v5" path="res://asset/sprite/ui/square_light.png" id="17_5i2f8"]
+[ext_resource type="AudioStream" uid="uid://cgoe0ob7iinbo" path="res://asset/music/booth_ambient_440126__blaukreuz.ogg" id="18_sdcp1"]
+[ext_resource type="PackedScene" uid="uid://c4orpco2rb63g" path="res://ui/SettingMenu.tscn" id="19_10mwh"]
+[ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="20_8txkl"]
+
+[node name="Day3" type="Node2D"]
+script = ExtResource("1_mly2x")
+day = 3
+date_string = "15/05/2000"
+today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_vtd8q")])
+lightout_after_n_second = 100
+
+[node name="GameUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1368.0
+offset_bottom = 768.0
+mouse_filter = 1
+
+[node name="CameraArea" parent="GameUI" instance=ExtResource("9_4gohn")]
+layout_mode = 1
+
+[node name="WorkingArea" parent="GameUI" node_paths=PackedStringArray("today_extra_documents", "today_items") instance=ExtResource("10_2ylh6")]
+layout_mode = 1
+offset_left = -984.0
+today_extra_documents = [NodePath("AllowedVisitNotice"), NodePath("NewRuleNotice")]
+today_items = [NodePath("FlashlightTool")]
+
+[node name="AllowedVisitNotice" parent="GameUI/WorkingArea" instance=ExtResource("11_p701c")]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 64.0
+offset_right = 964.0
+offset_bottom = 374.0
+content = "Research
+Medical reasons
+Education
+Politic
+Business (Except meteorite-related objects)"
+
+[node name="NewRuleNotice" parent="GameUI/WorkingArea" instance=ExtResource("6_ts2wh")]
+offset_left = 680.0
+offset_top = 208.0
+offset_right = 900.0
+offset_bottom = 493.0
+
+[node name="FlashlightTool" parent="GameUI/WorkingArea" instance=ExtResource("13_non5o")]
+offset_left = 88.0
+offset_top = 359.0
+offset_right = 155.0
+offset_bottom = 532.0
+
+[node name="DialogArea" parent="GameUI" instance=ExtResource("14_bio1f")]
+
+[node name="QuestionArea" parent="GameUI" instance=ExtResource("15_pm7xf")]
+layout_mode = 1
+
+[node name="ZoomView" parent="GameUI" instance=ExtResource("16_ap44c")]
+visible = false
+layout_mode = 1
+
+[node name="DayAnnouncer" type="Control" parent="GameUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameUI/DayAnnouncer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="GameUI/DayAnnouncer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -46.5
+offset_right = 94.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Training day
+
+12/05/2000"
+horizontal_alignment = 1
+
+[node name="DarkOverlay" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[node name="ScreenLight" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(192, 192)
+scale = Vector2(4, 4)
+energy = 0.5
+texture = ExtResource("17_5i2f8")
+
+[node name="ScreenLight2" type="PointLight2D" parent="ScreenLight"]
+position = Vector2(1.75, 129.875)
+scale = Vector2(0.535156, 0.248047)
+energy = 0.5
+texture = ExtResource("17_5i2f8")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_sdcp1")
+autoplay = true
+bus = &"BGM"
+
+[node name="LightoutTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SettingMenu" parent="CanvasLayer" instance=ExtResource("19_10mwh")]
+visible = false
+
+[node name="ResultScreen" parent="CanvasLayer" instance=ExtResource("20_8txkl")]
+visible = false

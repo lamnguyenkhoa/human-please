@@ -1,8 +1,6 @@
 extends Control
 class_name ResultScreen
 
-@export var next_day_scene: PackedScene
-
 @onready var background: Control = $Background
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var title: Label = $Title
@@ -49,8 +47,8 @@ func _on_end_day_pressed() -> void:
 		move_to_next_day()
 
 func move_to_next_day():
-	if next_day_scene != null:
-		get_tree().change_scene_to_packed(next_day_scene)
+	if GameManager.work_day.next_day_scene != null:
+		get_tree().change_scene_to_packed(GameManager.work_day.next_day_scene)
 	else:
 		next_day_button.text = "NEXT DAY STILL WIP.\nTHANKS FOR PLAYING"
 

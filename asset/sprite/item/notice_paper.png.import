@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cujia0bfupe8v"
-path="res://.godot/imported/usa_passport_cover.png-62035046d1cf33a5dab241d258df9e78.ctex"
+uid="uid://cr4bt8du0nwjd"
+path="res://.godot/imported/notice_paper.png-a94415581d371206259d5353f01481cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprite/ui/usa_passport_cover.png"
-dest_files=["res://.godot/imported/usa_passport_cover.png-62035046d1cf33a5dab241d258df9e78.ctex"]
+source_file="res://asset/sprite/item/notice_paper.png"
+dest_files=["res://.godot/imported/notice_paper.png-a94415581d371206259d5353f01481cc.ctex"]
 
 [params]
 

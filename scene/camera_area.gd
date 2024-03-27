@@ -107,7 +107,7 @@ func change_zoom_value(zoom_in: bool):
 func play_transition_sfx():
 	wood_step_sfx.pitch_scale = randf_range(0.8, 1.2)
 	open_door_sfx.pitch_scale = randf_range(0.8, 1.2)
-	door_bell_sfx.pitch_scale = randf_range(0.8, 1.2)
+	door_bell_sfx.pitch_scale = randf_range(0.9, 1.1)
 	wood_step_sfx.play()
 	open_door_sfx.play()
 	await get_tree().create_timer(1).timeout

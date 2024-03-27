@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsnsf88fxyg7o"
-path="res://.godot/imported/common_passport.png-54d099dbafe5dc3dae754c0e43c18509.ctex"
+uid="uid://3b5pw7kl3gx2"
+path="res://.godot/imported/usa_flag.png-90e1dfdff848c9f426ab7374d44d556c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprite/ui/common_passport.png"
-dest_files=["res://.godot/imported/common_passport.png-54d099dbafe5dc3dae754c0e43c18509.ctex"]
+source_file="res://asset/sprite/item/usa_flag.png"
+dest_files=["res://.godot/imported/usa_flag.png-90e1dfdff848c9f426ab7374d44d556c.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://cvl3ya4vpb43o"]
 
 [ext_resource type="Script" path="res://entity/document/passport.gd" id="1_eobry"]
-[ext_resource type="Texture2D" uid="uid://cujia0bfupe8v" path="res://asset/sprite/ui/usa_passport_cover.png" id="2_xnvlx"]
-[ext_resource type="Texture2D" uid="uid://bc5ml1ebf6g2w" path="res://asset/sprite/ui/usa_passport.png" id="3_4mb6o"]
+[ext_resource type="Texture2D" uid="uid://cujia0bfupe8v" path="res://asset/sprite/item/usa_passport_cover.png" id="2_xnvlx"]
+[ext_resource type="Texture2D" uid="uid://bc5ml1ebf6g2w" path="res://asset/sprite/item/usa_passport.png" id="3_4mb6o"]
 [ext_resource type="Texture2D" uid="uid://by4j1vauy0nwa" path="res://asset/sprite/character/mark_davidson_face.png" id="5_6tbpm"]
 [ext_resource type="Texture2D" uid="uid://dtb2s3m74ig8k" path="res://asset/sprite/ui/barcode.png" id="5_jc7mg"]
 [ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="6_5i1lb"]

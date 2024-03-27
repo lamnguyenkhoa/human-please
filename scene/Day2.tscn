@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d3t1coeegq2wg"]
+[gd_scene load_steps=22 format=3 uid="uid://d3t1coeegq2wg"]
 
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_3x04h"]
 [ext_resource type="Resource" uid="uid://cdgq8r7iklsk6" path="res://entity/character_data/day2/carol_coleman_day2.tres" id="2_gwfat"]
@@ -20,12 +20,14 @@
 [ext_resource type="PackedScene" uid="uid://c4orpco2rb63g" path="res://ui/SettingMenu.tscn" id="11_p5ui1"]
 [ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="12_beiu4"]
 [ext_resource type="AudioStream" uid="uid://cgoe0ob7iinbo" path="res://asset/music/booth_ambient_440126__blaukreuz.ogg" id="14_0rx63"]
+[ext_resource type="PackedScene" uid="uid://b01ihqfm83sp0" path="res://scene/Day3.tscn" id="21_7tyr6"]
 
 [node name="Day2" type="Node2D"]
 script = ExtResource("1_3x04h")
 day = 2
 date_string = "14/05/2000"
 today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_gwfat"), ExtResource("3_sbtvb"), ExtResource("4_ftybs"), ExtResource("5_j0a52"), ExtResource("6_0sogx"), ExtResource("7_d7dag"), ExtResource("8_pp0mf")])
+next_day_scene = ExtResource("21_7tyr6")
 lightout_after_n_second = 45
 
 [node name="GameUI" type="Control" parent="."]
