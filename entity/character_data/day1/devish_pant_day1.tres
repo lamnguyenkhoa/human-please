@@ -25,6 +25,7 @@ gender = 1
 birthdate = "9/1/1980"
 nationality = "USA"
 id_number = "C9955332"
+stand_too_close = false
 passport_expired = true
 auto_give_passport = true
 forgot_passport = false

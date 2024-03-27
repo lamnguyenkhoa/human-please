@@ -16,6 +16,9 @@ class_name CameraArea
 
 @onready var wood_step_sfx: AudioStreamPlayer2D = $WoodStepSFX
 @onready var open_door_sfx: AudioStreamPlayer2D = $OpenDoorSFX
+@onready var door_bell_sfx: AudioStreamPlayer2D = $DoorBellSFX
+
+@onready var start_work_sfx = preload ("res://asset/sfx/door_bell_digital_571674__nachtmahrtv.ogg")
 
 var max_v_distance = 0
 var max_h_distance = 0
@@ -104,8 +107,11 @@ func change_zoom_value(zoom_in: bool):
 func play_transition_sfx():
 	wood_step_sfx.pitch_scale = randf_range(0.8, 1.2)
 	open_door_sfx.pitch_scale = randf_range(0.8, 1.2)
+	door_bell_sfx.pitch_scale = randf_range(0.8, 1.2)
 	wood_step_sfx.play()
 	open_door_sfx.play()
+	await get_tree().create_timer(1).timeout
+	door_bell_sfx.play()
 
 func request_subject_stand_further():
 	subject_too_close.texture = null
@@ -149,6 +155,7 @@ func _on_allowed_pressed() -> void:
 	GameManager.allow_subject()
 
 func _on_start_work_pressed() -> void:
+	SoundManager.play_sound(start_work_sfx, "SFX")
 	button_click_sfx()
 	GameManager.start_work()
 

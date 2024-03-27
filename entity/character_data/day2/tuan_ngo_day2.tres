@@ -25,6 +25,7 @@ gender = 1
 birthdate = "14/7/1976"
 nationality = "USA"
 id_number = "C8530293"
+stand_too_close = false
 passport_expired = false
 auto_give_passport = true
 forgot_passport = false

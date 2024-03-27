@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://qibwmrns1nek"]
+[gd_scene load_steps=12 format=3 uid="uid://qibwmrns1nek"]
 
 [ext_resource type="Script" path="res://scene/camera_area.gd" id="1_momrw"]
 [ext_resource type="Texture2D" uid="uid://b35qc7h3wshnn" path="res://asset/sprite/ui/mugshot_background.png" id="2_dum4j"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://hd0sj0s7yhim" path="res://asset/sprite/gear.png" id="4_b1pba"]
 [ext_resource type="AudioStream" uid="uid://devuwkbtxcivl" path="res://asset/sfx/door_open_15419__pagancow.ogg" id="5_dxhou"]
 [ext_resource type="Texture2D" uid="uid://b4j4hk2l2coy5" path="res://asset/sprite/square.png" id="6_8lm3i"]
+[ext_resource type="AudioStream" uid="uid://djk68fqgrww5v" path="res://asset/sfx/door_bell_192761__ryuuzan__ryuuzan.ogg" id="7_oe2lo"]
 
 [sub_resource type="Shader" id="Shader_apvge"]
 code = "/*
@@ -597,6 +598,10 @@ stream = ExtResource("4_5bky7")
 [node name="OpenDoorSFX" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(192, 192)
 stream = ExtResource("5_dxhou")
+
+[node name="DoorBellSFX" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(192, 192)
+stream = ExtResource("7_oe2lo")
 
 [connection signal="mouse_entered" from="ControlPanel/CameraControl/ZoomIn" to="." method="button_hover_sfx"]
 [connection signal="pressed" from="ControlPanel/CameraControl/ZoomIn" to="." method="_on_zoom_in_pressed"]

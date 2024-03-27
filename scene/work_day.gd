@@ -17,7 +17,7 @@ class_name WorkDay
 
 var default_bgm = preload ("res://asset/music/booth_ambient_440126__blaukreuz.ogg")
 var open_door_sfx = preload ("res://asset/sfx/door_open_15419__pagancow.ogg")
-var door_bell_sfx = preload ("res://asset/sfx/door_bell_571674__nachtmahrtv.ogg")
+var new_day_sfx = preload ("res://asset/sfx/jingle_105228__chimerical.ogg")
 var power_cut_sfx = preload ("res://asset/sfx/power_cut_400194__ninjatrappeur.ogg")
 
 var screen_light: PointLight2D
@@ -59,7 +59,7 @@ func start_workday():
 	bgm.play()
 	day_announcer.visible = true
 	SoundManager.play_sound(open_door_sfx, "SFX", true)
-	SoundManager.play_sound(door_bell_sfx, "SFX")
+	SoundManager.play_sound(new_day_sfx, "SFX")
 	await get_tree().create_timer(2).timeout
 	day_announcer.visible = false
 

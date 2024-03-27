@@ -18,13 +18,14 @@ why_appearance = "Why I wear the same clothes like yesterday? Cause I own multip
 
 [resource]
 script = ExtResource("1_chiyl")
-name = ""
+name = "Carol Coleman"
 sprite = ExtResource("4_x110g")
 face_photo = ExtResource("2_sbrjl")
 gender = 2
 birthdate = "9/2/1978"
 nationality = "USA"
 id_number = "C8520921"
+stand_too_close = false
 passport_expired = false
 auto_give_passport = true
 forgot_passport = false
