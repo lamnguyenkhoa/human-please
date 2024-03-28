@@ -2,6 +2,8 @@ extends Control
 class_name WorkingArea
 
 @export var usa_passport_prefab: PackedScene
+@export var visit_card_prefab: PackedScene
+
 @export var today_extra_documents: Array[MoveableDocument]
 @export var today_items: Array[DrawerItem]
 
@@ -41,6 +43,12 @@ func remove_subject_document():
 			if doc.belong_to_subject:
 				doc.return_to_subject()
 
+func spawn_documents(data: CharacterResource):
+	if data.auto_give_passport:
+		spawn_passport()
+	if data.auto_give_visit_card:
+		spawn_visit_card()
+
 func spawn_passport():
 	if GameManager.current_subject.forgot_passport:
 		return
@@ -50,9 +58,26 @@ func spawn_passport():
 	new_pp.belong_to_subject = true
 	new_pp.position = document_spawn.position
 	new_pp.position.x -= (new_pp.size.x / 2)
+	new_pp.position.x += randf_range(-10, 10)
+	new_pp.position.y += randf_range(-10, 10)
 	new_pp.character_data = GameManager.current_subject
 	new_pp.populate_passport_data()
 	new_pp.play_sfx(new_pp.receive_remove_new_doc_sfx)
+
+func spawn_visit_card():
+	if GameManager.current_subject.no_visit_card:
+		return
+	var new_vc = visit_card_prefab.instantiate() as VisitCard
+	document_area.add_child(new_vc)
+	new_vc.document_area = document_area
+	new_vc.belong_to_subject = true
+	new_vc.position = document_spawn.position
+	new_vc.position.x -= (new_vc.size.x / 2)
+	new_vc.position.x += randf_range(-10, 10)
+	new_vc.position.y += randf_range(-10, 10)
+	new_vc.populate_data(GameManager.current_subject)
+	new_vc.play_sfx(new_vc.receive_remove_new_doc_sfx)
+
 
 func _on_open_close_drawer_button_pressed() -> void:
 	button_click_sfx()

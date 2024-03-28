@@ -4,10 +4,10 @@ Town: Broome (from Fiona Broome, person who coined Mandela Effect)
 - A normal town, until there a small meteorite striked. Now the town is famous and everyone want to go there.
 - Unknowly, the meteorite also attract the new kind of monster, alternate
 - Alternate divied into 2 types:
-	+ Type I: juvenile. These are clearly imperfect, you just need to pay attention.
-	+ Type II: mature. They able to perfectly mimic human, but asking them will reveal them.
-	+ Type III: special. Perfect mimic. Ask them may reveal, may not. Have special abilities:
-		- Created noise to the camera.
+    + Type I: juvenile. These are clearly imperfect, you just need to pay attention.
+    + Type II: mature. They able to perfectly mimic human, but asking them will reveal them.
+    + Type III: special. Perfect mimic. Ask them may reveal, may not. Have special abilities:
+        - Created noise to the camera.
 
 Day 0
 - Rule #1: Only people has valid purpose able to come in.
@@ -25,7 +25,7 @@ Day 2
 
 Day 3
 - Start dropping hint of something moving near town
-- Rule #3: Need a card about staying location during visit.
+- Rule #3: Need a card about staying location during visit. Card must be valid
 - Rule #4: Duration of stay must less than a week.
 - 5 visitors
 

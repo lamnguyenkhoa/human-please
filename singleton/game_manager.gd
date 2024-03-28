@@ -59,8 +59,7 @@ func load_next_character():
         current_subject = work_day.today_subjects[subject_count]
         subject_count += 1
         emit_signal("next_subject_readied")
-        if current_subject.auto_give_passport:
-            working_area.spawn_passport()
+        working_area.spawn_documents(current_subject)
     else:
         emit_signal("end_day")
         result_screen.show_result()

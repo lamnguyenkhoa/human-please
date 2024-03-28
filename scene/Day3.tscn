@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://b01ihqfm83sp0"]
+[gd_scene load_steps=16 format=3 uid="uid://b01ihqfm83sp0"]
 
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_mly2x"]
-[ext_resource type="Resource" uid="uid://bvad1dg57pnki" path="res://entity/character_data/day0/mark_davidson_day0.tres" id="2_vtd8q"]
+[ext_resource type="Resource" uid="uid://d12wwmrf6hulh" path="res://entity/character_data/day3/peng_yue_day3.tres" id="2_ajvmv"]
 [ext_resource type="PackedScene" uid="uid://dipxawo24s3qy" path="res://entity/document/NewRuleNotice.tscn" id="6_ts2wh"]
+[ext_resource type="PackedScene" uid="uid://dufe5p3532x3c" path="res://entity/document/VisitCard.tscn" id="6_wx4fm"]
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="9_4gohn"]
 [ext_resource type="PackedScene" uid="uid://cu7tx0jfe6p46" path="res://ui/WorkingArea.tscn" id="10_2ylh6"]
 [ext_resource type="PackedScene" uid="uid://xb65vfev8api" path="res://entity/document/AllowedVisitNotice.tscn" id="11_p701c"]
@@ -19,7 +20,7 @@
 script = ExtResource("1_mly2x")
 day = 3
 date_string = "15/05/2000"
-today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_vtd8q")])
+today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_ajvmv")])
 lightout_after_n_second = 100
 
 [node name="GameUI" type="Control" parent="."]
@@ -35,6 +36,7 @@ layout_mode = 1
 [node name="WorkingArea" parent="GameUI" node_paths=PackedStringArray("today_extra_documents", "today_items") instance=ExtResource("10_2ylh6")]
 layout_mode = 1
 offset_left = -984.0
+visit_card_prefab = ExtResource("6_wx4fm")
 today_extra_documents = [NodePath("AllowedVisitNotice"), NodePath("NewRuleNotice")]
 today_items = [NodePath("FlashlightTool")]
 
@@ -44,11 +46,11 @@ offset_left = 744.0
 offset_top = 64.0
 offset_right = 964.0
 offset_bottom = 374.0
-content = "Research
-Medical reasons
-Education
+content = "Medical reasons
 Politic
-Business (Except meteorite-related objects)"
+Business (Except meteorite-related objects)
+Visit family
+"
 
 [node name="NewRuleNotice" parent="GameUI/WorkingArea" instance=ExtResource("6_ts2wh")]
 offset_left = 680.0

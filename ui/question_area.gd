@@ -14,7 +14,7 @@ var standard_questions = [
 	[
 		"Please present your identification papers.",
 		"Papers, please.",
-		"I need to verify your identification.",
+		"I need to verify your identification documents.",
 		"Where are your documents?"
 	],
 	[
@@ -122,6 +122,9 @@ func _on_standard_1_pressed() -> void:
 	if not GameManager.current_subject.auto_give_passport:
 		await get_tree().create_timer(1).timeout
 		GameManager.working_area.spawn_passport()
+	if not GameManager.current_subject.auto_give_visit_card:
+		await get_tree().create_timer(1).timeout
+		GameManager.working_area.spawn_visit_card()
 
 func _on_standard_2_pressed() -> void:
 	var current_dialog = Utils.get_dialog_data()

@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://d12wwmrf6hulh"]
+
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_dpwsy"]
+[ext_resource type="Texture2D" uid="uid://cr8yxprs1qm58" path="res://asset/sprite/character/peng_yue_face.png" id="2_q8d3l"]
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="3_6vs5p"]
+[ext_resource type="Texture2D" uid="uid://ejtm1qxsjq71" path="res://asset/sprite/character/peng_yue.png" id="4_thhll"]
+
+[sub_resource type="Resource" id="Resource_8q6i0"]
+script = ExtResource("1_dpwsy")
+openings = Array[String](["Hello officer."])
+identity_verification = "There they are, mister."
+purpose_of_visit = "I come to visit my mother who lived here."
+duration_of_stay = "Around 5 days."
+item_in_possession = "I only bring a case with my clothes, my set of beauty products and a phone."
+previous_visit = "I do, but not very frequently. Usually 4 to 5 time a year. Had my mother agreed to live with me in the city, I won't have to travel this far for visiting."
+what_your_name = "It's Peng Yue, officer."
+why_appearance = "I'm sorry, what do you mean by that? Why do you think I look suspicious?"
+
+[resource]
+script = ExtResource("3_6vs5p")
+name = "Peng Yue"
+sprite = ExtResource("4_thhll")
+face_photo = ExtResource("2_q8d3l")
+gender = 2
+birthdate = "6/12/1956"
+nationality = "China"
+id_number = "C9583723"
+stand_too_close = false
+passport_expired = false
+auto_give_passport = true
+forgot_passport = false
+bad_visit_reason = false
+no_visit_card = false
+auto_give_visit_card = true
+bad_visit_card = false
+mismatch_visit_card_id = false
+stay_location = "19 Apple Avenue"
+stay_duration = "5 days"
+dialog = SubResource("Resource_8q6i0")

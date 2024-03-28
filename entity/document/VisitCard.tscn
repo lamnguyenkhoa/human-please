@@ -1,0 +1,126 @@
+[gd_scene load_steps=6 format=3 uid="uid://dufe5p3532x3c"]
+
+[ext_resource type="Script" path="res://entity/document/visit_card.gd" id="1_25gg6"]
+[ext_resource type="Texture2D" uid="uid://3vy62bs3omo4" path="res://asset/sprite/item/visit_card.png" id="2_2g2yx"]
+[ext_resource type="FontFile" uid="uid://bp35eoaichk1k" path="res://asset/font/Ticketing.ttf" id="3_8i7qc"]
+[ext_resource type="Texture2D" uid="uid://dtb2s3m74ig8k" path="res://asset/sprite/ui/barcode.png" id="4_rfyfg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_itrev"]
+
+[node name="VisitCard" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 265.0
+offset_bottom = 117.0
+script = ExtResource("1_25gg6")
+
+[node name="Shadow" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = -3.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.329412)
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_right = 265.0
+offset_bottom = 117.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_itrev")
+tabs_visible = false
+
+[node name="Background" type="TextureRect" parent="TabContainer"]
+layout_mode = 2
+texture = ExtResource("2_2g2yx")
+
+[node name="Title" type="Label" parent="TabContainer/Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 28.5
+offset_top = 10.0
+offset_right = 117.5
+offset_bottom = 30.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8i7qc")
+text = "Visit card"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Content" type="Label" parent="TabContainer/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = -33.5
+offset_right = 29.5
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8i7qc")
+theme_override_font_sizes/font_size = 12
+text = "Name: {0}
+ID: {1}
+Stay location: {2}
+Stay duration: {3}"
+autowrap_mode = 2
+
+[node name="Date" type="Label" parent="TabContainer/Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 88.0
+offset_right = -17.0
+offset_bottom = 97.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8i7qc")
+theme_override_font_sizes/font_size = 8
+text = "Valid on DD/MM/YYYY"
+horizontal_alignment = 1
+
+[node name="Decorative" type="Label" parent="TabContainer/Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -251.0
+offset_top = 3.0
+offset_right = -194.0
+offset_bottom = 12.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8i7qc")
+theme_override_font_sizes/font_size = 8
+text = "Broome Township"
+horizontal_alignment = 1
+
+[node name="Barcode" type="TextureRect" parent="TabContainer/Background"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 97.0
+offset_right = 236.0
+offset_bottom = 108.0
+texture = ExtResource("4_rfyfg")
+expand_mode = 1
+
+[node name="DestroyTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="resized" from="." to="." method="_on_resized"]
+[connection signal="timeout" from="DestroyTimer" to="TabContainer" method="_on_destroy_timer_timeout"]
