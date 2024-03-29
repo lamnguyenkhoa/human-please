@@ -34,6 +34,6 @@ no_visit_card = false
 auto_give_visit_card = true
 bad_visit_card = false
 mismatch_visit_card_id = false
-stay_location = "19 Apple Avenue"
+stay_location = "19 Lonsdale Street"
 stay_duration = "5 days"
 dialog = SubResource("Resource_8q6i0")

@@ -1,7 +1,7 @@
 extends Resource
 class_name CharacterResource
 
-@export_group("Status")
+@export_group("Basic")
 @export var name: String
 @export var sprite: Texture2D
 @export var face_photo: Texture2D
@@ -10,8 +10,6 @@ class_name CharacterResource
 @export var nationality: String
 @export var id_number: String
 @export var stand_too_close: bool
-
-@export_group("Basic")
 @export var passport_expired: bool
 @export var auto_give_passport: bool
 @export var forgot_passport: bool

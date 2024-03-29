@@ -58,8 +58,8 @@ func spawn_passport():
 	new_pp.belong_to_subject = true
 	new_pp.position = document_spawn.position
 	new_pp.position.x -= (new_pp.size.x / 2)
-	new_pp.position.x += randf_range(-10, 10)
-	new_pp.position.y += randf_range(-10, 10)
+	new_pp.position.x += randf_range( - 10, 10)
+	new_pp.position.y += randf_range( - 10, 10)
 	new_pp.character_data = GameManager.current_subject
 	new_pp.populate_passport_data()
 	new_pp.play_sfx(new_pp.receive_remove_new_doc_sfx)
@@ -73,11 +73,10 @@ func spawn_visit_card():
 	new_vc.belong_to_subject = true
 	new_vc.position = document_spawn.position
 	new_vc.position.x -= (new_vc.size.x / 2)
-	new_vc.position.x += randf_range(-10, 10)
-	new_vc.position.y += randf_range(-10, 10)
+	new_vc.position.x += randf_range( - 10, 10)
+	new_vc.position.y += randf_range( - 30, 30)
 	new_vc.populate_data(GameManager.current_subject)
 	new_vc.play_sfx(new_vc.receive_remove_new_doc_sfx)
-
 
 func _on_open_close_drawer_button_pressed() -> void:
 	button_click_sfx()

@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://byqq81vb6qlo4"]
+
+[ext_resource type="Texture2D" uid="uid://dsk75hg7kn2lf" path="res://asset/sprite/character/marcus_dennis_FACE.png" id="1_1q3vr"]
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="1_1rmlb"]
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_unbkf"]
+[ext_resource type="Texture2D" uid="uid://kh2mh2ckqkjk" path="res://asset/sprite/character/marcus_dennis.png" id="3_5fib1"]
+
+[sub_resource type="Resource" id="Resource_xmxb3"]
+script = ExtResource("1_unbkf")
+openings = Array[String](["Today is a good day, right? The weather is lovely."])
+identity_verification = "Already gave you, mister."
+purpose_of_visit = "I came to collect some local, traditional herbal medicine that I ordered online. Due to the access restriction, they can't ship it to me."
+duration_of_stay = "I just get my stuff and then go home right after."
+item_in_possession = "I only bring my wallet and my phone."
+previous_visit = "Yeah, I'm a frequent customer to the traditional medicine store in this town. I bought a lot of their stuff, actually."
+what_your_name = "It's Marcus, Marcus Dennis."
+why_appearance = "Ah, this hair color? I'm a fan of Guy Fieri, so I get this hairstyle and dye it white. Do I look like him?"
+
+[resource]
+script = ExtResource("1_1rmlb")
+name = "Marcus Dennis"
+sprite = ExtResource("3_5fib1")
+face_photo = ExtResource("1_1q3vr")
+gender = 1
+birthdate = "19/3/1959"
+nationality = "USA"
+id_number = "C6902309"
+stand_too_close = false
+passport_expired = true
+auto_give_passport = true
+forgot_passport = false
+bad_visit_reason = false
+no_visit_card = false
+auto_give_visit_card = true
+bad_visit_card = false
+mismatch_visit_card_id = false
+stay_location = "29 William Street"
+stay_duration = "1 day"
+dialog = SubResource("Resource_xmxb3")

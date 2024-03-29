@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://b01ihqfm83sp0"]
+[gd_scene load_steps=17 format=3 uid="uid://b01ihqfm83sp0"]
 
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_mly2x"]
 [ext_resource type="Resource" uid="uid://d12wwmrf6hulh" path="res://entity/character_data/day3/peng_yue_day3.tres" id="2_ajvmv"]
+[ext_resource type="Resource" uid="uid://byqq81vb6qlo4" path="res://entity/character_data/day3/marcus_dennis.tres" id="3_et8wu"]
 [ext_resource type="PackedScene" uid="uid://dipxawo24s3qy" path="res://entity/document/NewRuleNotice.tscn" id="6_ts2wh"]
 [ext_resource type="PackedScene" uid="uid://dufe5p3532x3c" path="res://entity/document/VisitCard.tscn" id="6_wx4fm"]
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="9_4gohn"]
@@ -20,7 +21,7 @@
 script = ExtResource("1_mly2x")
 day = 3
 date_string = "15/05/2000"
-today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_ajvmv")])
+today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_ajvmv"), ExtResource("3_et8wu")])
 lightout_after_n_second = 100
 
 [node name="GameUI" type="Control" parent="."]
