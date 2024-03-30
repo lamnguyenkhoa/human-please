@@ -35,7 +35,7 @@ func random_generate_date(birthdate: String, expired: bool) -> String:
 	var date_parts = birthdate.split("/")
 	var birthyear = int(date_parts[2])
 
-	var year = rng.randi_range(2001, 2050)
+	var year = rng.randi_range(2001, 2020)
 	if expired:
 		year = rng.randi_range(birthyear + 18, 1999)
 

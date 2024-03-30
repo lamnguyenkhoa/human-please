@@ -17,8 +17,7 @@ class_name CharacterResource
 
 # Day 3 onward
 @export_group("Visit card")
-@export var no_visit_card: bool
-@export var auto_give_visit_card: bool
+@export var has_visit_card: EnumAutoload.HasVisitCard
 @export var bad_visit_card: bool
 @export var mismatch_visit_card_id: bool
 @export var stay_location: String
@@ -27,4 +26,5 @@ class_name CharacterResource
 @export_group("")
 @export var dialog: DialogResource
 
-var gave_id = false
+var gave_passport = false
+var gave_visit_card = false

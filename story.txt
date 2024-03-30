@@ -26,7 +26,7 @@ Day 2
 Day 3
 - Start dropping hint of something moving near town
 - Rule #3: Need a card about staying location during visit. Card must be valid
-- Rule #4: Duration of stay must less than a week.
+- Rule #4: Duration of stay must no more than a week.
 - 5 visitors
 
 Day 4

@@ -15,5 +15,12 @@ enum QuestionID {
     ITEM_IN_POSSESSION,
     PREVIOUS_VISIT,
     QUESTION_APPEARANCE,
-    
+}
+
+enum HasVisitCard {
+    NONE,
+    AUTO_GIVE,
+    GIVE_WHEN_STANDARD_ASKED,
+    GIVE_WHEN_SPECIAL_ASKED,
+    DONT_HAVE
 }

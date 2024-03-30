@@ -58,6 +58,10 @@ var special_questions = [
 	[
 		"Please stand further away from the camera.",
 		"Please stand at the X spot on the floor."
+	],
+	[
+		"I also need to see your visit card.",
+		"Please present your visit card.",
 	]
 ]
 
@@ -101,6 +105,11 @@ func _on_next_subject_readied():
 		highlight.visible = true
 		special_btns[0].visible = true
 
+func check_missing_document():
+	if not GameManager.current_subject.gave_visit_card:
+		highlight.visible = true
+		special_btns[1].visible = true
+
 func select_random_string(array):
 	if array.size() == 0:
 		return ""
@@ -119,12 +128,11 @@ func _on_standard_1_pressed() -> void:
 	var current_dialog = Utils.get_dialog_data()
 	print_dialog(select_random_string(standard_questions[0]),
 		current_dialog.identity_verification, standard_btns[0])
-	if not GameManager.current_subject.auto_give_passport:
-		await get_tree().create_timer(1).timeout
-		GameManager.working_area.spawn_passport()
-	if not GameManager.current_subject.auto_give_visit_card:
-		await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1).timeout
+	GameManager.working_area.spawn_passport()
+	if GameManager.current_subject.has_visit_card == EnumAutoload.HasVisitCard.GIVE_WHEN_STANDARD_ASKED:
 		GameManager.working_area.spawn_visit_card()
+	check_missing_document()
 
 func _on_standard_2_pressed() -> void:
 	var current_dialog = Utils.get_dialog_data()
@@ -168,6 +176,15 @@ func _on_special_1_pressed() -> void:
 	SoundManager.play_sound(quick_footstep_sfx, "SFX", true)
 	await get_tree().create_timer(1).timeout
 	GameManager.camera_area.request_subject_stand_further()
+
+func _on_special_2_pressed() -> void:
+	# Request visit card
+	var current_dialog = Utils.get_dialog_data()
+	print_dialog(select_random_string(special_questions[1]),
+		current_dialog.request_visit_card, special_btns[1])
+	if GameManager.current_subject.has_visit_card == EnumAutoload.HasVisitCard.GIVE_WHEN_SPECIAL_ASKED:
+		await get_tree().create_timer(1).timeout
+		GameManager.working_area.spawn_visit_card()
 
 #####################
 

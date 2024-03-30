@@ -12,9 +12,10 @@ identity_verification = "There they are, mister."
 purpose_of_visit = "I come to visit my mother who lived here."
 duration_of_stay = "Around 5 days."
 item_in_possession = "I only bring a case with my clothes, my set of beauty products and a phone."
-previous_visit = "I do, but not very frequently. Usually 4 to 5 time a year. Had my mother agreed to live with me in the city, I won't have to travel this far for visiting."
+previous_visit = "I do, but not very frequently. Usually 4 to 5 times a year. Had my mother agreed to live with me in the city, I won't have to travel this far for visiting."
 what_your_name = "It's Peng Yue, officer."
 why_appearance = "I'm sorry, what do you mean by that? Why do you think I look suspicious?"
+request_visit_card = ""
 
 [resource]
 script = ExtResource("3_6vs5p")
@@ -30,8 +31,7 @@ passport_expired = false
 auto_give_passport = true
 forgot_passport = false
 bad_visit_reason = false
-no_visit_card = false
-auto_give_visit_card = true
+has_visit_card = 1
 bad_visit_card = false
 mismatch_visit_card_id = false
 stay_location = "19 Lonsdale Street"

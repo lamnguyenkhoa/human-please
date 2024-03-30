@@ -133,6 +133,13 @@ theme_override_fonts/font = ExtResource("3_og5ud")
 text = "Request subject stand further"
 text_overrun_behavior = 3
 
+[node name="Special2" type="Button" parent="TabContainer/Special/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_og5ud")
+text = "Request visit card"
+text_overrun_behavior = 3
+
 [node name="Highlight" type="TextureRect" parent="."]
 visible = false
 self_modulate = Color(0.901961, 0.552941, 0.00392157, 1)
@@ -164,3 +171,4 @@ autoplay = "flash_highlight"
 [connection signal="pressed" from="TabContainer/Interrogate/VBoxContainer/Interrogate1" to="." method="_on_interrogate_1_pressed"]
 [connection signal="pressed" from="TabContainer/Interrogate/VBoxContainer/Interrogate2" to="." method="_on_interrogate_2_pressed"]
 [connection signal="pressed" from="TabContainer/Special/VBoxContainer/Special1" to="." method="_on_special_1_pressed"]
+[connection signal="pressed" from="TabContainer/Special/VBoxContainer/Special2" to="." method="_on_special_2_pressed"]

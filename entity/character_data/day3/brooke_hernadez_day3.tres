@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://ukcf5wrp4p1p"]
+
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="1_33uoi"]
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_38vhs"]
+[ext_resource type="Texture2D" uid="uid://46toi07p18c1" path="res://asset/sprite/character/brooke_hernadez_face.png" id="1_68cj7"]
+[ext_resource type="Texture2D" uid="uid://c1mv4d6h8c8l5" path="res://asset/sprite/character/brooke_hernadez.png" id="3_iiy15"]
+
+[sub_resource type="Resource" id="Resource_yo675"]
+script = ExtResource("1_38vhs")
+openings = Array[String]([])
+identity_verification = "My bad, I'm forgetful. Here they are Mr. Inspector."
+purpose_of_visit = "I come to get a health checkup and a simple procedure to performed on me. The clinic need me to stay overnight for monitoring."
+duration_of_stay = "It's 2 or 3 days. It should be one single night at the clinic, but if thing not go well I have to stay for another night."
+item_in_possession = "I only bring a pair of clothes to change, my old phone and a puzzle book."
+previous_visit = "Yes, I frequently has my health checkup do at this clinic. They make me feel safe. The other clinics or hospitals scare me."
+what_your_name = "I am Brooke Hernadez, mister."
+why_appearance = "Sorry, I'm not in the best condition so I may forget to take care of one own appearance. Please tell me if anything look too out of ordinary."
+request_visit_card = "A visit card? We need one to enter town now too? I never heard we need it before! Can you look over this time, please? I promised I will have it next time."
+
+[resource]
+script = ExtResource("1_33uoi")
+name = "Brooke H. Hernadez"
+sprite = ExtResource("3_iiy15")
+face_photo = ExtResource("1_68cj7")
+gender = 2
+birthdate = "28/12/1942"
+nationality = "USA"
+id_number = "C9692012"
+stand_too_close = false
+passport_expired = false
+auto_give_passport = false
+forgot_passport = false
+bad_visit_reason = false
+has_visit_card = 4
+bad_visit_card = false
+mismatch_visit_card_id = false
+stay_location = "31 Marigold Street"
+stay_duration = "3 days"
+dialog = SubResource("Resource_yo675")

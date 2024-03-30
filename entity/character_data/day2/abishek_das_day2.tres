@@ -15,6 +15,7 @@ item_in_possession = "I only bring my phone and my wallet here. I do have other 
 previous_visit = "No man. Who would come to this town in a place of nowhere? Maybe for the beer and the meteor thing they talked on the news, but that's it."
 what_your_name = "It's Abi. Abishek Das."
 why_appearance = "Hey man, does your mother teach you not to judge a book by cover? Despite the look, I'm a decent person! Really!"
+request_visit_card = ""
 
 [resource]
 script = ExtResource("3_bmmba")
@@ -30,8 +31,7 @@ passport_expired = false
 auto_give_passport = false
 forgot_passport = true
 bad_visit_reason = false
-no_visit_card = false
-auto_give_visit_card = false
+has_visit_card = 0
 bad_visit_card = false
 mismatch_visit_card_id = false
 stay_location = ""

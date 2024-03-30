@@ -15,6 +15,7 @@ item_in_possession = "I have my luggage with me, which has clothes, textbooks, a
 previous_visit = "I came here once with my professor before. I don't like it, to be honest. I prefer the liveliness of the city more."
 what_your_name = "It's Vishnu Yo, sir. But you can call me Vish."
 why_appearance = "Uhh... sorry, sir? Is something wrong with my appearance?"
+request_visit_card = ""
 
 [resource]
 script = ExtResource("1_tkwak")
@@ -30,8 +31,7 @@ passport_expired = false
 auto_give_passport = true
 forgot_passport = false
 bad_visit_reason = false
-no_visit_card = false
-auto_give_visit_card = false
+has_visit_card = 0
 bad_visit_card = false
 mismatch_visit_card_id = false
 stay_location = ""

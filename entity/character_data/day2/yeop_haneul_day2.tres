@@ -15,6 +15,7 @@ item_in_possession = "I brought a laptop, clothes, a set of my favourite watches
 previous_visit = "No, first time here. But I have my junior scouted this town before so I know the way around."
 what_your_name = "Yeop Haneul from Golden Crown Corp."
 why_appearance = "I come here for business meeting, I need to dress sharp. However, I do understand why you feel it strange, consider your choice of clothes."
+request_visit_card = ""
 
 [resource]
 script = ExtResource("1_iy5ab")
@@ -30,8 +31,7 @@ passport_expired = false
 auto_give_passport = false
 forgot_passport = false
 bad_visit_reason = false
-no_visit_card = false
-auto_give_visit_card = false
+has_visit_card = 0
 bad_visit_card = false
 mismatch_visit_card_id = false
 stay_location = ""

@@ -15,6 +15,7 @@ item_in_possession = "A M1911 pistol and a standard-issued police baton."
 previous_visit = "Haha what kinda of question is that? I worked and lived here, man."
 what_your_name = "I am the great American writer, Mark Twain. Just kidding, my full name is Mark Davidson. Yes, my father's name is David."
 why_appearance = "What? I'm too handsome for a town cop? Why thank you my friend."
+request_visit_card = ""
 
 [resource]
 script = ExtResource("2_s7vwa")
@@ -30,8 +31,7 @@ passport_expired = false
 auto_give_passport = true
 forgot_passport = false
 bad_visit_reason = false
-no_visit_card = false
-auto_give_visit_card = false
+has_visit_card = 0
 bad_visit_card = false
 mismatch_visit_card_id = false
 stay_location = ""

@@ -15,6 +15,7 @@ item_in_possession = "I carry a small luggage, which has some clothes, a laptop,
 previous_visit = "No, I haven't visit this town before, but I have heard about it. Something about a meteor storm happened here? Anyway, I don't care about it."
 what_your_name = "Sir, it's Luther Griffin."
 why_appearance = "What's wrong with my appearance, sir? Even though I'm sick, I think I look fine."
+request_visit_card = ""
 
 [resource]
 script = ExtResource("3_o1prn")
@@ -30,8 +31,7 @@ passport_expired = false
 auto_give_passport = true
 forgot_passport = false
 bad_visit_reason = false
-no_visit_card = false
-auto_give_visit_card = false
+has_visit_card = 0
 bad_visit_card = false
 mismatch_visit_card_id = false
 stay_location = ""

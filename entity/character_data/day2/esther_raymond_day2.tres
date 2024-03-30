@@ -15,6 +15,7 @@ item_in_possession = "A change of clothes, some personal toiletries and my phone
 previous_visit = "Obviously, I came here for meetings a few times already."
 what_your_name = "It's Esther Raymond, mister inspector."
 why_appearance = "Is this authority abusing? Because you are an border inspector so you can harass me? I'm not a mayor now but soon will be so you better be careful with your mouth."
+request_visit_card = ""
 
 [resource]
 script = ExtResource("1_fn7e1")
@@ -30,8 +31,7 @@ passport_expired = false
 auto_give_passport = true
 forgot_passport = false
 bad_visit_reason = false
-no_visit_card = false
-auto_give_visit_card = false
+has_visit_card = 0
 bad_visit_card = false
 mismatch_visit_card_id = false
 stay_location = ""

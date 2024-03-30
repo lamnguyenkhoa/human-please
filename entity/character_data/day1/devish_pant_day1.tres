@@ -15,6 +15,7 @@ item_in_possession = "I brought some clothes, foods, a camera and a flashlight."
 previous_visit = "No, haven't come to this place before."
 what_your_name = "My full name? The full name is Deveshwar Prakash Pant."
 why_appearance = "Hey man, I know I'm a little on the bigger size but you don't have to say it out like that."
+request_visit_card = ""
 
 [resource]
 script = ExtResource("3_ctgoi")
@@ -30,8 +31,7 @@ passport_expired = true
 auto_give_passport = true
 forgot_passport = false
 bad_visit_reason = false
-no_visit_card = false
-auto_give_visit_card = false
+has_visit_card = 0
 bad_visit_card = false
 mismatch_visit_card_id = false
 stay_location = ""

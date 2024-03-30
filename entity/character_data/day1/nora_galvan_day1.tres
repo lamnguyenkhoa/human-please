@@ -15,6 +15,7 @@ item_in_possession = "I have my bag, which has some clothes, a pair of thick glo
 previous_visit = "No sir. I haven't visited this place before"
 what_your_name = "My name? First name Nora, last name Galvan, sir."
 why_appearance = "Aren'y you supposed to compliment my look, not the other way around, officer?"
+request_visit_card = ""
 
 [resource]
 script = ExtResource("2_ioike")
@@ -30,8 +31,7 @@ passport_expired = false
 auto_give_passport = true
 forgot_passport = false
 bad_visit_reason = true
-no_visit_card = false
-auto_give_visit_card = false
+has_visit_card = 0
 bad_visit_card = false
 mismatch_visit_card_id = false
 stay_location = ""

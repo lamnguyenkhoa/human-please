@@ -46,11 +46,12 @@ func remove_subject_document():
 func spawn_documents(data: CharacterResource):
 	if data.auto_give_passport:
 		spawn_passport()
-	if data.auto_give_visit_card:
+	if data.has_visit_card == EnumAutoload.HasVisitCard.AUTO_GIVE:
 		spawn_visit_card()
 
 func spawn_passport():
-	if GameManager.current_subject.forgot_passport:
+	var subject = GameManager.current_subject
+	if subject.forgot_passport or subject.gave_passport:
 		return
 	var new_pp = usa_passport_prefab.instantiate() as Passport
 	document_area.add_child(new_pp)
@@ -60,12 +61,14 @@ func spawn_passport():
 	new_pp.position.x -= (new_pp.size.x / 2)
 	new_pp.position.x += randf_range( - 10, 10)
 	new_pp.position.y += randf_range( - 10, 10)
-	new_pp.character_data = GameManager.current_subject
+	new_pp.character_data = subject
 	new_pp.populate_passport_data()
 	new_pp.play_sfx(new_pp.receive_remove_new_doc_sfx)
+	subject.gave_passport = true
 
 func spawn_visit_card():
-	if GameManager.current_subject.no_visit_card:
+	var subject = GameManager.current_subject
+	if subject.has_visit_card == EnumAutoload.HasVisitCard.DONT_HAVE or subject.gave_visit_card:
 		return
 	var new_vc = visit_card_prefab.instantiate() as VisitCard
 	document_area.add_child(new_vc)
@@ -75,8 +78,9 @@ func spawn_visit_card():
 	new_vc.position.x -= (new_vc.size.x / 2)
 	new_vc.position.x += randf_range( - 10, 10)
 	new_vc.position.y += randf_range( - 30, 30)
-	new_vc.populate_data(GameManager.current_subject)
+	new_vc.populate_data(subject)
 	new_vc.play_sfx(new_vc.receive_remove_new_doc_sfx)
+	subject.gave_visit_card = true
 
 func _on_open_close_drawer_button_pressed() -> void:
 	button_click_sfx()
