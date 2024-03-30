@@ -106,7 +106,7 @@ func _on_next_subject_readied():
 		special_btns[0].visible = true
 
 func check_missing_document():
-	if not GameManager.current_subject.gave_visit_card:
+	if GameManager.work_day.day >= 3 and not GameManager.current_subject.gave_visit_card:
 		highlight.visible = true
 		special_btns[1].visible = true
 
