@@ -67,7 +67,7 @@ func load_next_character():
 func calculate_pax_legal():
     if current_subject.passport_expired or \
     current_subject.bad_visit_reason or \
-    current_subject.forgot_passport or \
+    current_subject.has_passport == EnumAutoload.HasPassport.DONT_HAVE or \
     current_subject.has_visit_card == EnumAutoload.HasVisitCard.DONT_HAVE or \
     current_subject.bad_visit_card or \
     current_subject.mismatch_visit_card_id:

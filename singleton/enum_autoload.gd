@@ -17,6 +17,13 @@ enum QuestionID {
     QUESTION_APPEARANCE,
 }
 
+enum HasPassport {
+    NONE,
+    AUTO_GIVE,
+    GIVE_WHEN_STANDARD_ASKED,
+    DONT_HAVE
+}
+
 enum HasVisitCard {
     NONE,
     AUTO_GIVE,

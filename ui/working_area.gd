@@ -44,14 +44,14 @@ func remove_subject_document():
 				doc.return_to_subject()
 
 func spawn_documents(data: CharacterResource):
-	if data.auto_give_passport:
+	if data.has_passport == EnumAutoload.HasPassport.AUTO_GIVE:
 		spawn_passport()
 	if data.has_visit_card == EnumAutoload.HasVisitCard.AUTO_GIVE:
 		spawn_visit_card()
 
 func spawn_passport():
 	var subject = GameManager.current_subject
-	if subject.forgot_passport or subject.gave_passport:
+	if subject.has_passport == EnumAutoload.HasPassport.DONT_HAVE or subject.gave_passport:
 		return
 	var new_pp = usa_passport_prefab.instantiate() as Passport
 	document_area.add_child(new_pp)
