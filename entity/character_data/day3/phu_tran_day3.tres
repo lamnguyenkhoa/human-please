@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://bctgvmmy8v2hd"]
+
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_4b4jp"]
+[ext_resource type="Texture2D" uid="uid://bp5ljer8ey51q" path="res://asset/sprite/character/phu_tran_face.png" id="2_holy3"]
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="3_nc6wk"]
+[ext_resource type="Texture2D" uid="uid://bse15tt0hjnef" path="res://asset/sprite/character/phu_tran.png" id="4_mnh5t"]
+
+[sub_resource type="Resource" id="Resource_6cmg4"]
+script = ExtResource("1_4b4jp")
+openings = Array[String]([])
+identity_verification = "There's the passport."
+purpose_of_visit = "Hi, my purpose of visit is to visit my friend. He doesn't do well currently and I guess he need some moral support."
+duration_of_stay = "I will stay in the town for a week. Should be enough."
+item_in_possession = "I brought clothes, laptop, handheld gaming console, phone and a small gift for my friend: the famous Deathstar GELO set. This should cheer the dude up."
+previous_visit = "No, haven't been here before. My friend just moved here half a year ago so this is the first time I visit him."
+what_your_name = "My name is Phu Tran."
+why_appearance = "I prefer dress casual like this. Much more comfortable, you know. Well, I do admit it can look quite dodgy."
+request_visit_card = "Oopsie, there you are."
+
+[resource]
+script = ExtResource("3_nc6wk")
+name = "Phu Tran"
+sprite = ExtResource("4_mnh5t")
+face_photo = ExtResource("2_holy3")
+gender = 1
+birthdate = "3/3/1976"
+nationality = "Vietnam"
+id_number = "C0532921"
+stand_too_close = true
+has_passport = 2
+passport_expired = false
+bad_visit_reason = false
+has_visit_card = 3
+bad_visit_card = false
+mismatch_visit_card_id = false
+stay_location = "4 Marigold Street"
+stay_duration = "7 days"
+dialog = SubResource("Resource_6cmg4")

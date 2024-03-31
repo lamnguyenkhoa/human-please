@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://oasns4fb3vda"]
 
-[ext_resource type="Script" path="res://entity/document/moveable_document.gd" id="1_8yrlg"]
+[ext_resource type="Script" path="res://entity/document/guidebook.gd" id="1_yv554"]
 [ext_resource type="Texture2D" uid="uid://j0xw2p5dmgah" path="res://asset/sprite/item/guidebook_cover.png" id="2_jdxbl"]
 [ext_resource type="Texture2D" uid="uid://bmy07teg0e25r" path="res://asset/sprite/item/guidebook_paper_full.png" id="3_ibe5a"]
 [ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="4_hv1g7"]
@@ -25,12 +25,14 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ui7l"]
 
-[node name="Guidebook" type="Control"]
+[node name="Guidebook" type="Control" node_paths=PackedStringArray("rule3_text", "rule4_text")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 200.0
 offset_bottom = 256.0
-script = ExtResource("1_8yrlg")
+script = ExtResource("1_yv554")
+rule3_text = NodePath("TabContainer/Rules/Rule3")
+rule4_text = NodePath("TabContainer/Rules/Rule4")
 
 [node name="Shadow" type="ColorRect" parent="."]
 layout_mode = 1
@@ -67,13 +69,13 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
 flat = true
 
-[node name="Pages" type="TextureRect" parent="TabContainer"]
+[node name="TOC" type="TextureRect" parent="TabContainer"]
 visible = false
 light_mask = 2
 layout_mode = 2
 texture = ExtResource("3_ibe5a")
 
-[node name="Label" type="Label" parent="TabContainer/Pages"]
+[node name="Label" type="Label" parent="TabContainer/TOC"]
 layout_mode = 2
 offset_left = 222.0
 offset_top = 32.0
@@ -88,7 +90,7 @@ text = "TABLE OF CONTENT
 "
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="TabContainer/Pages"]
+[node name="Label2" type="Label" parent="TabContainer/TOC"]
 layout_mode = 2
 offset_left = 222.0
 offset_top = 104.0
@@ -101,7 +103,7 @@ text = "Rules.............3-6
 Terminology.......7-8
 Local map.........9-10"
 
-[node name="Label3" type="RichTextLabel" parent="TabContainer/Pages"]
+[node name="Label3" type="RichTextLabel" parent="TabContainer/TOC"]
 layout_mode = 2
 offset_left = 22.0
 offset_top = 16.0
@@ -120,7 +122,7 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 2
 
-[node name="Label4" type="RichTextLabel" parent="TabContainer/Pages"]
+[node name="Label4" type="RichTextLabel" parent="TabContainer/TOC"]
 layout_mode = 2
 offset_left = 16.0
 offset_top = 128.0
@@ -142,7 +144,7 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 2
 
-[node name="NextPageButton" type="Button" parent="TabContainer/Pages"]
+[node name="NextPageButton" type="Button" parent="TabContainer/TOC"]
 layout_mode = 0
 offset_left = 376.0
 offset_top = 8.0
@@ -156,7 +158,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
 flat = true
 
-[node name="PreviousPageButton" type="Button" parent="TabContainer/Pages"]
+[node name="PreviousPageButton" type="Button" parent="TabContainer/TOC"]
 layout_mode = 0
 offset_top = 8.0
 offset_right = 16.0
@@ -169,7 +171,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
 flat = true
 
-[node name="PageCount" type="Label" parent="TabContainer/Pages"]
+[node name="PageCount" type="Label" parent="TabContainer/TOC"]
 layout_mode = 2
 offset_left = 94.0
 offset_top = 240.0
@@ -181,7 +183,7 @@ theme_override_font_sizes/font_size = 8
 text = "1"
 horizontal_alignment = 1
 
-[node name="PageCount2" type="Label" parent="TabContainer/Pages"]
+[node name="PageCount2" type="Label" parent="TabContainer/TOC"]
 layout_mode = 2
 offset_left = 286.0
 offset_top = 240.0
@@ -193,7 +195,7 @@ theme_override_font_sizes/font_size = 8
 text = "2"
 horizontal_alignment = 1
 
-[node name="RuleButton" type="Button" parent="TabContainer/Pages"]
+[node name="RuleButton" type="Button" parent="TabContainer/TOC"]
 layout_mode = 0
 offset_left = 224.0
 offset_top = 107.0
@@ -207,7 +209,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_rufga")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1ui7l")
 flat = true
 
-[node name="TermButton" type="Button" parent="TabContainer/Pages"]
+[node name="TermButton" type="Button" parent="TabContainer/TOC"]
 layout_mode = 0
 offset_left = 224.0
 offset_top = 127.0
@@ -221,7 +223,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_rufga")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1ui7l")
 flat = true
 
-[node name="LocalMapButton" type="Button" parent="TabContainer/Pages"]
+[node name="LocalMapButton" type="Button" parent="TabContainer/TOC"]
 layout_mode = 0
 offset_left = 224.0
 offset_top = 147.0
@@ -235,13 +237,13 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_rufga")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1ui7l")
 flat = true
 
-[node name="Pages2" type="TextureRect" parent="TabContainer"]
+[node name="Rules" type="TextureRect" parent="TabContainer"]
 visible = false
 light_mask = 2
 layout_mode = 2
 texture = ExtResource("3_ibe5a")
 
-[node name="Label" type="Label" parent="TabContainer/Pages2"]
+[node name="Label" type="Label" parent="TabContainer/Rules"]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 8.0
@@ -252,7 +254,7 @@ theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "Rules"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="TabContainer/Pages2"]
+[node name="Label2" type="Label" parent="TabContainer/Rules"]
 layout_mode = 0
 offset_left = 278.0
 offset_top = 8.0
@@ -263,7 +265,7 @@ theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "Rules"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="TabContainer/Pages2"]
+[node name="Rule1+2" type="Label" parent="TabContainer/Rules"]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 40.0
@@ -279,7 +281,34 @@ text = "Rule #1: ID documents must be valid:
 Rule #2: Only subject with valid purpose is allowed to come in. Check today supplement materials."
 autowrap_mode = 2
 
-[node name="NextPageButton" type="Button" parent="TabContainer/Pages2"]
+[node name="Rule3" type="Label" parent="TabContainer/Rules"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 40.0
+offset_right = 384.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hv1g7")
+theme_override_font_sizes/font_size = 10
+text = "Rule #3: Subject must carry a valid visit card.
+- Match ID.
+- Issued on today."
+autowrap_mode = 2
+
+[node name="Rule4" type="Label" parent="TabContainer/Rules"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 120.0
+offset_right = 384.0
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hv1g7")
+theme_override_font_sizes/font_size = 10
+text = "Rule #4: Duration of stay on visit card must be no more than 2 weeks.
+"
+autowrap_mode = 2
+
+[node name="NextPageButton" type="Button" parent="TabContainer/Rules"]
 layout_mode = 0
 offset_left = 376.0
 offset_top = 8.0
@@ -293,7 +322,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
 flat = true
 
-[node name="PreviousPageButton" type="Button" parent="TabContainer/Pages2"]
+[node name="PreviousPageButton" type="Button" parent="TabContainer/Rules"]
 layout_mode = 0
 offset_top = 8.0
 offset_right = 16.0
@@ -306,7 +335,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
 flat = true
 
-[node name="PageCount" type="Label" parent="TabContainer/Pages2"]
+[node name="PageCount" type="Label" parent="TabContainer/Rules"]
 layout_mode = 0
 offset_left = 94.0
 offset_top = 240.0
@@ -319,7 +348,7 @@ text = "3
 "
 horizontal_alignment = 1
 
-[node name="PageCount2" type="Label" parent="TabContainer/Pages2"]
+[node name="PageCount2" type="Label" parent="TabContainer/Rules"]
 layout_mode = 0
 offset_left = 286.0
 offset_top = 240.0
@@ -332,13 +361,13 @@ text = "4
 "
 horizontal_alignment = 1
 
-[node name="Pages3" type="TextureRect" parent="TabContainer"]
+[node name="Rules2" type="TextureRect" parent="TabContainer"]
 visible = false
 light_mask = 2
 layout_mode = 2
 texture = ExtResource("3_ibe5a")
 
-[node name="Label3" type="Label" parent="TabContainer/Pages3"]
+[node name="Label3" type="Label" parent="TabContainer/Rules2"]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 40.0
@@ -349,7 +378,7 @@ theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 10
 autowrap_mode = 2
 
-[node name="NextPageButton" type="Button" parent="TabContainer/Pages3"]
+[node name="NextPageButton" type="Button" parent="TabContainer/Rules2"]
 layout_mode = 0
 offset_left = 376.0
 offset_top = 8.0
@@ -363,7 +392,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
 flat = true
 
-[node name="PreviousPageButton" type="Button" parent="TabContainer/Pages3"]
+[node name="PreviousPageButton" type="Button" parent="TabContainer/Rules2"]
 layout_mode = 0
 offset_top = 8.0
 offset_right = 16.0
@@ -376,7 +405,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
 flat = true
 
-[node name="Label" type="Label" parent="TabContainer/Pages3"]
+[node name="Label" type="Label" parent="TabContainer/Rules2"]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 8.0
@@ -387,7 +416,7 @@ theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "Rules"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="TabContainer/Pages3"]
+[node name="Label2" type="Label" parent="TabContainer/Rules2"]
 layout_mode = 0
 offset_left = 278.0
 offset_top = 8.0
@@ -398,7 +427,7 @@ theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "Rules"
 horizontal_alignment = 1
 
-[node name="PageCount" type="Label" parent="TabContainer/Pages3"]
+[node name="PageCount" type="Label" parent="TabContainer/Rules2"]
 layout_mode = 0
 offset_left = 94.0
 offset_top = 240.0
@@ -410,7 +439,7 @@ theme_override_font_sizes/font_size = 8
 text = "5"
 horizontal_alignment = 1
 
-[node name="PageCount2" type="Label" parent="TabContainer/Pages3"]
+[node name="PageCount2" type="Label" parent="TabContainer/Rules2"]
 layout_mode = 0
 offset_left = 286.0
 offset_top = 240.0
@@ -423,13 +452,13 @@ text = "6
 "
 horizontal_alignment = 1
 
-[node name="Pages4" type="TextureRect" parent="TabContainer"]
+[node name="Term" type="TextureRect" parent="TabContainer"]
 visible = false
 light_mask = 2
 layout_mode = 2
 texture = ExtResource("3_ibe5a")
 
-[node name="NextPageButton" type="Button" parent="TabContainer/Pages4"]
+[node name="NextPageButton" type="Button" parent="TabContainer/Term"]
 layout_mode = 0
 offset_left = 376.0
 offset_top = 8.0
@@ -443,7 +472,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
 flat = true
 
-[node name="PreviousPageButton" type="Button" parent="TabContainer/Pages4"]
+[node name="PreviousPageButton" type="Button" parent="TabContainer/Term"]
 layout_mode = 0
 offset_top = 8.0
 offset_right = 16.0
@@ -456,7 +485,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
 flat = true
 
-[node name="Label" type="Label" parent="TabContainer/Pages4"]
+[node name="Label" type="Label" parent="TabContainer/Term"]
 layout_mode = 0
 offset_left = 46.0
 offset_top = 8.0
@@ -467,7 +496,7 @@ theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "Terminology"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="TabContainer/Pages4"]
+[node name="Label2" type="Label" parent="TabContainer/Term"]
 layout_mode = 0
 offset_left = 246.0
 offset_top = 8.0
@@ -478,7 +507,7 @@ theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "Terminology"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="TabContainer/Pages4"]
+[node name="Label3" type="Label" parent="TabContainer/Term"]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 40.0
@@ -489,7 +518,7 @@ theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 10
 autowrap_mode = 2
 
-[node name="PageCount" type="Label" parent="TabContainer/Pages4"]
+[node name="PageCount" type="Label" parent="TabContainer/Term"]
 layout_mode = 0
 offset_left = 94.0
 offset_top = 240.0
@@ -501,7 +530,7 @@ theme_override_font_sizes/font_size = 8
 text = "7"
 horizontal_alignment = 1
 
-[node name="PageCount2" type="Label" parent="TabContainer/Pages4"]
+[node name="PageCount2" type="Label" parent="TabContainer/Term"]
 layout_mode = 0
 offset_left = 286.0
 offset_top = 240.0
@@ -513,13 +542,13 @@ theme_override_font_sizes/font_size = 8
 text = "8"
 horizontal_alignment = 1
 
-[node name="Pages5" type="TextureRect" parent="TabContainer"]
+[node name="Map" type="TextureRect" parent="TabContainer"]
 visible = false
 light_mask = 2
 layout_mode = 2
 texture = ExtResource("3_ibe5a")
 
-[node name="NextPageButton" type="Button" parent="TabContainer/Pages5"]
+[node name="NextPageButton" type="Button" parent="TabContainer/Map"]
 layout_mode = 0
 offset_left = 376.0
 offset_top = 8.0
@@ -533,7 +562,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
 flat = true
 
-[node name="PreviousPageButton" type="Button" parent="TabContainer/Pages5"]
+[node name="PreviousPageButton" type="Button" parent="TabContainer/Map"]
 layout_mode = 0
 offset_top = 8.0
 offset_right = 16.0
@@ -546,7 +575,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
 flat = true
 
-[node name="Label" type="Label" parent="TabContainer/Pages5"]
+[node name="Label" type="Label" parent="TabContainer/Map"]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 8.0
@@ -556,7 +585,7 @@ theme_override_colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
 theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "Local map"
 
-[node name="Label2" type="Label" parent="TabContainer/Pages5"]
+[node name="Label2" type="Label" parent="TabContainer/Map"]
 layout_mode = 0
 offset_left = 248.0
 offset_top = 112.0
@@ -567,7 +596,7 @@ theme_override_fonts/font = ExtResource("4_hv1g7")
 text = "WIP
 Sorry :(("
 
-[node name="PageCount" type="Label" parent="TabContainer/Pages5"]
+[node name="PageCount" type="Label" parent="TabContainer/Map"]
 layout_mode = 0
 offset_left = 94.0
 offset_top = 240.0
@@ -579,7 +608,7 @@ theme_override_font_sizes/font_size = 8
 text = "9"
 horizontal_alignment = 1
 
-[node name="PageCount2" type="Label" parent="TabContainer/Pages5"]
+[node name="PageCount2" type="Label" parent="TabContainer/Map"]
 layout_mode = 0
 offset_left = 286.0
 offset_top = 240.0
@@ -598,17 +627,17 @@ one_shot = true
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="resized" from="." to="." method="_on_resized"]
 [connection signal="pressed" from="TabContainer/Cover/NextPageButton" to="." method="_on_next_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Pages/NextPageButton" to="." method="_on_next_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Pages/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Pages/RuleButton" to="." method="_on_rule_button_pressed"]
-[connection signal="pressed" from="TabContainer/Pages/TermButton" to="." method="_on_term_button_pressed"]
-[connection signal="pressed" from="TabContainer/Pages/LocalMapButton" to="." method="_on_local_map_button_pressed"]
-[connection signal="pressed" from="TabContainer/Pages2/NextPageButton" to="." method="_on_next_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Pages2/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Pages3/NextPageButton" to="." method="_on_next_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Pages3/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Pages4/NextPageButton" to="." method="_on_next_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Pages4/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Pages5/NextPageButton" to="." method="_on_next_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Pages5/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
+[connection signal="pressed" from="TabContainer/TOC/NextPageButton" to="." method="_on_next_page_button_pressed"]
+[connection signal="pressed" from="TabContainer/TOC/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
+[connection signal="pressed" from="TabContainer/TOC/RuleButton" to="." method="_on_rule_button_pressed"]
+[connection signal="pressed" from="TabContainer/TOC/TermButton" to="." method="_on_term_button_pressed"]
+[connection signal="pressed" from="TabContainer/TOC/LocalMapButton" to="." method="_on_local_map_button_pressed"]
+[connection signal="pressed" from="TabContainer/Rules/NextPageButton" to="." method="_on_next_page_button_pressed"]
+[connection signal="pressed" from="TabContainer/Rules/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
+[connection signal="pressed" from="TabContainer/Rules2/NextPageButton" to="." method="_on_next_page_button_pressed"]
+[connection signal="pressed" from="TabContainer/Rules2/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
+[connection signal="pressed" from="TabContainer/Term/NextPageButton" to="." method="_on_next_page_button_pressed"]
+[connection signal="pressed" from="TabContainer/Term/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
+[connection signal="pressed" from="TabContainer/Map/NextPageButton" to="." method="_on_next_page_button_pressed"]
+[connection signal="pressed" from="TabContainer/Map/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
 [connection signal="timeout" from="DestroyTimer" to="TabContainer" method="_on_destroy_timer_timeout"]

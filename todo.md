@@ -11,6 +11,7 @@
 - [ ] Fixing camera
 - [ ] Inspect detailed inventory
 - [ ] Conditional questions
+- [ ] Add a local map
 
 ## Story
 

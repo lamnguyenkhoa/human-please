@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://2a1cy0brtop8"]
+
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="1_6iirs"]
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_vtycs"]
+[ext_resource type="Texture2D" uid="uid://1hdnvuxrk3vl" path="res://asset/sprite/character/travis_rutherford_face.png" id="2_gxlfc"]
+[ext_resource type="Texture2D" uid="uid://ba5ki825p2loe" path="res://asset/sprite/character/travis_rutherford.png" id="4_o3n4m"]
+
+[sub_resource type="Resource" id="Resource_6maaq"]
+script = ExtResource("1_vtycs")
+openings = Array[String]([])
+identity_verification = "Yeah, new required the visit card. The number of required documents is just gonna increased in the future, isn't it?"
+purpose_of_visit = "I has some business with one of the local bar here. I know the rule so I won't say more than necessary. The keyword you want to here is \"for business, not related to meteorite\", right?"
+duration_of_stay = "I will stay overnight, so it's 2 days."
+item_in_possession = "My case only has a spare set of clothes, my medicine, phone and laptop."
+previous_visit = "Rarely, but yes, I did visit this place."
+what_your_name = "Travis Rutherford"
+why_appearance = "Is there a rule against my clothes or something? What's wrong with it?"
+request_visit_card = ""
+
+[resource]
+script = ExtResource("1_6iirs")
+name = "Travis Rutherford"
+sprite = ExtResource("4_o3n4m")
+face_photo = ExtResource("2_gxlfc")
+gender = 1
+birthdate = "2/12/1939"
+nationality = "USA"
+id_number = "C9530983"
+stand_too_close = false
+has_passport = 1
+passport_expired = false
+bad_visit_reason = false
+has_visit_card = 2
+bad_visit_card = false
+mismatch_visit_card_id = false
+stay_location = "44 Lonsdale Street"
+stay_duration = "2 days"
+dialog = SubResource("Resource_6maaq")
