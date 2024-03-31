@@ -61,7 +61,7 @@ offset_left = 680.0
 offset_top = 208.0
 offset_right = 900.0
 offset_bottom = 493.0
-new_rule = "Rule #3: Visitors must carry a valid visit card."
+new_rule = "Rule #3: Visitors must carry a VALID visit card."
 
 [node name="FlashlightTool" parent="GameUI/WorkingArea" instance=ExtResource("13_non5o")]
 offset_left = 88.0
