@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://dbd00djis52lb"]
+
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="1_e47p4"]
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_xldrx"]
+[ext_resource type="Texture2D" uid="uid://cqwdvys827c5h" path="res://asset/sprite/character/joan_hall_face.png" id="2_lgbge"]
+[ext_resource type="Texture2D" uid="uid://b48nd8e6xvd3d" path="res://asset/sprite/character/joan_hall.png" id="4_3yxi2"]
+
+[sub_resource type="Resource" id="Resource_n6tr3"]
+script = ExtResource("1_xldrx")
+openings = Array[String](["Hi!"])
+identity_verification = "RIght here, mister!"
+purpose_of_visit = "My uncle invited me here for his cousin birthday birthday party. Since it's far from where I live, I decided to stay here for a few more days too."
+duration_of_stay = "Around 6 days. Have to go back before the next Monday."
+item_in_possession = "The usual traveller's luggage, you know. Some clothes, toothbrushes, towels  and mobile phone. And a gift for the cousin, too, which is a full set of Harry Spotter books. He will love it!"
+previous_visit = "I came here exactly one before, at my uncle wedding. Then uncle and dad had some fighting and we didn't talk much with each other for a while. Recently, they made up, so now it's the first time I go to my cousin birthday actually."
+what_your_name = "It's Joan Hall."
+why_appearance = "Ehh, is the red shirt too flashy? I like such bright color though. Beside, I don't think anything else look wrong on me."
+request_visit_card = ""
+
+[resource]
+script = ExtResource("1_e47p4")
+name = "Joan Hall"
+sprite = ExtResource("4_3yxi2")
+face_photo = ExtResource("2_lgbge")
+gender = 2
+birthdate = "14/3/1968"
+nationality = "USA"
+id_number = "C5231895"
+stand_too_close = false
+has_passport = 1
+passport_expired = false
+bad_visit_reason = false
+has_visit_card = 2
+bad_visit_card = false
+mismatch_visit_card_id = true
+stay_location = "12 Russel Street"
+stay_duration = "6 days"
+dialog = SubResource("Resource_n6tr3")

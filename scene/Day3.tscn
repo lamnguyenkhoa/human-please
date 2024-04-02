@@ -1,14 +1,17 @@
-[gd_scene load_steps=20 format=3 uid="uid://b01ihqfm83sp0"]
+[gd_scene load_steps=23 format=3 uid="uid://b01ihqfm83sp0"]
 
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_mly2x"]
 [ext_resource type="Resource" uid="uid://d12wwmrf6hulh" path="res://entity/character_data/day3/peng_yue_day3.tres" id="2_ajvmv"]
-[ext_resource type="Resource" uid="uid://byqq81vb6qlo4" path="res://entity/character_data/day3/marcus_dennis.tres" id="3_et8wu"]
+[ext_resource type="Resource" uid="uid://byqq81vb6qlo4" path="res://entity/character_data/day3/marcus_dennis_day3.tres" id="3_35pvo"]
 [ext_resource type="Resource" uid="uid://ukcf5wrp4p1p" path="res://entity/character_data/day3/brooke_hernadez_day3.tres" id="4_sfcln"]
 [ext_resource type="Resource" uid="uid://bctgvmmy8v2hd" path="res://entity/character_data/day3/phu_tran_day3.tres" id="5_s8ch2"]
 [ext_resource type="Resource" uid="uid://2a1cy0brtop8" path="res://entity/character_data/day3/travis_rutherford_day3.tres" id="6_celek"]
 [ext_resource type="PackedScene" uid="uid://dipxawo24s3qy" path="res://entity/document/NewRuleNotice.tscn" id="6_ts2wh"]
 [ext_resource type="PackedScene" uid="uid://dufe5p3532x3c" path="res://entity/document/VisitCard.tscn" id="6_wx4fm"]
+[ext_resource type="Resource" uid="uid://dbd00djis52lb" path="res://entity/character_data/day3/joan_hall_day3.tres" id="7_g2d6a"]
+[ext_resource type="Resource" uid="uid://bncsuaek41hl6" path="res://entity/character_data/day3/shawn_flores_day3.tres" id="8_c0lwu"]
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="9_4gohn"]
+[ext_resource type="Resource" uid="uid://bnrsmyvjk7gls" path="res://entity/character_data/day3/shirley_cook_day3.tres" id="9_fpgig"]
 [ext_resource type="PackedScene" uid="uid://cu7tx0jfe6p46" path="res://ui/WorkingArea.tscn" id="10_2ylh6"]
 [ext_resource type="PackedScene" uid="uid://xb65vfev8api" path="res://entity/document/AllowedVisitNotice.tscn" id="11_p701c"]
 [ext_resource type="PackedScene" uid="uid://dgh5j07y8yrea" path="res://entity/tool/FlashlightItem.tscn" id="13_non5o"]
@@ -24,7 +27,7 @@
 script = ExtResource("1_mly2x")
 day = 3
 date_string = "15/05/2000"
-today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_ajvmv"), ExtResource("3_et8wu"), ExtResource("4_sfcln"), ExtResource("5_s8ch2"), ExtResource("6_celek")])
+today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_ajvmv"), ExtResource("3_35pvo"), ExtResource("4_sfcln"), ExtResource("5_s8ch2"), ExtResource("6_celek"), ExtResource("7_g2d6a"), ExtResource("8_c0lwu"), ExtResource("9_fpgig")])
 lightout_after_n_second = 100
 
 [node name="GameUI" type="Control" parent="."]
@@ -53,8 +56,7 @@ offset_bottom = 374.0
 content = "Medical reasons
 Politic
 Business (Except meteorite-related objects)
-Visiting
-"
+Visiting"
 
 [node name="NewRuleNotice" parent="GameUI/WorkingArea" instance=ExtResource("6_ts2wh")]
 offset_left = 680.0

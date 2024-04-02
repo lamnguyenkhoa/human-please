@@ -291,7 +291,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 10
 text = "Rule #3: Subject must carry a valid visit card.
-- Match ID.
+- Matched ID number.
 - Issued on today."
 autowrap_mode = 2
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dufe5p3532x3c"]
+[gd_scene load_steps=7 format=3 uid="uid://dufe5p3532x3c"]
 
 [ext_resource type="Script" path="res://entity/document/visit_card.gd" id="1_25gg6"]
 [ext_resource type="Texture2D" uid="uid://3vy62bs3omo4" path="res://asset/sprite/item/visit_card.png" id="2_2g2yx"]
 [ext_resource type="FontFile" uid="uid://bp35eoaichk1k" path="res://asset/font/Ticketing.ttf" id="3_8i7qc"]
 [ext_resource type="Texture2D" uid="uid://dtb2s3m74ig8k" path="res://asset/sprite/ui/barcode.png" id="4_rfyfg"]
+[ext_resource type="Texture2D" uid="uid://dcji5587rbcnk" path="res://asset/sprite/item/city_stamp.png" id="5_yrqlj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_itrev"]
 
@@ -115,6 +116,15 @@ offset_top = 97.0
 offset_right = 236.0
 offset_bottom = 108.0
 texture = ExtResource("4_rfyfg")
+expand_mode = 1
+
+[node name="Stamp" type="TextureRect" parent="TabContainer/Background"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 29.0
+offset_right = 234.0
+offset_bottom = 86.0
+texture = ExtResource("5_yrqlj")
 expand_mode = 1
 
 [node name="DestroyTimer" type="Timer" parent="."]

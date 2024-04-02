@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=6 format=3 uid="uid://bncsuaek41hl6"]
+
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_qlq0r"]
+[ext_resource type="Texture2D" uid="uid://d0i1kmvhst8gr" path="res://asset/sprite/character/shawn_flores_face.png" id="2_ij5xi"]
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="3_gworx"]
+[ext_resource type="Texture2D" uid="uid://b38s66j8y33l2" path="res://asset/sprite/character/shawn_flores.png" id="4_sr564"]
+
+[sub_resource type="Resource" id="Resource_sp7qd"]
+script = ExtResource("1_qlq0r")
+openings = Array[String](["Good afternoon!"])
+identity_verification = "It's there, dude!"
+purpose_of_visit = "I come to dri.. to visit my friend! It's... been a while since I last saw him."
+duration_of_stay = "Just one day. Hopefully, if Im not drink too much... at my friend house, I mean."
+item_in_possession = "Not much, just my phone and my wallet. And my cooler bag."
+previous_visit = "Nah, never been here before."
+what_your_name = "My name is Shawn Flores. Friends usually call me Shaggy."
+why_appearance = "Suspicious? Just because I didn't carry any luggage and you think I'm suspicious. What illegal things did you think I will commit when I go to town?"
+request_visit_card = "Oh right man, here it is."
+
+[resource]
+script = ExtResource("3_gworx")
+name = "Shawn Flores"
+sprite = ExtResource("4_sr564")
+face_photo = ExtResource("2_ij5xi")
+gender = 1
+birthdate = "6/11/1974"
+nationality = "USA"
+id_number = "C8490112"
+stand_too_close = false
+has_passport = 1
+passport_expired = false
+bad_visit_reason = false
+has_visit_card = 3
+bad_visit_card = false
+mismatch_visit_card_id = false
+stay_location = "30 William Street"
+stay_duration = "1 days"
+dialog = SubResource("Resource_sp7qd")
