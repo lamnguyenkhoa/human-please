@@ -65,7 +65,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_q8x42")
 flat = true
 
 [node name="Page" type="TextureRect" parent="TabContainer"]
-visible = false
 light_mask = 2
 layout_mode = 2
 texture = ExtResource("3_4mb6o")
@@ -113,7 +112,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
-text = "United state of American"
+text = "[center]United States of America[/center]"
 fit_content = true
 
 [node name="Photo" type="TextureRect" parent="TabContainer/Page"]
