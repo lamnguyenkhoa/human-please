@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://oasns4fb3vda"]
+[gd_scene load_steps=17 format=3 uid="uid://oasns4fb3vda"]
 
 [ext_resource type="Script" path="res://entity/document/guidebook.gd" id="1_yv554"]
 [ext_resource type="Texture2D" uid="uid://j0xw2p5dmgah" path="res://asset/sprite/item/guidebook_cover.png" id="2_jdxbl"]
 [ext_resource type="Texture2D" uid="uid://bmy07teg0e25r" path="res://asset/sprite/item/guidebook_paper_full.png" id="3_ibe5a"]
 [ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="4_hv1g7"]
+[ext_resource type="Texture2D" uid="uid://dk8fe6pqrpfhk" path="res://asset/sprite/ui/local_map.png" id="5_44co4"]
+[ext_resource type="Texture2D" uid="uid://cy60t7sd2v7b5" path="res://asset/sprite/ui/local_map2.png" id="6_2xkqx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_530yy"]
 
@@ -51,6 +53,7 @@ offset_bottom = 256.0
 tabs_visible = false
 
 [node name="Cover" type="TextureRect" parent="TabContainer"]
+visible = false
 light_mask = 2
 layout_mode = 2
 texture = ExtResource("2_jdxbl")
@@ -543,7 +546,6 @@ text = "8"
 horizontal_alignment = 1
 
 [node name="Map" type="TextureRect" parent="TabContainer"]
-visible = false
 light_mask = 2
 layout_mode = 2
 texture = ExtResource("3_ibe5a")
@@ -583,18 +585,20 @@ offset_right = 120.0
 offset_bottom = 30.0
 theme_override_colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
 theme_override_fonts/font = ExtResource("4_hv1g7")
-text = "Local map"
+text = "Local area map"
 
 [node name="Label2" type="Label" parent="TabContainer/Map"]
 layout_mode = 0
-offset_left = 248.0
-offset_top = 112.0
-offset_right = 354.0
-offset_bottom = 159.0
+offset_left = 209.0
+offset_top = 7.0
+offset_right = 386.0
+offset_bottom = 32.0
 theme_override_colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
 theme_override_fonts/font = ExtResource("4_hv1g7")
-text = "WIP
-Sorry :(("
+theme_override_font_sizes/font_size = 8
+text = "*You are responsible for the highlighted area only."
+horizontal_alignment = 2
+autowrap_mode = 2
 
 [node name="PageCount" type="Label" parent="TabContainer/Map"]
 layout_mode = 0
@@ -619,6 +623,24 @@ theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 8
 text = "10"
 horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Map"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 38.0
+offset_right = 194.0
+offset_bottom = 239.0
+texture = ExtResource("5_44co4")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="TabContainer/Map"]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 38.0
+offset_right = 355.0
+offset_bottom = 239.0
+texture = ExtResource("6_2xkqx")
+expand_mode = 1
 
 [node name="DestroyTimer" type="Timer" parent="."]
 one_shot = true
