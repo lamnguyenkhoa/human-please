@@ -21,6 +21,10 @@ var legal_denied = 0
 var is_in_zoom_view = false
 var zoomed_doc: Control
 
+# Save-able data
+var owned_tokens = 0
+var violation_left = 3
+
 func _ready():
     SoundManager.set_master_volume(1)
     SoundManager.set_music_volume(0.8)

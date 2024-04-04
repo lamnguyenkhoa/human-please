@@ -7,10 +7,13 @@
   - [ ] Usually has odd body feature
 - [x] Zoom feature for accessibility
 - [ ] Work result reward / penalty
+  - [ ] Lose game and retry scenario
+  - [ ] Shop to buy stuff
 - [x] Lightout
 - [ ] Fixing camera
 - [ ] Inspect detailed inventory
-- [ ] Conditional questions
+- [x] Special questions
+- [ ] Answer from inspector
 - [ ] Add a local map
 
 ## Story
