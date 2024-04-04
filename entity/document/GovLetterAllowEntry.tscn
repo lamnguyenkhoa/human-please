@@ -1,0 +1,133 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvlihyb1ll67k"]
+
+[ext_resource type="Script" path="res://entity/document/government_letter.gd" id="1_pg44v"]
+[ext_resource type="Texture2D" uid="uid://1218fl6vnwf1" path="res://asset/sprite/ui/government_letter.png" id="2_hyw82"]
+[ext_resource type="FontFile" uid="uid://b1o8u7gtfofwm" path="res://asset/font/aflfont.TTF" id="3_riifp"]
+[ext_resource type="Texture2D" uid="uid://dcji5587rbcnk" path="res://asset/sprite/item/city_stamp.png" id="4_rpvmq"]
+
+[node name="GovLetterAllowEntry" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 680.0
+offset_top = 208.0
+offset_right = 880.0
+offset_bottom = 487.0
+script = ExtResource("1_pg44v")
+
+[node name="Shadow" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.329412)
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 279.0
+tabs_visible = false
+
+[node name="Background" type="TextureRect" parent="TabContainer"]
+layout_mode = 2
+texture = ExtResource("2_hyw82")
+
+[node name="Date" type="Label" parent="TabContainer/Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 240.0
+offset_right = -8.0
+offset_bottom = 256.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_riifp")
+theme_override_font_sizes/font_size = 6
+text = "DD/MM/YYYY"
+horizontal_alignment = 2
+
+[node name="Content" type="Label" parent="TabContainer/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -72.5
+offset_right = 84.0
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_riifp")
+theme_override_font_sizes/font_size = 10
+text = "Esteemed Inspector,
+
+You are hereby directed to grant passage to the individual identified as [{0}] through the checkpoint.
+
+This individual possesses official authorization for entry as granted by the government."
+autowrap_mode = 2
+
+[node name="TemplateTop" type="Label" parent="TabContainer/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -117.5
+offset_right = 35.0
+offset_bottom = -104.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_riifp")
+theme_override_font_sizes/font_size = 8
+text = "Broome Townhall"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TemplateBot" type="Label" parent="TabContainer/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = 108.5
+offset_right = 92.0
+offset_bottom = 131.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_riifp")
+theme_override_font_sizes/font_size = 8
+text = "Broome Governor
+Alex Quinn"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Background"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 229.0
+offset_right = 47.0
+offset_bottom = 271.0
+texture = ExtResource("4_rpvmq")
+expand_mode = 1
+
+[node name="DestroyTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="resized" from="." to="." method="_on_resized"]
+[connection signal="timeout" from="DestroyTimer" to="TabContainer" method="_on_destroy_timer_timeout"]

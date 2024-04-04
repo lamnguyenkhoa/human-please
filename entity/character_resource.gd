@@ -26,5 +26,9 @@ class_name CharacterResource
 @export_group("")
 @export var dialog: DialogResource
 
+@export_group("Extra documents")
+@export var extra_id_doc: Array[PackedScene]
+@export var extra_visit_purpose_doc: Array[PackedScene]
+
 var gave_passport = false
 var gave_visit_card = false

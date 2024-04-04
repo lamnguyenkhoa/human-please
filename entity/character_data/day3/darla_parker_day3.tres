@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=7 format=3 uid="uid://dd1sa6e0ket2c"]
+
+[ext_resource type="Script" path="res://entity/dialog_resource.gd" id="1_strkg"]
+[ext_resource type="Texture2D" uid="uid://cr85g6aym0ufs" path="res://asset/sprite/character/darla_parker_face.png" id="1_xxif8"]
+[ext_resource type="Script" path="res://entity/character_resource.gd" id="1_y3nvv"]
+[ext_resource type="PackedScene" uid="uid://cvlihyb1ll67k" path="res://entity/document/GovLetterAllowEntry.tscn" id="2_efcao"]
+[ext_resource type="Texture2D" uid="uid://bx4fa2hit0j84" path="res://asset/sprite/character/darla_parker.png" id="3_88var"]
+
+[sub_resource type="Resource" id="Resource_yxuii"]
+script = ExtResource("1_strkg")
+openings = Array[String](["Hi officer."])
+identity_verification = "There you are."
+purpose_of_visit = "I'm a researcher. I come here to do some field study about the vegetation here. It's seem the meteor rain that happened recently caused some biological change to the nearby flora environment. Ah, and I have this letter that should grant me entry, regardless of the inspect procedure."
+duration_of_stay = "I would stay here for 3 or 4 days. That should be enough for some light investigation and sample collection. The rest I will do at my own lab."
+item_in_possession = "I brought along my clothes, a laptop, some books, some... science instruments for measuring and collecting things."
+previous_visit = "No, it's the first time I heard about this town. It's quite desolate here."
+what_your_name = "It's Darla Parker."
+why_appearance = "You must getting something wrong. I don't think there anything suspicious about me."
+request_visit_card = ""
+
+[resource]
+script = ExtResource("1_y3nvv")
+name = "Darla Parker"
+sprite = ExtResource("3_88var")
+face_photo = ExtResource("1_xxif8")
+gender = 2
+birthdate = "6/1/1949"
+nationality = "USA"
+id_number = "C3350211"
+stand_too_close = false
+has_passport = 2
+passport_expired = false
+bad_visit_reason = false
+has_visit_card = 2
+mismatch_visit_card_id = false
+wrong_visit_card_issued_date = false
+stay_location = "18 Smith Street"
+stay_duration = "3 days"
+dialog = SubResource("Resource_yxuii")
+extra_id_doc = Array[PackedScene]([])
+extra_visit_purpose_doc = Array[PackedScene]([ExtResource("2_efcao")])

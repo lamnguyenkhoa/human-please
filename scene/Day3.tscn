@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b01ihqfm83sp0"]
+[gd_scene load_steps=24 format=3 uid="uid://b01ihqfm83sp0"]
 
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_mly2x"]
 [ext_resource type="Resource" uid="uid://d12wwmrf6hulh" path="res://entity/character_data/day3/peng_yue_day3.tres" id="2_ajvmv"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://qibwmrns1nek" path="res://ui/CameraArea.tscn" id="9_4gohn"]
 [ext_resource type="Resource" uid="uid://bnrsmyvjk7gls" path="res://entity/character_data/day3/shirley_cook_day3.tres" id="9_fpgig"]
 [ext_resource type="PackedScene" uid="uid://cu7tx0jfe6p46" path="res://ui/WorkingArea.tscn" id="10_2ylh6"]
+[ext_resource type="Resource" uid="uid://dd1sa6e0ket2c" path="res://entity/character_data/day3/darla_parker_day3.tres" id="10_dwkc2"]
 [ext_resource type="PackedScene" uid="uid://xb65vfev8api" path="res://entity/document/AllowedVisitNotice.tscn" id="11_p701c"]
 [ext_resource type="PackedScene" uid="uid://dgh5j07y8yrea" path="res://entity/tool/FlashlightItem.tscn" id="13_non5o"]
 [ext_resource type="PackedScene" uid="uid://r3obsn7dyt73" path="res://ui/DialogArea.tscn" id="14_bio1f"]
@@ -27,7 +28,7 @@
 script = ExtResource("1_mly2x")
 day = 3
 date_string = "15/05/2000"
-today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_ajvmv"), ExtResource("3_35pvo"), ExtResource("4_sfcln"), ExtResource("5_s8ch2"), ExtResource("6_celek"), ExtResource("7_g2d6a"), ExtResource("8_c0lwu"), ExtResource("9_fpgig")])
+today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_ajvmv"), ExtResource("3_35pvo"), ExtResource("4_sfcln"), ExtResource("5_s8ch2"), ExtResource("6_celek"), ExtResource("7_g2d6a"), ExtResource("8_c0lwu"), ExtResource("9_fpgig"), ExtResource("10_dwkc2")])
 lightout_after_n_second = 100
 
 [node name="GameUI" type="Control" parent="."]

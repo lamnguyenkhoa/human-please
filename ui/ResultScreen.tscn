@@ -133,8 +133,7 @@ grow_vertical = 2
 script = ExtResource("1_yyfp2")
 
 [node name="Background" type="TextureRect" parent="."]
-visible = false
-self_modulate = Color(0, 0, 0, 0)
+self_modulate = Color(0, 0, 0, 0.1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -240,9 +239,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -99.0
-offset_top = -224.0
+offset_top = -192.0
 offset_right = 109.0
-offset_bottom = -189.0
+offset_bottom = -157.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 30

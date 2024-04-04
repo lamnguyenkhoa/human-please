@@ -138,6 +138,10 @@ func _on_standard_2_pressed() -> void:
 	var current_dialog = Utils.get_dialog_data()
 	print_dialog(select_random_string(standard_questions[1]),
 		current_dialog.purpose_of_visit, standard_btns[1])
+	if len(GameManager.current_subject.extra_visit_purpose_doc) > 0:
+		await get_tree().create_timer(1).timeout
+		for doc in GameManager.current_subject.extra_visit_purpose_doc:
+			GameManager.working_area.spawn_document(doc)
 
 func _on_standard_3_pressed() -> void:
 	var current_dialog = Utils.get_dialog_data()

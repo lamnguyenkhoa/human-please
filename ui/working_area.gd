@@ -82,6 +82,20 @@ func spawn_visit_card():
 	new_vc.play_sfx(new_vc.receive_remove_new_doc_sfx)
 	subject.gave_visit_card = true
 
+func spawn_document(document_prefab: PackedScene):
+	var subject = GameManager.current_subject
+	var new_doc = document_prefab.instantiate() as MoveableDocument
+	document_area.add_child(new_doc)
+	new_doc.document_area = document_area
+	new_doc.belong_to_subject = true
+	new_doc.position = document_spawn.position
+	new_doc.position.x -= (new_doc.size.x / 2)
+	new_doc.position.x += randf_range( - 10, 10)
+	new_doc.position.y += randf_range( - 30, 30)
+	if new_doc.has_method("populate_data"):
+		new_doc.populate_data(subject)
+	new_doc.play_sfx(new_doc.receive_remove_new_doc_sfx)
+
 func _on_open_close_drawer_button_pressed() -> void:
 	button_click_sfx()
 	SoundManager.play_sound(open_drawer_sfx, "SFX", true)

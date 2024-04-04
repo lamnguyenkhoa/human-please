@@ -1,5 +1,10 @@
 # Todo
 
+## Links
+
+- <https://generated.photos/human-generator/new>
+- <https://removal.ai/upload>
+
 ## Gameplay
 
 - [ ] Alternate monster mechanic
