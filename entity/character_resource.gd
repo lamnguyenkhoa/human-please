@@ -18,8 +18,8 @@ class_name CharacterResource
 # Day 3 onward
 @export_group("Visit card")
 @export var has_visit_card: EnumAutoload.HasVisitCard
-@export var bad_visit_card: bool
 @export var mismatch_visit_card_id: bool
+@export var wrong_visit_card_issued_date: bool
 @export var stay_location: String
 @export var stay_duration: String
 
