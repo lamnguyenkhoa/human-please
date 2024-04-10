@@ -13,7 +13,7 @@ purpose_of_visit = "I come here to visit my dear friend, who lived and studied i
 duration_of_stay = "For 2 to 3 of sunrises. Don't want to overstay my welcmome."
 item_in_possession = "I only bring the essentials. 3 shirts, 2 cargo pants, 1 shorts, 1 toothbrush, 1 bottle of water, my bag, my wallet and my phone."
 previous_visit = "Last time I came here is for my friend's birthday party. Maybe half a year ago."
-what_your_name = "My name is Tuan Nguyen, but my friend usually call me Tuan Tuan."
+what_your_name = "My name is Tuan Ngo, but my friend usually call me Tuan Tuan."
 why_appearance = "Such clean and bright clothes in this weather? Without a single stain? I simply take care of my appearance a bit more than normal."
 request_visit_card = ""
 
@@ -36,3 +36,5 @@ wrong_visit_card_issued_date = false
 stay_location = ""
 stay_duration = ""
 dialog = SubResource("Resource_2re4j")
+extra_id_doc = Array[PackedScene]([])
+extra_visit_purpose_doc = Array[PackedScene]([])

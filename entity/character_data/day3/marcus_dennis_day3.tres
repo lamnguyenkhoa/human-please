@@ -36,3 +36,5 @@ wrong_visit_card_issued_date = false
 stay_location = "29 William Street"
 stay_duration = "1 day"
 dialog = SubResource("Resource_xmxb3")
+extra_id_doc = Array[PackedScene]([])
+extra_visit_purpose_doc = Array[PackedScene]([])

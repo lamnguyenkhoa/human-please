@@ -36,3 +36,5 @@ wrong_visit_card_issued_date = false
 stay_location = ""
 stay_duration = ""
 dialog = SubResource("Resource_4wt2k")
+extra_id_doc = Array[PackedScene]([])
+extra_visit_purpose_doc = Array[PackedScene]([])

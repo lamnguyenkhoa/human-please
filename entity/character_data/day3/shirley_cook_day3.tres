@@ -36,3 +36,5 @@ wrong_visit_card_issued_date = false
 stay_location = "4 Autumn Lane"
 stay_duration = "3 months"
 dialog = SubResource("Resource_pcenm")
+extra_id_doc = Array[PackedScene]([])
+extra_visit_purpose_doc = Array[PackedScene]([])
