@@ -9,7 +9,7 @@
 script = ExtResource("1_52qqc")
 openings = Array[String]([])
 identity_verification = "It's already on the table, mate."
-purpose_of_visit = "I come here to do business with the local tobacco shop. Do you smoke, offier?"
+purpose_of_visit = "I come here to do business with the local tobacco shop. Do you smoke, officer?"
 duration_of_stay = "One day only."
 item_in_possession = "I just have my phone, cigarettes and a lighter."
 previous_visit = "Yes, I came here before. Usually once a month."
