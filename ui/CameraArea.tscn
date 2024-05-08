@@ -603,6 +603,18 @@ stream = ExtResource("5_dxhou")
 position = Vector2(192, 192)
 stream = ExtResource("7_oe2lo")
 
+[node name="HelpText" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0.486275)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 760.0
+offset_right = 290.0
+offset_bottom = 793.0
+rotation = -1.57079
+theme_override_font_sizes/font_size = 14
+text = "LMB: Hold to move documents
+RMB: Zoom in documents"
+
 [connection signal="mouse_entered" from="ControlPanel/CameraControl/ZoomIn" to="." method="button_hover_sfx"]
 [connection signal="pressed" from="ControlPanel/CameraControl/ZoomIn" to="." method="_on_zoom_in_pressed"]
 [connection signal="mouse_entered" from="ControlPanel/CameraControl/ZoomOut" to="." method="button_hover_sfx"]

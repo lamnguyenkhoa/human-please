@@ -4,11 +4,13 @@ class_name MoveableDocument
 @onready var timer: Timer = $DestroyTimer
 @onready var tab_container = $TabContainer
 
+var page_flip_buttons: Array[PageFlipButton] = []
 var is_dragging = false
-var drag_offset = Vector2()
+var drag_offset = Vector2(0, 0)
 var mouse_in = false
 var document_area: Control
 var belong_to_subject = false
+var picked_up_pos = Vector2(0, 0)
 
 var document_moving_sfx = preload ("res://asset/sfx/document_moving_261086__jaklocke.ogg")
 var flip_paper_sfx = preload ("res://asset/sfx/flip_paper_391350__vithormoraes.ogg")
@@ -19,6 +21,10 @@ func _ready():
 	modulate = Color(1, 1, 1, 0)
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "modulate", Color(1, 1, 1, 1), 0.5).set_trans(Tween.TRANS_SINE)
+	for page in tab_container.get_children():
+		for elem in page.get_children():
+			if elem is PageFlipButton:
+				page_flip_buttons.append(elem)
 
 func _input(event):
 	if event.is_action_pressed("right_click"):
@@ -33,14 +39,13 @@ func _input(event):
 		if event.pressed and event.get_button_index() == MOUSE_BUTTON_LEFT:
 			if mouse_in:
 				is_dragging = true
-				tab_container.position = Vector2( - 8, -8)
 				drag_offset = get_global_mouse_position() - position
+				picked_up_pos = position
 				show_document_on_top()
 				if not GameManager.is_in_zoom_view:
 					play_sfx(document_moving_sfx)
 		elif not event.pressed and is_dragging:
 			is_dragging = false
-			tab_container.position = Vector2(0, 0)
 			if not GameManager.is_in_zoom_view:
 				play_sfx(document_moving_sfx)
 
@@ -48,9 +53,12 @@ func _process(_delta):
 	if is_dragging:
 		var new_pos = get_global_mouse_position() - drag_offset
 		keep_inside_document_area(new_pos)
+		if position != picked_up_pos and not GameManager.is_in_zoom_view:
+			tab_container.position = Vector2( - 8, -8)
 	else:
 		tab_container.size = Vector2(0, 0) # Keep document size at minimum
 		size = tab_container.size
+		tab_container.position = Vector2(0, 0)
 
 func return_to_subject():
 	var tween = get_tree().create_tween()
@@ -59,9 +67,13 @@ func return_to_subject():
 
 func _on_mouse_entered() -> void:
 	mouse_in = true
+	for elem in page_flip_buttons:
+		elem.visible = true
 
 func _on_mouse_exited() -> void:
 	mouse_in = false
+	for elem in page_flip_buttons:
+		elem.visible = false
 
 func _on_destroy_timer_timeout():
 	play_sfx(receive_remove_new_doc_sfx)
@@ -100,7 +112,7 @@ func _on_rule_button_pressed() -> void:
 
 func _on_term_button_pressed() -> void:
 	tab_container.current_tab = 4
-	
+
 func _on_local_map_button_pressed() -> void:
 	tab_container.current_tab = 5
 

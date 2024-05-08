@@ -7,6 +7,7 @@
 
 ## Gameplay
 
+- [ ] QoL page flip
 - [ ] Alternate monster mechanic
   - [ ] Report instead of deny entry
   - [ ] Usually has odd body feature
@@ -27,7 +28,7 @@
 - [x] Day 0
 - [x] Day 1
 - [x] Day 2
-- [ ] Day 3
+- [x] Day 3
 - [ ] Day 4
 - [ ] Day 5
 - [ ] Day 6

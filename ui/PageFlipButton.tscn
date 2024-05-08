@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dygcqclau0cri"]
+
+[ext_resource type="Script" path="res://ui/page_flip_button.gd" id="1_cneur"]
+[ext_resource type="Texture2D" uid="uid://dg0eekuqwvgq2" path="res://asset/sprite/ui/flip_page.png" id="1_n3wvd"]
+
+[node name="NextPageButton" type="Button"]
+offset_right = 24.0
+offset_bottom = 224.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_cneur")
+
+[node name="PageFlipIcon" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.509804)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_n3wvd")
+expand_mode = 1

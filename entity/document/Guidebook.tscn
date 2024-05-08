@@ -1,21 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://oasns4fb3vda"]
+[gd_scene load_steps=13 format=3 uid="uid://oasns4fb3vda"]
 
 [ext_resource type="Script" path="res://entity/document/guidebook.gd" id="1_yv554"]
 [ext_resource type="Texture2D" uid="uid://j0xw2p5dmgah" path="res://asset/sprite/item/guidebook_cover.png" id="2_jdxbl"]
 [ext_resource type="Texture2D" uid="uid://bmy07teg0e25r" path="res://asset/sprite/item/guidebook_paper_full.png" id="3_ibe5a"]
+[ext_resource type="PackedScene" uid="uid://dygcqclau0cri" path="res://ui/PageFlipButton.tscn" id="3_y2e8j"]
 [ext_resource type="FontFile" uid="uid://b2q8817lu0td7" path="res://asset/font/RobotoMono-VariableFont_wght.ttf" id="4_hv1g7"]
 [ext_resource type="Texture2D" uid="uid://dk8fe6pqrpfhk" path="res://asset/sprite/ui/local_map.png" id="5_44co4"]
 [ext_resource type="Texture2D" uid="uid://cy60t7sd2v7b5" path="res://asset/sprite/ui/local_map2.png" id="6_2xkqx"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_530yy"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpwve"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h0jec"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mbhsw"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l64f3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d4dvb"]
 
@@ -57,19 +48,12 @@ light_mask = 2
 layout_mode = 2
 texture = ExtResource("2_jdxbl")
 
-[node name="NextPageButton" type="Button" parent="TabContainer/Cover"]
+[node name="NextPageButton" parent="TabContainer/Cover" instance=ExtResource("3_y2e8j")]
 layout_mode = 0
 offset_left = 184.0
-offset_top = 8.0
-offset_right = 200.0
-offset_bottom = 248.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xpwve")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_h0jec")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
-flat = true
+offset_top = 16.0
+offset_right = 208.0
+offset_bottom = 240.0
 
 [node name="TOC" type="TextureRect" parent="TabContainer"]
 visible = false
@@ -146,33 +130,6 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 2
 
-[node name="NextPageButton" type="Button" parent="TabContainer/TOC"]
-layout_mode = 0
-offset_left = 376.0
-offset_top = 8.0
-offset_right = 392.0
-offset_bottom = 256.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xpwve")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_h0jec")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
-flat = true
-
-[node name="PreviousPageButton" type="Button" parent="TabContainer/TOC"]
-layout_mode = 0
-offset_top = 8.0
-offset_right = 16.0
-offset_bottom = 256.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xpwve")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_h0jec")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
-flat = true
-
 [node name="PageCount" type="Label" parent="TabContainer/TOC"]
 layout_mode = 2
 offset_left = 94.0
@@ -203,6 +160,7 @@ offset_left = 224.0
 offset_top = 107.0
 offset_right = 376.0
 offset_bottom = 117.0
+mouse_filter = 1
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_d4dvb")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_7x83d")
@@ -217,6 +175,7 @@ offset_left = 224.0
 offset_top = 127.0
 offset_right = 376.0
 offset_bottom = 137.0
+mouse_filter = 1
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_d4dvb")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_7x83d")
@@ -231,6 +190,7 @@ offset_left = 224.0
 offset_top = 147.0
 offset_right = 376.0
 offset_bottom = 156.0
+mouse_filter = 1
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_d4dvb")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_7x83d")
@@ -238,6 +198,21 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_lmpdc")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_rufga")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1ui7l")
 flat = true
+
+[node name="NextPageButton" parent="TabContainer/TOC" instance=ExtResource("3_y2e8j")]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 16.0
+offset_right = 408.0
+offset_bottom = 240.0
+
+[node name="PrevPageButton" parent="TabContainer/TOC" instance=ExtResource("3_y2e8j")]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 240.0
+flip_prev = true
 
 [node name="Rules" type="TextureRect" parent="TabContainer"]
 visible = false
@@ -311,33 +286,6 @@ text = "Rule #4: Duration of stay on visit card must be no more than 2 weeks.
 "
 autowrap_mode = 2
 
-[node name="NextPageButton" type="Button" parent="TabContainer/Rules"]
-layout_mode = 0
-offset_left = 376.0
-offset_top = 8.0
-offset_right = 392.0
-offset_bottom = 256.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xpwve")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_h0jec")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
-flat = true
-
-[node name="PreviousPageButton" type="Button" parent="TabContainer/Rules"]
-layout_mode = 0
-offset_top = 8.0
-offset_right = 16.0
-offset_bottom = 256.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xpwve")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_h0jec")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
-flat = true
-
 [node name="PageCount" type="Label" parent="TabContainer/Rules"]
 layout_mode = 0
 offset_left = 94.0
@@ -364,6 +312,19 @@ text = "4
 "
 horizontal_alignment = 1
 
+[node name="NextPageButton" parent="TabContainer/Rules" instance=ExtResource("3_y2e8j")]
+offset_left = 384.0
+offset_top = 16.0
+offset_right = 408.0
+offset_bottom = 240.0
+
+[node name="PrevPageButton" parent="TabContainer/Rules" instance=ExtResource("3_y2e8j")]
+offset_left = -8.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 240.0
+flip_prev = true
+
 [node name="Rules2" type="TextureRect" parent="TabContainer"]
 visible = false
 light_mask = 2
@@ -380,33 +341,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_hv1g7")
 theme_override_font_sizes/font_size = 10
 autowrap_mode = 2
-
-[node name="NextPageButton" type="Button" parent="TabContainer/Rules2"]
-layout_mode = 0
-offset_left = 376.0
-offset_top = 8.0
-offset_right = 392.0
-offset_bottom = 256.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xpwve")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_h0jec")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
-flat = true
-
-[node name="PreviousPageButton" type="Button" parent="TabContainer/Rules2"]
-layout_mode = 0
-offset_top = 8.0
-offset_right = 16.0
-offset_bottom = 256.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xpwve")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_h0jec")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
-flat = true
 
 [node name="Label" type="Label" parent="TabContainer/Rules2"]
 layout_mode = 0
@@ -455,38 +389,24 @@ text = "6
 "
 horizontal_alignment = 1
 
+[node name="NextPageButton" parent="TabContainer/Rules2" instance=ExtResource("3_y2e8j")]
+offset_left = 384.0
+offset_top = 16.0
+offset_right = 408.0
+offset_bottom = 240.0
+
+[node name="PrevPageButton" parent="TabContainer/Rules2" instance=ExtResource("3_y2e8j")]
+offset_left = -8.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 240.0
+flip_prev = true
+
 [node name="Term" type="TextureRect" parent="TabContainer"]
 visible = false
 light_mask = 2
 layout_mode = 2
 texture = ExtResource("3_ibe5a")
-
-[node name="NextPageButton" type="Button" parent="TabContainer/Term"]
-layout_mode = 0
-offset_left = 376.0
-offset_top = 8.0
-offset_right = 392.0
-offset_bottom = 256.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xpwve")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_h0jec")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
-flat = true
-
-[node name="PreviousPageButton" type="Button" parent="TabContainer/Term"]
-layout_mode = 0
-offset_top = 8.0
-offset_right = 16.0
-offset_bottom = 256.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xpwve")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_h0jec")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
-flat = true
 
 [node name="Label" type="Label" parent="TabContainer/Term"]
 layout_mode = 0
@@ -545,38 +465,24 @@ theme_override_font_sizes/font_size = 8
 text = "8"
 horizontal_alignment = 1
 
+[node name="NextPageButton" parent="TabContainer/Term" instance=ExtResource("3_y2e8j")]
+offset_left = 384.0
+offset_top = 16.0
+offset_right = 408.0
+offset_bottom = 240.0
+
+[node name="PrevPageButton" parent="TabContainer/Term" instance=ExtResource("3_y2e8j")]
+offset_left = -8.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 240.0
+flip_prev = true
+
 [node name="Map" type="TextureRect" parent="TabContainer"]
 visible = false
 light_mask = 2
 layout_mode = 2
 texture = ExtResource("3_ibe5a")
-
-[node name="NextPageButton" type="Button" parent="TabContainer/Map"]
-layout_mode = 0
-offset_left = 376.0
-offset_top = 8.0
-offset_right = 392.0
-offset_bottom = 256.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xpwve")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_h0jec")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
-flat = true
-
-[node name="PreviousPageButton" type="Button" parent="TabContainer/Map"]
-layout_mode = 0
-offset_top = 8.0
-offset_right = 16.0
-offset_bottom = 256.0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_530yy")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xpwve")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_h0jec")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mbhsw")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_l64f3")
-flat = true
 
 [node name="Label" type="Label" parent="TabContainer/Map"]
 layout_mode = 0
@@ -643,6 +549,13 @@ offset_bottom = 239.0
 texture = ExtResource("6_2xkqx")
 expand_mode = 1
 
+[node name="PrevPageButton" parent="TabContainer/Map" instance=ExtResource("3_y2e8j")]
+offset_left = -8.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 240.0
+flip_prev = true
+
 [node name="DestroyTimer" type="Timer" parent="."]
 one_shot = true
 
@@ -650,17 +563,16 @@ one_shot = true
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="resized" from="." to="." method="_on_resized"]
 [connection signal="pressed" from="TabContainer/Cover/NextPageButton" to="." method="_on_next_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/TOC/NextPageButton" to="." method="_on_next_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/TOC/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
 [connection signal="pressed" from="TabContainer/TOC/RuleButton" to="." method="_on_rule_button_pressed"]
 [connection signal="pressed" from="TabContainer/TOC/TermButton" to="." method="_on_term_button_pressed"]
 [connection signal="pressed" from="TabContainer/TOC/LocalMapButton" to="." method="_on_local_map_button_pressed"]
+[connection signal="pressed" from="TabContainer/TOC/NextPageButton" to="." method="_on_next_page_button_pressed"]
+[connection signal="pressed" from="TabContainer/TOC/PrevPageButton" to="." method="_on_previous_page_button_pressed"]
 [connection signal="pressed" from="TabContainer/Rules/NextPageButton" to="." method="_on_next_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Rules/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
+[connection signal="pressed" from="TabContainer/Rules/PrevPageButton" to="." method="_on_previous_page_button_pressed"]
 [connection signal="pressed" from="TabContainer/Rules2/NextPageButton" to="." method="_on_next_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Rules2/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
+[connection signal="pressed" from="TabContainer/Rules2/PrevPageButton" to="." method="_on_previous_page_button_pressed"]
 [connection signal="pressed" from="TabContainer/Term/NextPageButton" to="." method="_on_next_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Term/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Map/NextPageButton" to="." method="_on_next_page_button_pressed"]
-[connection signal="pressed" from="TabContainer/Map/PreviousPageButton" to="." method="_on_previous_page_button_pressed"]
+[connection signal="pressed" from="TabContainer/Term/PrevPageButton" to="." method="_on_previous_page_button_pressed"]
+[connection signal="pressed" from="TabContainer/Map/PrevPageButton" to="." method="_on_previous_page_button_pressed"]
 [connection signal="timeout" from="DestroyTimer" to="TabContainer" method="_on_destroy_timer_timeout"]
