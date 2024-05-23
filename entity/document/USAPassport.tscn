@@ -36,6 +36,7 @@ layout_mode = 2
 texture = ExtResource("2_xnvlx")
 
 [node name="NextPageButton" parent="TabContainer/Cover" instance=ExtResource("3_hgs6o")]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 136.0
 offset_right = 248.0
@@ -136,6 +137,7 @@ fit_content = true
 scroll_active = false
 
 [node name="PrevPageButton" parent="TabContainer/Page" instance=ExtResource("3_hgs6o")]
+layout_mode = 0
 offset_left = 8.0
 offset_top = -8.0
 offset_right = 248.0
@@ -143,6 +145,7 @@ offset_bottom = 24.0
 flip_prev = true
 
 [node name="PrevPageButton2" parent="TabContainer/Page" instance=ExtResource("3_hgs6o")]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 296.0
 offset_right = 248.0
