@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_sp7qd"]
 script = ExtResource("1_qlq0r")
 openings = Array[String](["Good afternoon!"])
-identity_verification = "It's there, dude!"
+request_document = "It's there, dude!"
 purpose_of_visit = "I come to dri.. to visit my friend! It's... been a while since I last saw him."
 duration_of_stay = "Just one day. Hopefully, if Im not drink too much... at my friend house, I mean."
 item_in_possession = "Not much, just my phone and my wallet. And my cooler bag."

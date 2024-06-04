@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_pcenm"]
 script = ExtResource("1_k1g2b")
 openings = Array[String](["Hello mister inspector."])
-identity_verification = "I already gave both of them to you, sir."
+request_document = "I already gave both of them to you, sir."
 purpose_of_visit = "I came to work as the new piano tutor for a wealthy family in town."
 duration_of_stay = "I will live in this town for 3 months, as per my contract. I also will stay at their place during the job, too! Saved some rent money hehe!"
 item_in_possession = "I brought my clothes, my personal toilettries, laptop, phone, piano textbooks, some office supplies, and a kalimba."

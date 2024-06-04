@@ -9,7 +9,7 @@ enum Gender {
 
 enum QuestionID {
     NONE,
-    IDENTITY_VERIFICATION,
+    REQUEST_DOCUMENT,
     PURPOSE_OF_VISIT,
     DURATION_OF_STAY,
     ITEM_IN_POSSESSION,

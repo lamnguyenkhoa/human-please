@@ -127,7 +127,7 @@ func print_dialog(question: String, answer: String, btn: Button):
 func _on_standard_1_pressed() -> void:
 	var current_dialog = Utils.get_dialog_data()
 	print_dialog(select_random_string(standard_questions[0]),
-		current_dialog.identity_verification, standard_btns[0])
+		current_dialog.request_document, standard_btns[0])
 	await get_tree().create_timer(1).timeout
 	GameManager.working_area.spawn_passport()
 	if GameManager.current_subject.has_visit_card == EnumAutoload.HasVisitCard.GIVE_WHEN_STANDARD_ASKED:

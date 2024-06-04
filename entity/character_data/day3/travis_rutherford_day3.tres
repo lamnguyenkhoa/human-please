@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_6maaq"]
 script = ExtResource("1_vtycs")
 openings = Array[String]([])
-identity_verification = "Yeah, new required the visit card. The number of required documents is just gonna increased in the future, isn't it?"
+request_document = "Yeah, new required the visit card. The number of required documents is just gonna increased in the future, isn't it?"
 purpose_of_visit = "I has some business with one of the local bar here. I know the rule so I won't say more than necessary. The keyword you want to hear is \"for business, not related to meteorite\", right?"
 duration_of_stay = "I will stay overnight, so it's 2 days."
 item_in_possession = "My case only has a spare set of clothes, my medicine, phone and laptop."

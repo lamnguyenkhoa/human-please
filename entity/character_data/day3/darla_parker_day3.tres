@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_yxuii"]
 script = ExtResource("1_strkg")
 openings = Array[String](["Hi officer."])
-identity_verification = "There you are."
+request_document = "There you are."
 purpose_of_visit = "I'm a researcher. I come here to do some field study about the vegetation here. It's seem the meteor rain that happened recently caused some biological change to the nearby flora environment. Ah, and I have this letter that should grant me entry, regardless of the inspect procedure."
 duration_of_stay = "I would stay here for 3 or 4 days. That should be enough for some light investigation and sample collection. The rest I will do at my own lab."
 item_in_possession = "I brought along my clothes, a laptop, some books, some... science instruments for measuring and collecting things."

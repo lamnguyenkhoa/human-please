@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_vjc1j"]
 script = ExtResource("1_snjdj")
 openings = Array[String](["Hey yo!"])
-identity_verification = "Sorry, let me get it. Umm..., where is it? Oh hell no, I think I forgot it man. Can you... let me in without it? It's just a quick visit, I promise!"
+request_document = "Sorry, let me get it. Umm..., where is it? Oh hell no, I think I forgot it man. Can you... let me in without it? It's just a quick visit, I promise!"
 purpose_of_visit = "I'm here for the famous beer in this town! Just the bar and the beer only!"
 duration_of_stay = "Very quick, sir. Nothing to worry about."
 item_in_possession = "I only bring my phone and my wallet here. I do have other stuff but it's in my car parked outside. I don't plan to drive the car in so there is no need to declare what's in there."

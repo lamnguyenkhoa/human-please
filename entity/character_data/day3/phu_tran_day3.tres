@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_6cmg4"]
 script = ExtResource("1_4b4jp")
 openings = Array[String]([])
-identity_verification = "There's the passport."
+request_document = "There's the passport."
 purpose_of_visit = "Hi, my purpose of visit is to visit my friend. He doesn't do well currently and I guess he need some moral support."
 duration_of_stay = "I will stay in the town for a week. Should be enough."
 item_in_possession = "I brought clothes, laptop, handheld gaming console, phone and a small gift for my friend: the famous Deathstar GELO set. This should cheer the dude up."

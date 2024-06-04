@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_yo675"]
 script = ExtResource("1_38vhs")
 openings = Array[String]([])
-identity_verification = "My bad, I'm forgetful. Here they are Mr. Inspector."
+request_document = "My bad, I'm forgetful. Here they are Mr. Inspector."
 purpose_of_visit = "I come to get a health checkup and a simple procedure to performed on me. The clinic need me to stay overnight for monitoring."
 duration_of_stay = "It's 2 or 3 days. It should be one single night at the clinic, but if thing not go well I have to stay for another night."
 item_in_possession = "I only bring a pair of clothes to change, my old phone and a puzzle book."

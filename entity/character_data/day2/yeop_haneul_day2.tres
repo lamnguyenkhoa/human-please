@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_1edb8"]
 script = ExtResource("1_gn6tj")
 openings = Array[String]([])
-identity_verification = "Here it is, officer."
+request_document = "Here it is, officer."
 purpose_of_visit = "I come to open a new Asian-style convenience store here."
 duration_of_stay = "I planned to stay here for around a month. Maybe more."
 item_in_possession = "I brought a laptop, clothes, a set of my favourite watches, work documents and some homemade snacks. I don't see any regulation related to allowed items so why bother asking?"

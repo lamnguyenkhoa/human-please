@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_xmxb3"]
 script = ExtResource("1_unbkf")
 openings = Array[String](["Today is a good day, right? The weather is lovely."])
-identity_verification = "Already gave you, mister."
+request_document = "Already gave you, mister."
 purpose_of_visit = "I came to collect some local, traditional herbal medicine that I ordered online. Due to the access restriction, they can't ship it to me."
 duration_of_stay = "I just get my stuff and then go home right after."
 item_in_possession = "I only bring my wallet and my phone."

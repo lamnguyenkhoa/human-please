@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_ggwgv"]
 script = ExtResource("1_gp7ib")
 openings = Array[String](["Here's the passport, mister."])
-identity_verification = "I just gave it to you."
+request_document = "I just gave it to you."
 purpose_of_visit = "I'm a candidate for the next Mayor in the nearby town, and I have a meeting with this town officials today."
 duration_of_stay = "I will stay here overnight."
 item_in_possession = "A change of clothes, some personal toiletries and my phone."

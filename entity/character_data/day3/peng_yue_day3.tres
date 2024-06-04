@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_8q6i0"]
 script = ExtResource("1_dpwsy")
 openings = Array[String](["Hello officer."])
-identity_verification = "There they are, mister."
+request_document = "There they are, mister."
 purpose_of_visit = "I come to visit my mother who lived here."
 duration_of_stay = "Around 5 days."
 item_in_possession = "I only bring a case with my clothes, my set of beauty products and a phone."

@@ -59,10 +59,10 @@ Politic
 Business (Except meteorite-related objects)"
 
 [node name="PostitNote" parent="GameUI/WorkingArea" instance=ExtResource("7_qgtkp")]
-offset_left = 24.0
-offset_top = 64.0
-offset_right = 164.0
-offset_bottom = 196.0
+offset_left = 256.0
+offset_top = 376.0
+offset_right = 396.0
+offset_bottom = 508.0
 content = "There's some trouble with the lighting today. Use the flashlight if needed. It's in the table drawer.
          -Mark, ur buddy"
 

@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_k4p1l"]
 script = ExtResource("1_f31tc")
 openings = Array[String](["Hello officer, I'm back. And this time I got the valid reason for visiting."])
-identity_verification = "Already gave you, officer."
+request_document = "Already gave you, officer."
 purpose_of_visit = "You forgot already? It's for business, mister officer. Business. I'm gonna make tons of money by buying those meteorite fragments and re-sell them. Gotta hurry up before the government ban trading them."
 duration_of_stay = "Roughly a day, officer."
 item_in_possession = "Not much. A laptop, phone and my set of business cards."
