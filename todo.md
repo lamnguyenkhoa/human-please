@@ -7,7 +7,7 @@
 
 ## Gameplay
 
-- [ ] QoL page flip
+- [x] QoL page flip
 - [ ] Alternate monster mechanic
   - [ ] Report instead of deny entry
   - [ ] Usually has odd body feature
@@ -20,7 +20,8 @@
 - [ ] Inspect detailed inventory
 - [x] Special questions
 - [ ] Answer from inspector
-- [ ] Add a local map
+- [x] Add a local map
+- [ ] Save system
 
 ## Story
 

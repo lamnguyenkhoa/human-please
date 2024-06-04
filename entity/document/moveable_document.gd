@@ -52,7 +52,10 @@ func _input(event):
 func _process(_delta):
 	if is_dragging:
 		var new_pos = get_global_mouse_position() - drag_offset
-		keep_inside_document_area(new_pos)
+		if GameManager.is_in_zoom_view:
+			position = new_pos
+		else:
+			keep_inside_document_area(new_pos)
 		if position != picked_up_pos and not GameManager.is_in_zoom_view:
 			tab_container.position = Vector2( - 8, -8)
 	else:
