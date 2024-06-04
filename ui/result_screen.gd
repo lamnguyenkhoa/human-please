@@ -34,11 +34,11 @@ func show_result():
 	if accuracy == 1:
 		rating2.self_modulate = Color.GREEN
 		rating2.text = 'Excellent'
-		calculate_reward(correct_count)
+		reward_amount = clampi(correct_count, 0, 1000)
 	elif accuracy > 0.5:
 		rating2.self_modulate = Color.YELLOW
 		rating2.text = 'Acceptable'
-		calculate_reward(correct_count)
+		reward_amount = clampi(correct_count, 0, 1000)
 	else:
 		rating2.self_modulate = Color.RED
 		rating2.text = 'Unacceptable'
@@ -52,7 +52,7 @@ func update_violation_badges():
 	if GameManager.violation_left <= 0:
 		violation_section.get_node("Star").visible = false
 
-func show_violation_striked():
+func receive_violation_striked():
 	update_violation_badges()
 	violation_section.visible = true
 	GameManager.violation_left -= 1
@@ -64,11 +64,11 @@ func show_violation_striked():
 		print("GAME OVER")
 		return
 
-func calculate_reward(correct):
+func receive_reward():
 	# Reward is 1 per correct choice, but only given if has above acceptable rating
-	reward_amount = clampi(correct, 0, 1000)
 	GameManager.owned_tokens += reward_amount
 	reward_label.text = reward_label.text.format([reward_amount, GameManager.owned_tokens])
+	reward_label.visible = true
 
 func _on_end_day_pressed() -> void:
 	button_click_sfx()
@@ -98,12 +98,11 @@ func _on_end_day_mouse_entered():
 	button_hover_sfx()
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
-	if GameManager.work_day.day == 0:
-		return
-	if reward_amount > 0:
-		reward_label.visible = true
-	else:
-		show_violation_striked()
+	if GameManager.work_day.day > 0:
+		if reward_amount > 0:
+			receive_reward()
+		else:
+			receive_violation_striked()
 	await get_tree().create_timer(1).timeout
 	play_beep_sfx()
 	next_day_button.visible = true
