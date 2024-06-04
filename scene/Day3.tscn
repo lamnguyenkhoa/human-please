@@ -45,7 +45,7 @@ layout_mode = 1
 layout_mode = 1
 offset_left = -984.0
 visit_card_prefab = ExtResource("6_wx4fm")
-today_extra_documents = [NodePath("AllowedVisitNotice"), NodePath("NewRuleNotice"), NodePath("")]
+today_extra_documents = [NodePath("AllowedVisitNotice"), NodePath("NewRuleNotice")]
 today_items = [NodePath("FlashlightTool")]
 
 [node name="AllowedVisitNotice" parent="GameUI/WorkingArea" instance=ExtResource("11_p701c")]

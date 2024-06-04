@@ -9,6 +9,7 @@ class_name ResultScreen
 @onready var rating2: Label = $Rating2
 @onready var next_day_button = $EndDay
 @onready var reward_label: Label = $Reward
+@onready var violation_section = $Violation
 
 var beep_sfx = preload ("res://asset/sfx/beep_1_33776__jobro.ogg")
 var reward_amount = 0
@@ -33,27 +34,41 @@ func show_result():
 	if accuracy == 1:
 		rating2.self_modulate = Color.GREEN
 		rating2.text = 'Excellent'
-		add_reward(correct_count)
+		calculate_reward(correct_count)
 	elif accuracy > 0.5:
 		rating2.self_modulate = Color.YELLOW
 		rating2.text = 'Acceptable'
-		add_reward(correct_count)
+		calculate_reward(correct_count)
 	else:
 		rating2.self_modulate = Color.RED
 		rating2.text = 'Unacceptable'
 	anim_player.play("show_result")
 
-func add_reward(correct):
+func update_violation_badges():
+	if GameManager.violation_left <= 2:
+		violation_section.get_node("Star3").visible = false
+	if GameManager.violation_left <= 1:
+		violation_section.get_node("Star2").visible = false
+	if GameManager.violation_left <= 0:
+		violation_section.get_node("Star").visible = false
+
+func show_violation_striked():
+	update_violation_badges()
+	violation_section.visible = true
+	GameManager.violation_left -= 1
+	await get_tree().create_timer(0.5).timeout
+	play_beep_sfx()
+	update_violation_badges()
+	if GameManager.violation_left <= 0:
+		#TODO: Game over
+		print("GAME OVER")
+		return
+
+func calculate_reward(correct):
 	# Reward is 1 per correct choice, but only given if has above acceptable rating
 	reward_amount = clampi(correct, 0, 1000)
-	reward_label.text = reward_label.text.format([reward_amount])
 	GameManager.owned_tokens += reward_amount
-
-func show_reward_text():
-	if GameManager.work_day.day == 0:
-		return
-	if reward_amount > 0:
-		reward_label.visible = true
+	reward_label.text = reward_label.text.format([reward_amount, GameManager.owned_tokens])
 
 func _on_end_day_pressed() -> void:
 	button_click_sfx()
@@ -81,3 +96,14 @@ func button_click_sfx():
 
 func _on_end_day_mouse_entered():
 	button_hover_sfx()
+
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	if GameManager.work_day.day == 0:
+		return
+	if reward_amount > 0:
+		reward_label.visible = true
+	else:
+		show_violation_striked()
+	await get_tree().create_timer(1).timeout
+	play_beep_sfx()
+	next_day_button.visible = true

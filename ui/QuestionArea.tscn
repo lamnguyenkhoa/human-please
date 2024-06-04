@@ -71,7 +71,7 @@ size_flags_horizontal = 3
 [node name="Standard1" type="Button" parent="TabContainer/Standard/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_og5ud")
-text = "Identity verification"
+text = "Identity verification / Request document"
 text_overrun_behavior = 3
 
 [node name="Standard2" type="Button" parent="TabContainer/Standard/VBoxContainer"]
