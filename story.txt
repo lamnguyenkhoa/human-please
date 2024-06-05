@@ -20,23 +20,19 @@ Day 0
 - Officer 2 also play pretend to give you an illegal case.
 
 Day 1
-- 5 visitors
 
 Day 2
 - Updated allowed visit reason
 - Light may ocassionally out
-- 7 visitors
 
 Day 3
 - Start dropping hint of something moving near town
 - Rule #3: Need a card about staying location during visit. Card must be valid
-- 5 visitors
 
 Day 4
 - Add Lie Detector device.
 - Visitor sometime look very weird
 - Rule #4: Duration of stay must no more than 2 weeks.
-- 6 visitors
 
 Day 5
 - Alternate appear (but inspector won't know about them yet)
@@ -45,18 +41,15 @@ Day 5
 - Note: Some alternates will create noise to the camera.
 - Update list of items not allowed.
 - Update list of place not allowed.
-- 6 visitors
 
 Day 6
 - Rule #7: Cannot stay near certain streets.
 - Rule #8: May have to fix electrical panel sometime.
 - Maximum stay is 3 days.
-- 6 visitors
 
 Day 7
 - Rule #9: If visitor is clearly alternate, press emergency immediately.
 - A perfect alternate appear. You must figure it out.
-- 7 visitors
 
 
 Secret ending:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b01ihqfm83sp0"]
+[gd_scene load_steps=33 format=3 uid="uid://b01ihqfm83sp0"]
 
 [ext_resource type="Script" path="res://scene/work_day.gd" id="1_mly2x"]
 [ext_resource type="Resource" uid="uid://d12wwmrf6hulh" path="res://entity/character_data/day3/peng_yue_day3.tres" id="2_ajvmv"]
@@ -23,12 +23,42 @@
 [ext_resource type="AudioStream" uid="uid://cgoe0ob7iinbo" path="res://asset/music/booth_ambient_440126__blaukreuz.ogg" id="18_sdcp1"]
 [ext_resource type="PackedScene" uid="uid://c4orpco2rb63g" path="res://ui/SettingMenu.tscn" id="19_10mwh"]
 [ext_resource type="PackedScene" uid="uid://dewfwna8cc2s0" path="res://ui/ResultScreen.tscn" id="20_8txkl"]
+[ext_resource type="Script" path="res://ui/cutscene.gd" id="20_40yxx"]
+[ext_resource type="Texture2D" uid="uid://480bcigjdaq7" path="res://asset/sprite/cutscene/open_car_door.png" id="21_4iirh"]
+[ext_resource type="Texture2D" uid="uid://bor531caxlt0b" path="res://asset/sprite/cutscene/emergency_meeting.png" id="21_h6kjr"]
+[ext_resource type="Texture2D" uid="uid://dgxxcgglvsv5b" path="res://asset/sprite/cutscene/police_corridor.png" id="21_igxpi"]
+[ext_resource type="Texture2D" uid="uid://trhhrji0ahtt" path="res://asset/sprite/cutscene/inspector_home.png" id="22_kitys"]
+[ext_resource type="Texture2D" uid="uid://dtxy23mc4navr" path="res://asset/sprite/cutscene/bed_lamp.png" id="23_c14m1"]
 
-[node name="Day3" type="Node2D"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x584p"]
+
+[sub_resource type="Animation" id="Animation_mx57t"]
+resource_name = "fadeout"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ForegroundCover:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kmm4g"]
+_data = {
+"fadeout": SubResource("Animation_mx57t")
+}
+
+[node name="Day3" type="Node2D" node_paths=PackedStringArray("postwork_cutscene")]
 script = ExtResource("1_mly2x")
 day = 3
 date_string = "15/05/2000"
 today_subjects = Array[Resource("res://entity/character_resource.gd")]([ExtResource("2_ajvmv"), ExtResource("3_35pvo"), ExtResource("4_sfcln"), ExtResource("5_s8ch2"), ExtResource("6_celek"), ExtResource("7_g2d6a"), ExtResource("8_c0lwu"), ExtResource("9_fpgig"), ExtResource("10_dwkc2")])
+postwork_cutscene = NodePath("GameUI/PostworkCutscene")
 lightout_after_n_second = 100
 
 [node name="GameUI" type="Control" parent="."]
@@ -117,6 +147,378 @@ text = "Training day
 
 12/05/2000"
 horizontal_alignment = 1
+
+[node name="PostworkCutscene" type="Control" parent="GameUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("20_40yxx")
+is_post_work = true
+
+[node name="BackgroundCover" type="ColorRect" parent="GameUI/PostworkCutscene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TabContainer" type="TabContainer" parent="GameUI/PostworkCutscene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_x584p")
+current_tab = 8
+tabs_visible = false
+
+[node name="EmergencyMeeting" type="ColorRect" parent="GameUI/PostworkCutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting"]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 140.0
+offset_right = 951.0
+offset_bottom = 476.0
+texture = ExtResource("21_4iirh")
+
+[node name="Label" type="RichTextLabel" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting"]
+offset_left = 232.0
+offset_top = 512.0
+offset_right = 1192.0
+offset_bottom = 644.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "After work, just when you about to go home, Officer Earnell walk toward you.
+
+[color=aqua]Officer Earnell[/color]: \"Sorry, I'm afraid you can't go home yet. We have an emergency meeting. Let's go there now.\""
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="EmergencyMeeting2" type="ColorRect" parent="GameUI/PostworkCutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting2"]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 138.0
+offset_right = 941.0
+offset_bottom = 481.0
+texture = ExtResource("21_igxpi")
+
+[node name="Label" type="RichTextLabel" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting2"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 512.0
+offset_right = 1192.0
+offset_bottom = 644.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "Through the corridor of the police station, you walk towards an large conference room, with lots people already in there."
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting2"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="EmergencyMeeting3" type="ColorRect" parent="GameUI/PostworkCutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting3"]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 101.0
+offset_right = 979.0
+offset_bottom = 482.0
+texture = ExtResource("21_h6kjr")
+
+[node name="Label" type="RichTextLabel" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting3"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 512.0
+offset_right = 1192.0
+offset_bottom = 690.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "\"Thanks for fetching our new inspector. I guess we can start now.\"
+
+[color=aqua]Police chief[/color]: \"Well, to keep it simple, we discovered that there are mysterious entities that try to mimic human to get into the town.
+
+"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting3"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="EmergencyMeeting4" type="ColorRect" parent="GameUI/PostworkCutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting4"]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 101.0
+offset_right = 979.0
+offset_bottom = 482.0
+texture = ExtResource("21_h6kjr")
+
+[node name="Label" type="RichTextLabel" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting4"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 512.0
+offset_right = 1192.0
+offset_bottom = 690.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "Lots of people suddenly talking and discussing. It seem hard to believe such things exist.
+
+[color=aqua]Police chief[/color]: \"Be quiet! And with that knowledge, I request you guys to pay more attentions to the town visitors. Especially those who work at checkpoint booth.\"
+"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting4"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="EmergencyMeeting5" type="ColorRect" parent="GameUI/PostworkCutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting5"]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 101.0
+offset_right = 979.0
+offset_bottom = 482.0
+texture = ExtResource("21_h6kjr")
+
+[node name="Label" type="RichTextLabel" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting5"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 512.0
+offset_right = 1192.0
+offset_bottom = 690.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=aqua]Police chief[/color]: \"Let see, those government guy give us some guideline to detect them... well it come bullet points too, isn't it convenient?\"
+"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting5"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="EmergencyMeeting6" type="ColorRect" parent="GameUI/PostworkCutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting6"]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 101.0
+offset_right = 979.0
+offset_bottom = 482.0
+texture = ExtResource("21_h6kjr")
+
+[node name="Label" type="RichTextLabel" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting6"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 512.0
+offset_right = 1192.0
+offset_bottom = 690.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[center]Sign of an Alternate (that's what we called them): 
+
+1. Incoherent, unnatural speech
+2. Present biologically impossible features
+3. Appearance that's identical to you
+4. Appearance that slightly off to someone you know[/center]
+"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting6"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="EmergencyMeeting7" type="ColorRect" parent="GameUI/PostworkCutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting7"]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 101.0
+offset_right = 979.0
+offset_bottom = 482.0
+texture = ExtResource("21_h6kjr")
+
+[node name="Label" type="RichTextLabel" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting7"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 512.0
+offset_right = 1192.0
+offset_bottom = 690.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=aqua]Police chief[/color]: \"That's... less detailed than I thought. Well, please put more attention to your work for the next few days, until the higher up figure out what to do next. That's all for the meeting\".
+
+It's quite a serious situation, but for some reason the chief seem pretty casual about it.
+"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/PostworkCutscene/TabContainer/EmergencyMeeting7"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="GoHome" type="ColorRect" parent="GameUI/PostworkCutscene/TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/PostworkCutscene/TabContainer/GoHome"]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 101.0
+offset_right = 979.0
+offset_bottom = 482.0
+texture = ExtResource("22_kitys")
+
+[node name="Label" type="RichTextLabel" parent="GameUI/PostworkCutscene/TabContainer/GoHome"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 512.0
+offset_right = 1192.0
+offset_bottom = 690.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "I exchanged some words with Earnell and Mark about what happened, then head back to home. I thought I could get some easy work here and enjoy life a bit, but fate does not like me, it seem."
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/PostworkCutscene/TabContainer/GoHome"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Sleep" type="ColorRect" parent="GameUI/PostworkCutscene/TabContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/PostworkCutscene/TabContainer/Sleep"]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 101.0
+offset_right = 979.0
+offset_bottom = 482.0
+texture = ExtResource("23_c14m1")
+
+[node name="Label" type="RichTextLabel" parent="GameUI/PostworkCutscene/TabContainer/Sleep"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 512.0
+offset_right = 1192.0
+offset_bottom = 690.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "The reason I volunteered to move here, is to escape from the chaotic work of the city. I still don't know what I want, what I need to do to be happy. I guess I'm at that point where people called \"mid-life crisis\", huh? "
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="GameUI/PostworkCutscene/TabContainer/Sleep"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 704.0
+offset_right = 800.0
+offset_bottom = 744.0
+text = "Click to continue"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ForegroundCover" type="ColorRect" parent="GameUI/PostworkCutscene"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameUI/PostworkCutscene"]
+libraries = {
+"": SubResource("AnimationLibrary_kmm4g")
+}
+autoplay = "fadeout"
+
+[node name="Timer" type="Timer" parent="GameUI/PostworkCutscene"]
+one_shot = true
 
 [node name="DarkOverlay" type="CanvasModulate" parent="."]
 visible = false
